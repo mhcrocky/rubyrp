@@ -41,8 +41,9 @@ Configuration settings are set in these files:
 $ bundle exec rspec
 or
 $ bundle exec rake (coverage included)
-$ open coverage/index.html (view coverage)
 ```
+
+$ open coverage/index.html (view coverage)
 
 
 ## Services
