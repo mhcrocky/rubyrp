@@ -41,3 +41,5 @@ yarn-debug.log*
 latest.dump
 
 .DS_Store
+
+coverage

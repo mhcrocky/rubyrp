@@ -35,6 +35,16 @@ Configuration settings are set in these files:
 * config/database.yml
 
 
+## How to run the test suite
+
+```
+$ bundle exec rspec
+or
+$ bundle exec rake (coverage included)
+$ open coverage/index.html (view coverage)
+```
+
+
 ## Services
 
 None at this time.
