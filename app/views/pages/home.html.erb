@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Home</h1>
-    <p class="lead text-muted">There is no actual product being sold here. The content below is example markup made with bootstrap, but we may use this page to mess with stripe later. <%= link_to('Log in', new_user_session_path) %> to see the blog &plus; todo list.</p>
+    <p class="lead text-muted">There is no actual product being sold here. The content below is example markup made with bootstrap, but we may integrate stripe later. <%= link_to("sign up", new_user_registration_path) %> or <%= link_to('sign in', new_user_session_path) %> to see the blog &plus; todo list.</p>
   </div>
 </section>
 
@@ -17,7 +17,7 @@
         <li>Email support</li>
         <li>Help center access</li>
       </ul>
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+      <button type="button" class="btn btn-lg btn-block btn-outline-primary"><%= link_to("Sign up for free", new_user_registration_path) %></button>
     </div>
   </div>
   <div class="card mb-4 shadow-sm">
@@ -25,7 +25,7 @@
       <h4 class="my-0 font-weight-normal">Pro</h4>
     </div>
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+      <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
       <ul class="list-unstyled mt-3 mb-4">
         <li>25 users included</li>
         <li>Priority email support</li>
@@ -39,7 +39,7 @@
       <h4 class="my-0 font-weight-normal">Enterprise</h4>
     </div>
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+      <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
       <ul class="list-unstyled mt-3 mb-4">
         <li>50 users included</li>
         <li>Phone and email support</li>
@@ -56,7 +56,7 @@
     <div class="media text-muted pt-3">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block text-gray-dark">What's in the App?</strong>
-        This is a Rails 6 example todo and blog application that utilizes React &amp; Bootstrap for the frontend.
+        This is a Rails 6 (PostgreSQL) example todo and blog application that utilizes React, Coffeescript, jQuery &amp; Bootstrap to shape the frontend.
       </p>
     </div>
     <div class="media text-muted pt-3">
@@ -81,7 +81,7 @@
       </p>
     </div>
     <small class="d-block text-right mt-3">
-      <%= link_to('Log in', new_user_session_path) %>
+      <%= link_to("Sign up", new_user_registration_path) %> or <%= link_to('Sign in', new_user_session_path) %>
     </small>
   </div>
 </main>

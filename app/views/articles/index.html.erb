@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Blog</h1>
-    <p class="lead text-muted">Article page description.</p>
+    <p class="lead text-muted">Just some good, old-fashioned CRUD</p>
     <p>
       <% if user_signed_in? %>
         <%= link_to 'New Article', new_article_path, class: 'btn btn-outline-primary' %>
@@ -10,9 +10,6 @@
     <div class="filter">
       <%= render partial: 'articles/search', locals: { action: articles_path, q: '' } %>
     </div><!-- .filter -->
-    <div class="pagination">
-      <%= will_paginate @articles %>
-    </div><!-- .pagination -->
   </div>
 </section>
 
@@ -39,4 +36,7 @@
     </div><!-- .col-md-4 -->
     <% end %>
   </div><!-- .row -->
+  <div class="pagination">
+    <%= will_paginate @articles %>
+  </div><!-- .pagination -->
 </div><!-- .album -->

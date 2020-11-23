@@ -35,3 +35,20 @@ html {
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+/* Forms and Buttons
+----------------------------------------------------------------------------- */
+
+button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.form-signup {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #DDDDDD;
+}

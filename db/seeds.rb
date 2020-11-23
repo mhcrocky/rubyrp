@@ -9,13 +9,13 @@
 User.create(email: "user@example.com", password: "password", password_confirmation: "password")
 
 User.all.each do |u|
-  6.times do |i|
+  12.times do |i|
     u.todo_items.create(title: "To Do Item #{i+1} for #{u.email}", complete: i % 3  == 0 ? true : false  )
   end
 end
 
 User.all.each do |u|
-  6.times do |i|
+  12.times do |i|
     u.articles.create(title: "Article #{i+1}", text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.")
   end
 end

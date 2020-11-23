@@ -13,9 +13,9 @@
 ----------------------------------------------------------------------------- */
 
 .pagination {
-  background: #fff;
   text-align: center;
   margin: 12px auto 0px;
+  background: #fff;
 }
 .pagination a, .pagination span, .pagination em {
   padding: 6px;
@@ -25,38 +25,21 @@
 }
 .pagination .disabled {
   color: #999999;
-  // border: 1px solid #dddddd;
 }
 .pagination .current {
   font-style: normal;
   font-weight: bold;
-  background: #2e6ab1;
-  color: white;
-  // border: 1px solid #2e6ab1;
+  color: #6c757d;
 }
 .pagination a {
   text-decoration: none;
   color: #105cb6;
-  // border: 1px solid #9aafe5;
 }
 .pagination a:hover, .pagination a:focus {
   text-decoration: none;
   cursor: grabbing;
   border-color: #000033;
   color: #000033;
-}
-.pagination .page_info {
-  background: #2e6ab1;
-  color: white;
-  padding: 0.4em 0.6em;
-  width: 22em;
-  margin-bottom: 0.3em;
-  text-align: center;
-}
-.pagination .page_info b {
-  color: #000033;
-  background: #6aa6ed;
-  padding: 0.1em 0.25em;
 }
 .pagination:after {
   content: ".";
