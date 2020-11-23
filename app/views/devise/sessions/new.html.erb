@@ -1,55 +1,40 @@
-<section class="jumbotron text-center">
-  <div class="container">
-    <h1 class="jumbotron-heading">Sign in</h1>
-    <p class="lead text-muted">The credentials below for <%= User.find(1).email %> will give you access to view the blog, edit that user's posts, &amp; see their todo list.</p>
-  </div>
-</section>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" } ) do |f| %>
 
+  <div class="text-center mb-4">
+    <%= image_tag 'logo.png', class: 'mb-4' %>
+    <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+    <p>The credentials for testing are:</p>
+    <p><code><%= User.find(1).email %></code></p>
+    <p><code>password</code></p>
+    <p>These credentials will give you access to view the blog, edit that user's posts, &amp; see their todo list.</p>
+  </div><!-- .text-center .mb-4 -->
 
-<div class="row">
-  <div class="col-md-6 col-lg-8">
-    <h4>Users</h4>
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th scope="col">Email</th>
-          <th scope="col">Password</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% User.all.each do |user| %>
-          <tr>
-            <td><%= user.email %></td>
-            <td>password</td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-md-6 col-lg-4">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "border shadow-sm rounded p-3 mb-3" } ) do |f| %>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
+  <div class="form-label-group">
+    <%= f.email_field :email, autocomplete: "email", id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
+    <label for="inputEmail">Email address</label>
+  </div><!-- .form-label-group -->
 
-      <div class="form-group">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-      </div>
+  <div class="form-label-group">
+    <%= f.password_field :password, autocomplete: "current-password", id: "inputPassword", class: "form-control", placeholder: "Password (6 characters minimum)", autofocus: true %>
+    <label for="inputPassword">Password</label>
+  </div><!-- .form-label-group -->
 
-      <% if devise_mapping.rememberable? %>
-        <div class="form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
+  <% if devise_mapping.rememberable? %>
+    <div class="checkbox mb-3">
+      <%= f.label :remember_me, class: 'checkbox' do %>
+        <%= f.check_box :remember_me %> Remember me
       <% end %>
+    </div><!-- .checkbox .mb-3 -->
+  <% end %>
 
-      <div class="form-group">
-        <%= f.submit "Log in", class: "btn btn-primary" %>
-      </div>
-    <% end %>
+  <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block" %>
 
+  <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>
-  </div>
-</div>
+  </p>
+
+  <p class="mt-5 mb-3 text-muted text-center">
+    <%= link_to('Home', root_path) %>
+  </p>
+
+<% end %>

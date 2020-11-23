@@ -1,30 +1,43 @@
-<section class="jumbotron text-center">
-  <div class="container">
-    <h1 class="jumbotron-heading">Sign up</h1>
-    <p class="lead text-muted">Sign up in order to make your own todo list &plus; be a part of the blog.</p>
-  </div>
-</section>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signup" } ) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin" } ) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="form-group">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control" %>
-  </div>
+  <div class="text-center mb-4">
+    <%= image_tag 'logo.png', class: 'mb-4' %>
+    <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+    <p>Sign up in order to make your own todo list &plus; be a part of the blog.</p>
+  </div><!-- .text-center .mb-4 -->
 
-  <div class="form-group">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password (6 characters minimum)", class: "form-control" %>
-  </div>
+  <div class="form-label-group">
+    <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
+    <label for="inputEmail">Email address</label>
+  </div><!-- .form-label-group -->
 
-  <div class="form-group">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "form-control" %>
-  </div>
+  <div class="form-label-group">
+    <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password (6 characters minimum)", autofocus: true %>
+    <label for="inputPassword">Password</label>
+  </div><!-- .form-label-group -->
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <div class="form-label-group">
+    <%= f.password_field :password_confirmation, id: "inputPasswordConfirmation", class: "form-control", placeholder: "Password Confirmation", autofocus: true %>
+    <label for="inputPasswordConfirmation">Password confirmation</label>
+  </div><!-- .form-label-group -->
 
-  <br>&nbsp;
-  <%= render "devise/shared/links" %>
+  <% if devise_mapping.rememberable? %>
+    <div class="checkbox mb-3">
+      <%= f.label :remember_me, class: 'checkbox' do %>
+        <%= f.check_box :remember_me %> Remember me
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+
+  <p class="mt-5 mb-3 text-muted text-center">
+    <%= render "devise/shared/links" %>
+  </p>
+
+  <p class="mt-5 mb-3 text-muted text-center">
+    <%= link_to('Home', root_path) %>
+  </p>
 
 <% end %>
