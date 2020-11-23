@@ -52,3 +52,21 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   padding: 15px;
   border: 1px solid #DDDDDD;
 }
+
+
+/* Tables
+----------------------------------------------------------------------------- */
+
+.table {
+  margin-top: 6px;
+  border: 1px solid #dee2e6 !important;
+}
+
+.table thead th {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.table th, .table td {
+  padding-left: 6px !important;
+  padding-top: 6px !important;
+}
