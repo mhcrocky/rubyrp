@@ -12,7 +12,6 @@ class TodoItems extends React.Component {
   render() {
     return (
       <>
-        <hr />
         <button
           className="btn btn-outline-primary btn-block mb-3"
           onClick={this.handleClick}
