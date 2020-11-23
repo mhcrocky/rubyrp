@@ -7,7 +7,6 @@ Rails React Bootstrap example app
 
 2.7.2
 
-
 ## System dependencies
 
 * Ruby on Rails 6.0.3.4
