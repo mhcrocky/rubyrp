@@ -53,8 +53,7 @@ None at this time.
 ## TODO
 
 ```
-1. Home Page Styles
-2. Devise Styles
-3. Tests
-4. Heroku
+1. Devise Styles
+2. Tests
+3. Heroku
 ```
