@@ -49,3 +49,13 @@ $ open coverage/index.html (view coverage)
 ## Services
 
 None at this time.
+
+
+## TODO
+
+```
+1. Home Page Styles
+2. Devise Styles
+3. Tests
+4. Heroku
+```
