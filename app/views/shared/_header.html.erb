@@ -8,12 +8,22 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <% if user_signed_in? %>
+            <%= link_to('List', root_path, class: "nav-link") %>
+          <% end %>
+        </li><!-- .nav-item -->
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            <%= link_to('Blog', articles_path, class: "nav-link") %>
+          <% end %>
+        </li><!-- .nav-item -->
+        <li class="nav-item">
+          <% if user_signed_in? %>
             <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
           <% else %>
             <%= link_to('Login', new_user_session_path, class: "nav-link") %>
           <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        </li><!-- .nav-item -->
+      </ul><!-- .navbar-nav -->
+    </div><!-- .navbar-collapse -->
+  </div><!-- .container -->
+</nav><!-- .navbar -->

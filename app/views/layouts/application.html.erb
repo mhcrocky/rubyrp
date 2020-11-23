@@ -10,10 +10,11 @@
     <%= stylesheet_pack_tag 'application' %>
   </head>
   <body>
-    <%= render "shared/navigation" %>
+    <%= render "shared/header" %>
     <%= render "shared/flash" %>
     <div class="container">
       <%= yield %>
     </div>
+    <%= render "shared/footer" %>
   </body>
 </html>

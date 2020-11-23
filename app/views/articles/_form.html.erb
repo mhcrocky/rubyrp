@@ -1,0 +1,51 @@
+<%= form_for @article, html: { class: 'form-horizontal' } do |f| %>
+
+  <% if @article.errors.any? %>
+    <div class="errors">
+      <h2>There was an error with this article:</h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="form-section">
+    <div class="card">
+
+      <div class="form-group">
+        <%= f.label :avatar, class: 'col-sm-3 control-label' %>
+        <%= image_tag(@article.avatar.url, class: 'avatar') %>
+        <div class="col-sm-9">
+          <%= f.file_field :avatar %>
+          <%= f.hidden_field :avatar_cache %>
+          <%= f.label :remove_avatar do %>
+            <%= f.check_box :remove_avatar %> Remove Avatar
+          <% end %>
+        </div><!-- .col-sm-9 -->
+      </div><!-- .form-group -->
+
+      <div class="form-group">
+        <%= f.label :title, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.text_field :title, class: 'form-control' %>
+        </div><!-- .col-sm-9 -->
+      </div><!-- .form-group -->
+
+      <div class="form-group">
+        <%= f.label :text, class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9">
+          <%= f.text_area :text, class: 'form-control' %>
+        </div><!-- .col-sm-9 -->
+      </div><!-- .form-group -->
+
+    </div><!-- .card -->
+  </section><!-- .form-section -->
+
+  <section class="form-actions">
+    <%= link_to 'Cancel', articles_path, class: 'btn btn-outline-secondary' %>
+    <%= f.submit class: 'btn btn-outline-success' %>
+  </section><!-- .form-actions -->
+
+<% end %>

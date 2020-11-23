@@ -1,0 +1,10 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><%= @article.title.titlecase %></h1>
+    <p>
+      <%= link_to 'Remove', @article, method: :delete, data: { confirm: 'Are you sure you want to delete this article?' }, class: 'btn btn-outline-danger' %>
+    </p>
+  </div>
+</section>
+
+<%= render partial: 'articles/form' %>

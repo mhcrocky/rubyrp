@@ -1,0 +1,27 @@
+/* Blog styles
+----------------------------------------------------------------------------- */
+
+img.card-img-top {
+  height: 225px;
+  width: 100%;
+  display: block;
+}
+
+img.avatar {
+  height: auto;
+  width: 290px;
+  margin: 15px;
+  display: block;
+}
+
+section.jumbo-show {
+  min-height: 240px;
+  background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+@media (min-width: 768px) {
+  section.jumbo-show {
+    min-height: 480px;
+  }
+}

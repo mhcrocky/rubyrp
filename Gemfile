@@ -34,6 +34,15 @@ gem 'devise'
 # Coffeescript
 gem 'coffee-rails'
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# File upload
+gem 'rmagick'
+gem 'carrierwave-aws'
+
+# Pagination
+gem 'will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

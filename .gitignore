@@ -43,3 +43,5 @@ latest.dump
 .DS_Store
 
 coverage
+
+/public/uploads/*
