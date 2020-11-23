@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Home</h1>
-    <p class="lead text-muted">There is no actual product being sold here. The content below is example markup made with bootstrap, but we may integrate stripe later. <%= link_to("sign up", new_user_registration_path) %> or <%= link_to('sign in', new_user_session_path) %> to see the blog &plus; todo list.</p>
+    <p class="lead text-muted">There is no actual product being sold here. The content below is example markup made with bootstrap, but we may integrate stripe later. Please <%= link_to('sign in', new_user_session_path) %> or <%= link_to("sign up", new_user_registration_path) %> to see the blog &plus; todo list.</p>
   </div>
 </section>
 
@@ -17,7 +17,7 @@
         <li>Email support</li>
         <li>Help center access</li>
       </ul>
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary"><%= link_to("Sign up for free", new_user_registration_path) %></button>
+      <%= link_to("Sign up for free", new_user_registration_path, class: 'btn btn-lg btn-block btn-outline-primary') %>
     </div>
   </div>
   <div class="card mb-4 shadow-sm">
@@ -31,7 +31,7 @@
         <li>Priority email support</li>
         <li>Help center access</li>
       </ul>
-      <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
     </div>
   </div>
   <div class="card mb-4 shadow-sm">
@@ -45,7 +45,7 @@
         <li>Phone and email support</li>
         <li>Help center access</li>
       </ul>
-      <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Buy</button>
     </div>
   </div>
 </div>
@@ -81,7 +81,7 @@
       </p>
     </div>
     <small class="d-block text-right mt-3">
-      <%= link_to("Sign up", new_user_registration_path) %> or <%= link_to('Sign in', new_user_session_path) %>
+      <%= link_to('Sign in', new_user_session_path) %> or <%= link_to("Sign up", new_user_registration_path) %>
     </small>
   </div>
 </main>

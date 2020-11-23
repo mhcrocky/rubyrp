@@ -8,6 +8,13 @@
   box-shadow: none;
 }
 
+@media (min-width: 990px) {
+  .nav-link-border {
+    margin-left: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
 
 /* Pagination
 ----------------------------------------------------------------------------- */
