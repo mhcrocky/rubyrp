@@ -10,10 +10,6 @@ body.signed-out {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  // color: #003366;
-  // background-color: #DCD9D4;
-  // background-image: linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.50) 50%);
-  // background-blend-mode: soft-light,screen;
   color: #212529;
   background-color: #fff;
   // color: #fff;
@@ -27,10 +23,9 @@ body.signed-out {
   margin: auto;
 }
 
-body.signed-out img,
 .form-signin img {
-  width: 109px;
-  max-width: 101px;
+  width: 100px;
+  max-width: 100px;
   margin: 0 auto;
 }
 
@@ -52,12 +47,12 @@ body.signed-out img,
   display: block;
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
-  line-height: 1.5;
-  color: #495057;
+  line-height: 1.1;
+  color: rgba(117,117,117,0.7);
   cursor: text; /* Match the input under the label */
   border: 1px solid transparent;
   border-radius: .25rem;
-  transition: all .1s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .form-label-group input::-webkit-input-placeholder {
@@ -89,8 +84,9 @@ body.signed-out img,
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
-  color: #777;
+  color: rgba(117,117,117,0.5);
 }
+
 
 /* Fallback for Edge
 -------------------------------------------------- */
@@ -99,7 +95,7 @@ body.signed-out img,
     display: none;
   }
   .form-label-group input::-ms-input-placeholder {
-    color: #777;
+    color: rgba(117,117,117,0.5);
   }
 }
 
@@ -110,6 +106,6 @@ body.signed-out img,
     display: none;
   }
   .form-label-group input:-ms-input-placeholder {
-    color: #777;
+    color: rgba(117,117,117,0.5);
   }
 }

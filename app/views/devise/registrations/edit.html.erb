@@ -4,7 +4,7 @@
   <div class="text-center mb-4">
     <%= image_tag 'logo.png', class: 'mb-4' %>
     <h1 class="h3 mb-3 font-weight-normal">Edit <%= resource_name.to_s.humanize %></h1>
-    <h5 class="h5 mb-3 font-weight-normal"><%= link_to('Home', root_path) %></h5>
+    <h5 class="h5 mb-3 font-weight-normal"><%= link_to('Home', root_path, class: "btn btn-outline-primary") %></h5>
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-label-group">
@@ -31,7 +31,7 @@
     <label for="inputCurrentPassword">Current Password</label>
   </div><!-- .form-label-group -->
 
-  <%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %>
+  <%= f.submit "Update", class: "btn btn-lg btn-outline-success btn-block" %>
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %>

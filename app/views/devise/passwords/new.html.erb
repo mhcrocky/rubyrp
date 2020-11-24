@@ -11,14 +11,14 @@
     <label for="inputEmail">Email address</label>
   </div><!-- .form-label-group -->
 
-  <%= f.submit "Send me reset password instructions", class: "btn btn-lg btn-primary btn-block" %>
+  <%= f.submit "Send me reset password instructions", class: "btn btn-lg btn-outline-success btn-block" %>
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>
   </p>
 
   <p class="mt-5 mb-3 text-muted text-center">
-    <%= link_to('Home', root_path) %>
+    <%= link_to('Home', root_path, class: "btn btn-outline-primary") %>
   </p>
 
 <% end %>

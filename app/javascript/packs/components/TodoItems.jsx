@@ -13,7 +13,7 @@ class TodoItems extends React.Component {
     return (
       <>
         <button
-          className="btn btn-outline-primary btn-block mb-3"
+          className="btn btn-outline-secondary btn-block mb-1"
           onClick={this.handleClick}
         >
         {this.props.hideCompletedTodoItems
