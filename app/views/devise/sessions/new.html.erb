@@ -3,10 +3,9 @@
   <div class="text-center mb-4">
     <%= image_tag 'logo.png', class: 'mb-4' %>
     <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
-    <p>The credentials for testing are:</p>
+    <p>The credentials below will give you access to view the blog, edit that user's posts, &amp; see their todo list:</p>
     <p><code><%= User.find(1).email %></code></p>
     <p><code>password</code></p>
-    <p>These credentials will give you access to view the blog, edit that user's posts, &amp; see their todo list.</p>
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-label-group">
@@ -34,7 +33,7 @@
   </p>
 
   <p class="mt-5 mb-3 text-muted text-center">
-    <%= link_to('Home', root_path, class: "btn btn-outline-primary") %>
+    <%= link_to('Home', root_path, class: "btn btn-outline-dark") %>
   </p>
 
 <% end %>
