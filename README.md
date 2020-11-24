@@ -53,6 +53,8 @@ None at this time.
 ## TODO
 
 ```
-1. Tests
-2. Heroku
+1. Style todo list (mobile)
+2. Blog WYSIWG
+3. Tests
+4. Heroku
 ```
