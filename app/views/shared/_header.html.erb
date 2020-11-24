@@ -7,20 +7,35 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to('List', root_path, class: "nav-link") %>
+          <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item" title="List">
+            <%= link_to(root_path, class: "nav-link") do %>
+              <i class="fas fa-clipboard-list"></i>
+              List
+            <% end %>
           </li><!-- .nav-item -->
-          <li class="nav-item">
-            <%= link_to('Blog', articles_path, class: "nav-link") %>
+          <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item" title="Blog">
+            <%= link_to(articles_path, class: "nav-link") do %>
+              <i class="fas fa-th"></i>
+              Blog
+            <% end %>
           </li><!-- .nav-item -->
-          <li class="nav-item">
-            <%= link_to('Users', users_path, class: "nav-link") %>
+          <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item" title="Users">
+            <%= link_to(users_path, class: "nav-link") do %>
+              <i class="fas fa-users"></i>
+              Users
+            <% end %>
           </li><!-- .nav-item -->
-          <li class="nav-item">
-            <%= link_to('Profile', edit_user_registration_path, class: "nav-link") %>
+          <li class="nav-item" title="Profile">
+            <%= link_to(edit_user_registration_path, class: "nav-link") do %>
+              <i class="fas fa-user"></i>
+              Profile
+            <% end %>
           </li><!-- .nav-item -->
-          <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+          <li class="nav-item" title="Logout">
+            <%= link_to(destroy_user_session_path, method: :delete, class: "nav-link") do %>
+              <i class="fas fa-sign-out-alt"></i>
+              Logout
+            <% end %>
           </li><!-- .nav-item -->
         <% else %>
           <li class="nav-item">

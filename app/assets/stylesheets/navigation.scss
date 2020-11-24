@@ -15,6 +15,12 @@
   }
 }
 
+.nav-item a.nav-link {
+  font-size: 1.25rem;
+  margin-right: 18px;
+  margin-left: 6px;
+}
+
 
 /* Pagination
 ----------------------------------------------------------------------------- */
@@ -82,4 +88,9 @@ footer a {
 }
 footer a:hover {
   color: #fff;
+}
+
+footer p a {
+  font-size: 36px;
+  margin-right: 18px;
 }
