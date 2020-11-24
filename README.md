@@ -55,6 +55,7 @@ None at this time.
 ```
 1. Style todo list (mobile)
 2. Blog WYSIWG
-3. Tests
-4. Heroku
+3. Article and User API
+4. Tests
+5. Heroku
 ```
