@@ -35,6 +35,10 @@ html {
   max-width: 40rem;
 }
 
+.card-deck .card {
+  min-width: 220px;
+}
+
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 
@@ -57,7 +61,6 @@ trix-editor.form-control {
   input[type="file" i] {
     max-width: 100%!important;
     clear: both !important;
-    border: 1px solid #343a40 !important;
   }
 }
 

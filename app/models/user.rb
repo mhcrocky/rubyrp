@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :todo_items, dependent: :destroy
   has_many :articles, dependent: :destroy
 
-  def table_name
-    "#{self.email}"
+  def name
+    "#{self.email.split('@').first}"
   end
 
   def self.search(search)

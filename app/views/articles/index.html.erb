@@ -16,12 +16,12 @@
 <div class="album py-5">
   <div class="row">
     <% @articles.each do |article| %>
-    <div class="col-md-4">
+    <div class="col-lg-4">
       <div class="card mb-4 box-shadow">
         <%= image_tag article.avatar.url, class: 'card-img-top' %>
         <div class="card-body">
           <p class="card-text"><%= article.title.titlecase %></p>
-          <p class="card-text">By <%= article.user.email %></p>
+          <p class="card-text">By <%= article.user.name %></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <%= link_to 'View', article_path(article), class: 'btn btn-sm btn-outline-secondary' %>
@@ -29,11 +29,11 @@
                 <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-sm btn-primary' %>
               <% end %>
             </div><!-- .btn-group -->
-            <small class="text-muted"><%= article.updated_at.strftime('%b %-d, %Y, %l:%M %p') if article.present? %></small>
+            <small class="text-muted"><%= article.updated_at.strftime('%b %-d, %Y at %l:%M %p') %></small>
           </div><!-- .d-flex -->
         </div><!-- .card-body -->
       </div><!-- .card -->
-    </div><!-- .col-md-4 -->
+    </div><!-- .col-lg-4 -->
     <% end %>
   </div><!-- .row -->
   <div class="pagination">
