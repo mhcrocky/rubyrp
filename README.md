@@ -1,6 +1,6 @@
 # Rails React Bootstrap
 
-Rails React Bootstrap example app
+* Example application
 
 
 ## System dependencies
