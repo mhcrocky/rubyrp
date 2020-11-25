@@ -53,12 +53,17 @@ trix-editor.form-control {
   display: none !important;
   width: 0 !important;
 }
-
 @media (max-width: 768px) {
   input[type="file" i] {
     max-width: 100%!important;
     clear: both !important;
+    border: 1px solid #343a40 !important;
   }
+}
+
+.filter .form-control,
+.card .form-control {
+  border: 1px solid #343a40 !important;
 }
 
 button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
@@ -66,9 +71,19 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   color: #fff !important;
 }
 
-.form-check button.close span {
-  color: #dc3545 !important;
+.form-check .form-check-input {
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  margin-top: 15px !important;
 }
+.table-responsive button.close span {
+  color: #dc3545 !important;
+  font-size: 36px !important;
+}
+
 
 /* Tables
 ----------------------------------------------------------------------------- */
