@@ -12,26 +12,18 @@ Rails React Bootstrap example app
 * Ruby on Rails 6.0.3.4
 * PostgreSQL
 * React
-* rails new rails-react-bootstrap -d=postgresql --webpacker=react
+* (rails new rails-react-bootstrap -d=postgresql --webpacker=react)
 
 
-## Database creation
+## Initialization
 
-```
-$ rails db:create
-$ rails db:migrate
-$ rails db:seed
-```
-
-## Configuration
-
-Install required gems.
 ```
 $ bundle install
+$ yarn install
+$ rails db:create
+$ rails db:seed
+$ rails s
 ```
-
-Configuration settings are set in these files:
-* config/database.yml
 
 
 ## How to run the test suite
