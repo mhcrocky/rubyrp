@@ -17,7 +17,20 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 require("./components/TodoApp");
+
+// Bootstrap
 require('bootstrap')
 import 'bootstrap/dist/css/bootstrap'
 
+// Font Awesome
 import "@fortawesome/fontawesome-free/js/all";
+
+// Action View
+require("trix")
+require("@rails/actiontext")
+// trix-editor-overrides.js
+window.addEventListener("trix-file-accept", function(event) {
+  event.preventDefault()
+  alert("File attachment not supported")
+  console.log('File attachment not supported')
+})

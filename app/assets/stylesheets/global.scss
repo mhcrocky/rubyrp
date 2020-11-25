@@ -41,6 +41,26 @@ html {
 /* Forms and Buttons
 ----------------------------------------------------------------------------- */
 
+trix-editor.form-control {
+  height: 320px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+.trix-button-group--file-tools,
+.trix-button-group--history-tools,
+.trix-button--icon-decrease-nesting-level,
+.trix-button--icon-increase-nesting-level {
+  display: none !important;
+  width: 0 !important;
+}
+
+@media (max-width: 768px) {
+  input[type="file" i] {
+    max-width: 100%!important;
+    clear: both !important;
+  }
+}
+
 button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   text-decoration: none;
   color: #fff !important;

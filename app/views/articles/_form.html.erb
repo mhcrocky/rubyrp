@@ -36,16 +36,18 @@
       <div class="form-group">
         <%= f.label :text, class: 'col-sm-3 control-label' %>
         <div class="col-sm-9">
-          <%= f.text_area :text, class: 'form-control' %>
+          <%= f.rich_text_area :text, class: 'form-control' %>
         </div><!-- .col-sm-9 -->
       </div><!-- .form-group -->
 
+      <div class="form-group">
+        <div class="col-sm-9">
+          <%= link_to 'Cancel', articles_path, class: 'btn btn-outline-secondary' %>
+          <%= f.submit class: 'btn btn-outline-success' %>
+        </div><!-- .col-sm-9 -->
+      </div><!-- .form-actions -->
+
     </div><!-- .card -->
   </section><!-- .form-section -->
-
-  <section class="form-actions">
-    <%= link_to 'Cancel', articles_path, class: 'btn btn-outline-secondary' %>
-    <%= f.submit class: 'btn btn-outline-success' %>
-  </section><!-- .form-actions -->
 
 <% end %>

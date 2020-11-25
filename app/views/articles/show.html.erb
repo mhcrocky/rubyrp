@@ -1,10 +1,10 @@
 <section class="jumbotron text-center jumbo-show bg-dark" style="background-image: url('<%= @article.avatar.url %>')"></section>
 
 <div class="card-body">
+  <% if current_user == @article.user %>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-lg btn-primary float-right' %>
+  <% end %>
   <h2 class="card-text"><%= @article.title.titlecase %></h2>
   <p class="card-text text-muted"><%= @article.updated_at.strftime('%b %-d, %Y, %l:%M %p') if @article.present? %> <span>by <%= @article.user.email %></span></p>
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
-  <% if current_user == @article.user %>
-    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-sm btn-outline-secondary' %>
-  <% end %>
 </div><!-- .card-body -->

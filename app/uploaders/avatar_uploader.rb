@@ -42,6 +42,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_whitelist
     %w(jpg jpeg gif png)
+    # %w(txt doc docx ppt pptx xls xlsx pdf gif jpg jpeg png mov mp3 pages)
   end
 
   # Override the filename of the uploaded files:
