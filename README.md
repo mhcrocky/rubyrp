@@ -12,7 +12,7 @@ Rails React Bootstrap example app
 * Ruby on Rails 6.0.3.4
 * PostgreSQL
 * React
-* (rails new rails-react-bootstrap -d=postgresql --webpacker=react)
+* (* rails new rails-react-bootstrap -d=postgresql --webpacker=react )
 
 
 ## Initialization
@@ -45,7 +45,7 @@ None at this time.
 ```
 
 
-## TODO
+## Itinerary
 
 ```
 1. Style todo list (mobile)
