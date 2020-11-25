@@ -31,10 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Users
 gem 'devise'
 
-# Coffeescript
-gem 'coffee-rails'
-
-# Use jquery as the JavaScript library
+# Use jquery as a JavaScript library
 gem 'jquery-rails'
 
 # File upload
