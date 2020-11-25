@@ -36,7 +36,14 @@ html {
 }
 
 .card-deck .card {
-  min-width: 220px;
+  min-width: 280px;
+}
+
+.bg-jelly {
+  background-color: rgba(111,71,190,0.9) !important;
+}
+.bg-jam {
+  background-color: rgba(230,67,140,0.9) !important;
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
