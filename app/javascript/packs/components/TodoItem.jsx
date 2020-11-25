@@ -110,7 +110,6 @@ class TodoItem extends React.Component {
               className="form-check-label"
               htmlFor={`complete-${todoItem.id}`}
             >
-              // Done
             </label>
           </div>
           <button onClick={this.handleDestroy} className="close"><span aria-hidden="true">&times;</span></button>
