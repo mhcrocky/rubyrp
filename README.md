@@ -3,16 +3,17 @@
 Rails React Bootstrap example app
 
 
-## Ruby version
-
-2.7.2
-
 ## System dependencies
 
+* Ruby 2.7.2
 * Ruby on Rails 6.0.3.4
 * PostgreSQL
 * React
-* (* rails new rails-react-bootstrap -d=postgresql --webpacker=react )
+```
+$ ruby -v
+$ rails -v
+$ rails new PROJECT_NAME -d=postgresql --webpacker=react
+```
 
 
 ## Initialization
