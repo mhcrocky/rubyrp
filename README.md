@@ -30,7 +30,8 @@ $ rails s
 
 ```
 $ bundle exec rspec
-or to view coverage
+
+View coverage
 $ bundle exec rake
 or
 $ open coverage/index.html
@@ -39,7 +40,9 @@ $ open coverage/index.html
 
 ## Services
 
+```
 None at this time.
+```
 
 
 ## TODO
