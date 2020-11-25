@@ -1,6 +1,6 @@
 # Rails React Bootstrap
 
-* Example application
+Example application
 
 
 ## System dependencies
@@ -49,9 +49,7 @@ None at this time.
 ## Itinerary
 
 ```
-1. Style todo list (mobile)
-2. Blog WYSIWG
-3. Article and User API
-4. Tests
-5. Heroku
+1. Article and User API
+2. Tests
+3. Heroku
 ```
