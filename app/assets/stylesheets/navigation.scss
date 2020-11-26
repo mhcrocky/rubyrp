@@ -77,20 +77,20 @@ footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
   border-bottom: 0;
-}
-
-footer p {
-  margin-bottom: .25rem;
-}
-
-footer a {
-  color: #dad4ec;
-}
-footer a:hover {
-  color: #fff;
-}
-
-footer p a {
-  font-size: 36px;
-  margin-right: 18px;
+  p {
+    margin-bottom: .25rem;
+    a {
+      font-size: 36px;
+      margin-right: 18px;
+    }
+    a.back-to-top {
+      margin-right: 0px;
+    }
+  }
+  a {
+    color: #dad4ec;
+  }
+  a:hover {
+    color: #fff;
+  }
 }
