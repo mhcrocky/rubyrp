@@ -20,7 +20,7 @@
       <div class="card mb-4 box-shadow">
         <%= image_tag article.avatar.url, class: 'card-img-top' %>
         <div class="card-body">
-          <p class="card-text"><%= article.title.titlecase %></p>
+          <p class="card-text font-weight-bold"><%= article.title.titlecase %></p>
           <p class="card-text"><i class="fas fa-user text-muted"></i> <%= article.user.name %></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">

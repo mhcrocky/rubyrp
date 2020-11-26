@@ -3,9 +3,91 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Random (sandbox)</h1>
-      <p class="lead text-muted">There is no actual product being sold here. The content below is example markup made with bootstrap, but we may integrate stripe later. Please <%= link_to('sign in', new_user_session_path) %> or <%= link_to("sign up", new_user_registration_path) %> to see the blog &plus; todo list.</p>
+      <p class="lead text-muted">There is no actual product being sold here. The content below is development markup. Please <%= link_to('sign in', new_user_session_path) %> or <%= link_to("sign up", new_user_registration_path) %> to see the blog &plus; todo list.</p>
     </div>
   </section>
+
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-tayberry">
+        <h4 class="my-0 font-weight-bold text-white">Free</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><strong>Lorem</strong></li>
+          <li>Fusce dapibus donec id elit</li>
+          <li>Porta gravida</li>
+          <li>Justo</li>
+        </ul>
+        <%= link_to("Sign up for free", new_user_registration_path, class: 'btn btn-lg btn-block btn-outline-primary') %>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-shnozberry">
+        <h4 class="my-0 font-weight-bold text-white">Premium</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><strong>Lorem Ipsum</strong></li>
+          <li>Fusce dapibus donec ima</li>
+          <li>Porta gravida at emic eget</li>
+          <li>Justo sit amet risus</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-success">Buy Premium</button>
+      </div>
+    </div><!-- .card -->
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header bg-shnozberry">
+        <h4 class="my-0 font-weight-bold text-white">Unlimited</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><strong>Lorem Ipsum</strong></li>
+          <li>Fusce dapibus donec id elit</li>
+          <li>Porta gravida at emic eget</li>
+          <li>Justo sit amet risus</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-success">Buy Unlimited</button>
+      </div>
+    </div><!-- .card -->
+  </div><!-- .card-deck -->
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Rails React Bootstrap</h6>
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">What's in the App?</strong>
+        This is a Rails 6 (PostgreSQL) example todo and blog application that utilizes React, Coffeescript, jQuery &amp; Bootstrap to shape the frontend.
+      </p>
+    </div>
+    <div class="media text-muted pt-3">
+      <%= image_tag 'tayberry.svg', class: 'mr-2 rounded' %>
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">Free</strong>
+        Donec id elit non mi porta gravida amo vidicus metu. Quipio udon <%= link_to('rando', randoms_path) %>, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
+      </p>
+    </div>
+    <div class="media text-muted pt-3">
+      <%= image_tag 'schnozberry.svg', class: 'mr-2 rounded' %>
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">Premium</strong>
+        Donec id elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
+      </p>
+    </div>
+    <div class="media text-muted pt-3">
+      <%= image_tag 'schnozberry.svg', class: 'mr-2 rounded' %>
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">Unlimited</strong>
+        Donec id elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Pellentesque nulla nisi massa justo sit amet risus Proin vel purus ut nulla sodales
+      </p>
+    </div>
+    <small class="d-block text-right mt-3">
+      <%= link_to('Sign in', new_user_session_path) %> or <%= link_to("Sign up", new_user_registration_path) %>
+    </small>
+  </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
 
   <div class="my-3 p-3 bg-white">
     <h3 class="text-center font-weight-light">Grids</h3>
@@ -37,8 +119,15 @@
   </div><!-- .my-3 .p-3 .bg-white -->
 
   <section class="jumbotron text-center">
-    <h3 class="jumbotron-heading" id="randomVideo">Random Video</h3>
-    <iframe src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </section>
+    <h3 class="jumbotron-heading" id="randomVideo">2 Videos <code>col-lg-6</code></h3>
+    <div class="row">
+      <div class="col-lg-6">
+        <iframe src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div><!-- .col-lg-6 -->
+      <div class="col-lg-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13519.573901475933!2d-74.01550190195908!3d40.2444926305387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgmaps%20deal%20nj!5e1!3m2!1sen!2sus!4v1606372422795!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div><!-- .col-lg-6 -->
+    </div><!-- .row -->
+  </section><!-- .jumbotron -->
 
 </div><!-- .random -->
