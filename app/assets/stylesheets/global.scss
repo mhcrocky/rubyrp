@@ -9,6 +9,19 @@ html {
   --jumbotron-padding-y: 3rem;
 }
 
+iframe {
+  width: 100%;
+  height: 66vh;
+}
+@media (max-width: 768px) {
+  iframe {
+    width: 100%;
+    height: 33vh;
+  }
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);
@@ -38,8 +51,6 @@ html {
 .card-deck .card {
   min-width: 280px;
 }
-
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 .bg-blueberry {
   background-color: rgba(21,127,251,1) !important;
