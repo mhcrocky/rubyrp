@@ -39,14 +39,35 @@ html {
   min-width: 280px;
 }
 
-.bg-jelly {
-  background-color: rgba(111,71,190,0.9) !important;
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.bg-blueberry {
+  background-color: rgba(21,127,251,1) !important;
 }
-.bg-jam {
-  background-color: rgba(230,67,140,0.9) !important;
+.bg-tayberry {
+  background-color: rgba(230,67,140,1) !important;
+}
+.bg-shnozberry {
+  background-color: rgba(111,71,190,1) !important;
 }
 
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+.text-blueberry {
+  color: rgba(21,127,251,1) !important;
+}
+.text-tayberry {
+  color: rgba(230,67,140,1) !important;
+}
+.text-shnozberry {
+  color: rgba(111,71,190,1) !important;
+}
+
+img.jelly {
+  width: 32px;
+  height: 32px;
+}
+.jam {
+  background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%);
+}
 
 
 /* Forms and Buttons
@@ -89,11 +110,15 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   transform: scale(1.5);
   margin-top: 15px !important;
 }
-.table-responsive button.close span {
-  color: #dc3545 !important;
-  font-size: 36px !important;
+.table-responsive button.close path {
+  fill: #dc3545 !important;
 }
-
+.table-responsive button.close svg {
+  width: 24px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: 1px;
+}
 
 /* Tables
 ----------------------------------------------------------------------------- */

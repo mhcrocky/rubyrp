@@ -21,7 +21,7 @@
         <%= image_tag article.avatar.url, class: 'card-img-top' %>
         <div class="card-body">
           <p class="card-text"><%= article.title.titlecase %></p>
-          <p class="card-text">By <%= article.user.name %></p>
+          <p class="card-text"><i class="fas fa-user text-muted"></i> <%= article.user.name %></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <%= link_to 'View', article_path(article), class: 'btn btn-sm btn-outline-secondary' %>

@@ -64,7 +64,7 @@ class TodoItem extends React.Component {
         <td>
           <svg
             className={`bi bi-check-circle ${
-              this.state.complete ? `text-success` : `text-muted`
+              this.state.complete ? `text-shnozberry` : `text-white`
             }`}
             width="2em"
             height="2em"
@@ -112,7 +112,7 @@ class TodoItem extends React.Component {
             >
             </label>
           </div>
-          <button onClick={this.handleDestroy} className="close"><span aria-hidden="true">&times;</span></button>
+          <button onClick={this.handleDestroy} className="close"><i className="fas fa-trash"></i></button>
         </td>
       </tr>
     )
