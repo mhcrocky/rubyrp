@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :articles
+  resources :randoms, only: [:index]
 
 end
