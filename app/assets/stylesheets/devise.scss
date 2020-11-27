@@ -15,11 +15,20 @@ body.signed-out {
 }
 
 .goodbye {
-  position: fixed;
-  top: 6px;
-  right: 12px;
+  position: absolute;
+  bottom: 24px;
+  right: 48px;
   // left: 50%;
   // transform: translate(-50%, 0);
+  path {
+    fill: #dc3545 !important;
+  }
+}
+@media (max-width: 768px) {
+  .goodbye {
+    top: 12px;
+    right: 24px;
+  }
 }
 
 .form-signin {
