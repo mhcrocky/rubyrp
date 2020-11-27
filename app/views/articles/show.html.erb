@@ -1,10 +1,21 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><%= @article.title.titlecase %></h1>
+    <p class="lead text-muted"><i class="fas fa-user"></i> <%= @article.user.name %><br><%= @article.updated_at.strftime('%b %-d, %Y, %l:%M %p') %></p>
+    <p>
+      <% if current_user == @article.user %>
+        <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-lg btn-primary' %>
+      <% end %>
+    </p>
+  </div><!-- .container -->
+</section><!-- .jumbotron -->
+
 <section class="jumbotron text-center jumbo-show bg-dark" style="background-image: url('<%= @article.avatar.url %>')"></section>
 
 <div class="card-body">
-  <% if current_user == @article.user %>
-    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-lg btn-primary float-right' %>
-  <% end %>
-  <h2 class="card-text"><%= @article.title.titlecase %></h2>
-  <p class="card-text text-muted"><i class="fas fa-user"></i> <%= @article.user.name %><br><%= @article.updated_at.strftime('%b %-d, %Y, %l:%M %p') if @article.present? %></p>
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
 </div><!-- .card-body -->
+
+
+<h3 class="more-whatever text-center">Articles by <%= @article.user.name %></h3>
+<%= render partial: 'articles/articles' %>

@@ -8,6 +8,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @articles = Article.search(filter).
+                        where(user_id:current_user.id).
+                        paginate(page: params[:page], per_page: 12)
   end
 
   def new

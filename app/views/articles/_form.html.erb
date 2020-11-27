@@ -12,42 +12,36 @@
   <% end %>
 
   <section class="form-section">
-    <div class="card">
+
+      <div class="form-label-group">
+        <div class="col-sm-12">
+          <%= f.text_field :title, id: "inputTitle", class: "form-control", placeholder: "Title", autofocus: true %>
+          <label for="inputTitle"><code>&#42; Title</code></label>
+        </div><!-- .col-sm-12 -->
+      </div><!-- .form-label-group -->
 
       <div class="form-group">
-        <%= f.label :avatar, class: 'col-sm-3 control-label' %>
-        <%= image_tag(@article.avatar.url, class: 'avatar') %>
-        <div class="col-sm-9">
-          <%= f.file_field :avatar %>
+        <section class="jumbotron text-center jumbo-show bg-dark" style="background-image: url('<%= image_tag(@article.avatar.url) %>')"></section>
+        <div class="col-sm-12">
+          <p><%= f.file_field :avatar, class: 'avatar' %></p>
           <%= f.hidden_field :avatar_cache %>
-          <%= f.label :remove_avatar do %>
-            <%= f.check_box :remove_avatar %> Remove Avatar
-          <% end %>
-        </div><!-- .col-sm-9 -->
+          <p><%= f.check_box :remove_avatar %> Remove Image</p>
+        </div><!-- .col-sm-12 -->
       </div><!-- .form-group -->
 
       <div class="form-group">
-        <%= f.label :title, class: 'col-sm-3 control-label' %>
-        <div class="col-sm-9">
-          <%= f.text_field :title, class: 'form-control' %>
-        </div><!-- .col-sm-9 -->
-      </div><!-- .form-group -->
-
-      <div class="form-group">
-        <%= f.label :text, class: 'col-sm-3 control-label' %>
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           <%= f.rich_text_area :text, class: 'form-control' %>
-        </div><!-- .col-sm-9 -->
+        </div><!-- .col-sm-12 -->
       </div><!-- .form-group -->
 
       <div class="form-group">
-        <div class="col-sm-9">
+        <div class="col-sm-12 text-center">
           <%= link_to 'Cancel', articles_path, class: 'btn btn-outline-secondary' %>
           <%= f.submit class: 'btn btn-outline-success' %>
-        </div><!-- .col-sm-9 -->
-      </div><!-- .form-actions -->
+        </div><!-- .col-sm-12 -->
+      </div><!-- .form-group -->
 
-    </div><!-- .card -->
   </section><!-- .form-section -->
 
 <% end %>
