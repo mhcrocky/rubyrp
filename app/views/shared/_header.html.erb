@@ -9,32 +9,32 @@
         <% if user_signed_in? %>
           <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item" title="List">
             <%= link_to(root_path, class: "nav-link") do %>
-              <i class="fas fa-clipboard-list"></i>
-              List
+              <i class="fas fa-clipboard-list burger-icon"></i>
+              <span class="burger-text">List</span>
             <% end %>
           </li><!-- .nav-item -->
           <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item" title="Blog">
             <%= link_to(articles_path, class: "nav-link") do %>
-              <i class="fas fa-th"></i>
-              Blog
+              <i class="fas fa-th burger-icon"></i>
+              <span class="burger-text">Blog</span>
             <% end %>
           </li><!-- .nav-item -->
           <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item" title="Users">
             <%= link_to(users_path, class: "nav-link") do %>
-              <i class="fas fa-users"></i>
-              Users
+              <i class="fas fa-users burger-icon"></i>
+              <span class="burger-text">Users</span>
             <% end %>
           </li><!-- .nav-item -->
           <li class="nav-item" title="Profile">
             <%= link_to(edit_user_registration_path, class: "nav-link") do %>
-              <i class="fas fa-user"></i>
-              Profile
+              <i class="fas fa-user burger-icon"></i>
+              <span class="burger-text">Profile</span>
             <% end %>
           </li><!-- .nav-item -->
           <li class="nav-item" title="Logout">
             <%= link_to(destroy_user_session_path, method: :delete, class: "nav-link") do %>
-              <i class="fas fa-sign-out-alt"></i>
-              Logout
+              <i class="fas fa-sign-out-alt burger-icon"></i>
+              <span class="burger-text">Logout</span>
             <% end %>
           </li><!-- .nav-item -->
         <% else %>

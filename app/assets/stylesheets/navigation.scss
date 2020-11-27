@@ -17,8 +17,22 @@
 
 .nav-item a.nav-link {
   font-size: 1.25rem;
-  margin-right: 18px;
-  margin-left: 6px;
+  margin-right: 1.25rem;
+  svg.burger-icon {
+    display: none !important;
+  }
+  span.burger-text {
+    display: inline-block;
+    margin-left: 6px;
+  }
+  @media (min-width: 990px) {
+    span.burger-text {
+      display: none;
+    }
+    svg.burger-icon {
+      display: inline-block !important;
+    }
+  }
 }
 
 
@@ -80,8 +94,8 @@ footer {
   p {
     margin-bottom: .25rem;
     a {
-      font-size: 36px;
-      margin-right: 18px;
+      font-size: 24px;
+      margin-right: 20px;
     }
     a.back-to-top {
       margin-right: 0px;

@@ -6,7 +6,6 @@
 ----------------------------------------------------------------------------- */
 
 .random {
-
   .row.gridapalooza {
     margin-bottom: 1rem;
     [class*="col-"] {
@@ -16,10 +15,13 @@
       border: 1px solid rgba(230,67,140,1);
     }
   }
-  iframe {
+  .col-lg-6 iframe {
     width: 100%;
-    height: 37vh;
+    height: 40vh;
   }
-
-
+  @media (max-width: 768px) {
+    .col-lg-6 iframe {
+      height: 33vh;
+    }
+  }
 }
