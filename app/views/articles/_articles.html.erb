@@ -3,7 +3,7 @@
     <% @articles.each do |article| %>
     <div class="col-lg-4">
       <div class="card mb-4 box-shadow">
-        <%= image_tag article.avatar.url, class: 'card-img-top' %>
+        <%= image_tag article.avatar.url, alt: 'Article avatar', class: 'card-img-top' %>
         <div class="card-body">
           <p class="card-text font-weight-bold"><%= truncate(article.title.titlecase) %></p>
           <p class="card-text"><i class="fas fa-user text-muted"></i> <%= truncate(article.user.name) %></p>
