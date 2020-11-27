@@ -13,25 +13,7 @@
 
   <div class="col-md-6 col-lg-8">
     <!-- <h3 class="pb-2 mb-0">Users</h3> -->
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th scope="col">User</th>
-          <th scope="col">Articles</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= user.articles.count %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <div class="pagination">
-      <%= will_paginate @users %>
-    </div><!-- .pagination -->
+    <%= render partial: 'users/users' %>
   </div><!-- .col-md-6 .col-lg-8 -->
 
   <div class="col-md-6 col-lg-4">

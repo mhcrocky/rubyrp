@@ -14,6 +14,14 @@ body.signed-out {
   background-color: #fff;
 }
 
+.goodbye {
+  position: fixed;
+  top: 6px;
+  right: 12px;
+  // left: 50%;
+  // transform: translate(-50%, 0);
+}
+
 .form-signin {
   width: 100%;
   max-width: 420px;

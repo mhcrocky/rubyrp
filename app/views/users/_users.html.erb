@@ -1,0 +1,19 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Articles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to truncate(user.name), user %></td>
+        <td><%= user.articles.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="pagination">
+  <%= will_paginate @users %>
+</div><!-- .pagination -->

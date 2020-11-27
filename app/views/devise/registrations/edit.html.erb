@@ -33,8 +33,10 @@
 
   <%= f.submit "Update", class: "btn btn-lg btn-outline-success btn-block" %>
 
-  <p class="mt-5 mb-3 text-muted text-center">
-    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %>
-  </p>
-
 <% end %>
+
+<div class="goodbye">
+  <p class="mt-5 mb-3 text-muted text-center">
+    <%= link_to "X", registration_path(resource_name), data: { confirm: "Are you sure you want to delete your account? Note: your articles depend on you and will also be deleted." }, method: :delete, class: "btn btn-danger" %>
+  </p>
+</div><!-- .goodbye -->

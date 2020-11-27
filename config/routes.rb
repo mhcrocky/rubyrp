@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   authenticated :user do
     root "pages#my_todo_items", as: :authenticated_root
