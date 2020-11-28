@@ -8,7 +8,7 @@ body.signed-out {
   min-height: 768px;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 0px;
   padding-bottom: 40px;
   color: #212529;
   background-color: #fff;
@@ -42,9 +42,9 @@ body.signed-out {
 }
 
 .form-signin img {
-  width: 100px;
-  max-width: 100px;
-  margin: 0 auto;
+  width: 90px;
+  height: auto;
+  margin: 0 auto 15px;
 }
 
 .form-label-group {

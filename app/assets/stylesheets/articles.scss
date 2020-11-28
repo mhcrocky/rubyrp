@@ -15,6 +15,16 @@ img.card-img-top {
   width: 100%;
   display: block;
 }
+@media only screen and (min-width: 768px) and (max-width: 990px)  {
+  img.card-img-top {
+    height: 425px !important;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px)  {
+  img.card-img-top {
+    height: 325px !important;
+  }
+}
 
 section.jumbo-show {
   min-height: 240px;

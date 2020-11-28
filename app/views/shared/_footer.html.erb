@@ -1,15 +1,22 @@
 <footer class="bg-dark">
   <div class="container">
-    <p class="float-right">
-      <a href="#/" title="Back to top" class="back-to-top"><i class="fas fa-caret-square-up fa-2x"></i></a>
-    </p>
-    <p>
-      <a href="mailto:ajmaseda@gmail.com" title="Email"><i class="fas fa-envelope-square"></i></a>
-      <a href="http://www.youtube.com/channel/UCbDHG59-KfqZQsp0tpxcVww" target= "blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
-      <a href="http://on.fb.me/1DwG2El" target= "blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-      <a href="https://www.linkedin.com/in/anthony-maseda-52a16547/" target= "blank" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/TonyMaseda" target= "blank" title="Github"><i class="fab fa-github-square"></i></a>
-    </p>
-    <p class="text-muted">&copy; <%= Time.current.year %></p>
+    <div class="float-left">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo.png', alt: 'Logo', class: 'header-logo' %>
+      <% end %>
+      <p class="text-muted">&copy;<%= Time.current.year %></p>
+    </div><!-- .float-left -->
+    <div class="float-right">
+      <p class="mb-3">
+        <a href="mailto:ajmaseda@gmail.com" title="Email"><i class="fas fa-envelope-square"></i></a>
+        <a href="https://www.youtube.com/channel/UCxR1elfy91jLjkdI5FbG2Fg" target= "blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
+        <a href="http://on.fb.me/1DwG2El" target= "blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.linkedin.com/in/anthony-maseda-52a16547/" target= "blank" title="Linkedin"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/TonyMaseda" target= "blank" title="Github"><i class="fab fa-github-square"></i></a>
+      </p>
+      <p class="text-right">
+        <a href="#/" title="Back to top">Back to top</a>
+      </p>
+    </div><!-- .float-right -->
   </div><!-- .container -->
 </footer>

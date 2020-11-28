@@ -2,9 +2,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="text-center mb-4">
-    <%= image_tag 'logo.png', alt: 'Logo', class: 'mb-3' %>
+    <%= link_to root_path do %>
+      <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
+    <% end %>
     <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
-    <p>Sign up in order to make your own todo list &plus; be a part of the blog.</p>
+    <p>Make your own todo list &plus; be a part of the blog.</p>
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-label-group">
@@ -34,10 +36,6 @@
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>
-  </p>
-
-  <p class="mt-5 mb-3 text-muted text-center">
-    <%= link_to('Home', root_path, class: "btn btn-outline-dark") %>
   </p>
 
 <% end %>

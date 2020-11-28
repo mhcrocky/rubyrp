@@ -11,7 +11,7 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
-          <td><%= user.created_at.strftime('%b %-d, %Y') %>
+          <td><%= user.created_at.strftime('%b %-d, %Y') %></td>
           <td><%= user.articles.count %></td>
         </tr>
       <% end %>

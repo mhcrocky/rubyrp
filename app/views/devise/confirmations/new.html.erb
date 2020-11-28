@@ -2,7 +2,9 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="text-center mb-4">
-    <%= image_tag 'logo.png', alt: 'Logo', class: 'mb-3' %>
+    <%= link_to root_path do %>
+      <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
+    <% end %>
     <h1 class="h3 mb-3 font-weight-normal">Resend confirmation instructions</h1>
   </div><!-- .text-center .mb-4 -->
 
@@ -15,10 +17,6 @@
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>
-  </p>
-
-  <p class="mt-5 mb-3 text-muted text-center">
-    <%= link_to('Home', root_path, class: "btn btn-outline-dark") %>
   </p>
 
 <% end %>

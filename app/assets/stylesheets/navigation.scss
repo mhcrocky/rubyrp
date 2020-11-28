@@ -23,6 +23,7 @@
   }
   span.burger-text {
     display: inline-block;
+    margin-top: 18px;
     margin-left: 6px;
   }
   @media (min-width: 990px) {
@@ -33,6 +34,11 @@
       display: inline-block !important;
     }
   }
+}
+
+img.header-logo {
+  width: 60px;
+  height: auto;
 }
 
 
@@ -89,23 +95,24 @@
 
 footer {
   margin-top: 90px;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: 0;
+  padding-top: 1rem;
   p {
     margin-bottom: .25rem;
     a {
       font-size: 24px;
       margin-right: 20px;
     }
-    a.back-to-top {
-      margin-right: 0px;
-    }
   }
   a {
-    color: #dad4ec;
+    color: rgba(255,255,255,0.5);
   }
   a:hover {
-    color: #fff;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
   }
+}
+
+img.footer-logo {
+  width: 40px;
+  height: auto;
 }

@@ -2,8 +2,9 @@
   <div class="container">
     <h1 class="jumbotron-heading"><%= @user.name %></h1>
     <p class="lead"><%= mail_to @user.email, truncate(@user.email), class: 'text-info font-weight-bold' %></p>
+    <p class="text-muted">Joined <%= @user.created_at.strftime('%b %-d, %Y') %></p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<h3 class="more-whatever text-center font-weight-normal">Articles by <%= @user.name %></h3>
+<h5 class="more text-center font-weight-normal">Articles</h5>
 <%= render partial: 'articles/articles' %>
