@@ -1,19 +1,23 @@
-<table class="table table-sm">
-  <thead>
-    <tr>
-      <th scope="col">User</th>
-      <th scope="col">Articles</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= link_to truncate(user.name), user %></td>
-        <td><%= user.articles.count %></td>
+        <th scope="col">User</th>
+        <th scope="col">Joined</th>
+        <th scope="col">Articles</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
+          <td><%= user.created_at.strftime('%b %-d, %Y') %>
+          <td><%= user.articles.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- .table-responsive -->
 <div class="pagination">
   <%= will_paginate @users %>
 </div><!-- .pagination -->

@@ -55,18 +55,19 @@
 }
 .pagination .current {
   font-style: normal;
-  font-weight: bold;
+  font-weight: lighter;
   color: #6c757d;
 }
 .pagination a {
   text-decoration: none;
-  color: #105cb6;
+  font-weight: bold;
+  color: rgba(111,71,190,1);
 }
 .pagination a:hover, .pagination a:focus {
   text-decoration: none;
   cursor: grabbing;
-  border-color: #000033;
-  color: #000033;
+  border-color: rgba(230,67,140,1);
+  color: rgba(230,67,140,1);
 }
 .pagination:after {
   content: ".";

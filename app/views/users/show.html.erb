@@ -1,9 +1,9 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading"><%= @user.name %></h1>
-    <p class="lead text-muted"><%= @user.email %></p>
+    <p class="lead"><%= mail_to @user.email, truncate(@user.email), class: 'text-info font-weight-bold' %></p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<h3 class="more-whatever text-center">Articles by <%= @user.name %></h3>
+<h3 class="more-whatever text-center font-weight-normal">Articles by <%= @user.name %></h3>
 <%= render partial: 'articles/articles' %>

@@ -44,7 +44,7 @@ class TodoItem extends React.Component {
 
   handleDestroy() {
     setAxiosHeaders();
-    const confirmation = confirm("Are you sure?");
+    const confirmation = confirm("Are you sure you want to delete this item?");
     if (confirmation) {
       axios
         .delete(this.path)

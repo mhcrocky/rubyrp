@@ -1,15 +1,13 @@
 /* Blog styles
 ----------------------------------------------------------------------------- */
 
-.form-horizontal .form-label-group {
-  margin-bottom: 36px;
-}
-.form-horizontal .form-group {
-  margin-bottom: 72px;
-}
-
-.avatar {
-  margin-top: 18px;
+.cache-image {
+  margin: 12px 0;
+  width: 50%;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 img.card-img-top {

@@ -10,7 +10,9 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<section class="jumbotron text-center jumbo-show bg-dark" style="background-image: url('<%= @article.avatar.url %>')"></section>
+<% if @article.avatar.present? %>
+  <section class="jumbotron text-center jumbo-show bg-white" style="background-image: url('<%= @article.avatar.url %>')"></section>
+<% end %>
 
 <div class="card-body">
   <p class="card-text"><%= @article.text if @article.text.present? %></p>

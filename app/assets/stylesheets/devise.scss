@@ -5,7 +5,7 @@ body.signed-out {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  min-height: 100vh;
+  min-height: 768px;
   -ms-flex-align: center;
   align-items: center;
   padding-top: 40px;
@@ -20,7 +20,10 @@ body.signed-out {
   right: 48px;
   // left: 50%;
   // transform: translate(-50%, 0);
-  path {
+  .fa-sign-out-alt path {
+    fill: #6c757d!important;
+  }
+  .fa-trash path {
     fill: #dc3545 !important;
   }
 }

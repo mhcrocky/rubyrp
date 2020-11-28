@@ -49,7 +49,7 @@ class TodoForm extends React.Component {
           </div>
           <div className="form-group col-md-1">
             <button className="btn btn-success btn-block">
-              Add
+              <i class="fas fa-plus"></i>
             </button>
           </div>
         </div>

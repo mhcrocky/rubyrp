@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @articles = Article.where(user_id: current_user.id).
+    @articles = Article.where(user_id: @article.user.id).
                         paginate(page: params[:page], per_page: 3)
   end
 
