@@ -1,22 +1,94 @@
-<footer class="bg-dark">
-  <div class="container">
+<nav class="footer-navbar navbar navbar-dark bg-dark text-white pt-4 pb-1">
+  <footer class="container">
     <div class="float-left">
-      <%= link_to root_path do %>
-        <%= image_tag 'logo.png', alt: 'Logo', class: 'header-logo' %>
-      <% end %>
-      <p class="text-muted">&copy;<%= Time.current.year %></p>
-    </div><!-- .float-left -->
+      <p>&copy; <%= Time.current.year %>. All Rights Reserved.</p>
+      <p>Company, Inc.</p>
+    </div>
     <div class="float-right">
-      <p class="mb-3">
-        <a href="mailto:ajmaseda@gmail.com" title="Email"><i class="fas fa-envelope-square"></i></a>
-        <a href="https://www.youtube.com/channel/UCxR1elfy91jLjkdI5FbG2Fg" target= "blank" title="Youtube"><i class="fab fa-youtube-square"></i></a>
-        <a href="http://on.fb.me/1DwG2El" target= "blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://www.linkedin.com/in/anthony-maseda-52a16547/" target= "blank" title="Linkedin"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/TonyMaseda" target= "blank" title="Github"><i class="fab fa-github-square"></i></a>
-      </p>
-      <p class="text-right">
-        <a href="#/" title="Back to top">Back to top</a>
-      </p>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#footerModal"><i class="fas fa-bars"></i></button>
+      <!-- Modal -->
+      <div class="modal fade" id="footerModal" tabindex="-1" role="dialog" aria-labelledby="footerModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="footerModalLabel">
+                <%= link_to root_path, class: 'navbar-brand' do %>
+                  <%= image_tag 'logo.png', alt: 'Logo', class: 'footer-logo' %>
+                <% end %>
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button><!-- .close -->
+            </div><!-- .modal-header -->
+            <div class="modal-body">
+              <div class="my-3 p-3 bg-white rounded shadow-sm">
+                <h4 class="border-bottom border-gray pb-1 mb-0">Legal</h4>
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="#!"><i class="fas fa-square"></i>Privacy</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="#!"><i class="fas fa-square"></i>Terms and Conditions</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="#!"><i class="fas fa-square"></i>Site Map</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <h4 class="border-bottom border-gray pt-5 pb-1 mb-0">Social</h4>
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="mailto:ajmaseda@gmail.com" title="Email"><i class="fas fa-envelope-square"></i>Email</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="https://www.youtube.com/channel/UCxR1elfy91jLjkdI5FbG2Fg" target= "blank" title="Youtube"><i class="fab fa-youtube-square"></i>Youtube</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="http://on.fb.me/1DwG2El" target= "blank" title="Facebook"><i class="fab fa-facebook-square"></i>Facebook</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="https://www.linkedin.com/in/anthony-maseda-52a16547/" target= "blank" title="Linkedin"><i class="fab fa-linkedin"></i>Linkedin</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+                <div class="media text-muted pt-3">
+                  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block">
+                      <a href="https://github.com/TonyMaseda" target= "blank" title="Github"><i class="fab fa-github-square"></i>Github</a>
+                    </strong>
+                  </p><!-- .media-body -->
+                </div><!-- .media -->
+              </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
+            </div><!-- .modal-body -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div><!-- .modal-footer -->
+          </div><!-- .modal-content -->
+        </div><!-- .modal-dialog -->
+      </div><!-- .modal -->
     </div><!-- .float-right -->
-  </div><!-- .container -->
-</footer>
+  </footer><!-- .container -->
+</nav><!-- .footer-nav -->

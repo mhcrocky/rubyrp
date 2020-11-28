@@ -38,48 +38,28 @@
   </div><!-- .card -->
 </div><!-- .card-deck -->
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-lg btn-block btn-outline-secondary text-center mb-" data-toggle="modal" data-target="#homeeModal">Learn More</button>
-<!-- Modal -->
-<div class="modal fade" id="homeeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="homeModalLabel">Rails React Bootstrap</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button><!-- .close -->
-      </div><!-- .modal-header -->
-      <div class="modal-body">
-        <div class="my-3 p-3 bg-white rounded shadow-sm">
-          <h6 class="border-bottom border-gray pb-2 mb-0">What's in the App?</h6>
-          <div class="media text-muted pt-3">
-            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              This is a Rails 6 (PostgreSQL) example todo and blog application that utilizes React, Coffeescript, jQuery &amp; Bootstrap to shape the frontend.
-            </p><!-- .media-body -->
-          </div><!-- .media -->
-          <div class="media text-muted pt-3">
-            <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              <strong class="d-block text-gray-dark">Free</strong>
-              Donec id elit non mi porta gravida amo vidicus metu. Quipio udon <%= link_to('rando', randoms_path) %>, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
-            </p><!-- .media-body -->
-          </div><!-- .media -->
-          <div class="media text-muted pt-3">
-            <%= image_tag 'schnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              <strong class="d-block text-gray-dark">Premium</strong>
-              Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
-            </p><!-- .media-body -->
-          </div><!-- .media -->
-          <small class="d-block text-right mt-3">
-            <%= link_to('Sign in', new_user_session_path) %> or <%= link_to("Sign up", new_user_registration_path) %>
-          </small>
-        </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
-      </div><!-- .modal-body -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div><!-- .modal-footer -->
-    </div><!-- .modal-content -->
-  </div><!-- .modal-dialog -->
-</div><!-- .modal -->
+<div class="my-3 p-3 bg-white rounded shadow-sm">
+  <h6 class="border-bottom border-gray pb-2 mb-0">What's in the App?</h6>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      This is a Rails 6 (PostgreSQL) example todo and blog application that utilizes React &amp; Bootstrap to shape the frontend.
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <div class="media text-muted pt-3">
+    <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark">Free</strong>
+      Donec id elit non mi porta gravida amo vidicus metu. Quipio udon <%= link_to('rando', randoms_path) %>, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <div class="media text-muted pt-3">
+    <%= image_tag 'schnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark">Premium</strong>
+      Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <small class="d-block text-right mt-3">
+    <%= link_to('Sign in', new_user_session_path) %> or <%= link_to("Sign up", new_user_registration_path) %>
+  </small><!-- .d-block -->
+</div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
