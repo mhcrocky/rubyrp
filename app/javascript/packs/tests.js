@@ -1,3 +1,3 @@
-console.log("Canvas JS Firing");
+// console.log("Canvas JS Firing");
 
-if(jQuery) console.log('jQuery is loaded');
+// if(jQuery) console.log('jQuery is loaded');

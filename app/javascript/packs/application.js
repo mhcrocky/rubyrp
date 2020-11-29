@@ -19,7 +19,6 @@ require("channels")
 // Packs
 require("./components/TodoApp")
 require("./tests")
-require("./canvas")
 
 // Bootstrap
 require('bootstrap')
