@@ -98,6 +98,10 @@ trix-editor.form-control {
   }
 }
 
+.form-group.col-md-11 input[type="text"] {
+  border: 1px solid #28a745 !important;
+}
+
 .filter .form-control {
   border: 1px solid #17a2b8!important;
   padding: 30px;

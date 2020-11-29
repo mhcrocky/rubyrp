@@ -16,14 +16,14 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-require("./components/TodoApp");
+require("./components/TodoApp")
 
 // Bootstrap
 require('bootstrap')
 import 'bootstrap/dist/css/bootstrap'
 
 // Font Awesome
-import "@fortawesome/fontawesome-free/js/all";
+import "@fortawesome/fontawesome-free/js/all"
 
 // Action View
 require("trix")
