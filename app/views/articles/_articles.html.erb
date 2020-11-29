@@ -22,6 +22,10 @@
     <% end %>
   </div><!-- .row -->
   <div class="pagination">
-    <%= will_paginate @articles %>
+    <%= will_paginate @articles,
+      previous_label:'Prev',
+      next_label:'Next',
+      inner_window: 1, outer_window: -1
+    %>
   </div><!-- .pagination -->
 </div><!-- .album -->
