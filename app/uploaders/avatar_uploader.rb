@@ -21,8 +21,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   def extension_whitelist
-    %w(jpg jpeg gif png)
-    # %w(txt doc docx ppt pptx xls xlsx pdf gif jpg jpeg png mov mp3 pages)
+    %w(jpg jpeg gif png svg)
+    # %w(txt doc docx ppt pptx xls xlsx pdf gif jpg jpeg png svg mov mp3 pages)
   end
 
   # Process files as they are uploaded:
