@@ -5,48 +5,33 @@
     <div class="filter">
       <%= render partial: 'users/search', locals: { action: articles_path, q: '' } %>
     </div><!-- .filter -->
-  </div>
-</section>
-
+  </div><!-- .container -->
+</section><!-- .jumbotron .text-center -->
 
 <div class="row">
-
-  <div class="col-md-6 col-lg-8">
-    <!-- <h3 class="pb-2 mb-0">Users</h3> -->
+  <div class="col-xl-8">
     <%= render partial: 'users/users' %>
-  </div><!-- .col-md-6 .col-lg-8 -->
-
-  <div class="col-md-6 col-lg-4">
+  </div><!-- .col-lg-8 -->
+  <div class="col-xl-4">
     <div class="bg-white rounded">
-      <!-- <h3 class="border-bottom border-gray pb-2 mb-0">Rails React Bootstrap</h3> -->
-      <div class="media text-muted pt-3">
-        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <div class="media text-muted pt-5">
+        <p class="media-body pb-1 small lh-125 border-bottom border-gray">
           <strong class="d-block text-gray-dark">Why are we listing users?</strong>
           We just want a view for now where we can see how many users are joining, populating the blog, etc..
-        </p>
+        </p><!-- .media-body -->
       </div><!-- .media .text-muted .pt-3 -->
-      <div class="media text-muted pt-3">
-        <%= image_tag 'schnozberry.svg', alt: 'Media', class: 'mr-2 rounded jelly' %>
-        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-          <strong class="d-block text-gray-dark">Lorem Ipsum</strong>
-          Aliquam erat volutpat. Phasellus vehicula orci ac elementum pellentesque. Duis sed scelerisque ante, id semper tortor. Aenean iaculis tellus vitae leo faucibus, sed luctus dui volutpat. Duis ut ex tempor, convallis leo aliquet, accumsan ante. Duis sed scelerisque. Phaseli elementum pellentesque.
-        </p>
-      </div><!-- .media .text-muted .pt-3 -->
-      <div class="media text-muted pt-3">
-        <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded jelly' %>
-        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-          <strong class="d-block text-gray-dark">Lorem Ipsum</strong>
-          Phasellus vehicula orci ac elementum pellentesque, blandit nunc a mollis pulvini.
-        </p>
-      </div><!-- .media .text-muted .pt-3 -->
-      <div class="media text-muted pt-3">
-        <%= image_tag 'blueberry.svg', alt: 'Media', class: 'mr-2 rounded jelly' %>
-        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-          <strong class="d-block text-gray-dark">Lorem Ipsum</strong>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ut fermentum massa justo sit amet risus. Vestibulum pretium mi nec massa tincidunt mollis.
-        </p>
-      </div><!-- .media .text-muted .pt-3 -->
+      <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">New Users YTD ( <%= User.count %> since inception )</strong>
+      </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
+      <p class="border-bottom border-gray mt-0">
+        <%= column_chart charts_month_of_year_users_path, colors: ["#17a2b8"] %>
+      </p><!-- .mt-0 -->
+      <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">New Articles YTD ( <%= Article.count %> since inception )</strong>
+      </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
+      <p class="border-bottom border-gray mt-0">
+        <%= bar_chart charts_month_of_year_articles_path, colors: ["rgba(251,79,20,0.7)"] %>
+      </p><!-- .mt-0 -->
     </div><!-- .bg-white .rounded -->
-  </div><!-- .col-md-6 .col-lg-4 -->
-
+  </div><!-- .col-lg-4 -->
 </div><!-- .row -->

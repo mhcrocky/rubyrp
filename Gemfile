@@ -38,6 +38,10 @@ gem 'carrierwave-aws'
 # Pagination
 gem 'will_paginate'
 
+# Charts
+gem 'chartkick'
+gem 'groupdate'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -33,6 +33,10 @@ window.$ = window.jQuery = jQuery;
 // Font Awesome
 import "@fortawesome/fontawesome-free/js/all"
 
+// Charts
+require("chartkick")
+require("chart.js")
+
 // Action View
 require("trix")
 require("@rails/actiontext")
