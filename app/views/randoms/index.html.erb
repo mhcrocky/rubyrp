@@ -1,11 +1,13 @@
 <div class="random">
 
+
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Random (sandbox)</h1>
       <p class="lead text-muted">There is no actual product being sold here. The content below is development markup. Please <%= link_to('sign in', new_user_session_path) %> or <%= link_to("sign up", new_user_registration_path) %> to see the blog &plus; todo list.</p>
     </div>
   </section>
+
 
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
@@ -55,99 +57,94 @@
     </div><!-- .card -->
   </div><!-- .card-deck -->
 
-  <div class="my-3 p-3 bg-white rounded shadow-sm">
-    <h6 class="border-bottom border-gray pb-2 mb-0">What are we selling?</h6>
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">Absolutely nothing</strong>
-        This is a Rails 6 (PostgreSQL) example todo and blog application that utilizes a harmony of javascript frameworks &amp; Bootstrap to shape the frontend.
-      </p>
-    </div>
-    <div class="media text-muted pt-3">
-      <%= image_tag 'tayberry.svg', class: 'mr-2 rounded' %>
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">Free</strong>
-        Donec id elit non mi porta gravida amo vidicus metu. Quipio udon <%= link_to('rando', randoms_path) %>, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
-      </p>
-    </div>
-    <div class="media text-muted pt-3">
-      <%= image_tag 'schnozberry.svg', class: 'mr-2 rounded' %>
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">Premium</strong>
-        Donec id elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
-      </p>
-    </div>
-    <div class="media text-muted pt-3">
-      <%= image_tag 'schnozberry.svg', class: 'mr-2 rounded' %>
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">Unlimited</strong>
-        Donec id elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Pellentesque nulla nisi massa justo sit amet risus Proin vel purus ut nulla sodales
-      </p>
-    </div>
-    <small class="d-block text-right mt-3">
-      <%= link_to('Sign in', new_user_session_path) %> or <%= link_to("Sign up", new_user_registration_path) %>
-    </small>
-  </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
 
-  <div class="bg-white rounded">
-    <div class="media text-muted pt-5">
-      <p class="media-body pb-1 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">Why are we listing users?</strong>
-        We just want a view for now where we can see how many users are joining, populating the blog, etc..
-      </p><!-- .media-body -->
-    </div><!-- .media .text-muted .pt-3 -->
-    <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block text-gray-dark">New Users Month by Year ( <%= User.count %> Total )</strong>
-    </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
-    <p class="border-bottom border-gray mt-0">
-      <%= pie_chart charts_month_of_year_users_path, donut: true, download: true %>
-    </p><!-- .mt-0 -->
-    <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block text-gray-dark">New Articles Month by Year ( <%= Article.count %> Total )</strong>
-    </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
-    <p class="border-bottom border-gray mt-0">
-      <%= bar_chart charts_month_of_year_articles_path, colors: ["rgba(251,79,20,0.5)"] %>
-    </p><!-- .mt-0 -->
-  </div><!-- .bg-white .rounded -->
+  <section class="jumbotron text-center card shadow-sm">
 
-  <div class="my-3 p-3 bg-white">
-    <h3 class="text-center font-weight-light">Grids</h3>
-    <div class="row gridapalooza">
-      <div class="col-4">.col-4</div>
-      <div class="col-4">.col-4</div>
-      <div class="col-4">.col-4</div>
-    </div>
-    <div class="row gridapalooza">
-      <div class="col-sm-4">.col-sm-4</div>
-      <div class="col-sm-4">.col-sm-4</div>
-      <div class="col-sm-4">.col-sm-4</div>
-    </div>
-    <div class="row gridapalooza">
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4">.col-md-4</div>
-    </div>
-    <div class="row gridapalooza">
-      <div class="col-lg-4">.col-lg-4</div>
-      <div class="col-lg-4">.col-lg-4</div>
-      <div class="col-lg-4">.col-lg-4</div>
-    </div>
-    <div class="row gridapalooza">
-      <div class="col-xl-4">.col-xl-4</div>
-      <div class="col-xl-4">.col-xl-4</div>
-      <div class="col-xl-4">.col-xl-4</div>
-    </div>
-  </div><!-- .my-3 .p-3 .bg-white -->
+    <h2 class="jumbotron-heading mb-4">Charts</h2>
 
-  <section class="jumbotron text-center">
-    <h3 class="jumbotron-heading mb-3">1 Map</h3>
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13519.573901475933!2d-74.01550190195908!3d40.2444926305387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgmaps%20deal%20nj!5e1!3m2!1sen!2sus!4v1606372422795!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div><!-- .embed-responsive -->
+    <div class="row">
+      <div class="col-12">
+        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Articles ( <%= Article.count %> Total )</h4>
+      </div><!-- .col-12 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Article Titles</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <!-- NO Controller Method for now (Sandbox) -->
+          <%= pie_chart Article.group(:title).count, defer: true, download: true, legend: false %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">New Articles Month by Year</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <%= line_chart charts_month_of_year_articles_path, download: true, points: false, colors: ["rgba(61,12,2,1)"] %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+    </div><!-- .row -->
+
+    <div class="row">
+      <div class="col-12">
+        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Users ( <%= User.count %> Total )</h4>
+      </div><!-- .col-12 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">User Emails</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <!-- NO Controller Method for now (Sandbox) -->
+          <%= pie_chart User.group(:email).count, defer: true, download: true, legend: false %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">New Users Month by Year</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <%= area_chart charts_month_of_year_users_path, download: true, points: false, colors: ["#{}ffc107"] %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+    </div><!-- .row -->
+
+    <div class="row">
+      <div class="col-12">
+        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Static Content</h4>
+      </div><!-- .col-12 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Sports Played</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <%= pie_chart({"Surfing" => 10, "Golf" => 10, "Jiu Jitsu" => 5, "Skiing" => 5, "Walking" => 3}) %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Food Groups</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <%= bar_chart ({"Carbs" => 9, "Protein" => 7, "Dairy" => 5, "Fruit" => 5, "Vegetables" => 7}) %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+    </div><!-- .row -->
+
   </section><!-- .jumbotron -->
 
-  <section class="jumbotron text-center">
-    <h3 class="jumbotron-heading mb-3">2 Videos</h3>
+
+  <section class="jumbotron text-center mt-5">
+
+    <h2 class="jumbotron-heading mb-4">Map &amp; Videos</h2>
+
+    <div class="row mb-4">
+      <div class="col-lg-12">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13519.573901475933!2d-74.01550190195908!3d40.2444926305387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgmaps%20deal%20nj!5e1!3m2!1sen!2sus!4v1606372422795!5m2!1sen!2sus" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div><!-- .embed-responsive -->
+      </div><!-- .col-lg-12 -->
+    </div><!-- .row -->
+
     <div class="row">
       <div class="col-lg-6">
         <div class="embed-responsive embed-responsive-16by9 mb-2">
@@ -160,6 +157,8 @@
         </div><!-- .embed-responsive -->
       </div><!-- .col-lg-6 -->
     </div><!-- .row -->
+
   </section><!-- .jumbotron -->
+
 
 </div><!-- .random -->
