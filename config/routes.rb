@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     get 'month_of_year-users'
     # get 'dev-articles'
     get 'month_of_year-articles'
+    # get 'dev-todos'
+    get 'month_of_year-todos'
+    get 'month_of_year_single-todos'
   end
 
 end

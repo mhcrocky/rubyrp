@@ -3,7 +3,7 @@ class Api::V1::TodoItemsController < ApplicationController
   before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todo_items = current_user.todo_items.all
+    @todo_items = current_user.todo_items.order('created_at DESC')
   end
 
   def show

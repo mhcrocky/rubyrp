@@ -60,57 +60,83 @@
 
   <section class="jumbotron text-center card shadow-sm">
 
-    <h2 class="jumbotron-heading mb-4">Charts</h2>
+    <h2 class="jumbotron-heading mb-4">Charts & Graphs</h2>
 
     <div class="row">
       <div class="col-12">
-        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Articles ( <%= Article.count %> Total )</h4>
-      </div><!-- .col-12 -->
-      <div class="col-xl-6">
-        <h6 class="text-muted mt-5 mb-1 pb-0">
-          <strong class="text-gray-dark">Article Titles</strong>
-        </h6><!-- . -->
-        <div class="pt-0 mt-0 mb-5">
-          <!-- NO Controller Method for now (Sandbox) -->
-          <%= pie_chart Article.group(:title).count, defer: true, download: true, legend: false %>
-        </div><!-- . -->
-      </div><!-- .col-xl-6 -->
-      <div class="col-xl-6">
-        <h6 class="text-muted mt-5 mb-1 pb-0">
-          <strong class="text-gray-dark">New Articles Month by Year</strong>
-        </h6><!-- . -->
-        <div class="pt-0 mt-0 mb-5">
-          <%= line_chart charts_month_of_year_articles_path, download: true, points: false, colors: ["rgba(61,12,2,1)"] %>
-        </div><!-- . -->
-      </div><!-- .col-xl-6 -->
-    </div><!-- .row -->
-
-    <div class="row">
-      <div class="col-12">
-        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Users ( <%= User.count %> Total )</h4>
+        <h4 class="jumbotron-heading mt-5 mb-0 text-gray-dark">Users</h4>
+        <h6 class="text-muted jumbotron-heading mt-0 mb-2 text-gray-dark"><%= User.count %></h6>
       </div><!-- .col-12 -->
       <div class="col-xl-6">
         <h6 class="text-muted mt-5 mb-1 pb-0">
           <strong class="text-gray-dark">User Emails</strong>
         </h6><!-- . -->
         <div class="pt-0 mt-0 mb-5">
-          <!-- NO Controller Method for now (Sandbox) -->
-          <%= pie_chart User.group(:email).count, defer: true, download: true, legend: false %>
+          <!-- No Controller Method for now (Sandbox , defer: true if necessary) -->
+          <%= pie_chart User.group(:email).count, download: true, legend: false %>
         </div><!-- . -->
       </div><!-- .col-xl-6 -->
       <div class="col-xl-6">
         <h6 class="text-muted mt-5 mb-1 pb-0">
-          <strong class="text-gray-dark">New Users Month by Year</strong>
+          <strong class="text-gray-dark">Users month of Year</strong>
         </h6><!-- . -->
         <div class="pt-0 mt-0 mb-5">
-          <%= area_chart charts_month_of_year_users_path, download: true, points: false, colors: ["#{}ffc107"] %>
+          <%= area_chart charts_month_of_year_users_path, download: true, points: false, colors: ["#17a2b8"] %>
         </div><!-- . -->
       </div><!-- .col-xl-6 -->
     </div><!-- .row -->
 
     <div class="row">
       <div class="col-12">
-        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Static Content</h4>
+        <h4 class="jumbotron-heading mt-5 mb-0 text-gray-dark">Articles</h4>
+        <h6 class="text-muted jumbotron-heading mt-0 mb-2 text-gray-dark"><%= Article.count %></h6>
+      </div><!-- .col-12 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Article Titles</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <!-- No Controller Method for now (Sandbox , defer: true if necessary) -->
+          <%= pie_chart Article.group(:title).count, download: true, legend: false %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Articles month of Year</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <%= area_chart charts_month_of_year_articles_path, download: true, points: false, colors: ["rgba(251,79,20,0.5)"] %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+    </div><!-- .row -->
+
+    <div class="row">
+      <div class="col-12">
+        <h4 class="jumbotron-heading mt-5 mb-0 text-gray-dark">Todo Items</h4>
+        <h6 class="text-muted jumbotron-heading mt-0 mb-2 text-gray-dark"><%= TodoItem.count %></h6>
+      </div><!-- .col-12 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Todo Item Titles</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <!-- No Controller Method for now (Sandbox , defer: true if necessary) -->
+          <%= pie_chart TodoItem.group(:title).count, download: true, legend: false %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+      <div class="col-xl-6">
+        <h6 class="text-muted mt-5 mb-1 pb-0">
+          <strong class="text-gray-dark">Todos month of Year</strong>
+        </h6><!-- . -->
+        <div class="pt-0 mt-0 mb-5">
+          <%= area_chart charts_month_of_year_todos_path, download: true, points: false, colors: ["rgba(61,12,2,0.5)"] %>
+        </div><!-- . -->
+      </div><!-- .col-xl-6 -->
+    </div><!-- .row -->
+
+    <div class="row">
+      <div class="col-12">
+        <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Static</h4>
       </div><!-- .col-12 -->
       <div class="col-xl-6">
         <h6 class="text-muted mt-5 mb-1 pb-0">
@@ -125,7 +151,7 @@
           <strong class="text-gray-dark">Food Groups</strong>
         </h6><!-- . -->
         <div class="pt-0 mt-0 mb-5">
-          <%= bar_chart ({"Carbs" => 9, "Protein" => 7, "Dairy" => 5, "Fruit" => 5, "Vegetables" => 7}) %>
+          <%= bar_chart ({"Carbs" => 9, "Protein" => 7, "Dairy" => 5, "Fruit" => 5, "Vegetables" => 7}), colors: ["#ffc107"] %>
         </div><!-- . -->
       </div><!-- .col-xl-6 -->
     </div><!-- .row -->

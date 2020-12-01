@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users = User.order('created_at DESC').
                   search(filter).
-                  paginate(page: params[:page], per_page: 20)
+                  paginate(page: params[:page], per_page: 27)
   end
 
   def show
