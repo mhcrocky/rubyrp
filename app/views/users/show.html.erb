@@ -6,5 +6,13 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<h5 class="more text-center font-weight-normal">Articles by <%= truncate(@user.name) %></h5>
-<%= render partial: 'articles/articles' %>
+<section class="container text-center mt-0">
+  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark"><%= @user.articles.count %> Articles</h6>
+  <div class="pt-0 mt-0 mb-0">
+    <%= render partial: 'articles/articles' %>
+  </div><!-- .pt-0 .mt-0 .mb-0 -->
+  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark">Articles Month of Year</h6>
+  <div class="pt-0 mt-0 mb-5">
+    <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"] %>
+  </div><!-- .pt-0 .mt-0 .mb-5 -->
+</section><!-- .container -->

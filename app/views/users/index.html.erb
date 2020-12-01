@@ -22,18 +22,21 @@
       </div><!-- .media .text-muted .pt-3 -->
       <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block text-gray-dark">Users Month of Year</strong>
+        <%= User.count %> Total
       </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
       <p class="border-bottom border-gray mt-0">
         <%= column_chart charts_month_of_year_users_path, refresh: 55, download: true, colors: ["#17a2b8"] %>
       </p><!-- .mt-0 -->
       <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block text-gray-dark">Articles Month of Year</strong>
+        <%= Article.count %> Total
       </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
       <p class="border-bottom border-gray mt-0">
         <%= column_chart charts_month_of_year_articles_path, refresh: 55, download: true, colors: ["rgba(251,79,20,0.5)"] %>
       </p><!-- .mt-0 -->
       <p class="text-muted pb-1 mt-4 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block text-gray-dark">Todos Month of Year</strong>
+        <%= TodoItem.count %> Total
       </p><!-- .pb-1 mt-4 mb-0 small lh-125-->
       <p class="border-bottom border-gray mt-0">
         <%= column_chart charts_month_of_year_todos_path, refresh: 55, download: true, colors: ["rgba(61,12,2,0.5)"] %>

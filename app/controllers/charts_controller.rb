@@ -23,7 +23,6 @@ class ChartsController < ApplicationController
   def month_of_year_todos
     render json: TodoItem.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
-
   def month_of_year_single_todos
     render json: current_user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end

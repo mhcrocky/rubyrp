@@ -16,7 +16,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "fallback/" + [version_name, "avatar.png"].compact.join('_')
+    "fallback/" + [version_name, "blueberry.svg"].compact.join('_')
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
