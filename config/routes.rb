@@ -5,20 +5,18 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
   authenticated :user do
-    root 'pages#my_todo_items', as: :authenticated_root
+    root 'todo_items#index', as: :authenticated_root
   end
 
   root 'pages#home'
+
+  resources :articles
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :todo_items, only: [:index, :show, :create, :update, :destroy]
     end
   end
-
-  resources :articles
-
-  resources :randoms, only: [:index]
 
   namespace :charts do
     # get 'dev-users'
