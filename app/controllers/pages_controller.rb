@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
 
-  def home
+  def welcome
+  end
+
+  def dashboard
   end
 
 end

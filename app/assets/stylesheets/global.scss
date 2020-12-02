@@ -9,8 +9,6 @@ html {
   --jumbotron-padding-y: 3rem;
 }
 
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);
@@ -40,6 +38,8 @@ html {
 .card-deck .card {
   min-width: 280px;
 }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 .bg-brownie {
   background-color: rgba(61,12,2,1) !important;

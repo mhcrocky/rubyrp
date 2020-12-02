@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
   authenticated :user do
-    root 'todo_items#index', as: :authenticated_root
+    root 'pages#dashboard', as: :authenticated_root
   end
 
-  root 'pages#home'
+  root 'pages#welcome'
 
   resources :articles
+
+  resources :todo_items, only: [:index, :show, :create, :update, :destroy]
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do

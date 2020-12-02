@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
   <div class="container">
     <%= link_to root_path do %>
-      <%= image_tag 'logo.png', alt: 'Logo', class: 'header-logo' %>
+      <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'header-logo' %>
     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,8 +9,8 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item" title="List">
-            <%= link_to(root_path, class: "nav-link") do %>
+          <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="List">
+            <%= link_to(todo_items_path, class: "nav-link") do %>
               <i class="fas fa-clipboard-list burger-icon"></i>
               <span class="burger-text">List</span>
             <% end %>
