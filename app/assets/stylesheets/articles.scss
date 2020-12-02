@@ -10,6 +10,23 @@
   }
 }
 
+img.article-show-image {
+  height: 40vh;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  img.article-show-image {
+    height: 30vh;
+  }
+}
+@media (max-width: 480px) {
+  img.article-show-image {
+    height: 20vh;
+  }
+}
+
 img.card-img-top {
   height: 225px !important;
   width: 100%;
@@ -24,17 +41,5 @@ img.card-img-top {
 @media only screen and (min-width: 480px) and (max-width: 767px)  {
   img.card-img-top {
     height: 325px !important;
-  }
-}
-
-section.jumbo-show {
-  min-height: 240px;
-  background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
-@media (min-width: 768px) {
-  section.jumbo-show {
-    min-height: 480px;
   }
 }

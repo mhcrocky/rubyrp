@@ -1,18 +1,17 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading"><%= @user.name %></h1>
-    <p class="lead"><%= mail_to @user.email, truncate(@user.email), class: 'text-info font-weight-bold' %></p>
+    <p class="lead"><%= mail_to @user.email, @user.email, class: 'text-info font-weight-bold' %></p>
     <p class="text-muted">Joined <%= @user.created_at.strftime('%b %-d, %Y') %></p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
 <section class="container text-center mt-0">
-  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark"><%= @user.articles.count %> Articles</h6>
-  <div class="pt-0 mt-0 mb-0">
-    <%= render partial: 'articles/articles' %>
-  </div><!-- .pt-0 .mt-0 .mb-0 -->
-  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark">Articles Month of Year</h6>
-  <div class="pt-0 mt-0 mb-5">
+  <h4 class="jumbotron-heading mb-0 text-gray-dark">Articles</h4>
+  <div class="mt-0 mb-0">
     <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"] %>
-  </div><!-- .pt-0 .mt-0 .mb-5 -->
+  </div><!-- .mt-0 .mb-0 -->
+  <div class=" mt-0 mb-0">
+    <%= render partial: 'articles/articles' %>
+  </div><!-- .mt-0 .mb-0 -->
 </section><!-- .container -->

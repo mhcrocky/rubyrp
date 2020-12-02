@@ -1,7 +1,6 @@
 <!-- CHART (Refresh able to work in partial view) -->
 <section class="container text-center mt-5">
   <h4 class="jumbotron-heading pt-5 mb-0 text-gray-dark">My Items</h4>
-  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark"><%= current_user.todo_items.count %> currently</h6>
   <div class="pt-0 mt-0 mb-5">
     <%= area_chart charts_month_of_year_single_todos_path, refresh: 5, download: true, points: false, colors: ["rgba(0,0,0,0.5)"] %>
   </div><!-- .pt-0 .mt-0 .mb-5 -->

@@ -10,9 +10,12 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<% if @article.avatar.present? %>
-  <section class="jumbotron text-center jumbo-show bg-white" style="background-image: url('<%= @article.avatar.url %>')"></section>
-<% end %>
+
+<div class="mt-0 mb-1 text-center">
+  <% if @article.avatar.present? %>
+    <%= image_tag @article.avatar.url, alt: 'Article avatar', class: 'article-show-image' %>
+  <% end %>
+</div><!-- .mt-0 .mb-1 .text-center -->
 
 <div class="card-body">
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
@@ -20,7 +23,6 @@
 
 <section class="container text-center mt-5">
   <h4 class="jumbotron-heading pt-5 mb-0 text-gray-dark">Articles by <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></h4>
-  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark"><%= @article.user.articles.count %></h6>
   <div class="pt-0 mt-0 mb-5">
     <%= render partial: 'articles/articles' %>
   </div><!-- .pt-0 .mt-0 .mb-5 -->
