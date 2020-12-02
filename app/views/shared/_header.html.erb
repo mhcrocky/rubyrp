@@ -21,12 +21,6 @@
               <span class="burger-text">Blog</span>
             <% end %>
           </li><!-- .nav-item -->
-          <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item" title="Users">
-            <%= link_to(users_path, class: "nav-link") do %>
-              <i class="fas fa-users burger-icon"></i>
-              <span class="burger-text">Users</span>
-            <% end %>
-          </li><!-- .nav-item -->
           <li class="nav-item" title="Profile">
             <%= link_to(edit_user_registration_path, class: "nav-link") do %>
               <i class="fas fa-user burger-icon"></i>

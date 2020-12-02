@@ -2,14 +2,14 @@
   <div class="container">
     <h1 class="jumbotron-heading">Blog</h1>
     <p class="lead text-left text-muted">Create, read, update, &amp; destroy your articles. Read articles by other authors and link to their profiles.</p>
-    <p>
-      <% if user_signed_in? %>
-        <%= link_to 'New Article', new_article_path, class: 'btn btn-outline-primary btn-block' %>
-      <% end %>
-    </p>
     <div class="filter">
       <%= render partial: 'articles/search', locals: { action: articles_path, q: '' } %>
     </div><!-- .filter -->
+    <p>
+      <% if user_signed_in? %>
+        <%= link_to 'New Article', new_article_path, class: 'btn btn-outline-primary btn-block mt-5 mb-0' %>
+      <% end %>
+    </p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
@@ -17,7 +17,7 @@
 
 <section class="container text-center mt-5">
   <h4 class="jumbotron-heading mb-0 text-gray-dark">Articles</h4>
-  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark"><%= Article.count %></h6>
+  <h6 class="text-muted jumbotron-heading mt-1 mb-2 text-gray-dark"><%= Article.count %> total</h6>
   <div class="pt-0 mt-0 mb-5">
     <%= area_chart charts_month_of_year_articles_path, refresh: 55, points: false, colors: ["rgba(0,0,0,0.5)"] %>
   </div><!-- .pt-0 .mt-0 .mb-5 -->

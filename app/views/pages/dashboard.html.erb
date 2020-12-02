@@ -1,24 +1,44 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Dashboard</h1>
-    <p class="lead text-left text-muted">Follow the header navigation to see the blog &plus; todo list. This dashboard view will render a different view based on role and/or membership.</p>
+    <p class="lead text-left text-muted">Use the header links to see the blog &plus; todo list. In lieu of roles and/or memberships, this dashboard allows all users to see an admin view.</p>
+    <div class="filter">
+      <%= render partial: 'pages/search', locals: { action: root_path, q: '' } %>
+    </div><!-- .filter -->
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
 <section class="container mt-0">
-  <div class="row">
-    <div class="col-xl-8 text-center">
+  <div class="row text-center">
+    <div class="col-xl-4">
+      <h6 class="text-muted mt-5 mb-1 pb-0">
+        <strong class="text-gray-dark">Users</strong>
+      </h6><!-- . -->
+      <p class="mt-0">
+        <%= column_chart charts_month_of_year_users_path, refresh: 55, download: true, colors: ["#17a2b8"] %>
+      </p><!-- .mt-0 -->
+      <h6 class="text-muted mt-5 mb-1 pb-0">
+        <strong class="text-gray-dark">Articles</strong>
+      </h6><!-- . -->
+      <p class="mt-0">
+        <%= column_chart charts_month_of_year_articles_path, refresh: 55, download: true, colors: ["rgba(251,79,20,0.5)"] %>
+      </p><!-- .mt-0 -->
+      <h6 class="text-muted mt-5 mb-1 pb-0">
+        <strong class="text-gray-dark">Todo Items</strong>
+      </h6><!-- . -->
+      <p class="mt-0">
+        <%= column_chart charts_month_of_year_todos_path, refresh: 55, download: true, colors: ["rgba(61,12,2,0.5)"] %>
+      </p><!-- .mt-0 -->
+    </div><!-- .col-xl-4 -->
+    <div class="col-xl-1"></div>
+    <div class="col-xl-7">
       <div class="row">
-        <div class="col-12">
-          <!-- Charts & Graphs: not rendering json in charts controller, as these charts are temporary -->
-          <h4 class="jumbotron-heading mt-4 mb-2 text-gray-dark">Dynamic</h4>
-        </div><!-- .col-12 -->
         <div class="col-md-4">
           <h6 class="text-muted mt-5 mb-1 pb-0">
             <strong class="text-gray-dark">User Emails</strong>
           </h6><!-- . -->
           <div class="pt-0 mt-0 mb-5">
-            <%= pie_chart User.group(:email).count, refresh: 55, download: true, legend: false %>
+            <%= pie_chart User.group(:email).count, download: true, legend: false %>
           </div><!-- . -->
         </div><!-- .col-md-4-->
         <div class="col-md-4">
@@ -26,7 +46,7 @@
             <strong class="text-gray-dark">Article Titles</strong>
           </h6><!-- . -->
           <div class="pt-0 mt-0 mb-5">
-            <%= pie_chart Article.group(:title).count, refresh: 55, download: true, legend: false %>
+            <%= pie_chart Article.group(:title).count, download: true, legend: false %>
           </div><!-- . -->
         </div><!-- .col-md-4 -->
         <div class="col-md-4">
@@ -34,64 +54,13 @@
             <strong class="text-gray-dark">Todo Item Titles</strong>
           </h6><!-- . -->
           <div class="pt-0 mt-0 mb-5">
-            <%= pie_chart TodoItem.group(:title).count, refresh: 55, download: true, legend: false %>
+            <%= pie_chart TodoItem.group(:title).count, download: true, legend: false %>
           </div><!-- . -->
         </div><!-- .col-md-4 -->
-        <div class="col-12">
-          <h4 class="jumbotron-heading mt-5 mb-2 text-gray-dark">Static</h4>
+        <div class="col-12 text-left">
+          <%= render partial: 'users/users' %>
         </div><!-- .col-12 -->
-        <div class="col-lg-6">
-          <h6 class="text-muted mt-5 mb-1 pb-0">
-            <strong class="text-gray-dark">Food Groups</strong>
-          </h6><!-- . -->
-          <div class="pt-0 mt-0 mb-5">
-            <%= bar_chart ({"Carbs" => 9, "Protein" => 7, "Dairy" => 5, "Fruit" => 5, "Vegetables" => 7}), colors: ["#ffc107"] %>
-          </div><!-- . -->
-        </div><!-- .col-lg-6 -->
-        <div class="col-lg-6">
-          <h6 class="text-muted mt-5 mb-1 pb-0">
-            <strong class="text-gray-dark">Sports Played</strong>
-          </h6><!-- . -->
-          <div class="pt-0 mt-0 mb-5">
-            <%= line_chart ({"Surfing" => 10, "Golf" => 10, "Jiu Jitsu" => 5, "Skiing" => 5, "Walking" => 3}), points: false, colors: ["rgba(61,12,2,1)"] %>
-          </div><!-- . -->
-        </div><!-- .col-lg-6 -->
       </div><!-- .row -->
-    </div><!-- .col-xl-8 -->
-    <div class="col-xl-4">
-      <div class="my-3 p-3 bg-white rounded shadow-sm">
-        <h6 class="border-bottom border-gray pb-2 mb-0">What's in the App?</h6>
-        <div class="media text-muted pt-3">
-          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">A bunch of CRUD ...</strong>
-            This is a Rails 6 (PostgreSQL) example todo and blog application that utilizes a harmony of javascript frameworks &amp; Bootstrap to shape the frontend.
-          </p>
-        </div>
-        <div class="media text-muted pt-3">
-          <%= image_tag 'fallback/blueberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">Lorem Ipsum</strong>
-            Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
-          </p><!-- .media-body -->
-        </div><!-- .media -->
-        <div class="media text-muted pt-3">
-          <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">Lorem Ipsum</strong>
-            Donec id elit non mi porta gravida amo vidicus metu. Quipio udon rando, ut fermentum massa justo sit amet risus. Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
-          </p><!-- .media-body -->
-        </div><!-- .media -->
-        <div class="media text-muted pt-3">
-          <%= image_tag 'schnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">Lorem Ipsum</strong>
-            Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Lorem Ipsum elit non mi porta gravida y at egorial.
-          </p><!-- .media-body -->
-        </div><!-- .media -->
-        <small class="d-block text-right mt-3">
-          <%= link_to('List', todo_items_path) %> | <%= link_to('Blog', articles_path) %> | <%= link_to('Users', users_path) %>
-        </small><!-- .d-block -->
-      </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
-    </div><!-- .col-xl-4 -->
+    </div><!-- .col-xl-7 -->
   </div><!-- .row -->
 </section><!-- .container -->

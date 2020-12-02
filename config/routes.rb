@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:show]
 
   authenticated :user do
     root 'pages#dashboard', as: :authenticated_root
