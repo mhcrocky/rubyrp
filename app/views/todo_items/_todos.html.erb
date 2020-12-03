@@ -1,6 +1,12 @@
 <!-- CHART (Refresh able to work in partial view) -->
 <section class="text-center pt-5 mt-5">
-  <div class="pt-0 mt-0 mb-5">
-    <%= area_chart charts_month_of_year_single_todos_path, refresh: 5, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "My Items" %>
-  </div><!-- .pt-0 .mt-0 .mb-5 -->
+  <div class="row pt-0 mt-0 mb-5">
+    <div class="col-md-7">
+      <%= area_chart charts_month_of_year_single_todos_path, refresh: 5, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "My Items" %>
+    </div><!-- .col-md-7 -->
+    <div class="col-md-1 pb-5"></div>
+    <div class="col-md-4">
+      <%= pie_chart charts_complete_incomplete_single_todos_path, legend: false, refresh: 5, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "List Status" %>
+    </div><!-- .col-md-4 -->
+  </div><!-- .row .pt-0 .mt-0 .mb-5 -->
 </section><!-- .text-center .pt-5 .mt-5 -->
