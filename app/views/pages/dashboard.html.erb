@@ -8,9 +8,9 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<section class="container mt-0">
-  <div class="row text-center">
-    <div class="col-xl-4">
+<section class="mt-0 text-center">
+  <div class="row">
+    <div class="col-lg-4">
       <p class="mt-3">
         <%= column_chart charts_month_of_year_users_path, refresh: 55, download: {background: "#ffffff"}, colors: ["#17a2b8"], title: "Users" %>
       </p><!-- .mt-3 mb-5 -->
@@ -20,9 +20,9 @@
       <p class="mt-3 mb-5">
         <%= column_chart charts_month_of_year_todos_path, refresh: 55, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.5)"], title: "Todo Items" %>
       </p><!-- .mt-3 mb-5 -->
-    </div><!-- .col-xl-4 -->
-    <div class="col-xl-1"></div>
-    <div class="col-xl-7">
+    </div><!-- .col-lg-4 -->
+    <div class="col-lg-1 pb-5"></div>
+    <div class="col-lg-7">
       <div class="row">
         <div class="col-md-4">
           <div class="pt-0 mt-3 mb-5">
@@ -43,6 +43,6 @@
           <%= render partial: 'users/users' %>
         </div><!-- .col-12 -->
       </div><!-- .row -->
-    </div><!-- .col-xl-7 -->
+    </div><!-- .col-lg-7 -->
   </div><!-- .row -->
-</section><!-- .container -->
+</section><!-- .mt-0 .text-center -->

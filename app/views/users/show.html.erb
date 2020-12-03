@@ -6,7 +6,7 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<section class="container text-center mt-0">
+<section class="text-center mt-0">
   <div class="mt-0 mb-0">
     <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
   </div><!-- .mt-0 .mb-0 -->

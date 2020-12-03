@@ -5,18 +5,19 @@
     <div class="filter">
       <%= render partial: 'articles/search', locals: { action: articles_path, q: '' } %>
     </div><!-- .filter -->
-    <p>
-      <% if user_signed_in? %>
-        <%= link_to 'New Article', new_article_path, class: 'btn btn-outline-primary btn-block mt-5 mb-0' %>
-      <% end %>
-    </p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
 <%= render partial: 'articles/articles' %>
 
-<section class="container text-center mt-5">
+<section class="text-center mt-5">
   <div class="pt-0 mt-0 mb-5">
     <%= area_chart charts_month_of_year_articles_path, refresh: 55, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
   </div><!-- .pt-0 .mt-0 .mb-5 -->
-</section><!-- .container -->
+</section><!-- .text-center .mt-5 -->
+
+<% if user_signed_in? %>
+  <p class="mt-5 mb-0">
+    <%= link_to 'New Article', new_article_path, class: 'btn btn-lg btn-block btn-primary' %>
+  </p>
+<% end %>
