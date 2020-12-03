@@ -15,9 +15,8 @@ class Article < ApplicationRecord
   def self.search(search)
     if search && search.length > 0
       select('articles.*, lower(articles.title)').
-      joins("LEFT OUTER JOIN users ON users.id  = articles.user_id").
-        where("lower(articles.title) LIKE ? OR lower(articles.text) LIKE ? OR lower(users.email) LIKE ?",
-          "%#{search.downcase}%",
+      joins("LEFT OUTER JOIN users ON users.id = articles.user_id").
+        where("lower(articles.title) LIKE ? OR lower(users.email) LIKE ?",
           "%#{search.downcase}%",
           "%#{search.downcase}%").
         distinct

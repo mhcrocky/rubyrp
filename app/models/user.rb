@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search && search.length > 0
-      where("LOWER(email) LIKE ?", "%#{search.downcase}%")
+      where("lower(email) LIKE ?", "%#{search.downcase}%")
     else
       where(nil)
     end
