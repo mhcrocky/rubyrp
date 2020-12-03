@@ -16,8 +16,7 @@
 <%= render partial: 'articles/articles' %>
 
 <section class="container text-center mt-5">
-  <h4 class="jumbotron-heading mb-0 text-gray-dark">Articles</h4>
   <div class="pt-0 mt-0 mb-5">
-    <%= area_chart charts_month_of_year_articles_path, refresh: 55, points: false, colors: ["rgba(0,0,0,0.5)"] %>
+    <%= area_chart charts_month_of_year_articles_path, refresh: 55, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
   </div><!-- .pt-0 .mt-0 .mb-5 -->
 </section><!-- .container -->

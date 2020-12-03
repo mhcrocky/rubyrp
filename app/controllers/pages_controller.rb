@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   def dashboard
     @users = User.order(:email).
                   search(filter).
-                  paginate(page: params[:page], per_page: 14)
+                  paginate(page: params[:page], per_page: 12)
   end
 
   private
