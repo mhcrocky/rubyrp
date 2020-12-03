@@ -10,14 +10,13 @@
 
 <%= render partial: 'articles/articles' %>
 
-<section class="text-center mt-5">
-  <div class="pt-0 mt-0 mb-5">
+<section class="text-center mt-5 pb-5">
+  <div class="mb-5">
     <%= area_chart charts_month_of_year_articles_path, refresh: 55, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
-  </div><!-- .pt-0 .mt-0 .mb-5 -->
+  </div><!-- .mb-5 -->
+  <% if user_signed_in? %>
+    <p class="mt-5 mb-5">
+      <%= link_to 'New Article', new_article_path, class: 'btn btn-lg btn-block btn-primary' %>
+    </p>
+  <% end %>
 </section><!-- .text-center .mt-5 -->
-
-<% if user_signed_in? %>
-  <p class="mt-5 mb-0">
-    <%= link_to 'New Article', new_article_path, class: 'btn btn-lg btn-block btn-primary' %>
-  </p>
-<% end %>
