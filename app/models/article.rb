@@ -14,8 +14,8 @@ class Article < ApplicationRecord
 
   def cleanup_embed
     if self.embed.present?
-      if self.embed.include? '<iframe width="560" height="315" src="https://www.youtube'
-        "#{self.embed.remove' width="560" height="315"'}"
+      if self.embed.include? 'embed' # Youtube + Google Maps (Not Vimeo)
+        self.embed # Width + Height overridden by css
       else
         self.embed = nil
       end
