@@ -1,10 +1,10 @@
-<div class="album py-5">
+<div class="album py-5 text-left">
   <div class="row">
     <% @articles.each do |article| %>
     <div class="col-lg-4">
       <div class="card mb-4 box-shadow">
         <% if article.embed.present? %>
-          <%== article.embed %>
+          <%= article.iframe.html_safe %>
         <% else %>
           <%= image_tag 'missing.svg', alt: 'Media', class: 'card-img-top' %>
         <% end %>

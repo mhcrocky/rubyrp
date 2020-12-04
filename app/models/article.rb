@@ -10,12 +10,20 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
 
-  before_save :cleanup_embed
+  before_save :iframe
 
-  def cleanup_embed
+  def iframe
     if self.embed.present?
-      if self.embed.include? 'embed' # Youtube + Google Maps (Not Vimeo)
-        self.embed # Width + Height overridden by css
+      ### YouTube
+      ## Browser link --- use array to handle most playlist links, etc
+      if self.embed =~ /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=/
+      # if self.embed.include? 'https://www.youtube.com/watch?v='
+        "<iframe src='https://www.youtube.com/embed/#{self.embed[32..42]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+      ## YouTube share link --- using array, but could also use .split('https://youtu.be/').last
+      elsif self.embed =~ /^(https?:\/\/)?(www\.)?youtu.be\//
+      # elsif self.embed.include? 'https://youtu.be/'
+        "<iframe src='https://www.youtube.com/embed/#{self.embed[17..27]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+      ### elsif # Validate + Generate iframe for whatever other embeds you want to allow (Google Maps, Vimeo, etc)
       else
         self.embed = nil
       end

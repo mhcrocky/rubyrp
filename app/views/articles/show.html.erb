@@ -7,8 +7,8 @@
 
 <div class="card-body">
   <% if @article.embed.present? %>
-    <div class="embed-responsive embed-responsive-16by9 text-center text-gray-dark font-weight-bold">
-      <%== @article.embed %>
+    <div class="embed-responsive embed-responsive-16by9">
+      <%= @article.iframe.html_safe %>
     </div><!-- .embed-responsive -->
   <% end %>
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
