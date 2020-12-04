@@ -1,45 +1,19 @@
 /* Blog styles
 ----------------------------------------------------------------------------- */
 
-.cache-image {
-  margin: 12px 0;
-  width: 50%;
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-img.article-show-image {
-  height: 40vh;
-  width: auto;
-  max-width: 100%;
-  margin: 0 auto;
-}
-@media (max-width: 768px) {
-  img.article-show-image {
-    height: 30vh;
-  }
-}
-@media (max-width: 480px) {
-  img.article-show-image {
-    height: 20vh;
-  }
-}
-
-img.card-img-top {
+img.card-img-top, .col-lg-4 .card iframe {
   height: 225px !important;
   width: 100%;
   display: block;
-  filter: grayscale(81%);
+  // filter: grayscale(99%);
 }
 @media only screen and (min-width: 768px) and (max-width: 990px)  {
-  img.card-img-top {
+  img.card-img-top, .col-lg-4 .card iframe {
     height: 425px !important;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px)  {
-  img.card-img-top {
+  img.card-img-top, .col-lg-4 .card iframe {
     height: 325px !important;
   }
 }

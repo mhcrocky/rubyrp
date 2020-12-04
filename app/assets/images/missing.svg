@@ -1,0 +1,21 @@
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <radialGradient spreadMethod="pad" id="svg_8">
+   <stop offset="0" stop-opacity="0.99609" stop-color="#455b59"/>
+   <stop offset="1" stop-opacity="0.99609" stop-color="#0c0909"/>
+  </radialGradient>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="url(#svg_8)" id="canvas_background" height="482" width="642" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="#000" transform="matrix(14.164627375025361,0,0,1,-4253.2109075096905,0) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_2" y="246.45313" x="314.5" stroke-width="0" fill="#000000"/>
+  <text stroke="#000" transform="matrix(16.68506616252307,0,0,1,-5086.464914678295,0) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_3" y="212.45313" x="356.85765" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000"/>
+ </g>
+</svg>

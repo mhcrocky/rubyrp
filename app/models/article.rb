@@ -4,13 +4,23 @@ class Article < ApplicationRecord
 
   belongs_to :user
 
+  has_rich_text :text
+
   validates_presence_of :user
 
   validates :title, presence: true
 
-  mount_uploader :avatar, AvatarUploader
+  before_save :cleanup_embed
 
-  has_rich_text :text
+  def cleanup_embed
+    if self.embed.present?
+      if self.embed.include? '<iframe width="560" height="315" src="https://www.youtube'
+        "#{self.embed.remove' width="560" height="315"'}"
+      else
+        self.embed = nil
+      end
+    end
+  end
 
   def self.search(search)
     if search && search.length > 0

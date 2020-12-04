@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.string :title
       t.text :text
-      t.string :avatar
+      t.string :embed
       t.timestamps
     end
   end

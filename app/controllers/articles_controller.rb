@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @articles = Article.where(user_id: @article.user.id).
+                        order('created_at DESC').
                         paginate(page: params[:page], per_page: 3)
   end
 
@@ -55,7 +56,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:user_id, :title, :text, :avatar, :avatar_cache, :remove_avatar)
+    params.require(:article).permit(:user_id, :title, :text, :embed)
   end
 
   def filter

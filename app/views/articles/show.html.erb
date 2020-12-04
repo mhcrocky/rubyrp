@@ -5,13 +5,12 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<div class="mt-0 mb-1 text-center">
-  <% if @article.avatar.present? %>
-    <%= image_tag @article.avatar.url, alt: 'Article avatar', class: 'article-show-image' %>
-  <% end %>
-</div><!-- .mt-0 .mb-1 .text-center -->
-
 <div class="card-body">
+  <% if @article.embed.present? %>
+    <div class="embed-responsive embed-responsive-16by9 text-center text-gray-dark font-weight-bold">
+      <%== @article.embed %>
+    </div><!-- .embed-responsive -->
+  <% end %>
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
   <% if current_user == @article.user %>
     <p class="mt-5 mb-0">
