@@ -23,7 +23,49 @@
     <div class="jumbotron text-center form-label-group">
       <div class="col-sm-12">
         <%= f.text_field :embed, id: "inputEmbed", class: "form-control", placeholder: "YouTube Video", autofocus: true %>
-        <label for="inputEmbed">YouTube Video</label>
+        <label for="inputEmbed">YouTube Video (<span style="cursor:grabbing;" class="text-shnozberry" data-toggle="modal" data-target="#exampleModal">examples<span>)</label>
+        <div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fas fa-window-close"></i>
+                </button><!-- .close -->
+              </div><!-- .modal-header -->
+              <div class="modal-body">
+                <div class="my-3 p-3 shadow-lg">
+                  <h4 class="border-bottom border-gray pb-1 mb-0">Format 1</h4>
+                  <div class="media text-muted pt-3">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                      <code class="d-block">
+                        https://www.youtube.com/watch?v=<strong>u75Zsl1ECPQ</strong>&list=PLu9lbDbw-S8zyBwu9_aA2nE-3QocgyzRE&index=4
+                      </code>
+                    </p><!-- .media-body -->
+                  </div><!-- .media -->
+                  <h4 class="border-bottom border-gray pb-1 mb-0">Format 2</h4>
+                  <div class="media text-muted pt-3">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                      <code class="d-block">
+                        https://www.youtube.com/watch?v=<strong>u75Zsl1ECPQ</strong>
+                      </code>
+                    </p><!-- .media-body -->
+                  </div><!-- .media -->
+                  <h4 class="border-bottom border-gray pb-1 mb-0">Format 3</h4>
+                  <div class="media text-muted pt-3">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                      <code class="d-block">
+                        https://youtu.be/<strong>u75Zsl1ECPQ</strong>
+                      </code>
+                    </p><!-- .media-body -->
+                  </div><!-- .media -->
+                </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
+              </div><!-- .modal-body -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div><!-- .modal-footer -->
+            </div><!-- .modal-content -->
+          </div><!-- .modal-dialog -->
+        </div><!-- .modal -->
       </div><!-- .col-sm-12 -->
     </div><!-- .jumbotron .text-center .form-group -->
 

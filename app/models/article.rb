@@ -16,14 +16,13 @@ class Article < ApplicationRecord
     if self.embed.present?
       ### YouTube
       ## Browser link --- use array to handle most playlist links, etc
-      if self.embed =~ /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=/
-      # if self.embed.include? 'https://www.youtube.com/watch?v='
+      if self.embed =~ /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=/  # self.embed.include? 'https://www.youtube.com/watch?v='
         "<iframe src='https://www.youtube.com/embed/#{self.embed[32..42]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
       ## YouTube share link --- using array, but could also use .split('https://youtu.be/').last
-      elsif self.embed =~ /^(https?:\/\/)?(www\.)?youtu.be\//
-      # elsif self.embed.include? 'https://youtu.be/'
+      elsif self.embed =~ /^(https?:\/\/)?(www\.)?youtu.be\//  # self.embed.include? 'https://youtu.be/'
         "<iframe src='https://www.youtube.com/embed/#{self.embed[17..27]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
-      ### elsif # Validate + Generate iframe for whatever other embeds you want to allow (Google Maps, Vimeo, etc)
+      ### Validate + Generate iframe for whatever other embeds you want to allow (Google Maps, Vimeo, etc)
+      # elsif
       else
         self.embed = nil
       end
