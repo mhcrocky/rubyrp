@@ -4,6 +4,7 @@
       <tr>
         <th scope="col">User</th>
         <th scope="col">Joined</th>
+        <th scope="col">Role</th>
         <th scope="col">Articles</th>
       </tr>
     </thead>
@@ -12,6 +13,7 @@
         <tr>
           <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
           <td><%= user.created_at.strftime('%b %-d, %Y') %></td>
+          <td><%= user.roles.first.name %></td>
           <td><%= user.articles.count %></td>
         </tr>
       <% end %>

@@ -27,9 +27,7 @@ Rails.application.routes.draw do
     get 'month_of_year-articles'
     # Todo Items
     get 'complete_incomplete-todos'
-    get 'complete_incomplete_single-todos'
     get 'month_of_year-todos'
-    get 'month_of_year_single-todos'
   end
 
 end

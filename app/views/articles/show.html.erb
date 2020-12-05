@@ -12,7 +12,7 @@
     </div><!-- .embed-responsive -->
   <% end %>
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
-  <% if current_user == @article.user %>
+  <% if can? :manage, @article %>
     <p class="mt-5 mb-0">
       <%= link_to 'Edit', edit_article_path(@article), title: 'Edit', class: 'btn btn-lg btn-block btn-primary' %>
     </p>

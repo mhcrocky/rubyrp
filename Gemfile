@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Authentication
 gem 'devise'
+gem 'rolify'
+gem 'cancancan'
 
 # Pagination
 gem 'will_paginate'

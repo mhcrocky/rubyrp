@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def index
-    @articles = Article.order('created_at DESC').
+    @articles = @articles.order('created_at DESC').
                         search(filter).
                         paginate(page: params[:page], per_page: 12)
   end
@@ -15,15 +16,12 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def create
-    @article = Article.new(article_params)
     @article.user = current_user #.id gives Fixnum instead of User
     respond_to do |format|
       if @article.save
@@ -35,9 +33,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
     respond_to do |format|
-      if @article.update_attributes(article_params)
+      if @article.update(article_params)
         format.html { redirect_to article_path(@article), notice: 'Article was successfully updated.' }
       else
         format.html { render action: 'edit' }
@@ -46,7 +43,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_path, notice: 'Article was successfully deleted.' }

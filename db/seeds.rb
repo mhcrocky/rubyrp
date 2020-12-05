@@ -7,8 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 15.times do |i|
-  User.create(email: "user#{i+1}@example.com", password: "bs&E2wJC7A(?4X!", password_confirmation: "bs&E2wJC7A(?4X!")
+  member = User.create(email: "member#{i+1}@example.com", password: "m@keTh1ng$", password_confirmation: "m@keTh1ng$")
+  member.add_role 'member'
 end
+
+3.times do |i|
+  admin = User.create(email: "admin#{i+1}@example.com", password: 'm@keTh1ng$', password_confirmation: "m@keTh1ng$")
+  admin.add_role 'admin'
+end
+
+superadmin = User.create(email: 'superadmin@example.com', password: 'm@keTh1ng$', password_confirmation: "m@keTh1ng$")
+superadmin.add_role 'superadmin'
+
+sysadmin = User.create(email: 'sysadmin@example.com', password: 'm@keTh1ng$', password_confirmation: "m@keTh1ng$")
+sysadmin.add_role 'sysadmin'
 
 User.all.each do |u|
   5.times do |i|
