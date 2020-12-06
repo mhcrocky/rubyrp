@@ -7,9 +7,11 @@
 </section><!-- .jumbotron -->
 
 <section class="text-center mt-0">
-  <div class="mt-0 mb-0">
-    <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
-  </div><!-- .mt-0 .mb-0 -->
+  <% if can? :manage, current_user %>
+    <div class="mt-0 mb-0">
+      <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
+    </div><!-- .mt-0 .mb-0 -->
+  <% end %>
   <div class=" mt-0 mb-0">
     <%= render partial: 'articles/articles' %>
   </div><!-- .mt-0 .mb-0 -->

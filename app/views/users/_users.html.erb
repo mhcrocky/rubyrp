@@ -4,7 +4,9 @@
       <tr>
         <th scope="col">User</th>
         <th scope="col">Joined</th>
-        <th scope="col">Role</th>
+        <% if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin) %>
+          <th scope="col">Role</th>
+        <% end %>
         <th scope="col">Articles</th>
       </tr>
     </thead>
@@ -13,7 +15,9 @@
         <tr>
           <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
           <td><%= user.created_at.strftime('%b %-d, %Y') %></td>
-          <td><%= user.roles.first.name %></td>
+          <% if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin) %>
+            <td><%= user.roles.first.name if user.roles.present? %></td>
+          <% end %>
           <td><%= user.articles.count %></td>
         </tr>
       <% end %>

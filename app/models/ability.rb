@@ -13,8 +13,8 @@ class Ability
       can :manage, Article
       can :manage, TodoItem
       can :read, User
+      # can :manage, User, roles: { name: 'admin' }
       can :manage, User, roles: { name: 'member' }
-      can :manage, User, roles: { name: 'admin' }
       can :manage, User, id: user.id
 
     elsif user.has_role? :admin

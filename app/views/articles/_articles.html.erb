@@ -10,7 +10,7 @@
         <% end %>
         <div class="card-body">
           <p class="card-text font-weight-bold"><%= truncate(article.title.titlecase) %></p>
-          <p class="card-text"><i class="fas fa-user text-muted"></i> <%= truncate(article.user.name) %></p>
+          <p class="card-text"><i class="fas fa-user text-muted"></i> <%= link_to truncate(article.user.name), article.user, class: 'text-info font-weight-bold' %></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <%= link_to 'View', article_path(article), class: 'btn btn-sm btn-outline-secondary' %>

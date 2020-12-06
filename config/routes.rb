@@ -23,11 +23,15 @@ Rails.application.routes.draw do
   namespace :charts do
     # Users
     get 'month_of_year-users'
+    get 'free_member-roles'
     # Articles
     get 'month_of_year-articles'
+    get 'free_member-articles'
     # Todo Items
     get 'complete_incomplete-todos'
+    get 'complete_incomplete_single-todos'
     get 'month_of_year-todos'
+    get 'month_of_year_single-todos'
   end
 
 end
