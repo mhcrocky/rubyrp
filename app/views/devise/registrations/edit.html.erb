@@ -32,17 +32,38 @@
     <label for="inputCurrentPassword">Current Password</label>
   </div><!-- .form-label-group -->
 
-  <%= f.submit "Update", class: "btn btn-lg btn-success btn-block" %>
+  <%= f.submit "Update", class: "btn btn-lg btn-block btn-success" %>
+
+  <button type="button" class="btn btn-lg btn-block btn-outline-danger mt-5" data-toggle="modal" data-target="#goodbyeModal">Delete Account</button>
 
 <% end %>
 
-<div class="goodbye">
-  <p class="mt-5 mb-3 text-muted text-center">
-    <%= link_to(destroy_user_session_path, method: :delete) do %>
-      <i class="fas fa-sign-out-alt fa-2x" title='Sign out'></i>
-    <% end %>
-    <%= link_to(registration_path(resource_name), data: { confirm: "Are you sure you want to delete your account? Note: your articles depend on you and will also be deleted." }, method: :delete) do %>
-      <i class="fas fa-trash fa-2x" title='Delete Acount!'></i>
-    <% end %>
-  </p>
-</div><!-- .goodbye -->
+<div class="modal fade text-left" id="goodbyeModal" tabindex="-1" role="dialog" aria-labelledby="goodbyeModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-danger" id="goodbyeModalLabel">
+          Delete Account
+        </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fas fa-window-close"></i>
+        </button><!-- .close -->
+      </div><!-- .modal-header -->
+      <div class="modal-body">
+        <div class="my-3 p-3 bg-white shadow-lg">
+          <p class="pb-1 mt-1">
+            Are you sure you want to delete your account? <strong>Your articles will also be deleted</strong>.
+          </p>
+        </div><!-- .my-3 .p-3 .bg-white .shadow-sm -->
+      </div><!-- .modal-body -->
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= link_to(registration_path(resource_name), class:'btn btn-danger', data: { confirm: "Confirm Account Deletion" }, method: :delete) do %>
+          Delete Acount
+        <% end %>
+
+      </div><!-- .modal-footer -->
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
