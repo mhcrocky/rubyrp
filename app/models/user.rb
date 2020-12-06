@@ -10,6 +10,14 @@ class User < ApplicationRecord
   has_many :todo_items, dependent: :destroy
   has_many :articles, dependent: :destroy
 
+  after_create :first_items
+
+  def first_items
+    2.times do |i|
+      self.todo_items.create(title: "Item #{i+1} for #{self.email}", complete: i % 3 == 0 ? true : false)
+    end
+  end
+
   def name
     "#{self.email.split('@').first}"
   end
