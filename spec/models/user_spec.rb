@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  
+
   describe "creation" do
     let!(:user) { FactoryBot.create(:user) }
     it "can be created" do
@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
     it "must have a password" do
       user.password = nil
       expect(user).to_not be_valid
-    end        
+    end
   end
 
   describe "todo_item associations" do
@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
       expect(relation.macro).to eq(:has_many)
     end
     it "destroys associated todo_items" do
-      expect{ user_with_todo_items.destroy }.to change { TodoItem.count }.by(-5)
+      expect{ user_with_todo_items.destroy }.to change { TodoItem.count }.by(-7) ## 5 (factory) + 2 (first_items method after_create)
     end
   end
 
