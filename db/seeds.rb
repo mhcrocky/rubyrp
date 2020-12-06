@@ -23,13 +23,13 @@ sysadmin = User.create(email: 'sysadmin@example.com', password: 'm@keTh1ng$', pa
 sysadmin.add_role 'sysadmin'
 
 User.all.each do |u|
-  5.times do |i|
-    u.todo_items.create(title: "To Do Item #{i+1} for #{u.email}", complete: i % 3  == 0 ? true : false  )
+  4.times do |i|
+    u.todo_items.create(title: "Seed Item #{i+1} for #{u.email}", complete: i % 2 == 0 ? true : false  )
   end
 end
 
 User.all.each do |u|
   3.times do |i|
-    u.articles.create(title: "Article #{i+1}", text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.")
+    u.articles.create(title: "Article #{i+1}", text: "Donec id elit non mi porta gravida amo vidicus metu. Quipio udon rando, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.")
   end
 end
