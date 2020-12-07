@@ -57,12 +57,10 @@
         </div><!-- .my-3 .p-3 .bg-white .shadow-sm -->
       </div><!-- .modal-body -->
       <div class="modal-footer">
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <%= link_to(registration_path(resource_name), class:'btn btn-danger', data: { confirm: "Confirm Account Deletion" }, method: :delete) do %>
           Delete Acount
         <% end %>
-
       </div><!-- .modal-footer -->
     </div><!-- .modal-content -->
   </div><!-- .modal-dialog -->
