@@ -37,6 +37,7 @@ $ rails s
 ## Frameworks, Libraries, Packages and Gems
 
 * Bootstrap
+* Font Awesome
 * jQuery
 * chart js
 * chartkick + groupdate
