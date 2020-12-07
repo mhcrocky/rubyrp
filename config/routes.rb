@@ -14,13 +14,7 @@ Rails.application.routes.draw do
 
   resources :todo_items, only: [:index]
 
-  namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-      resources :todo_items, only: [:index, :show, :create, :update, :destroy]
-    end
-  end
-
-  namespace :charts do
+  namespace :charts, defaults: { format: :json } do
     # Users
     get 'month_of_year-users'
     get 'free_member-roles'
@@ -32,6 +26,26 @@ Rails.application.routes.draw do
     get 'complete_incomplete_single-todos'
     get 'month_of_year-todos'
     get 'month_of_year_single-todos'
+  end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :todo_items, only: [:index, :show, :create, :update, :destroy]
+      resources :articles, only: [:index, :show, :create, :update, :destroy]
+      namespace :charts do
+        # Users
+        get 'month_of_year-users'
+        get 'free_member-roles'
+        # Articles
+        get 'month_of_year-articles'
+        get 'free_member-articles'
+        # Todo Items
+        get 'complete_incomplete-todos'
+        get 'complete_incomplete_single-todos'
+        get 'month_of_year-todos'
+        get 'month_of_year_single-todos'
+      end
+    end
   end
 
 end

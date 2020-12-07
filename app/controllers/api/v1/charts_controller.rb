@@ -1,4 +1,4 @@
-class ChartsController < ApplicationController
+class Api::V1::ChartsController < ApplicationController
   before_action :authenticate_user!
 
   ## Users

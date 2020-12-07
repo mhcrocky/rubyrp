@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ChartsController do
+describe Api::V1::ChartsController do
 
   before(:each) do
     @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
