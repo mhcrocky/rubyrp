@@ -27,14 +27,27 @@ $ rails s
 ```
 
 
-## How to run the test suite
+## Authentication
+
+* devise
+* rolify
+* cancancan
+
+
+## Frameworks, Libraries, Packages and Gems
+
+* Bootstrap
+* jQuery
+* chart js
+* chartkick + groupdate
+* will_paginate
+* Action Text (trix)
+
+
+## Testing (rspec)
 
 ```
 $ bundle exec rspec
-
-View coverage
-$ bundle exec rake
-or
 $ open coverage/index.html
 ```
 
@@ -49,7 +62,9 @@ None at this time.
 ## Itinerary
 
 ```
-1. Article and User API
-2. Tests
-3. Heroku
+1. Terms / privacy / sitemap
+2. Admins scaffold (sanitize in application controller)
+3. Users + Devise API
+4. Tests (Users API + Todo API)
+5. Heroku
 ```
