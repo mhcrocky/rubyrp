@@ -18,4 +18,11 @@ describe ArticlesController do
     end
   end
 
+  describe "GET #new" do
+    it "renders the :new view" do
+      get :new
+      expect(response.status).to eq(200)
+    end
+  end
+
 end

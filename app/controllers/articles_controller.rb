@@ -4,8 +4,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = @articles.order('created_at DESC').
-                        search(filter).
-                        paginate(page: params[:page], per_page: 12)
+                          search(filter).
+                          paginate(page: params[:page], per_page: 12)
   end
 
   def show

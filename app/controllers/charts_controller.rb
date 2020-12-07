@@ -25,7 +25,6 @@ class ChartsController < ApplicationController
     render json: ({"Not Complete" => current_user.todo_items.accessible_by(current_ability).where(complete: false).count, "Complete" => current_user.todo_items.accessible_by(current_ability).where(complete: true).count})
     # render json: current_user.todo_items.group(:complete).count
   end
-
   def month_of_year_todos
     render json: TodoItem.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
