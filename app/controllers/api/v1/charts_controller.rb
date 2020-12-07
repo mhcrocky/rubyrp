@@ -13,6 +13,9 @@ class Api::V1::ChartsController < ApplicationController
   def month_of_year_articles
     render json: Article.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
+  def month_of_year_single_articles
+    render json: current_user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
   def free_member_articles
     render json: ({"Free" => Article.count - Article.where(user_id: User.with_role(:sysadmin)).count - Article.where(user_id: User.with_role(:superadmin)).count - Article.where(user_id: User.with_role(:admin)).count - Article.where(user_id: User.with_role(:member)).count, "Members" => Article.where(user_id: User.with_role(:member)).count})
   end

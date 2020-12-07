@@ -12,7 +12,7 @@
   </div><!-- .mt-0 .mb-0 -->
   <% if can? :manage, @user %>
     <div class="mt-3 mb-5 d-block">
-      <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles" %>
+      <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Articles by #{truncate(@user.name)}" %>
     </div><!-- .mt-3 .mb-5 -->
   <% end %>
 </section><!-- .container -->
