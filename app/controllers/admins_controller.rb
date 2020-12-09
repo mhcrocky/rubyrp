@@ -5,6 +5,10 @@ class AdminsController < ApplicationController
   def new
     if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin)
       @admin.add_role :admin
+      @users = User.with_role(:admin).
+                    order(:email).
+                    search(filter).
+                    paginate(page: params[:page], per_page: 12)
     else
       redirect_to authenticated_root_url, alert: 'You are not authorized to access this page.'
     end
@@ -30,6 +34,10 @@ class AdminsController < ApplicationController
 
   def admin_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def filter
+    @filter = params[:q]
   end
 
 end

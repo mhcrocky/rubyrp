@@ -13,6 +13,8 @@
 
   <section class="form-section">
 
+    <h4 class="text-center mt-2 mb-3">New Admin</h4>
+
     <div class="text-center form-label-group">
       <div class="col-sm-12">
         <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email", autofocus: true %>
@@ -28,9 +30,8 @@
     </div><!-- .jumbotron .text-center .form-group -->
 
     <div class="form-group">
-      <div class="col-sm-12 text-center">
-        <%= link_to 'Cancel', authenticated_root_url, class: 'btn btn-outline-secondary' %>
-        <%= f.submit class: 'btn btn-success' %>
+      <div class="col-sm-12">
+        <%= f.submit class: 'btn btn-lg btn-block btn-success' %>
       </div><!-- .col-sm-12 -->
     </div><!-- .form-group -->
 

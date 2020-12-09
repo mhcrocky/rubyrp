@@ -1,5 +1,17 @@
 <section class="jumbotron text-center">
-  <h1 class="jumbotron-heading">New Administator</h1>
+  <div class="container">
+    <h1 class="jumbotron-heading">Admins</h1>
+    <div class="filter">
+      <%= render partial: 'admins/search', locals: { action: new_admin_path, q: '' } %>
+    </div><!-- .filter -->
+  </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<%= render partial: 'admins/form', locals: { action: admins_path } %>
+<div class="row">
+  <div class="col-lg-8 mb-5">
+    <%= render partial: 'users/users' %>
+  </div><!-- .col-lg-8 -->
+  <div class="col-lg-4 mb-5">
+    <%= render partial: 'admins/form', locals: { action: admins_path } %>
+  </div><!-- .col-lg-4 -->
+</div><!-- .row -->
