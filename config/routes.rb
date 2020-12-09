@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   root 'pages#welcome'
 
   resources :users, only: [:show, :destroy]
-  # resources :admins, only: [:new, :create]
-  # resources :superadmins, only: [:new, :create]
+  resources :admins, only: [:new, :create]
 
   resources :articles
 

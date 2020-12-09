@@ -9,10 +9,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to authenticated_root_url, notice: 'User was successfully deleted.' }
+    if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin)
+      @user = User.find(params[:id])
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to authenticated_root_url, notice: 'User was successfully deleted.' }
+      end
+    else
+      redirect_to authenticated_root_url, alert: 'You CANNOT delete a user other than yourself.'
     end
   end
 
