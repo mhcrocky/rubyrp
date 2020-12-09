@@ -2,13 +2,15 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:show]
-
   authenticated :user do
     root 'pages#dashboard', as: :authenticated_root
   end
 
   root 'pages#welcome'
+
+  resources :users, only: [:show, :destroy]
+  # resources :admins, only: [:new, :create]
+  # resources :superadmins, only: [:new, :create]
 
   resources :articles
 

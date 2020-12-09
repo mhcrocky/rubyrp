@@ -8,4 +8,12 @@ class UsersController < ApplicationController
                         paginate(page: params[:page], per_page: 12)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to authenticated_root_url, notice: 'User was successfully deleted.' }
+    end
+  end
+
 end

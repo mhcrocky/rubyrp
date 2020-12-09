@@ -10,7 +10,18 @@ button.close:focus {
   box-shadow: none;
 }
 
+.dropdown-toggle::after {
+  display: none !important;
+}
+
 @media (min-width: 990px) {
+  ul.navbar-nav li.dropdown > .dropdown-menu {
+    z-index: 2;
+  }
+  ul.navbar-nav li.dropdown:hover > .dropdown-menu {
+    display: block;
+    z-index: 3;
+  }
   .nav-link-border {
     margin-left: 12px;
     border: 1px solid rgba(255, 255, 255, 0.5);

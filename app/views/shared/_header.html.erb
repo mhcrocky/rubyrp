@@ -15,24 +15,31 @@
               <span class="burger-text">List</span>
             <% end %>
           </li><!-- .nav-item -->
-          <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item" title="Blog">
-            <%= link_to(articles_path, class: "nav-link") do %>
-              <i class="fas fa-th burger-icon"></i>
-              <span class="burger-text">Blog</span>
-            <% end %>
-          </li><!-- .nav-item -->
-          <li class="nav-item" title="Profile">
-            <%= link_to(edit_user_registration_path, class: "nav-link") do %>
-              <i class="fas fa-user burger-icon"></i>
-              <span class="burger-text">Profile</span>
-            <% end %>
-          </li><!-- .nav-item -->
-          <li class="nav-item" title="Logout">
-            <%= link_to(destroy_user_session_path, method: :delete, class: "nav-link") do %>
-              <i class="fas fa-sign-out-alt burger-icon"></i>
-              <span class="burger-text">Logout</span>
-            <% end %>
-          </li><!-- .nav-item -->
+          <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item dropdown" title="Blog">
+            <a class="nav-link dropdown-toggle" href="" id="dropdownArticle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th burger-icon"></i> <span class="burger-text">Blog</span></a>
+            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownArticle">
+              <%= link_to(articles_path, class: "dropdown-item") do %>
+                View Blog
+              <% end %>
+              <%# if user_signed_in? ## In event that authorize_user is removed ## %>
+                <%= link_to 'New Article', new_article_path, class: 'dropdown-item' %>
+              <%# end %>
+            </div><!-- .dropdown-menu .shadow-lg -->
+          </li><!-- .nav-item .dropdown -->
+          <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item dropdown" title="Profile">
+            <a class="nav-link dropdown-toggle" href="" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user burger-icon"></i> <span class="burger-text">Profile</span></a>
+            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownUser">
+              <%= link_to(current_user, class: "dropdown-item") do %>
+                View Profile
+              <% end %>
+              <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                Edit Profile
+              <% end %>
+              <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item") do %>
+                Sign out
+              <% end %>
+            </div><!-- .dropdown-menu .shadow-lg -->
+          </li><!-- .nav-item .dropdown -->
         <% else %>
           <li class="nav-item">
             <%= link_to('Sign in', new_user_session_path, class: "nav-link") %>

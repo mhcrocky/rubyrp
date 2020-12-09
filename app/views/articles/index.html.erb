@@ -5,11 +5,6 @@
     <div class="filter">
       <%= render partial: 'articles/search', locals: { action: articles_path, q: '' } %>
     </div><!-- .filter -->
-    <%# if user_signed_in? ## In event that authorize_user is removed ## %>
-      <p class="mt-5 mb-0">
-        <%= link_to 'New Article', new_article_path, class: 'btn btn-lg btn-block btn-primary' %>
-      </p>
-    <%# end %>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 

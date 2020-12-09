@@ -1,0 +1,39 @@
+<%= form_for @admin, html: { class: 'form-horizontal' } do |f| %>
+
+  <% if @admin.errors.any? %>
+    <div class="errors">
+      <h2>There was an error with this administrator</h2>
+      <ul>
+        <% @admin.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="form-section">
+
+    <div class="text-center form-label-group">
+      <div class="col-sm-12">
+        <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email", autofocus: true %>
+        <label for="inputEmail"><code>&#42; Email</code></label>
+      </div><!-- .col-sm-12 -->
+    </div><!-- .jumbotron .text-center .form-group -->
+
+    <div class="text-center form-label-group">
+      <div class="col-sm-12">
+        <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password", autofocus: true %>
+        <label for="inputPassword"><code>&#42; Password</code></label>
+      </div><!-- .col-sm-12 -->
+    </div><!-- .jumbotron .text-center .form-group -->
+
+    <div class="form-group">
+      <div class="col-sm-12 text-center">
+        <%= link_to 'Cancel', authenticated_root_url, class: 'btn btn-outline-secondary' %>
+        <%= f.submit class: 'btn btn-success' %>
+      </div><!-- .col-sm-12 -->
+    </div><!-- .form-group -->
+
+  </section><!-- .form-section -->
+
+<% end %>

@@ -2,6 +2,11 @@
   <div class="container">
     <h1 class="jumbotron-heading"><%= @article.title.titlecase %></h1>
     <p class="lead text-muted"><%= @article.updated_at.strftime('%b %-d, %Y, %l:%M %p') %><strong class="d-block"><i class="fas fa-user"></i> <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></strong></p>
+    <% if can? :manage, @article %>
+      <p class="mt-0 mb-0">
+        <%= link_to 'Edit Article', edit_article_path(@article), title: 'Edit Article', class: 'btn btn-outline-dark' %>
+      </p>
+    <% end %>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
@@ -12,16 +17,11 @@
     </div><!-- .embed-responsive -->
   <% end %>
   <p class="card-text"><%= @article.text if @article.text.present? %></p>
-  <% if can? :manage, @article %>
-    <p class="mt-5 mb-0">
-      <%= link_to 'Edit', edit_article_path(@article), title: 'Edit', class: 'btn btn-lg btn-block btn-primary' %>
-    </p>
-  <% end %>
 </div><!-- .card-body -->
 
 <section class="text-center mt-5">
   <h4 class="jumbotron-heading pt-5 mb-0 text-gray-dark">Articles by <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></h4>
-  <div class="pt-0 mt-0 mb-5">
+  <div class="pt-0 mt-0 mb-0">
     <%= render partial: 'articles/articles' %>
-  </div><!-- .pt-0 .mt-0 .mb-5 -->
+  </div><!-- .pt-0 .mt-0 .mb-0 -->
 </section><!-- .text-center mt-5 -->

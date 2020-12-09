@@ -1,4 +1,4 @@
-<% if can? :manage, User, roles: { name: 'member' } %>
+<% if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin) %>
 
   <section class="jumbotron text-center">
     <div class="container">
@@ -18,12 +18,12 @@
           </div><!-- .col-12 -->
           <div class="col-md-4">
             <div class="pt-0 mt-3 mb-5">
-              <%= pie_chart api_v1_charts_free_member_roles_path, refresh: 120, legend: false, download: {background: "#ffffff"}, colors: ["rgba(230,67,140,1)", "rgba(111,71,190,1)"], title: "Premium Users" %>
+              <%= pie_chart api_v1_charts_free_member_roles_path, refresh: 120, legend: false, download: {background: "#ffffff"}, colors: ["#17a2b8", "rgba(230,67,140,1)", "rgba(111,71,190,1)"], title: "Users" %>
             </div><!-- .pt-0 mt-3 mb-5 -->
           </div><!-- .col-md-4-->
           <div class="col-md-4">
             <div class="pt-0 mt-3 mb-5">
-              <%= pie_chart api_v1_charts_free_member_articles_path, refresh: 121, legend: false, download: {background: "#ffffff"}, colors: ["rgba(230,67,140,1)", "rgba(111,71,190,1)"], title: "Premium Articles" %>
+              <%= pie_chart api_v1_charts_free_member_articles_path, refresh: 121, legend: false, download: {background: "#ffffff"}, colors: ["#17a2b8", "rgba(230,67,140,1)", "rgba(111,71,190,1)"], title: "Articles" %>
             </div><!-- .pt-0 mt-3 mb-5 -->
           </div><!-- .col-md-4 -->
           <div class="col-md-4">
@@ -48,7 +48,7 @@
     </div><!-- .row -->
   </section><!-- .mt-0 .text-center -->
 
-<% else # members and signed-in users with no role %>
+<% else # admins, members, and signed-in users with no role %>
 
   <section class="jumbotron text-center">
     <div class="container">
@@ -77,10 +77,10 @@
       <div class="col-lg-1 pb-1"></div>
       <div class="col-lg-4">
         <p class="mt-3">
-          <%= pie_chart api_v1_charts_complete_incomplete_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "My List Status" %>
+          <%= pie_chart api_v1_charts_complete_incomplete_single_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "My List Status" %>
         </p><!-- .mt-3 -->
         <p class="mt-3 mb-5">
-          <%= column_chart api_v1_charts_month_of_year_todos_path, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.5)"], title: "My Todo Items" %>
+          <%= column_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.5)"], title: "My Todo Items" %>
         </p><!-- .mt-3 mb-5 -->
         <p class="mt-5 text-left text-muted">
           <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>, you currently have <%= current_user.todo_items.count %> todo items &amp; <%= current_user.articles.count %> blog articles.
