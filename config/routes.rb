@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       # Charts
       namespace :charts do
         # Users
+        get 'month_of_year-admins'
         get 'month_of_year-users'
         get 'free_member-roles'
         # Articles

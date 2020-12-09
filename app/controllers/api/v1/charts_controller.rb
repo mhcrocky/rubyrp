@@ -2,6 +2,9 @@ class Api::V1::ChartsController < ApplicationController
   before_action :authenticate_user!
 
   ## Users
+  def month_of_year_admins
+    render json: User.with_role(:admin).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
   def month_of_year_users
     render json: User.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end

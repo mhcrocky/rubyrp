@@ -30,7 +30,7 @@
             <a class="nav-link dropdown-toggle" href="" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user burger-icon"></i> <span class="burger-text">Profile</span></a>
             <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownUser">
               <%= link_to(current_user, class: "dropdown-item") do %>
-                View Profile
+                <span class="text-info"><%= current_user.name %></span>
               <% end %>
               <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
                 Edit Profile

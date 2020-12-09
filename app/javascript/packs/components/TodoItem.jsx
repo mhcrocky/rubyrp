@@ -112,7 +112,7 @@ class TodoItem extends React.Component {
             >
             </label>
           </div>
-          <button onClick={this.handleDestroy} className="close"><i className="fas fa-trash"></i></button>
+          <button onClick={this.handleDestroy} className="close"><i className="fas fa-trash text-dark"></i></button>
         </td>
       </tr>
     )
