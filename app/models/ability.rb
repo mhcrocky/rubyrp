@@ -11,14 +11,14 @@ class Ability
 
     elsif user.has_role? :superadmin
       can :manage, Article
-      can :manage, TodoItem
+      can :manage, TodoItem, user_id: user.id
       can :manage, User
       cannot :manage, User, roles: { name: 'sysadmin' }
       cannot :manage, User, roles: { name: 'superadmin' }
 
     elsif user.has_role? :admin
       can :manage, Article
-      can :manage, TodoItem
+      can :manage, TodoItem, user_id: user.id
       can :read, User
 
     else # members .. or anyone else that signs up if no assign_default_role (rolify)
