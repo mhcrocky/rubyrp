@@ -10,7 +10,11 @@ class User < ApplicationRecord
   has_many :todo_items, dependent: :destroy
   has_many :articles, dependent: :destroy
 
-  after_create :first_items
+  after_create :assign_default_role, :first_items
+
+  def assign_default_role
+    self.add_role(:visitor)
+  end
 
   def first_items
     2.times do |i|

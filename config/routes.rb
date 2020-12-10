@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   root 'pages#welcome'
 
   resources :users, only: [:show, :destroy]
+  resources :superadmins, only: [:new, :create]
   resources :admins, only: [:new, :create]
+  resources :members, only: [:index]
+  resources :visitors, only: [:index]
 
   resources :articles
 
@@ -24,7 +27,10 @@ Rails.application.routes.draw do
       # Charts
       namespace :charts do
         # Users
+        get 'month_of_year-superadmins'
         get 'month_of_year-admins'
+        get 'month_of_year-members'
+        get 'month_of_year-visitors'
         get 'month_of_year-users'
         get 'free_member-roles'
         # Articles

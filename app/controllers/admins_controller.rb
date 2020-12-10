@@ -20,6 +20,7 @@ class AdminsController < ApplicationController
       respond_to do |format|
         if @admin.save
           @admin.add_role :admin
+          @admin.remove_role :visitor
           format.html { redirect_to @admin, notice: 'Administator was successfully created.' }
         else
           format.html { render action: 'new' }
