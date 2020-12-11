@@ -21,6 +21,10 @@ FactoryBot.define do
       end
     end
 
+    factory :visitor do
+      after(:create) {|user| user}
+    end
+
     factory :member do
       after(:create) {|user| user.add_role(:member)}
     end

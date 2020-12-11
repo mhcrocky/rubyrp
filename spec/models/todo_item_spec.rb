@@ -28,7 +28,7 @@ RSpec.describe TodoItem, type: :model do
     end
   end
 
-  ## Moved descending order to controller for chartkick 
+  ## Moved descending order to controller for chartkick
   # describe "order scope" do
   #   let!(:old_todo_item) { FactoryBot.create(:todo_item, created_at: Time.now - 1.day) }
   #   let!(:future_todo_item) { FactoryBot.create(:todo_item, created_at: Time.now + 1.day) }

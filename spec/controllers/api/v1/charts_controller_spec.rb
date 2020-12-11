@@ -10,6 +10,30 @@ describe Api::V1::ChartsController do
   end
 
   ## Users
+  describe "GET #month_of_year-superadmins" do
+    it "renders the json" do
+      get :month_of_year_superadmins
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #month_of_year-admins" do
+    it "renders the json" do
+      get :month_of_year_admins
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #month_of_year-members" do
+    it "renders the json" do
+      get :month_of_year_members
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #month_of_year-visitors" do
+    it "renders the json" do
+      get :month_of_year_visitors
+      expect(response.status).to eq(200)
+    end
+  end
   describe "GET #month_of_year-users" do
     it "renders the json" do
       get :month_of_year_users
@@ -24,6 +48,12 @@ describe Api::V1::ChartsController do
   end
 
   ## Articles
+  describe "GET #month_of_year_single-articles" do
+    it "renders the json" do
+      get :month_of_year_single_articles
+      expect(response.status).to eq(200)
+    end
+  end
   describe "GET #month_of_year-articles" do
     it "renders the json" do
       get :month_of_year_articles
@@ -38,9 +68,21 @@ describe Api::V1::ChartsController do
   end
 
   ## Todo Items
+  describe "GET #complete_incomplete_single-todos" do
+    it "renders the json" do
+      get :complete_incomplete_single_todos
+      expect(response.status).to eq(200)
+    end
+  end
   describe "GET #complete_incomplete-todos" do
     it "renders the json" do
       get :complete_incomplete_todos
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #month_of_year_single-todos" do
+    it "renders the json" do
+      get :month_of_year_single_todos
       expect(response.status).to eq(200)
     end
   end
