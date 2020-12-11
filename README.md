@@ -48,24 +48,16 @@ $ rails s
 ## Testing (rspec)
 
 ```
-$ bundle exec rspec
+$ rspec
 $ open coverage/index.html
-```
-
-
-## Services
-
-```
-None at this time.
 ```
 
 
 ## Itinerary
 
 ```
-1. Terms / privacy / sitemap
-2. Admins scaffold (sanitize in application controller)
-3. Users + Devise API
-4. Tests (Users API + Todo API)
-5. Heroku
+1. Stripe (members)
+2. Terms / privacy / sitemap(status)
+3. CSV Reports
+4. Heroku
 ```
