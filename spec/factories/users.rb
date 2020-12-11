@@ -38,7 +38,7 @@ FactoryBot.define do
     end
 
     factory :sysadmin do
-      after(:create) {|user| user.add_role(:sysadmin)}
+      after(:create) {|user| user.add_role(:superadmin)}
     end
 
   end
