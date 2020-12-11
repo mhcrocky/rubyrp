@@ -3,7 +3,7 @@
 Example application
 
 
-## System dependencies, Frameworks, Libraries, Packages and Gems
+## System Dependencies, Frameworks, Libraries, Packages and Gems
 
 * Ruby 2.7.2
 * Ruby on Rails 6.0.3.4
@@ -12,9 +12,9 @@ Example application
 * jQuery
 * Bootstrap
 * Font Awesome
-* chartkick (chart js) + groupdate
-* will_paginate
+* Chartkick (Chart JS) + Groupdate
 * Action Text (trix)
+* will_paginate
 ```
 $ ruby -v
 $ rails -v
