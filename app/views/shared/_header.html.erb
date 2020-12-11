@@ -26,8 +26,8 @@
               <%# end %>
             </div><!-- .dropdown-menu .shadow-lg -->
           </li><!-- .nav-item .dropdown -->
-          <% if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin) %>
-            <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item dropdown" title="Users">
+          <% if current_user.has_role?(:superadmin) %>
+            <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item dropdown" title="Users">
               <a class="nav-link dropdown-toggle" href="" id="dropdownRole" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users burger-icon"></i> <span class="burger-text">Users</span></a>
               <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownRole">
                 <%= link_to(visitors_path, class: "dropdown-item") do %>

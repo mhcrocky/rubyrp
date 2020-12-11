@@ -2,7 +2,7 @@ class VisitorsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin)
+    if current_user.has_role?(:superadmin)
       @users = User.with_role(:visitor).
                     order(:email).
                     search(filter).

@@ -25,6 +25,7 @@ end
 
 2.times do |i|
   sysadmin = User.create(email: "sysadmin_#{i+1}@example.com", password: 'm@keTh1ng$', password_confirmation: "m@keTh1ng$")
+  sysadmin.add_role 'superadmin'
   sysadmin.add_role 'sysadmin'
   sysadmin.remove_role 'visitor'
 end

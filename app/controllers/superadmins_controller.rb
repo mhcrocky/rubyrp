@@ -3,7 +3,7 @@ class SuperadminsController < ApplicationController
   load_and_authorize_resource :superadmin, class: 'User'
 
   def new
-    if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin)
+    if current_user.has_role?(:superadmin)
       @superadmin.add_role :superadmin
       @users = User.with_role(:superadmin).
                     order(:email).
@@ -15,7 +15,7 @@ class SuperadminsController < ApplicationController
   end
 
   def create
-    if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin)
+    if current_user.has_role?(:superadmin)
       @superadmin.id = nil
       respond_to do |format|
         if @superadmin.save

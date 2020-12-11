@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   # load_and_authorize_resource :member, class: 'User'
 
   def index
-    if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin)
+    if current_user.has_role?(:superadmin)
       @users = User.with_role(:member).
                     order(:email).
                     search(filter).
