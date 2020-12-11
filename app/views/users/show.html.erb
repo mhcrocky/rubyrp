@@ -7,7 +7,7 @@
 </section><!-- .jumbotron -->
 
 <section class="text-center mt-0">
-  <% if can? :manage, @user %>
+  <% if current_user.has_role?(:sysadmin) || current_user.has_role?(:superadmin) # if can? :manage, @user %>
     <div class="row">
       <div class="col-md-6 mt-3 mb-0">
         <%= area_chart @user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(61,12,2,0.5)"], title: "Items" %>
