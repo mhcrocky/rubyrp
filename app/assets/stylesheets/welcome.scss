@@ -30,3 +30,13 @@
     background-color: #6c757d;
   }
 }
+
+img.center-img {
+  width: 90%;
+  margin: 0 auto 90px;
+  transition: transform 0.75s;
+}
+img.center-img:hover {
+  cursor: zoom-in;
+  transform: scale(1.25);
+}
