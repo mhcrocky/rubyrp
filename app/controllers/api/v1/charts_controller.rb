@@ -23,13 +23,13 @@ class Api::V1::ChartsController < ApplicationController
 
   ## Articles
   def month_of_year_articles
-    render json: Article.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+    render json: Article.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
   def month_of_year_single_articles
     render json: current_user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
   def free_member_articles
-    render json: ({"By Admins" => Article.where(user_id: User.with_any_role(:sysadmin, :superadmin, :admin)).count, "By Members" => Article.where(user_id: User.with_role(:member)).count, "By Free Users" => Article.where(user_id: User.with_role(:visitor)).count})
+    render json: ({"By Admins" => Article.accessible_by(current_ability).where(user_id: User.with_any_role(:sysadmin, :superadmin, :admin)).count, "By Members" => Article.accessible_by(current_ability).where(user_id: User.with_role(:member)).count, "By Free Users" => Article.accessible_by(current_ability).where(user_id: User.with_role(:visitor)).count})
   end
 
   ## Todo Items
