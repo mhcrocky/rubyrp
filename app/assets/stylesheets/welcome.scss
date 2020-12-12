@@ -1,0 +1,32 @@
+/* What's in the App? section of welcome page
+----------------------------------------------------------------------------- */
+
+.in-app {
+  display: block;
+  svg {
+    width: 48px;
+    height: 36px;
+    padding: 6px;
+    font-size: 32px;
+    border: 2px solid #6c757d;
+    border-radius: 50%;
+    color: #6c757d;
+    background-color: #fff;
+  }
+}
+@media (max-width: 990px) {
+  .in-app {
+    display: none;
+  }
+}
+
+.left-1:hover,
+.left-2:hover,
+.right-1:hover,
+.right-2:hover {
+  cursor: pointer;
+  svg {
+    color: #fff;
+    background-color: #6c757d;
+  }
+}

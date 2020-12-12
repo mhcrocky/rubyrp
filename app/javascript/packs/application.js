@@ -18,7 +18,6 @@ require("channels")
 
 // Packs
 require("./components/TodoApp")
-require("./sandbox")
 
 // Bootstrap
 require('bootstrap')

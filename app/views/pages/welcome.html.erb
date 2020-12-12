@@ -38,8 +38,8 @@
   </div><!-- .card -->
 </div><!-- .card-deck -->
 
-<div class="my-3 p-4 card shadow-sm">
-  <h6 class="border-bottom border-gray pb-2 mb-0">What are we selling?</h6>
+<div class="mb-5 my-3 p-4 card shadow-sm">
+  <h5 class="border-bottom border-gray pb-2 mb-0">What are we selling?</h5>
   <div class="media text-muted pt-3">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block text-gray-dark">Absolutely nothing</strong>
@@ -68,12 +68,98 @@
   <small class="d-block text-right text-muted mt-2">
     <strong class="d-block text-gray-dark">Anthony Juan Maseda</strong>
   </small><!-- .d-block -->
-</div><!-- .my-3 p-3 card shadow-sm -->
+</div><!-- mb-5 .my-3 p-3 card shadow-sm -->
 
-<section class="jumbotron text-center mt-3">
-  <h4 class="jumbotron-heading mb-0 text-gray-dark">Explanation video</h4>
-  <h6 class="jumbotron-heading mt-1 mb-2 text-gray-dark text-muted text-capitalize">Embed Responsive</h6>
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/u75Zsl1ECPQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div><!-- .embed-responsive -->
-</section><!-- .jumbotron -->
+<section class="pt-5 mt-5 text-center in-app">
+  <h4 class="jumbotron-heading mb-0 pb-0">What's in the App?</h4>
+  <div class="row">
+    <div class="col-sm-3 text-muted">
+      <div class="left-1 mb-5 pt-5 pb-5">
+        <i class="fa fa-laptop-code"></i>
+        <h5>React JS</h5>
+    	  <p>Each user gets a personal todo list where we use React.</p>
+      </div><!-- .left-1 -->
+      <div class="left-2 mt-5 mb-5 pt-5 pb-5">
+        <i class='fa fa-chart-pie' aria-hidden='true'></i>
+        <h5>Chart JS</h5>
+    	  <p>We format dynamic data into json and create charts built with Chartkick and Groupdate.</p>
+      </div><!-- .left-2 -->
+    </div><!-- .col-sm-3 -->
+    <div class="col-sm-6 d-flex align-items-center">
+      <%= image_tag 'welcome/react.png', alt: 'Welcome', class: 'center-img mb-5 w-100 shadow-lg' %>
+    </div><!-- .col-sm-6 -->
+    <div class="col-sm-3 text-muted">
+      <div class="right-1 mb-5 pt-5 pb-5">
+        <i class='fa fa-lock-open' aria-hidden='true'></i>
+        <h5>Devise</h5>
+    	  <p>We use Devise, Rolify, and Cancan for authentication.</p>
+      </div><!-- .right-1 -->
+      <div class="right-2 mt-5 mb-5 pt-5 pb-5">
+        <i class='fa fa-language' aria-hidden='true'></i>
+        <h5>Regex</h5>
+    	  <p>Make any kind of youtube url into an embed, accompanying the rich text blog posts.</p>
+      </div><!-- .right-2 -->
+    </div><!-- .col-sm-3 .text-muted -->
+  </div><!-- .row -->
+</section><!-- .text-center .in-app -->
+
+<script>
+  $(function() {
+    $(".left-1 svg").css('background', '#6c757d');
+    $('.left-1 svg').css('color', '#fff');
+    $('.left-1').click(function(){
+      $('img.center-img').fadeOut(150,function(){
+        $('img.center-img').attr("src",'<%= asset_path("welcome/react.png")%>');
+        $('img.center-img').fadeIn(150);
+      });
+      $(".left-1 svg").css('background', '#6c757d');
+      $('.left-1 svg').css('color', '#fff');
+      $(".left-2 svg").removeAttr('style');
+      $(".right-1 svg").removeAttr('style');
+      $(".right-2 svg").removeAttr('style');
+      // console.log('react');
+      return false;
+    });
+    $('.left-2').click(function(){
+      $('img.center-img').fadeOut(150,function(){
+        $('img.center-img').attr("src",'<%= asset_path("welcome/chart.png")%>');
+        $('img.center-img').fadeIn(150);
+      });
+      $(".left-2 svg").css('background', '#6c757d');
+      $('.left-2 svg').css('color', '#fff');
+      $(".left-1 svg").removeAttr('style');
+      $(".right-1 svg").removeAttr('style');
+      $(".right-2 svg").removeAttr('style');
+      // console.log('chart');
+      return false;
+    });
+    $('.right-1').click(function(){
+      $('img.center-img').fadeOut(150,function(){
+        $('img.center-img').attr("src",'<%= asset_path("welcome/devise.png")%>');
+        $('img.center-img').fadeIn(150);
+      });
+      $(".right-1 svg").css('background', '#6c757d');
+      $('.right-1 svg').css('color', '#fff');
+      $(".right-2 svg").removeAttr('style');
+      $(".left-1 svg").removeAttr('style');
+      $(".left-2 svg").removeAttr('style');
+      // console.log('devise');
+      return false;
+    });
+    $('.right-2').click(function(){
+      $('img.center-img').fadeOut(150,function(){
+        $('img.center-img').attr("src",'<%= asset_path("welcome/regex.png")%>');
+        $('img.center-img').fadeIn(150);
+      });
+      $(".right-2 svg").css('background', '#6c757d');
+      $('.right-2 svg').css('color', '#fff');
+      $(".right-1 svg").removeAttr('style');
+      $(".left-1 svg").removeAttr('style');
+      $(".left-2 svg").removeAttr('style');
+      // console.log('regex');
+      return false;
+    });
+    // console.log("Welcome JS Firing");
+    // if(jQuery) console.log('jQuery is loaded');
+  });
+</script>
