@@ -12,7 +12,7 @@ RSpec.feature "HomepageFlows", type: :feature do
     end
 
     describe "log in page" do
-      let!(:user) { FactoryBot.create(:user) }
+      let!(:user) { FactoryBot.create(:superadmin) }
       it "logs the user in and redirects to their dashboard" do
         visit new_user_session_path
         fill_in "Email", with: user.email
