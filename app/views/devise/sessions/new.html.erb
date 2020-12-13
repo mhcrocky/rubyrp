@@ -6,7 +6,7 @@
     <% end %>
     <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
     <p>Use the credentials below to view the blog, edit that user's posts, &amp; see their todo list:</p>
-    <p><code><%= User.first.email %></code><br><code>m@keTh1ng$</code></p>
+    <p style="cursor:pointer;" class="text-info text-weight-bold" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i> Test Emails<br><span class="text-info text-weight-bold">m@keTh1ng$</span></p>
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-label-group">
@@ -34,3 +34,41 @@
   </p>
 
 <% end %>
+
+
+<div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">
+          Example Account Emails
+        </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fas fa-window-close"></i>
+        </button><!-- .close -->
+      </div><!-- .modal-header -->
+      <div class="modal-body">
+        <div class="my-3 p-3 shadow-lg">
+          <h5 class="border-bottom border-gray pb-1 mt-1">Free User</h5>
+          <div class="media text-muted pt-1">
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+              <%= User.with_role(:visitor).first.email %>
+            </p><!-- .media-body -->
+          </div><!-- .media -->
+          <h5 class="border-bottom border-gray pb-1 mt-4">Member</h5>
+          <div class="media text-muted pt-1">
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+              <%= User.with_role(:member).first.email %>
+            </p><!-- .media-body -->
+          </div><!-- .media -->
+          <h5 class="border-bottom border-gray pb-1 mt-4">Superadmin</h5>
+          <div class="media text-muted pt-1">
+            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+              <%= User.with_role(:superadmin).first.email %>
+            </p><!-- .media-body -->
+          </div><!-- .media -->
+        </div><!-- .my-3 .p-3 .shadow-lg -->
+      </div><!-- .modal-body -->
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
