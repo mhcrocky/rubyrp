@@ -123,14 +123,15 @@ img.header-logo {
   }
   .modal {
     color: #212529;
-    a {
+    a, span {
       margin-left: 12px;
       color: rgba(21,127,251,0.8);
       font-size: 18px;
     }
-    a:hover {
+    a:hover, span:hover {
       color: rgba(21,127,251,1);
       text-decoration: none;
+      cursor: pointer;
     }
     .modal-title img {
       width: 60px;

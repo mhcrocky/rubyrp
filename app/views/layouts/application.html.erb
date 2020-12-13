@@ -12,9 +12,69 @@
   <body>
     <%= render "shared/header" %>
     <%= render "shared/flash" %>
-    <div class="container overflow-hidden">
+    <div class="container theme overflow-hidden">
       <%= yield %>
     </div>
     <%= render "shared/footer" %>
+    <script>
+      // Sun Link
+      function sunFunction() {
+        // links
+        $('.page-theme-sun-link').addClass('text-muted');
+        $('.page-theme-moon-link').removeClass('text-muted');
+        // content
+        $("body").removeAttr('style');
+        $(".theme").removeAttr('style');
+        $(".modal").removeAttr('style');
+        $("iframe").removeAttr('style');
+        $("img.card-img-top").removeAttr('style');
+      }
+      // Moon Link
+      function moonFunction() {
+        // links
+        $('.page-theme-sun-link').removeClass('text-muted');
+        $('.page-theme-moon-link').addClass('text-muted');
+        // content
+        $("body").css("background", "#000");
+        $(".theme").css("filter", "invert(100%)");
+        $(".modal").css("filter", "invert(100%)");
+        $("iframe").css("filter", "invert(100%)");
+        $("img.card-img-top").css("filter", "invert(100%)");
+      }
+      // Set Theme Cookie
+      function setCookie(name,value,days) {
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime()+(days*24*60*60*1000));
+          var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+      }
+      function getCookie(key) {
+        var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+        return keyValue ? keyValue[2] : null;
+      }
+      // Update Cookie/Theme Without Reload
+      $('.page-theme-moon-link').on('click', function () {
+        setCookie('theme','1', '30');
+        // console.log('Dark Theme Cookie (Moon = 1): ' + getCookie('theme'));
+        moonFunction();
+      });
+      $('.page-theme-sun-link').on('click', function () {
+        setCookie('theme','2', '30');
+        // console.log('Light Theme Cookie (Sun = 2): ' + getCookie('theme'));
+        sunFunction();
+      });
+      // Persist Theme on New Page Load
+      if (getCookie('theme') == 1) {
+        // console.log('Theme Cookie (Moon: 1 , Sun: 2): ' + getCookie('theme'));
+        moonFunction();
+      }
+      if (getCookie('theme') == 2) {
+        // console.log('Theme Cookie (Moon: 1 , Sun: 2): ' + getCookie('theme'));
+        sunFunction();
+      }
+    </script>
   </body>
 </html>
