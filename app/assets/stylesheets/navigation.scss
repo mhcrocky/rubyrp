@@ -52,6 +52,7 @@ button.close:focus {
 img.header-logo {
   width: 60px;
   height: auto;
+  filter: invert(0%) !important;
 }
 
 

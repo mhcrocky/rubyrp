@@ -2,6 +2,7 @@
 //------------------------------------------------------------------------------
 // Sun Link
 function sunFunction() {
+  $('body').removeClass('dark');
   $(".theme").removeAttr('style');
   $(".btn-success").removeAttr('style');
   $(".btn-danger").removeAttr('style');
@@ -11,6 +12,7 @@ function sunFunction() {
 }
 // Moon Link
 function moonFunction() {
+  $('body').addClass('dark');
   $(".theme").css("filter", "invert(100%)");
   $(".btn-success").css("filter", "invert(100%)");
   $(".btn-danger").css("filter", "invert(100%)");
@@ -22,7 +24,7 @@ function moonFunction() {
 function setCookie(name,value,days) {
   if (days) {
     var date = new Date();
-    date.setTime(date.getTime()+(days*24*60*60*10000));
+    date.setTime(date.getTime()+(days*24*60*60*1461)); // 4 years
     var expires = "; expires="+date.toGMTString();
   }
   else var expires = "";

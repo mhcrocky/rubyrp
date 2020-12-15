@@ -6,10 +6,13 @@ function sunFunction() {
   $('.page-theme-sun-link').addClass('text-muted');
   $('.page-theme-moon-link').removeClass('text-muted');
   // content
+  $('body').removeClass('dark');
   $("body").removeAttr('style');
   $(".theme").removeAttr('style');
   $(".bg-shnozberry").removeAttr('style');
   $(".bg-tayberry").removeAttr('style');
+  $(".text-shnozberry").removeAttr('style');
+  $(".text-tayberry").removeAttr('style');
   $(".bg-success").removeAttr('style');
   $(".bg-danger").removeAttr('style');
   $(".btn-success").removeAttr('style');
@@ -17,9 +20,9 @@ function sunFunction() {
   $(".btn-danger").removeAttr('style');
   $(".btn-outline-danger").removeAttr('style');
   $(".text-danger").removeAttr('style');
-  $(".card img").removeAttr('style');
   $("code").removeAttr('style');
   $("iframe").removeAttr('style');
+  $("img").removeAttr('style');
 }
 // Moon Link
 function moonFunction() {
@@ -27,10 +30,13 @@ function moonFunction() {
   $('.page-theme-sun-link').removeClass('text-muted');
   $('.page-theme-moon-link').addClass('text-muted');
   // content
+  $('body').addClass('dark');
   $("body").css("background", "#000");
   $(".theme").css("filter", "invert(100%)");
   $(".bg-shnozberry").css("filter", "invert(100%)");
   $(".bg-tayberry").css("filter", "invert(100%)");
+  $(".text-shnozberry").css("filter", "invert(100%)");
+  $(".text-tayberry").css("filter", "invert(100%)");
   $(".bg-success").css("filter", "invert(100%)");
   $(".bg-danger").css("filter", "invert(100%)");
   $(".btn-success").css("filter", "invert(100%)");
@@ -38,15 +44,15 @@ function moonFunction() {
   $(".btn-danger").css("filter", "invert(100%)");
   $(".btn-outline-danger").css("filter", "invert(100%)");
   $(".text-danger").css("filter", "invert(100%)");
-  $(".card img").css("filter", "invert(100%)");
   $("code").css("filter", "invert(100%)");
   $("iframe").css("filter", "invert(100%)");
+  $("img").css("filter", "invert(100%)");
 }
 // Set Theme Cookie
 function setCookie(name,value,days) {
   if (days) {
     var date = new Date();
-    date.setTime(date.getTime()+(days*24*60*60*10000));
+    date.setTime(date.getTime()+(days*24*60*60*1461)); // 4 years
     var expires = "; expires="+date.toGMTString();
   }
   else var expires = "";

@@ -35,6 +35,7 @@ img.center-img {
   width: 90%;
   margin: 0 auto 105px;
   transition: transform 0.75s;
+  filter: invert(0%) !important;
 }
 img.center-img:hover {
   cursor: zoom-in;
