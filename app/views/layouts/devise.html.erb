@@ -5,11 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': true %>
+    <% if user_signed_in? && current_user.dark_theme %>
+      <style>
+        /* Dark Theme */
+        body {background: #fff;}
+        .theme, .bg-shnozberry, .text-shnozberry, .bg-tayberry, .text-tayberry,
+        .bg-success, .btn-success, .btn-outline-success,
+        .bg-danger, .btn-danger, .btn-outline-danger, .text-danger,
+        .text-info {filter: invert(100%);}
+      </style>
+    <% end %>
   </head>
   <body class="authorization theme">
     <%= yield %>
-    <%= javascript_pack_tag 'layouts/deviseTheme', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

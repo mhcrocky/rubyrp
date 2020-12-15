@@ -8,6 +8,14 @@
     <h1 class="h3 mb-3 font-weight-normal"><%= link_to current_user.name, current_user %> <%#= resource_name.to_s.humanize %></h1>
   </div><!-- .text-center .mb-4 -->
 
+  <div class="form-group">
+    <div class="col-sm-12 text-center">
+      <%= f.label :dark_theme, class: 'theme-check', title: 'Dark Theme' do %>
+        <%= f.check_box :dark_theme %> <span class='small text-muted'><i class="fas fa-moon"></i></span>
+      <% end %>
+    </div><!-- col-sm-12 -->
+  </div><!-- form-group -->
+
   <div class="form-label-group">
     <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
     <label for="inputEmail">Email address</label>
