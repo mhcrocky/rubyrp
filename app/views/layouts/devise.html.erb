@@ -10,11 +10,10 @@
     <% if user_signed_in? && current_user.dark_theme %>
       <style>
         /* Dark Theme */
-        body {background: #fff;}
         .theme, .bg-shnozberry, .text-shnozberry, .bg-tayberry, .text-tayberry,
-        .bg-success, .btn-success, .btn-outline-success,
+        .bg-success, .btn-success, .btn-outline-success, .text-info,
         .bg-danger, .btn-danger, .btn-outline-danger, .text-danger,
-        .text-info {filter: invert(100%);}
+        .dropdown-menu {filter: invert(100%);}
       </style>
     <% end %>
   </head>

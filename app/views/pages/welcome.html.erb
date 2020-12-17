@@ -103,64 +103,65 @@
   </div><!-- .row -->
 </section><!-- .text-center .in-app -->
 
-<!-- Example script in view (jQuery) -->
 <script>
-  $(function() {
+//  Transition Images - Example script in view (jQuery)
+//---------------------------------------------------------
+$(function() {
+  $(".left-1 svg").css('background', '#6c757d');
+  $('.left-1 svg').css('color', '#fff');
+  $('.left-1').click(function(){
+    $('img.center-img').fadeOut(150,function(){
+      $('img.center-img').attr("src",'<%= asset_path("welcome/react.png")%>');
+      $('img.center-img').fadeIn(150);
+    });
     $(".left-1 svg").css('background', '#6c757d');
     $('.left-1 svg').css('color', '#fff');
-    $('.left-1').click(function(){
-      $('img.center-img').fadeOut(150,function(){
-        $('img.center-img').attr("src",'<%= asset_path("welcome/react.png")%>');
-        $('img.center-img').fadeIn(150);
-      });
-      $(".left-1 svg").css('background', '#6c757d');
-      $('.left-1 svg').css('color', '#fff');
-      $(".left-2 svg").removeAttr('style');
-      $(".right-1 svg").removeAttr('style');
-      $(".right-2 svg").removeAttr('style');
-      // console.log('react');
-      return false;
-    });
-    $('.left-2').click(function(){
-      $('img.center-img').fadeOut(150,function(){
-        $('img.center-img').attr("src",'<%= asset_path("welcome/chart.png")%>');
-        $('img.center-img').fadeIn(150);
-      });
-      $(".left-2 svg").css('background', '#6c757d');
-      $('.left-2 svg').css('color', '#fff');
-      $(".left-1 svg").removeAttr('style');
-      $(".right-1 svg").removeAttr('style');
-      $(".right-2 svg").removeAttr('style');
-      // console.log('chart');
-      return false;
-    });
-    $('.right-1').click(function(){
-      $('img.center-img').fadeOut(150,function(){
-        $('img.center-img').attr("src",'<%= asset_path("welcome/devise.png")%>');
-        $('img.center-img').fadeIn(150);
-      });
-      $(".right-1 svg").css('background', '#6c757d');
-      $('.right-1 svg').css('color', '#fff');
-      $(".right-2 svg").removeAttr('style');
-      $(".left-1 svg").removeAttr('style');
-      $(".left-2 svg").removeAttr('style');
-      // console.log('devise');
-      return false;
-    });
-    $('.right-2').click(function(){
-      $('img.center-img').fadeOut(150,function(){
-        $('img.center-img').attr("src",'<%= asset_path("welcome/regex.png")%>');
-        $('img.center-img').fadeIn(150);
-      });
-      $(".right-2 svg").css('background', '#6c757d');
-      $('.right-2 svg').css('color', '#fff');
-      $(".right-1 svg").removeAttr('style');
-      $(".left-1 svg").removeAttr('style');
-      $(".left-2 svg").removeAttr('style');
-      // console.log('regex');
-      return false;
-    });
-    // console.log("Welcome JS Firing");
-    // if(jQuery) console.log('jQuery is loaded');
+    $(".left-2 svg").removeAttr('style');
+    $(".right-1 svg").removeAttr('style');
+    $(".right-2 svg").removeAttr('style');
+    // console.log('react');
+    return false;
   });
+  $('.left-2').click(function(){
+    $('img.center-img').fadeOut(150,function(){
+      $('img.center-img').attr("src",'<%= asset_path("welcome/chart.png")%>');
+      $('img.center-img').fadeIn(150);
+    });
+    $(".left-2 svg").css('background', '#6c757d');
+    $('.left-2 svg').css('color', '#fff');
+    $(".left-1 svg").removeAttr('style');
+    $(".right-1 svg").removeAttr('style');
+    $(".right-2 svg").removeAttr('style');
+    // console.log('chart');
+    return false;
+  });
+  $('.right-1').click(function(){
+    $('img.center-img').fadeOut(150,function(){
+      $('img.center-img').attr("src",'<%= asset_path("welcome/devise.png")%>');
+      $('img.center-img').fadeIn(150);
+    });
+    $(".right-1 svg").css('background', '#6c757d');
+    $('.right-1 svg').css('color', '#fff');
+    $(".right-2 svg").removeAttr('style');
+    $(".left-1 svg").removeAttr('style');
+    $(".left-2 svg").removeAttr('style');
+    // console.log('devise');
+    return false;
+  });
+  $('.right-2').click(function(){
+    $('img.center-img').fadeOut(150,function(){
+      $('img.center-img').attr("src",'<%= asset_path("welcome/regex.png")%>');
+      $('img.center-img').fadeIn(150);
+    });
+    $(".right-2 svg").css('background', '#6c757d');
+    $('.right-2 svg').css('color', '#fff');
+    $(".right-1 svg").removeAttr('style');
+    $(".left-1 svg").removeAttr('style');
+    $(".left-2 svg").removeAttr('style');
+    // console.log('regex');
+    return false;
+  });
+  // console.log("Welcome JS Firing");
+  // if(jQuery) console.log('jQuery is loaded');
+});
 </script>

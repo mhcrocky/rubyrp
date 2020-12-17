@@ -13,7 +13,7 @@
     <%= render partial: 'users/users' %>
   </div><!-- .col-lg-8 -->
   <div class="col-lg-4 mb-5">
-    <%= column_chart api_v1_charts_month_of_year_admins_path, refresh: 300, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.5)"], title: "Admins" %>
+    <%= render partial: 'admins/chart' %>
     <div class="card mt-5">
       <%= render partial: 'admins/form', locals: { action: admins_path } %>
     </div>

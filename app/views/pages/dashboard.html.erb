@@ -16,34 +16,12 @@
           <div class="col-12 mt-3 text-left">
             <%= render partial: 'users/users' %>
           </div><!-- .col-12 -->
-          <div class="col-md-4">
-            <div class="pt-0 mt-3 mb-5">
-              <%= pie_chart api_v1_charts_free_member_roles_path, refresh: 120, legend: false, download: {background: "#ffffff"}, colors: ["#17a2b8", "rgba(111,71,190,1)", "rgba(230,67,140,1)"], title: "Users" %>
-            </div><!-- .pt-0 mt-3 mb-5 -->
-          </div><!-- .col-md-4-->
-          <div class="col-md-4">
-            <div class="pt-0 mt-3 mb-5">
-              <%= pie_chart api_v1_charts_free_member_articles_path, refresh: 121, legend: false, download: {background: "#ffffff"}, colors: ["#17a2b8", "rgba(111,71,190,1)", "rgba(230,67,140,1)"], title: "Articles" %>
-            </div><!-- .pt-0 mt-3 mb-5 -->
-          </div><!-- .col-md-4 -->
-          <div class="col-md-4">
-            <div class="pt-0 mt-3 mb-5">
-              <%= pie_chart api_v1_charts_complete_incomplete_todos_path, refresh: 122, legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "List Status" %>
-            </div><!-- .pt-0 mt-3 mb-5 -->
-          </div><!-- .col-md-4 -->
+          <%= render partial: 'pages/pies' %>
         </div><!-- .row .mb-5 -->
       </div><!-- .col-lg-7 -->
       <div class="col-lg-1 pb-1"></div>
       <div class="col-lg-4">
-        <p class="mt-3">
-          <%= column_chart api_v1_charts_month_of_year_users_path, refresh: 123, download: {background: "#ffffff"}, colors: ["#17a2b8"], title: "Users" %>
-        </p><!-- .mt-3 -->
-        <p class="mt-3 mb-5">
-          <%= column_chart api_v1_charts_month_of_year_articles_path, refresh: 124, download: {background: "#ffffff"}, colors: ["rgba(251,79,20,0.5)"], title: "Articles" %>
-        </p><!-- .mt-3 mb-5 -->
-        <p class="mt-3 mb-5">
-          <%= column_chart api_v1_charts_month_of_year_todos_path, refresh: 125, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.5)"], title: "Todo Items" %>
-        </p><!-- .mt-3 mb-5 -->
+        <%= render partial: 'pages/columns' %>
       </div><!-- .col-lg-4 -->
     </div><!-- .row -->
   </section><!-- .mt-0 .text-center -->
@@ -58,34 +36,7 @@
   </section><!-- .jumbotron -->
   <section class="mt-0 text-center">
     <div class="row">
-      <div class="col-lg-7">
-        <div class="row mb-5">
-          <div class="col-12 mt-3 text-left">
-            <section class="text-center mt-0">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div><!-- .embed-responsive -->
-            </section><!-- .text-center mt-0 -->
-          </div><!-- .col-12 -->
-          <div class="col-12">
-            <div class="pt-5 mt-5 mb-5">
-              <%= area_chart api_v1_charts_month_of_year_single_articles_path, points: false, colors: ["rgba(251,79,20,0.5)"], title: "My Articles" %>
-            </div><!-- .pt-0 mt-3 mb-5 -->
-          </div><!-- .col-12 -->
-        </div><!-- .row .mb-5 -->
-      </div><!-- .col-lg-7 -->
-      <div class="col-lg-1 pb-1"></div>
-      <div class="col-lg-4">
-        <p class="mt-3">
-          <%= pie_chart api_v1_charts_complete_incomplete_single_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "My List Status" %>
-        </p><!-- .mt-3 -->
-        <p class="mt-3 mb-5">
-          <%= column_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.5)"], title: "My Todo Items" %>
-        </p><!-- .mt-3 mb-5 -->
-        <p class="mt-5 text-left text-muted">
-          <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>, you currently have <%= current_user.todo_items.count %> todo items &amp; <%= current_user.articles.count %> blog articles.
-        </p>
-      </div><!-- .col-lg-4 -->
+      <%= render partial: 'pages/charts' %>
     </div><!-- .row -->
   </section><!-- .mt-0 .text-center -->
 

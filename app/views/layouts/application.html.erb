@@ -14,7 +14,7 @@
         .theme, .bg-shnozberry, .text-shnozberry, .bg-tayberry, .text-tayberry,
         .bg-success, .btn-success, .btn-outline-success,
         .bg-danger, .btn-danger, .btn-outline-danger, .text-danger,
-        code, iframe, img {filter: invert(100%);}
+        .dropdown-menu, code, iframe, img {filter: invert(100%);}
       </style>
     <% end %>
   </head>
@@ -23,7 +23,7 @@
     <%= render "shared/flash" %>
     <div class="container theme overflow-hidden">
       <%= yield %>
-    </div>
+    </div><!-- .container .theme -->
     <%= render "shared/footer" %>
     <%= render 'articles/formats' if controller.class == ArticlesController %>
   </body>
