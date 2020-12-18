@@ -2,9 +2,9 @@ class Article < ApplicationRecord
 
   # default_scope { order(created_at: :desc) }
 
-  belongs_to :user
-
   has_rich_text :text
+
+  belongs_to :user
 
   validates_presence_of :user
 
