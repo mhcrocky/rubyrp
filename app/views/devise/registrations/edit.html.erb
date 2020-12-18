@@ -77,21 +77,5 @@
 
 <!-- Toggle Themes -->
 <script>
-$('input[type=checkbox]#inputTheme').each(function(index, element) {
-  return $(element).change(function(e) {
-    var user_id;
-    user_id = $(e.currentTarget).data('user-id');
-    return $.ajax({
-      url: '/users/' + user_id + '/toggle_theme',
-      type: 'PUT',
-      error: function(jqXHR, textStatus, errorThrown) {
-        return console.log('user ajax error: ' + textStatus);
-      },
-      success: function(data, textStatus, jqXHR) {
-        // show change + handle turbolinks
-        return location.reload();
-      }
-    });
-  });
-});
+$("input[type=checkbox]#inputTheme").each(function(f,c){return $(c).change(function(a){a=$(a.currentTarget).data("user-id");return $.ajax({url:"/users/"+a+"/toggle_theme",type:"PUT",error:function(d,b,e){return console.log("user ajax error: "+b)},success:function(d,b,e){return location.reload()}})})});
 </script>
