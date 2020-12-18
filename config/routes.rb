@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   root 'pages#welcome'
 
-  resources :users, only: [:show, :destroy]
+  resources :users, only: [:show, :destroy] do
+    put :toggle_theme, on: :member
+  end
+
   resources :superadmins, only: [:new, :create]
   resources :admins, only: [:new, :create]
   resources :members, only: [:index]

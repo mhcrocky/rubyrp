@@ -8,6 +8,12 @@ class UsersController < ApplicationController
                         paginate(page: params[:page], per_page: 12)
   end
 
+  def toggle_theme
+    @user = User.find(params[:id])
+    @user.toggle!(:dark_theme)
+    render json: { result: true }
+  end
+
   def destroy
     @user = User.find(params[:id])
     if can? :manage, @user

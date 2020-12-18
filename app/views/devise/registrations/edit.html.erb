@@ -11,7 +11,7 @@
   <div class="form-label-group">
     <div class="col-sm-12 text-center">
       <%= f.label :dark_theme, class: 'theme-check', title: 'Dark Theme' do %>
-        <%= f.check_box :dark_theme, id: 'inputTheme' %>
+        <%= f.check_box :dark_theme, id: 'inputTheme', data: {'user-id': current_user.id} %>
       <% end %>
       <label for="inputTheme" class='ml-2 text-muted'>Dark Theme</label>
     </div><!-- col-sm-12 -->
@@ -74,3 +74,24 @@
     </div><!-- .modal-content -->
   </div><!-- .modal-dialog -->
 </div><!-- .modal -->
+
+<!-- Toggle Themes -->
+<script>
+$('input[type=checkbox]#inputTheme').each(function(index, element) {
+  return $(element).change(function(e) {
+    var user_id;
+    user_id = $(e.currentTarget).data('user-id');
+    return $.ajax({
+      url: '/users/' + user_id + '/toggle_theme',
+      type: 'PUT',
+      error: function(jqXHR, textStatus, errorThrown) {
+        return console.log('user ajax error: ' + textStatus);
+      },
+      success: function(data, textStatus, jqXHR) {
+        // show change + handle turbolinks
+        return location.reload();
+      }
+    });
+  });
+});
+</script>
