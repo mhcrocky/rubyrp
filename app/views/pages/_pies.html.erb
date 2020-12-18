@@ -13,3 +13,5 @@
     <%= pie_chart api_v1_charts_complete_incomplete_todos_path, refresh: 3600, legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "List Status" %>
   </div><!-- .pt-0 mt-3 mb-5 -->
 </div><!-- .col-md-4 -->
+
+<%#= pie_chart ({"Dark Theme" => User.where(dark_theme: true).count, "Light Theme" => User.where(dark_theme: false).count}), refresh: 3600, legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.7)", "rgba(0,0,0,0.3)"], title: "Theme" %>

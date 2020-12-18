@@ -2,7 +2,7 @@
   <%= area_chart @user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(61,12,2,0.5)"], title: "Items" %>
 </div><!-- .col-md-7 -->
 <div class="col-md-6 mt-3 mb-5">
-  <%= pie_chart ({"Not Complete" => @user.todo_items.accessible_by(current_ability).where(complete: false).count, "Complete" => @user.todo_items.accessible_by(current_ability).where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "List Status" %>
+  <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count, "Complete" => @user.todo_items.where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "List Status" %>
 </div><!-- .col-md-4 -->
 <div class="col-12 mt-5">
   <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, download: {background: "#ffffff"}, colors: ["rgba(251,79,20,0.5)"], title: "Articles" %>
