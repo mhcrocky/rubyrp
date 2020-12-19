@@ -28,7 +28,7 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Rspec
 
 
-## Initialization
+## Initialization (Development)
 
 ```
 $ bundle install
@@ -39,19 +39,22 @@ $ rails s
 ```
 
 
+## Initialization (Heroku)
+
+* The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+* Add-ons: Rollbar | Papertrail | Heroku Postgres
+```
+$ heroku git:remote -a your_app_name
+$ git remote rename heroku production
+$ git push production master
+$ heroku run rake db:schema:load --app your_app_name
+$ heroku run rake db:seed --app your_app_name
+```
+
+
 ## Testing (rspec)
 
 ```
 $ rspec
 $ open coverage/index.html
-```
-
-
-## Itinerary
-
-```
-1. Stripe (members)
-2. Terms / privacy / sitemap(status)
-3. CSV Reports
-4. Heroku
 ```
