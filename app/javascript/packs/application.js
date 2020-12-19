@@ -30,9 +30,8 @@ global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
 // Font Awesome
-// import "@fortawesome/fontawesome-free/js/all"
-import "@fortawesome/fontawesome-free/js/all";
-import "@fortawesome/fontawesome-free/css/all";
+import '@fortawesome/fontawesome-free/js/all'
+import '@fortawesome/fontawesome-free/css/all'
 
 // Charts
 require("chartkick")
