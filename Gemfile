@@ -33,6 +33,9 @@ gem 'devise'
 gem 'rolify'
 gem 'cancancan'
 
+# For Mailer
+gem 'dotenv-rails'
+
 # Pagination
 gem 'will_paginate'
 

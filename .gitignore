@@ -44,4 +44,6 @@ latest.dump
 
 coverage
 
+.env
+
 /public/uploads/*
