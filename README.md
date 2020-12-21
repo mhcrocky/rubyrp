@@ -16,6 +16,7 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 
 
 ## Libraries, Packages and Gems
+
 * Font Awesome
 * Bootstrap
 * jQuery
@@ -25,7 +26,18 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Action Text (trix)
 * will_paginate
 * Devise + Rolify + Cancan
+* Simplecov
 * Rspec
+* PGHero
+
+
+## Monitoring, Testing and Coverage
+
+* PGHero: root/pghero (sysadmin)
+```
+$ rspec
+$ open coverage/index.html
+```
 
 
 ## Initialization (Development)
@@ -50,12 +62,4 @@ $ git remote rename heroku production
 $ git push production master
 $ heroku run rake db:schema:load --app your_app_name
 $ heroku run rake db:seed --app your_app_name
-```
-
-
-## Testing (rspec)
-
-```
-$ rspec
-$ open coverage/index.html
 ```
