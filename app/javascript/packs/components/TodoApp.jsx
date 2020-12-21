@@ -48,6 +48,12 @@ class TodoApp extends React.Component {
   createTodoItem(todoItem) {
     const todoItems = [todoItem, ...this.state.todoItems];
     this.setState({ todoItems });
+    setTimeout(() => {
+      Chartkick.eachChart( function(chart) {
+        chart.updateData(chart.getDataSource());
+        // console.log('Chart Updated');
+      })
+    }, 250);
   }
   toggleCompletedTodoItems() {
     this.setState({

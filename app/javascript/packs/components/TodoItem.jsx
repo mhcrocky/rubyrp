@@ -40,6 +40,12 @@ class TodoItem extends React.Component {
         this.props.handleErrors(error);
         console.log(error);
       });
+      setTimeout(() => {
+        Chartkick.eachChart( function(chart) {
+          chart.updateData(chart.getDataSource());
+          // console.log('Chart Updated');
+        })
+      }, 250);
   }, 1000);
 
   handleDestroy() {
@@ -55,6 +61,12 @@ class TodoItem extends React.Component {
           console.log(error);
         });
     }
+    setTimeout(() => {
+      Chartkick.eachChart( function(chart) {
+        chart.updateData(chart.getDataSource());
+        // console.log('Chart Updated');
+      })
+    }, 250);
   }
 
   render() {
