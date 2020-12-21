@@ -36,12 +36,16 @@ gem 'cancancan'
 # For Mailer
 gem 'dotenv-rails'
 
-# Pagination
-gem 'will_paginate'
+# Monitor PostgreSQL
+gem 'pghero'
+gem 'pg_query', '>= 0.9.0'
 
 # Charts
 gem 'chartkick'
 gem 'groupdate'
+
+# Pagination
+gem 'will_paginate'
 
 
 group :development, :test do

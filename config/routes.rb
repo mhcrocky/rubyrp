@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  authenticate :user, -> (user) { user.has_role?(:sysadmin) } do
+    mount PgHero::Engine, at: "pghero"
+  end
+
   authenticated :user do
     root 'pages#dashboard', as: :authenticated_root
   end
