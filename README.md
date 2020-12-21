@@ -55,7 +55,7 @@ $ rails s
 
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Add-ons: Rollbar | Papertrail | Heroku Postgres
-* Buildpacks: heroku/nodejs | heroku/ruby
+* Buildpacks: heroku/nodejs (8.16.0) | heroku/ruby
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
