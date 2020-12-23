@@ -34,9 +34,9 @@ class Article < ApplicationRecord
       ### YouTube
       ## Each YouTube video has 4 generated images [ /0 .. /3 ]
       if self.embed =~ /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=/
-        "<img alt='Media' class='card-img-top' src='http://img.youtube.com/vi/#{self.embed[32..42]}/0.jpg' />"
+        "<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/#{self.embed[32..42]}/0.jpg' />"
       elsif self.embed =~ /^(https?:\/\/)?(www\.)?youtu.be\//
-        "<img alt='Media' class='card-img-top' src='http://img.youtube.com/vi/#{self.embed[17..27]}/0.jpg' />"
+        "<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/#{self.embed[17..27]}/0.jpg' />"
       else
         self.embed = nil
       end
