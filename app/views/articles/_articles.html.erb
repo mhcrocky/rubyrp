@@ -4,12 +4,12 @@
     <div class="col-lg-4">
       <div class="card mb-4 box-shadow">
         <% if article.embed.present? %>
-          <%= article.iframe.html_safe %>
+          <%= link_to article.thumb.html_safe, article_path(article) %>
         <% else %>
-          <%= image_tag 'missing.svg', alt: 'Media', class: 'card-img-top' %>
+          <%= link_to image_tag("missing.svg", alt: 'Media', class: 'card-img-top'), article_path(article) %>
         <% end %>
         <div class="card-body">
-          <p class="card-text font-weight-bold"><%= truncate(article.title.titlecase) %></p>
+          <p class="card-text font-weight-bold"><%= link_to truncate(article.title.titlecase), article_path(article), class: 'text-dark' %></p>
           <p class="card-text"><i class="fas fa-user text-muted"></i> <%= link_to truncate(article.user.name), article.user, class: 'text-info font-weight-bold' %></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
