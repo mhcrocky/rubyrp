@@ -14,6 +14,7 @@ class TodoItem extends React.Component {
     this.updateTodoItem = this.updateTodoItem.bind(this);
     this.inputRef = React.createRef();
     this.completedRef = React.createRef();
+    this.finishedRef = React.createRef();
     this.handleDestroy = this.handleDestroy.bind(this);
     this.path = `/api/v1/todo_items/${this.props.todoItem.id}`;
   }
@@ -22,6 +23,13 @@ class TodoItem extends React.Component {
     this.setState({
       complete: this.completedRef.current.checked
     });
+    // console.log(this.finishedRef.current);
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '.' + dd + '.' + yyyy;
+    this.finishedRef.current.innerHTML = today;
     this.updateTodoItem();
   }
   updateTodoItem = _.debounce(() => {
@@ -74,27 +82,17 @@ class TodoItem extends React.Component {
     return (
       <tr className={`${ this.state.complete && this.props.hideCompletedTodoItems ? `d-none` : "" } ${this.state.complete ? "table-light" : ""}`} >
         <td>
-          <svg
-            className={`bi bi-check-circle ${
-              this.state.complete ? `text-shnozberry` : `text-white`
+          {todoItem.created}
+        </td>
+        <td>
+          <span
+            ref={this.finishedRef}
+            className={`finish-date ${
+              this.state.complete ? `text-dark` : `text-white`
             }`}
-            width="2em"
-            height="2em"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              fillRule="evenodd"
-              d="M17.354 4.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3-3a.5.5 0 11.708-.708L10 11.293l6.646-6.647a.5.5 0 01.708 0z"
-              clipRule="evenodd"
-            />
-            <path
-              fillRule="evenodd"
-              d="M10 4.5a5.5 5.5 0 105.5 5.5.5.5 0 011 0 6.5 6.5 0 11-3.25-5.63.5.5 0 11-.5.865A5.472 5.472 0 0010 4.5z"
-              clipRule="evenodd"
-            />
-          </svg>
+            {todoItem.finished}
+          </span>
         </td>
         <td>
           <input
