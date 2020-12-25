@@ -11,6 +11,15 @@ class PagesController < ApplicationController
                   paginate(page: params[:page], per_page: 12)
   end
 
+  def terms_and_conditions
+  end
+
+  def privacy_policy
+  end
+
+  def sitemap
+  end
+
   private
 
   def filter

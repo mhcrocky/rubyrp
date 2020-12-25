@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   root 'pages#welcome'
 
+  get 'pages/terms_and_conditions'
+  get 'pages/privacy_policy'
+  get 'pages/sitemap'
+
   resources :users, only: [:show, :destroy] do
     put :toggle_theme, on: :member
   end

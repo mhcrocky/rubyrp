@@ -1,0 +1,151 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Sitemap</h1>
+    <p class="lead text-left text-muted">Your privacy is very important to us. The content below will help you to understand how we collect and make use of personal information.</p>
+    <p class="lead text-left text-muted"></p>
+  </div><!-- .container -->
+</section><!-- .jumbotron -->
+
+<h5 class="border-bottom border-gray pb-1 mb-0">Legal</h5>
+<div class="media text-muted pt-3">
+  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <strong class="d-block">
+      <%= link_to pages_terms_and_conditions_path do %>
+        Terms and Conditions
+      <% end %>
+    </strong>
+  </p><!-- .media-body -->
+</div><!-- .media -->
+<div class="media text-muted pt-3">
+  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <strong class="d-block">
+      <%= link_to pages_privacy_policy_path do %>
+        Privacy Policy
+      <% end %>
+    </strong>
+  </p><!-- .media-body -->
+</div><!-- .media -->
+<div class="media text-muted pt-3">
+  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <strong class="d-block">
+      Sitemap
+    </strong>
+  </p><!-- .media-body -->
+</div><!-- .media -->
+
+<% if user_signed_in? %>
+  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Todo List</h5>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to todo_items_path do %>
+          Single Page Application
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Blog</h5>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to articles_path do %>
+          Blog
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to new_article_path do %>
+          New Article
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <% if current_user.has_role?(:superadmin) %>
+    <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Users</h5>
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to visitors_path do %>
+            Free Users
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to members_path do %>
+            Members
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to new_admin_path do %>
+            Admins
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to new_superadmin_path do %>
+            Super Admins
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+  <% end # if current_user.has_role?(:superadmin) %>
+  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Profile</h5>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to current_user do %>
+          View Profile
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to edit_user_registration_path do %>
+          Edit Profile
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <div class="media text-muted pt-3 pb-5 mb-5">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to destroy_user_session_path do %>
+          Sign out
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <% if current_user.has_role?(:sysadmin) %>
+    <h5 class="border-bottom border-gray pt-5 mb-0">PGHero</h5>
+    <div class="media text-muted pt-3 pb-5 mb-5">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to pg_hero_path, target: :blank do %>
+            Database Analysis
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+  <% end # if current_user.has_role?(:superadmin) %>
+<% else %>
+  <section class="jumbotron text-center mb-5 pb-5">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div><!-- .embed-responsive -->
+  </section><!-- .jumbotron t .text-center mt-5 mb-5 pb-5 -->
+<% end # user_signed_in? %>
