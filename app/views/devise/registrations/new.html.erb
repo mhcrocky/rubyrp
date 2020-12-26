@@ -9,14 +9,10 @@
     <p>Make your own todo list &plus; be a part of the blog.</p>
   </div><!-- .text-center .mb-4 -->
 
-  <div class="form-label-group">
-    <div class="col-sm-12 text-center">
-      <%= f.label :dark_theme, class: 'theme-check', title: 'Dark Theme' do %>
-        <%= f.check_box :dark_theme, id: 'inputTheme' %>
-      <% end %>
-      <label for="inputTheme" class='ml-2 text-muted'>Dark Theme</label>
-    </div><!-- col-sm-12 -->
-  </div><!-- form-group -->
+  <div class="custom-control custom-switch text-center mb-5">
+    <%= f.check_box :dark_theme, class: "custom-control-input", id: "inputTheme" %>
+    <label class="custom-control-label" for="inputTheme">Dark Theme</label>
+  </div><!-- .custom-control .custom-switch -->
 
   <div class="form-label-group">
     <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
