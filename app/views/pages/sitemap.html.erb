@@ -141,11 +141,5 @@
         </strong>
       </p><!-- .media-body -->
     </div><!-- .media -->
-  <% end # if current_user.has_role?(:superadmin) %>
-<% else %>
-  <section class="jumbotron text-center mb-5 pb-5">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div><!-- .embed-responsive -->
-  </section><!-- .jumbotron t .text-center mt-5 mb-5 pb-5 -->
+  <% end # if current_user.has_role?(:sysadmin) %>
 <% end # user_signed_in? %>
