@@ -124,7 +124,7 @@
   <div class="media text-muted pt-3 pb-5 mb-5">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
-        <%= link_to destroy_user_session_path do %>
+        <%= link_to(destroy_user_session_path, method: :delete) do %>
           Sign out
         <% end %>
       </strong>

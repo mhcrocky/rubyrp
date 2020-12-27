@@ -6,7 +6,7 @@
     <% end %>
     <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
     <p>Use the credentials below to view the blog, edit that user's posts, &amp; see their todo list:</p>
-    <p><span style="cursor:pointer;" class="text-info text-weight-bold" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i> Test Emails</span><br><span class="text-info text-weight-bold">m@keTh1ng$</span></p>
+    <p><span style="cursor:pointer;" class="text-info text-weight-bold" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i> Example Accounts</span></p>
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-label-group">
@@ -44,7 +44,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">
-          Example Account Emails
+          Example Accounts
         </h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <i class="fas fa-window-close"></i>
@@ -54,14 +54,14 @@
         <div class="my-3 p-3 shadow-lg">
           <h5 class="border-bottom border-gray pb-1 mt-1">Free User</h5>
           <div class="media text-muted pt-1">
-            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              <%= User.with_role(:visitor).first.email %>
+            <p class="visitor media-body pb-3 mb-0 small border-bottom border-gray">
+              Click here to use credentials
             </p><!-- .media-body -->
           </div><!-- .media -->
           <h5 class="border-bottom border-gray pb-1 mt-4">Superadmin</h5>
           <div class="media text-muted pt-1">
-            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-              <%= User.with_role(:superadmin).first.email %>
+            <p class="superadmin media-body pb-3 mb-0 small border-bottom border-gray">
+              Click here to use credentials
             </p><!-- .media-body -->
           </div><!-- .media -->
         </div><!-- .my-3 .p-3 .shadow-lg -->
@@ -69,3 +69,7 @@
     </div><!-- .modal-content -->
   </div><!-- .modal-dialog -->
 </div><!-- .modal -->
+
+<script>
+$(function(){$('p.visitor').click(function(){email="<%= User.with_role(:visitor).first.email %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1});$('p.superadmin').click(function(){email="<%= User.with_role(:superadmin).first.email %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1})})
+</script>
