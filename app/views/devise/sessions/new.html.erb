@@ -54,13 +54,13 @@
         <div class="my-3 p-3 shadow-lg">
           <h5 class="border-bottom border-gray pb-1 mt-1">Free User</h5>
           <div class="media text-muted pt-1">
-            <p class="visitor media-body pb-3 mb-0 small text-shnozberry border-bottom border-gray">
+            <p title="Click here to use credentials" class="visitor media-body small text-primary border-bottom border-gray pb-3 mb-0">
               Click here to use credentials
             </p><!-- .media-body -->
           </div><!-- .media -->
           <h5 class="border-bottom border-gray pb-1 mt-4">Superadmin</h5>
           <div class="media text-muted pt-1">
-            <p class="superadmin media-body pb-3 mb-0 small text-shnozberry  border-bottom border-gray">
+            <p title="Click here to use credentials" class="superadmin media-body small text-primary border-bottom border-gray pb-3 mb-0">
               Click here to use credentials
             </p><!-- .media-body -->
           </div><!-- .media -->
@@ -71,5 +71,5 @@
 </div><!-- .modal -->
 
 <script>
-$(function(){$('p.visitor').click(function(){email="<%= User.with_role(:visitor).first.email %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1});$('p.superadmin').click(function(){email="<%= User.with_role(:superadmin).first.email %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1})})
+$(function(){$('p.visitor').click(function(){email="<%= User.with_role(:visitor).first.email if User.with_role(:visitor).present? %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1});$('p.superadmin').click(function(){email="<%= User.with_role(:superadmin).first.email if User.with_role(:superadmin).present? %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1})})
 </script>
