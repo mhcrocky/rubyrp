@@ -19,13 +19,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit(:email, :password, :password_confirmation, :dark_theme)
+      user_params.permit(:email, :password, :password_confirmation, :timezone, :dark_theme)
     end
     devise_parameter_sanitizer.permit(:sign_in) do |user_params|
       user_params.permit(:email, :password, :remember_me)
     end
     devise_parameter_sanitizer.permit(:account_update) do |user_params|
-      user_params.permit(:email, :password, :password_confirmation, :current_password, :dark_theme)
+      user_params.permit(:email, :password, :password_confirmation, :current_password, :timezone, :dark_theme)
     end
   end
 

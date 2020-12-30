@@ -14,7 +14,7 @@ class TodoItem extends React.Component {
     this.updateTodoItem = this.updateTodoItem.bind(this);
     this.inputRef = React.createRef();
     this.completedRef = React.createRef();
-    this.finishedRef = React.createRef();
+    this.updatedRef = React.createRef();
     this.handleDestroy = this.handleDestroy.bind(this);
     this.path = `/api/v1/todo_items/${this.props.todoItem.id}`;
   }
@@ -23,13 +23,8 @@ class TodoItem extends React.Component {
     this.setState({
       complete: this.completedRef.current.checked
     });
-    // console.log(this.finishedRef.current);
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
-    var yyyy = today.getFullYear();
-    today = mm + '.' + dd + '.' + yyyy;
-    this.finishedRef.current.innerHTML = today;
+    // console.log(this.updatedRef.current)
+    this.updatedRef.current.innerHTML = new Date().toLocaleDateString(); //new Date().toLocaleString();
     this.updateTodoItem();
   }
   updateTodoItem = _.debounce(() => {
@@ -86,12 +81,12 @@ class TodoItem extends React.Component {
         </td>
         <td>
           <span
-            ref={this.finishedRef}
-            className={`finish-date ${
+            ref={this.updatedRef}
+            className={`updated-date ${
               this.state.complete ? `text-dark` : `text-white`
             }`}
           >
-            {todoItem.finished}
+            {todoItem.updated}
           </span>
         </td>
         <td>

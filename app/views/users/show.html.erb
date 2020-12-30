@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="jumbotron-heading"><%= @user.name %></h1>
     <p class="lead"><%= mail_to @user.email, @user.email, class: 'text-info font-weight-bold' %></p>
-    <p class="text-muted">Joined <%= @user.created_at.strftime('%b %-d, %Y') %></p>
+    <p class="text-muted">Joined <%= @user.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></p>
   </div><!-- .container -->
 </section><!-- .jumbotron .text-center -->
 

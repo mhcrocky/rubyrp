@@ -8,10 +8,14 @@
     <h1 class="h3 mb-3 font-weight-normal"><%= link_to current_user.name, current_user %> <%#= resource_name.to_s.humanize %></h1>
   </div><!-- .text-center .mb-4 -->
 
-  <div class="custom-control custom-switch text-center mb-5">
+  <div class="custom-control custom-switch text-center mt-3 mb-3">
     <%= f.check_box :dark_theme, class: "custom-control-input", id: "inputTheme", data: {'user-id': current_user.id} %>
     <label class="custom-control-label" for="inputTheme">Dark Theme</label>
   </div><!-- .custom-control .custom-switch -->
+
+  <div class="form-label-group mb-5">
+    <%= f.select :timezone, timezone_options, { include_blank: false }, { class: 'form-control' } %>
+  </div><!-- .form-label-group -->
 
   <div class="form-label-group">
     <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>

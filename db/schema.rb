@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_202119) do
+ActiveRecord::Schema.define(version: 2020_12_30_061941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_202119) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "dark_theme", default: false, null: false
+    t.string "timezone", default: "Eastern Time (US & Canada)"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

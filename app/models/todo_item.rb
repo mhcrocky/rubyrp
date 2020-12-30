@@ -5,10 +5,11 @@ class TodoItem < ApplicationRecord
   validates :title, presence: true
 
   def created
-    "#{self.created_at.strftime('%m.%d.%Y')}"
+    "#{self.created_at.in_time_zone("#{self.user.timezone}").strftime('%m/%d/%Y')}"
   end
-  def finished
-    "#{self.updated_at.strftime('%m.%d.%Y')}"
+
+  def updated
+    "#{self.updated_at.in_time_zone("#{self.user.timezone}").strftime('%m/%d/%Y')}" # .. %H, %M, %S
   end
 
 end

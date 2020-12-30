@@ -18,7 +18,7 @@
                 <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-sm btn-outline-secondary' %>
               <% end %>
             </div><!-- .btn-group -->
-            <small class="text-muted"><%= article.updated_at.strftime('%b %-d, %Y') %></small>
+            <small class="text-muted"><%= article.updated_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></small>
           </div><!-- .d-flex -->
         </div><!-- .card-body -->
       </div><!-- .card -->
