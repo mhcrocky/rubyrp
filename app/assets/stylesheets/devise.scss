@@ -5,7 +5,7 @@ body.authorization {
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  min-height: 800px;
+  min-height: 860px;
   -ms-flex-align: center;
   align-items: center;
   padding-top: 0px;
@@ -60,7 +60,7 @@ p.visitor, p.superadmin {cursor:grab;}
 .form-label-group > input,
 .form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
-  padding-left: 12px;
+  padding-left: 15px;
 }
 
 .form-label-group > label {

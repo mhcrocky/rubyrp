@@ -10,10 +10,11 @@
 
   <div class="custom-control custom-switch text-center mt-3 mb-3">
     <%= f.check_box :dark_theme, class: "custom-control-input", id: "inputTheme", data: {'user-id': current_user.id} %>
-    <label class="custom-control-label" for="inputTheme">Dark Theme</label>
+    <label class="custom-control-label text-secondary" for="inputTheme">Dark Theme</label>
   </div><!-- .custom-control .custom-switch -->
 
   <div class="form-label-group mb-5">
+    <p class="mb-0 ml-3 small text-secondary">Timezone</p>
     <%= f.select :timezone, timezone_options, { include_blank: false }, { class: 'form-control' } %>
   </div><!-- .form-label-group -->
 
