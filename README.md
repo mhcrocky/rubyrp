@@ -26,6 +26,7 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Action Text (trix)
 * will_paginate
 * Devise + Rolify + Cancan
+* Figaro
 * Simplecov
 * Rspec
 * PGHero

@@ -33,10 +33,10 @@ gem 'devise'
 gem 'rolify'
 gem 'cancancan'
 
-# For Mailer
-gem 'dotenv-rails'
+# Secrets (application.yml)
+gem 'figaro'
 
-# Monitor PostgreSQL
+# Analyze PostgreSQL
 gem 'pghero'
 gem 'pg_query', '>= 0.9.0'
 
