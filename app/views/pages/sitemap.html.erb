@@ -63,6 +63,27 @@
       </strong>
     </p><!-- .media-body -->
   </div><!-- .media -->
+  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Video Chats</h5>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block">
+        <%= link_to rooms_path do %>
+          Chat Rooms
+        <% end %>
+      </strong>
+    </p><!-- .media-body -->
+  </div><!-- .media -->
+  <% if can? :manage, Room %>
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to new_room_path do %>
+            New Room
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+  <% end %>
   <% if current_user.has_role?(:superadmin) %>
     <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Users</h5>
     <div class="media text-muted pt-3">
