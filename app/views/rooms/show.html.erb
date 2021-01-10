@@ -1,0 +1,22 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading"><%= @room.name %></h1>
+    <p class="lead text-muted"><%= @room.updated_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %><strong class="d-block"><i class="fas fa-user"></i> <%= link_to truncate(@room.user.name), @room.user, class: "text-info" %></strong></p>
+    <% if can? :manage, @room %>
+      <p class="mt-0 mb-0">
+        <%= link_to 'Edit Room', edit_room_path(@room), title: 'Edit Room', class: 'btn btn-outline-dark' %>
+      </p>
+    <% end %>
+  </div><!-- .container -->
+</section><!-- .jumbotron -->
+
+<div class='row'>
+  <div class='col-12'>
+    <div data-controller='video-chat'
+         data-video-chat-session="<%= session.id %>"
+         data-video-chat-id="<%= @room.id %>">
+      <div data-video-chat-target="remote_videos"><!-- data-target='video-chat.remote_videos' --></div>
+      <video data-video-chat-target="local_video" autoplay><!-- data-target='video-chat.local_video'--></video>
+    </div><!-- video-chat -->
+  </div><!-- .col-12 -->
+</div><!-- .row -->

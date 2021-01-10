@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   resources :members, only: [:index]
   resources :visitors, only: [:index]
 
+  resources :rooms
+
   resources :articles
 
   resources :todo_items, only: [:index]
@@ -35,6 +37,8 @@ Rails.application.routes.draw do
       resources :todo_items, only: [:index, :show, :create, :update, :destroy]
       # Articles
       resources :articles, only: [:index, :show, :create, :update, :destroy]
+      # Rooms
+      resources :rooms, only: [:index, :show, :create, :update, :destroy]
       # Charts
       namespace :charts do
         # Users

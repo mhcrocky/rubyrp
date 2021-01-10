@@ -26,6 +26,17 @@
               <%# end %>
             </div><!-- .dropdown-menu .shadow-lg -->
           </li><!-- .nav-item .dropdown -->
+          <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item dropdown" title="Video Chat">
+            <a class="nav-link dropdown-toggle" href="" id="dropdownRoom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-comments burger-icon"></i> <span class="burger-text">Video Chat</span></a>
+            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownRoom">
+              <%= link_to(rooms_path, class: "dropdown-item") do %>
+                View Rooms
+              <% end %>
+              <% if can? :manage, Room %>
+                <%= link_to 'New Room', new_room_path, class: 'dropdown-item' %>
+              <% end %>
+            </div><!-- .dropdown-menu .shadow-lg -->
+          </li><!-- .nav-item .dropdown -->
           <% if current_user.has_role?(:superadmin) %>
             <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item dropdown" title="Users">
               <a class="nav-link dropdown-toggle" href="" id="dropdownRole" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users burger-icon"></i> <span class="burger-text">Users</span></a>

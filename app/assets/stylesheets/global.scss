@@ -142,3 +142,12 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 .table th, .table td {
   padding: 9px 12px !important;
 }
+
+
+/* Chat Room styles
+----------------------------------------------------------------------------- */
+
+.col-12 video {
+  width: calc(50% - 6px);
+  height: auto;
+}

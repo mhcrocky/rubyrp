@@ -37,6 +37,9 @@ import '@fortawesome/fontawesome-free/css/all'
 require("chartkick")
 require("chart.js")
 
+// Stimulus
+import "controllers"
+
 // Action View
 require("trix")
 require("@rails/actiontext")

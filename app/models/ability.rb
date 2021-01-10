@@ -10,6 +10,7 @@ class Ability
       can :manage, :all
 
     elsif user.has_role? :superadmin
+      can :manage, Room
       can :manage, Article
       can :manage, TodoItem
       can :manage, User
@@ -17,11 +18,13 @@ class Ability
       cannot :manage, User, roles: { name: 'superadmin' }
 
     elsif user.has_role? :admin
+      can :manage, Room
       can :manage, Article
       can :manage, TodoItem, user_id: user.id
       can :read, User
 
-    else # members + visitors..(default sign_up role)
+    else # members + visitors(default sign_up role)
+      can :read, Room
       can :read, Article
       can :manage, Article, user_id: user.id
       can :manage, TodoItem, user_id: user.id

@@ -1,0 +1,13 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Video Chat</h1>
+    <p class="lead text-left text-muted">Create, read, update, &amp; destroy your rooms. Join rooms and speak to other users.</p>
+    <div class="filter">
+      <%= render partial: 'rooms/search', locals: { action: rooms_path, q: '' } %>
+    </div><!-- .filter -->
+  </div><!-- .container -->
+</section><!-- .jumbotron -->
+
+<%= render partial: 'rooms/rooms' %>
+
+<section class="jumbotron text-center my-5"></section>

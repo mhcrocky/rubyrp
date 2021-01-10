@@ -68,10 +68,11 @@ ActiveRecord::Schema.define(version: 2021_01_03_061236) do
   end
 
   create_table "rooms", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "name"
-    t.string "vonage_session_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "todo_items", force: :cascade do |t|
@@ -106,5 +107,6 @@ ActiveRecord::Schema.define(version: 2021_01_03_061236) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
+  add_foreign_key "rooms", "users"
   add_foreign_key "todo_items", "users"
 end
