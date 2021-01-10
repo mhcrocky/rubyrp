@@ -14,9 +14,7 @@ export default class extends Controller {
     this.ice = {
       "iceServers": [
         {
-          urls: 'turn:turn.vaas.me',
-          credential: 'driftingruby',
-          username: 'driftingruby'
+          urls: ["stun:global.stun.twilio.com:3478?transport=udp", 'turn:global.turn.twilio.com:3478?transport=udp']
         },
       ]
     }

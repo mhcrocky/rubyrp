@@ -15,8 +15,10 @@
     <div data-controller='video-chat'
          data-video-chat-session="<%= session.id %>"
          data-video-chat-id="<%= @room.id %>">
-      <div data-video-chat-target="remote_videos"><!-- data-target='video-chat.remote_videos' --></div>
+      <div class="d-inline" data-video-chat-target="remote_videos"><!-- data-target='video-chat.remote_videos' --></div>
       <video data-video-chat-target="local_video" autoplay><!-- data-target='video-chat.local_video'--></video>
     </div><!-- video-chat -->
   </div><!-- .col-12 -->
 </div><!-- .row -->
+
+<section class="jumbotron text-center my-5"></section>
