@@ -46,6 +46,32 @@ describe Api::V1::ChartsController do
       expect(response.status).to eq(200)
     end
   end
+  describe "GET #user-themes" do
+    it "renders the json" do
+      get :user_themes
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #user-timezones" do
+    it "renders the json" do
+      get :user_timezones
+      expect(response.status).to eq(200)
+    end
+  end
+
+  ## Rooms
+  describe "GET #month_of_year-rooms" do
+    it "renders the json" do
+      get :month_of_year_rooms
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #chat-rooms" do
+    it "renders the json" do
+      get :chat_rooms
+      expect(response.status).to eq(200)
+    end
+  end
 
   ## Articles
   describe "GET #month_of_year_single-articles" do

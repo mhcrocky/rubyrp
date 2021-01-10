@@ -48,10 +48,15 @@ Rails.application.routes.draw do
         get 'month_of_year-visitors'
         get 'month_of_year-users'
         get 'free_member-roles'
+        get 'user-themes'
+        get 'user-timezones'
         # Articles
         get 'month_of_year-articles'
         get 'month_of_year_single_articles'
         get 'free_member-articles'
+        # Rooms
+        get 'month_of_year-rooms'
+        get 'chat-rooms'
         # Todo Items
         get 'complete_incomplete-todos'
         get 'complete_incomplete_single-todos'

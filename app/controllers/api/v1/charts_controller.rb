@@ -20,6 +20,12 @@ class Api::V1::ChartsController < ApplicationController
   def free_member_roles
     render json: ({"Admins" => User.with_any_role(:sysadmin, :superadmin, :admin).count, "Members" => User.with_role(:member).count, "Free Users" => User.with_role(:visitor).count})
   end
+  def user_themes
+    render json: ({"Dark Theme" => User.where(dark_theme: true).count, "Light Theme" => User.where(dark_theme: false).count})
+  end
+  def user_timezones
+    render json: User.group(:timezone).count
+  end
 
   ## Articles
   def month_of_year_articles
@@ -30,6 +36,14 @@ class Api::V1::ChartsController < ApplicationController
   end
   def free_member_articles
     render json: ({"By Admins" => Article.where(user_id: User.with_any_role(:sysadmin, :superadmin, :admin)).count, "By Members" => Article.where(user_id: User.with_role(:member)).count, "By Free Users" => Article.where(user_id: User.with_role(:visitor)).count})
+  end
+
+  ## Rooms
+  def month_of_year_rooms
+    render json: Room.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def chat_rooms
+    render json: Room.group(:name).count
   end
 
   ## Todo Items
