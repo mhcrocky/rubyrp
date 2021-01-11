@@ -14,7 +14,7 @@ export default class extends Controller {
     this.ice = {
       "iceServers": [
         {
-          urls: ["https://tony-stun-turn.herokuapp.com/"]
+          urls: ["stun:global.stun.twilio.com:3478", 'turn:global.turn.twilio.com:3478']
         },
       ]
     }
