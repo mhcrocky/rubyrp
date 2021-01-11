@@ -14,7 +14,10 @@ export default class extends Controller {
     this.ice = {
       "iceServers": [
         {
-          urls: ["stun:global.stun.twilio.com:3478", 'turn:global.turn.twilio.com:3478']
+          username: '038ee272f4166c8a1ab62303056675d041cbf9a9466345e1481a46c8e216e4e2',
+          credential: 'RYDAhbayBhZRJK/ExXavIrmlV1elEX7qJhgKJt5YIPc=',
+          url: "stun:global.stun.twilio.com:3478?transport=udp",
+          urls: 'stun:global.stun.twilio.com:3478?transport=udp'
         },
       ]
     }
