@@ -14,11 +14,15 @@ export default class extends Controller {
     this.ice = {
       "iceServers": [
         {
-          username: '038ee272f4166c8a1ab62303056675d041cbf9a9466345e1481a46c8e216e4e2',
-          credential: 'RYDAhbayBhZRJK/ExXavIrmlV1elEX7qJhgKJt5YIPc=',
-          url: "stun:global.stun.twilio.com:3478?transport=udp",
-          urls: 'stun:global.stun.twilio.com:3478?transport=udp'
+          urls: 'turn:global.turn.twilio.com:3478?transport=tcp',
+          auth_token: process.env.TWILIO_AUTH_TOKEN,
+          account_sid: process.env.TWILIO_ACCOUNT_SID
+          // username: '038ee272f4166c8a1ab62303056675d041cbf9a9466345e1481a46c8e216e4e2',
+          // credential: 'RYDAhbayBhZRJK/ExXavIrmlV1elEX7qJhgKJt5YIPc='
         },
+        // {
+        //   urls: 'stun:global.stun.twilio.com:3478?transport=udp'
+        // },
       ]
     }
     this.JOIN_ROOM = "JOIN_ROOM"
