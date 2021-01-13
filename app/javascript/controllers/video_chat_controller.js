@@ -12,19 +12,10 @@ export default class extends Controller {
     this.currentUser = this.data.get("session")
     this.pcPeers = {}
     this.ice = {
-      "iceServers": [
-        {
-          urls: 'turn:global.turn.twilio.com:3478?transport=tcp',
-          auth_token: process.env.TWILIO_AUTH_TOKEN,
-          account_sid: process.env.TWILIO_ACCOUNT_SID
-          // username: '038ee272f4166c8a1ab62303056675d041cbf9a9466345e1481a46c8e216e4e2',
-          // credential: 'RYDAhbayBhZRJK/ExXavIrmlV1elEX7qJhgKJt5YIPc='
-        },
-        // {
-        //   urls: 'stun:global.stun.twilio.com:3478?transport=udp'
-        // },
-      ]
+      // "iceServers": this.data.get("twilio")
+      "ice_servers": this.data.get("twilio")
     }
+    console.log("twilio:" + this.data.get("twilio"))
     this.JOIN_ROOM = "JOIN_ROOM"
     this.EXCHANGE = "EXCHANGE"
     this.REMOVE_USER = "REMOVE_USER"

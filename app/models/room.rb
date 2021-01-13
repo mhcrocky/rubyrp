@@ -14,4 +14,19 @@ class Room < ApplicationRecord
     end
   end
 
+  def twilio
+    require 'twilio-ruby'
+    # Your Account Sid and Auth Token from twilio.com/console
+    # and set the environment variables. See http://twil.io/secure
+    account_sid = ENV['TWILIO_ACCOUNT_SID']
+    auth_token = ENV['TWILIO_AUTH_TOKEN']
+    @client = Twilio::REST::Client.new(account_sid, auth_token)
+    token = @client.tokens.create
+    "#{p token.ice_servers.to_json}"
+  end
+
+  # def twilio_credentials
+  #   "#{self.twilio.to_s}"
+  # end
+
 end

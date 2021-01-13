@@ -44,6 +44,9 @@ gem 'pg_query', '>= 0.9.0'
 gem 'chartkick'
 gem 'groupdate'
 
+# Twilio API
+gem 'twilio-ruby', '~> 5.45.1'
+
 # Pagination
 gem 'will_paginate'
 
