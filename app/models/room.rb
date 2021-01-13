@@ -14,7 +14,7 @@ class Room < ApplicationRecord
     end
   end
 
-  def twilio_username
+  def twilio
     require 'twilio-ruby'
     # Your Account Sid and Auth Token from twilio.com/console
     # and set the environment variables. See http://twil.io/secure
@@ -22,21 +22,8 @@ class Room < ApplicationRecord
     auth_token = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
     token = @client.tokens.create
-    "#{p token.username}"
+     # &quot;account_sid&quot;: &quot;#{p ENV['TWILIO_ACCOUNT_SID']}&quot;,
+    "&quot;username&quot;: &quot;#{p token.username}&quot;, &quot;ice_servers&quot;: #{p token.ice_servers.to_json}, &quot;date_updated&quot;: &quot;#{p token.date_updated}&quot;, &quot;ttl&quot;: &quot;#{p token.ttl}&quot;, &quot;date_created&quot;: &quot;#{p token.date_created}&quot;, &quot;password&quot;: &quot;#{p token.password}&quot;"
   end
-  def twilio_ice_servers
-    require 'twilio-ruby'
-    # Your Account Sid and Auth Token from twilio.com/console
-    # and set the environment variables. See http://twil.io/secure
-    account_sid = ENV['TWILIO_ACCOUNT_SID']
-    auth_token = ENV['TWILIO_AUTH_TOKEN']
-    @client = Twilio::REST::Client.new(account_sid, auth_token)
-    token = @client.tokens.create
-    "#{p token.ice_servers.to_json}"
-  end
-
-  # def twilio_credentials
-  #   "#{self.twilio.to_s}"
-  # end
 
 end

@@ -13,8 +13,7 @@
 <div class='row'>
   <div class='col-12'>
     <div data-controller='video-chat'
-         data-video-chat-twilione='<%= @room.twilio_username.html_safe %>'
-         data-video-chat-twiliotwo='<%= @room.twilio_ice_servers.html_safe %>'
+         data-video-chat-twilio='<%= @room.twilio.html_safe %>'
          data-video-chat-session="<%= session.id %>"
          data-video-chat-id="<%= @room.id %>">
       <div class="d-inline" data-video-chat-target="remote_videos"><!-- data-target='video-chat.remote_videos' --></div>
@@ -23,4 +22,4 @@
   </div><!-- .col-12 -->
 </div><!-- .row -->
 
-<section class="jumbotron text-center my-5"></section>
+<section class="jumbotron text-center my-5"><%= @room.twilio.html_safe %></section>

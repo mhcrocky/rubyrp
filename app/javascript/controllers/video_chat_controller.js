@@ -12,12 +12,10 @@ export default class extends Controller {
     this.currentUser = this.data.get("session")
     this.pcPeers = {}
     this.ice = {
-      // "iceServers": this.data.get("twilio")
-      "username": this.data.get("twilioUsername"),
-      "ice_servers": this.data.get("twilioIce")
+      rest: this.data.get("twilio"),
+      account_sid: process.env['TWILIO_ACCOUNT_SID']
     }
-    console.log("twilio username:" + this.data.get("twilione"))
-    console.log("twilio ice_servers:" + this.data.get("twiliotwo"))
+    console.log("twilio: " + this.data.get("twilio"))
     this.JOIN_ROOM = "JOIN_ROOM"
     this.EXCHANGE = "EXCHANGE"
     this.REMOVE_USER = "REMOVE_USER"
