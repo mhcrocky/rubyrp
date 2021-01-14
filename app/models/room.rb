@@ -22,8 +22,9 @@ class Room < ApplicationRecord
     auth_token = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
     token = @client.tokens.create
-     # &quot;account_sid&quot;: &quot;#{p ENV['TWILIO_ACCOUNT_SID']}&quot;,
-    "&quot;username&quot;: &quot;#{p token.username}&quot;, &quot;ice_servers&quot;: #{p token.ice_servers.to_json}, &quot;date_updated&quot;: &quot;#{p token.date_updated}&quot;, &quot;ttl&quot;: &quot;#{p token.ttl}&quot;, &quot;date_created&quot;: &quot;#{p token.date_created}&quot;, &quot;password&quot;: &quot;#{p token.password}&quot;"
+    #  # &quot;account_sid&quot;: &quot;#{p ENV['TWILIO_ACCOUNT_SID']}&quot;,
+    # "&quot;username&quot;: &quot;#{p token.username}&quot;, &quot;ice_servers&quot;: #{p token.ice_servers.to_json}, &quot;date_updated&quot;: &quot;#{p token.date_updated}&quot;, &quot;ttl&quot;: &quot;#{p token.ttl}&quot;, &quot;date_created&quot;: &quot;#{p token.date_created}&quot;, &quot;password&quot;: &quot;#{p token.password}&quot;"
+    "#{p token.ice_servers.to_json}"
   end
 
 end
