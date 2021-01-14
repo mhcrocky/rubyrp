@@ -12,9 +12,9 @@ export default class extends Controller {
     this.currentUser = this.data.get("session")
     this.pcPeers = {}
     this.ice = {
-      "iceServers": this.data.get("twilio")
+      "iceServers": this.data.get("twilio").replace(/\\/g, '')
     }
-    console.log("ice: " this.ice)
+    console.log("ice: " + JSON.stringify(this.ice))
     // console.log("twilio: " + this.data.get("twilio"))
     this.JOIN_ROOM = "JOIN_ROOM"
     this.EXCHANGE = "EXCHANGE"
