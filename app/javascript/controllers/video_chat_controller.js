@@ -14,7 +14,8 @@ export default class extends Controller {
     this.ice = {
       "iceServers": this.data.get("twilio")
     }
-    console.log("twilio: " + this.data.get("twilio"))
+    console.log("ice: " this.ice)
+    // console.log("twilio: " + this.data.get("twilio"))
     this.JOIN_ROOM = "JOIN_ROOM"
     this.EXCHANGE = "EXCHANGE"
     this.REMOVE_USER = "REMOVE_USER"
