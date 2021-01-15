@@ -24,7 +24,15 @@ class Room < ApplicationRecord
     token = @client.tokens.create
     #  # &quot;account_sid&quot;: &quot;#{p ENV['TWILIO_ACCOUNT_SID']}&quot;,
     # "&quot;username&quot;: &quot;#{p token.username}&quot;, &quot;ice_servers&quot;: #{p token.ice_servers.to_json}, &quot;date_updated&quot;: &quot;#{p token.date_updated}&quot;, &quot;ttl&quot;: &quot;#{p token.ttl}&quot;, &quot;date_created&quot;: &quot;#{p token.date_created}&quot;, &quot;password&quot;: &quot;#{p token.password}&quot;"
-    "#{p token.ice_servers.to_json}"
+
+    # "#{token.ice_servers.to_json}"
+
+    ice = token.ice_servers.to_json
+    return ice
+
+
+    # subjectsinlist = subjectsinlist.chomp(', ')
+
   end
 
 end
