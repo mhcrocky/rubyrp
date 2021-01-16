@@ -13,7 +13,7 @@
 <div class='row'>
   <div class='col-12'>
     <div data-controller='video-chat'
-         data-video-chat-twilio='<%== @room.room_key %>'
+         data-video-chat-twilio='<%= @room.room_key.html_safe %>'
          data-video-chat-session="<%= session.id %>"
          data-video-chat-id="<%= @room.id %>">
       <div class="d-inline" data-video-chat-target="remote_videos"><!-- data-target='video-chat.remote_videos' --></div>

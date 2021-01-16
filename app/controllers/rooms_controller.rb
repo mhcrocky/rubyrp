@@ -49,7 +49,7 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:user_id, :name)
+    params.require(:room).permit(:user_id, :name, :room_key)
   end
 
   def filter

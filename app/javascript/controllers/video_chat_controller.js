@@ -11,10 +11,11 @@ export default class extends Controller {
   connect() {
     this.currentUser = this.data.get("session")
     this.pcPeers = {}
+    this.roomKey = this.data.get("twilio")
     this.ice = {
-      "iceServers": this.data.get("twilio")
+      'iceServers': JSON.parse(this.roomKey)
     }
-    console.log("ice: " + this.ice)
+    console.log(this.ice)
     this.JOIN_ROOM = "JOIN_ROOM"
     this.EXCHANGE = "EXCHANGE"
     this.REMOVE_USER = "REMOVE_USER"
