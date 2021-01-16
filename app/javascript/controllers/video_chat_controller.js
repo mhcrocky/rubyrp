@@ -12,8 +12,7 @@ export default class extends Controller {
     this.currentUser = this.data.get("session")
     this.pcPeers = {}
     this.ice = {
-      // "iceServers": this.data.get("twilio").replace(/\\/g, '')
-      "iceServers": [{"url":"stun:global.stun.twilio.com:3478?transport=udp","urls":"stun:global.stun.twilio.com:3478?transport=udp"},{"url":"turn:global.turn.twilio.com:3478?transport=udp","username":"df87102d598315827d28ad2178e9bdae5fa3540f28e54f49ed50f5a80dc71ab4","urls":"turn:global.turn.twilio.com:3478?transport=udp","credential":"VkZjKS+DekXvX10iSi5Qe/bI87zJG+VFXpkbL6U2C+E="},{"url":"turn:global.turn.twilio.com:3478?transport=tcp","username":"df87102d598315827d28ad2178e9bdae5fa3540f28e54f49ed50f5a80dc71ab4","urls":"turn:global.turn.twilio.com:3478?transport=tcp","credential":"VkZjKS+DekXvX10iSi5Qe/bI87zJG+VFXpkbL6U2C+E="},{"url":"turn:global.turn.twilio.com:443?transport=tcp","username":"df87102d598315827d28ad2178e9bdae5fa3540f28e54f49ed50f5a80dc71ab4","urls":"turn:global.turn.twilio.com:443?transport=tcp","credential":"VkZjKS+DekXvX10iSi5Qe/bI87zJG+VFXpkbL6U2C+E="}]
+      "iceServers": this.data.get("twilio")
     }
     console.log("ice: " + this.ice)
     this.JOIN_ROOM = "JOIN_ROOM"
