@@ -148,6 +148,7 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 ----------------------------------------------------------------------------- */
 
 .col-12 video {
-  width: calc(50% - 6px);
-  height: auto;
+  width: calc(50% - 1px);
+  height: calc(45vh);
+  margin-bottom: 5vh;
 }
