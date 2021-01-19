@@ -27,6 +27,14 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "name" do
+    let(:user) { FactoryBot.build(:user) }
+    it "should create the username by splitting email" do
+      user.email = "person@example.com"
+      expect(user.name).to match("person")
+    end
+  end
+
   describe "todo_item associations" do
     let!(:user_with_todo_items) { FactoryBot.create(:user_with_todo_items) }
     it "has many todo items" do

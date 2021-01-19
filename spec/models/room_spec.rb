@@ -21,4 +21,13 @@ RSpec.describe Room, type: :model do
     end
   end
 
+  describe "twilio credentials" do
+    let(:room) { FactoryBot.build(:room) }
+    it "should create an ice_servers array" do
+      room.name = "Test"
+      room.save
+      expect(room.room_key).to_not be_nil
+    end
+  end
+
 end
