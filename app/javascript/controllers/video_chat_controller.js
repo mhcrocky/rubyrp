@@ -1,7 +1,3 @@
-// import { Controller } from "stimulus"
-//
-// export default class extends Controller {}
-
 import { Controller } from "stimulus"
 import consumer from "channels/consumer"
 
@@ -15,7 +11,7 @@ export default class extends Controller {
     this.ice = {
       'iceServers': JSON.parse(this.roomKey)
     }
-    console.log(this.ice)
+    // console.log(this.ice)
     this.JOIN_ROOM = "JOIN_ROOM"
     this.EXCHANGE = "EXCHANGE"
     this.REMOVE_USER = "REMOVE_USER"
