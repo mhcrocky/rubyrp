@@ -21,12 +21,14 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Bootstrap
 * jQuery
 * React
+* Stimulus
 * Chart.js
 * Chartkick + Groupdate
 * Action Text (trix)
 * will_paginate
 * Devise + Rolify + Cancan
 * Figaro
+* Redis (production)
 * Simplecov
 * Rspec
 * PGHero
@@ -55,7 +57,7 @@ $ rails s
 ## Initialization (Heroku)
 
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
-* Add-ons: Rollbar | Papertrail | Heroku Postgres
+* Add-ons: Rollbar | Papertrail | Heroku Redis | Heroku Postgres
 * Buildpacks: heroku/nodejs | heroku/ruby
 ```
 $ heroku git:remote -a your_app_name
