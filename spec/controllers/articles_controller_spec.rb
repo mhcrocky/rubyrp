@@ -18,6 +18,14 @@ describe ArticlesController do
     end
   end
 
+  describe "GET #show" do
+    it 'should render the show view' do
+      @article = FactoryBot.create(:article)
+      get :show, params: { id: @article.id }
+      expect(response.status).to eq(200)
+    end
+  end
+
   describe "GET #new" do
     it "renders the :new view" do
       get :new

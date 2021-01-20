@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe RoomsController do
+describe UsersController do
 
   before(:each) do
     @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
@@ -11,24 +11,9 @@ describe RoomsController do
 
   render_views
 
-  describe "GET #index" do
-    it "renders the :index view" do
-      get :index
-      expect(response.status).to eq(200)
-    end
-  end
-
   describe "GET #show" do
     it 'should render the show view' do
-      @room = FactoryBot.create(:room)
-      get :show, params: { id: @room.id }
-      expect(response.status).to eq(200)
-    end
-  end
-
-  describe "GET #new" do
-    it "renders the :new view" do
-      get :new
+      get :show, params: { id: @user.id }
       expect(response.status).to eq(200)
     end
   end
