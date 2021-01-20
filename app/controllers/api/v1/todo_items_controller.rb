@@ -1,6 +1,6 @@
 class Api::V1::TodoItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   def index
     @todo_items = current_user.todo_items.order('created_at DESC')
@@ -60,10 +60,6 @@ class Api::V1::TodoItemsController < ApplicationController
 
     def todo_item_params
       params.require(:todo_item).permit(:title, :complete)
-    end
-
-    def set_todo_item
-      @todo_item = TodoItem.find(params[:id])
     end
 
     def authorized?
