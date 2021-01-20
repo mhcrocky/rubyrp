@@ -3,7 +3,7 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
-      <p class="lead text-left text-muted">Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>, you can use the header links to see the blog &plus; todo list. This dashboard provides an admin view.</p>
+      <p class="lead text-left text-muted">Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>, this site contains a blog &plus; todo list, as well as video chat. This dashboard provides an admin view.</p>
       <div class="filter">
         <%= render partial: 'pages/search', locals: { action: root_path, q: '' } %>
       </div><!-- .filter -->
