@@ -33,4 +33,12 @@ describe RoomsController do
     end
   end
 
+  describe "GET #edit" do
+    it 'should render the edit view' do
+      @room = FactoryBot.create(:room)
+      get :edit, params: { id: @room.id }
+      expect(response.status).to eq(200)
+    end
+  end
+
 end

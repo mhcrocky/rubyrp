@@ -33,4 +33,12 @@ describe ArticlesController do
     end
   end
 
+  describe "GET #edit" do
+    it 'should render the edit view' do
+      @article = FactoryBot.create(:article)
+      get :edit, params: { id: @article.id }
+      expect(response.status).to eq(200)
+    end
+  end
+
 end
