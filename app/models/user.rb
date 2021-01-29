@@ -8,8 +8,9 @@ class User < ApplicationRecord
   # default_scope { order(created_at: :desc) }
 
   has_many :todo_items, dependent: :destroy
-  has_many :articles, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   after_create :assign_default_role, :first_items
 

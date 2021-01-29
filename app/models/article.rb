@@ -10,6 +10,9 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
 
+  has_many :comments, dependent: :destroy
+  # accepts_nested_attributes_for :comments
+
   #show
   def iframe
     if self.embed.present?

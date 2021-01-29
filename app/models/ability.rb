@@ -12,6 +12,7 @@ class Ability
     elsif user.has_role? :superadmin
       can :manage, Room
       can :manage, Article
+      can :manage, Comment
       can :manage, TodoItem
       can :manage, User
       cannot :manage, User, roles: { name: 'sysadmin' }
@@ -20,6 +21,7 @@ class Ability
     elsif user.has_role? :admin
       can :manage, Room
       can :manage, Article
+      can :manage, Comment
       can :manage, TodoItem, user_id: user.id
       can :read, User
 
@@ -27,6 +29,9 @@ class Ability
       can :read, Room
       can :read, Article
       can :manage, Article, user_id: user.id
+      can :read, Comment
+      can :manage, Comment, user_id: user.id
+      can :manage, Comment, article: { user: { id: user.id } }
       can :manage, TodoItem, user_id: user.id
       can :read, User
     end

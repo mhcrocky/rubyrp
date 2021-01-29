@@ -1,0 +1,8 @@
+<%= form_with model: [ @article, @article.comments.build ], html: { remote: true, class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.rich_text_area :body, id: 'comment_name', class: 'form-control comments' %>
+  </div><!-- .form-group -->
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-lg btn-outline-dark btn-block' %>
+  </div><!-- .form-group -->
+<% end %>

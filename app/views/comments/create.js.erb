@@ -1,0 +1,8 @@
+// // render comment
+var body = document.getElementById("comments");
+body.innerHTML = "<%= j render @comment %>";
+
+// // clear input
+var input = document.getElementById("comment_name");
+input.value = '';
+// input.focus();

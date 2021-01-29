@@ -85,8 +85,11 @@ trix-editor.form-control {
   display: none !important;
   width: 0 !important;
 }
+trix-editor.form-control.comments {
+  height: 420px !important;
+}
 @media (max-width: 768px) {
-  trix-editor.form-control {
+  trix-editor.form-control, trix-editor.form-control.comments {
     height: 350px !important;
   }
   input[type="file" i] {
@@ -150,6 +153,13 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 img.card-img-top {
   display: block;
   width: 100%;
+}
+
+#comments {
+  max-height: 525px;
+  .comment-body {
+    max-height: 75px;
+  }
 }
 
 

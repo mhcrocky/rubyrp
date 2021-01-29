@@ -27,7 +27,9 @@ Rails.application.routes.draw do
 
   resources :rooms
 
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:create, :destroy]
+  end
 
   resources :todo_items, only: [:index]
 
@@ -36,7 +38,9 @@ Rails.application.routes.draw do
       # Todo Items
       resources :todo_items, only: [:index, :show, :create, :update, :destroy]
       # Articles
-      resources :articles, only: [:index, :show, :create, :update, :destroy]
+      resources :articles, only: [:index, :show, :create, :update, :destroy] do
+        resources :comments, only: [:create, :destroy]
+      end
       # Rooms
       resources :rooms, only: [:index, :show, :create, :update, :destroy]
       # Charts
