@@ -25,6 +25,9 @@ RSpec.describe User, type: :model do
       user.password = nil
       expect(user).to_not be_valid
     end
+    it "should pass with all valid fields" do
+      expect(user).to be_valid
+    end
   end
 
   describe "name" do

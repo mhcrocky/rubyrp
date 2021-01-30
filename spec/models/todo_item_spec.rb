@@ -19,6 +19,9 @@ RSpec.describe TodoItem, type: :model do
       todo_item.user = nil
       expect(todo_item).to_not be_valid
     end
+    it "should pass with all valid fields" do
+      expect(todo_item).to be_valid
+    end
   end
 
   describe "default values" do

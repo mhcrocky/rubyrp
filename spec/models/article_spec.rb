@@ -19,6 +19,9 @@ RSpec.describe Article, type: :model do
       article.user = nil
       expect(article).to_not be_valid
     end
+    it "should pass with all valid fields" do
+      expect(article).to be_valid
+    end
   end
 
   describe "iframe" do

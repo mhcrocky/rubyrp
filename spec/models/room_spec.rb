@@ -19,6 +19,9 @@ RSpec.describe Room, type: :model do
       room.user = nil
       expect(room).to_not be_valid
     end
+    it "should pass with all valid fields" do
+      expect(room).to be_valid
+    end
   end
 
   describe "twilio credentials" do
