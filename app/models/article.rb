@@ -8,10 +8,13 @@ class Article < ApplicationRecord
 
   validates_presence_of :user
 
-  validates :title, presence: true
+  has_many :users_articles
+  has_many :liked_by_users, through: :users_articles, source: :user
 
   has_many :comments, dependent: :destroy
-  # accepts_nested_attributes_for :comments
+
+  validates :title, presence: true
+
 
   #show
   def iframe

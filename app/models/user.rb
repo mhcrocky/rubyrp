@@ -9,7 +9,12 @@ class User < ApplicationRecord
 
   has_many :todo_items, dependent: :destroy
   has_many :rooms, dependent: :destroy
+
+  has_many :users_articles
+  has_many :liked_articles, through: :users_articles, source: :article
+
   has_many :articles, dependent: :destroy
+
   has_many :comments, dependent: :destroy
 
   after_create :assign_default_role, :first_items

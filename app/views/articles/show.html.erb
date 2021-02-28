@@ -16,7 +16,14 @@
       <%= @article.iframe.html_safe %>
     </div><!-- .embed-responsive -->
   <% end %>
-  <p class="card-text"><%= @article.text if @article.text.present? %></p>
+  <div class="card-text mt-3 mb-2">
+    <%= @article.text if @article.text.present? %>
+  </div>
+
+  <div class="text-right mr-1">
+    <%= render partial: 'articles/like' %>
+  </div><!-- .text-right .mr-1 -->
+
 </div><!-- .card-body -->
 
 <section class="container">
