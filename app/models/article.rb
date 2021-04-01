@@ -15,6 +15,8 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
 
+  before_save :iframe
+  before_save :thumb
 
   #show
   def iframe
