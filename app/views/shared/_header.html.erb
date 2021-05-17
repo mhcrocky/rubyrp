@@ -62,6 +62,16 @@
               <%= link_to(current_user, class: "dropdown-item") do %>
                 <span class="text-info"><%= current_user.name %></span>
               <% end %>
+              <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class: "form-signin" }) do |f| %>
+                <div class="custom-control custom-switch text-center mt-3 mb-3">
+                  <%= f.check_box :dark_theme, class: "custom-control-input", id: "inputTheme", data: {'user-id': current_user.id} %>
+                  <label class="custom-control-label text-secondary" for="inputTheme">Theme</label>
+                </div><!-- .custom-control .custom-switch -->
+              <% end %>
+              <!-- Toggle Themes -->
+              <script>
+                $('input[type=checkbox]#inputTheme').each(function(index,element){return $(element).change(function(e){var user_id;user_id=$(e.currentTarget).data('user-id');return $.ajax({url:'/users/'+user_id+'/toggle_theme',type:'PUT',error:function(jqXHR,textStatus,errorThrown){return console.log('user ajax error: '+textStatus)},success:function(data,textStatus,jqXHR){return location.reload()}})})})
+              </script>
               <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
                 Edit Profile
               <% end %>
