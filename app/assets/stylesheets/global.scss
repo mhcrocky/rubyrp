@@ -153,6 +153,13 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 img.card-img-top {
   display: block;
   width: 100%;
+  object-fit: none;
+  object-position: center;
+}
+@media screen and (min-width:510px) and (max-width:992px){
+  img.card-img-top {
+    object-fit: cover;
+  }
 }
 #articleLikes a {
   text-decoration: none;
