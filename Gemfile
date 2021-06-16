@@ -50,6 +50,8 @@ gem 'twilio-ruby', '~> 5.45.1'
 # Pagination
 gem 'will_paginate'
 
+# pretty print (ap ...)
+gem 'amazing_print', '~> 1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
