@@ -53,6 +53,11 @@ gem 'will_paginate'
 # pretty print (ap ...)
 gem 'amazing_print', '~> 1.3'
 
+group :production do
+  # Rollabar notifications
+  gem 'rollbar'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
