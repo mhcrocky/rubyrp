@@ -27,7 +27,7 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Action Text (trix)
 * will_paginate
 * Devise + Rolify + Cancan
-* Figaro
+* Figaro (application.yml)
 * Redis (production)
 * Simplecov
 * Rspec
@@ -65,4 +65,8 @@ $ git remote rename heroku production
 $ git push production master
 $ heroku run rake db:schema:load --app PROJECT_NAME
 $ heroku run rake db:seed --app PROJECT_NAME
+
+(custom domain)
+$ heroku domains:add GODADDY_DOMAIN.com
+$ heroku domains
 ```
