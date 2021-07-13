@@ -9,7 +9,7 @@ class Article < ApplicationRecord
   validates_presence_of :user
 
   has_many :users_articles
-  has_many :liked_by_users, through: :users_articles, source: :user
+  has_many :liked_by_users, through: :users_articles, source: :user, dependent: :destroy
 
   has_many :comments, dependent: :destroy
 

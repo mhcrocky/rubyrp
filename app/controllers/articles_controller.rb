@@ -44,11 +44,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    # if current_user likes the article .. avoid PG::ForeignKeyViolation
-    user_article = UsersArticle.find_by(article: @article, user: current_user)
-    if user_article.present?
-      user_article.destroy
-    end
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_path, notice: 'Article was successfully deleted.' }
