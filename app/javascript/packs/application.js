@@ -19,6 +19,9 @@ require("channels")
 // Packs
 require("./components/TodoApp")
 
+// Analytics
+import gtag from "src/analytics"
+
 // Bootstrap
 require('bootstrap')
 import 'bootstrap/dist/css/bootstrap'
