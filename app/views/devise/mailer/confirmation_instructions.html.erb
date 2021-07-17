@@ -1,5 +1,10 @@
-<p>Welcome, <%= @email %>, to Rails React Bootstrap.</p>
+<h2>Welcome, <%= @email %></h2>
 
-<p>You can confirm your account email through the link below:</p>
+<p>By confirming, you agree that you are over 18. By using the site you accept our:</p>
+<ol>
+  <li><a href="https://rails-react-bootstrap.herokuapp.com/pages/terms_and_conditions">Terms and Conditions</a></li>
+  <li><a href="https://rails-react-bootstrap.herokuapp.com/pages/privacy_policy">Privacy Policy</a></li>
+  <li><a href="https://rails-react-bootstrap.herokuapp.com/pages/cookie_policy">Cookie Policy</a></li>
+</ol>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<h3><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></h3>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'pages/terms_and_conditions'
   get 'pages/privacy_policy'
+  get 'pages/cookie_policy'
   get 'pages/sitemap'
 
   resources :users, only: [:show, :destroy] do

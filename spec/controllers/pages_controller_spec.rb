@@ -4,6 +4,78 @@ describe PagesController do
 
   render_views
 
+  describe "GET #cookie_policy" do
+    it "renders the :cookie_policy view without authentication" do
+      get :cookie_policy
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #cookie_policy" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
+      @user = FactoryBot.create(:sysadmin)
+      @user.roles << Role.where(name: 'sysadmin').first_or_create
+      sign_in @user
+    end
+    it "renders the :cookie_policy view for a sysadmin" do
+      get :cookie_policy
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #cookie_policy" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:superadmin]
+      @user = FactoryBot.create(:superadmin)
+      @user.roles << Role.where(name: 'superadmin').first_or_create
+      sign_in @user
+    end
+    it "renders the :cookie_policy view for a superadmin" do
+      get :cookie_policy
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #cookie_policy" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:admin]
+      @user = FactoryBot.create(:admin)
+      @user.roles << Role.where(name: 'admin').first_or_create
+      sign_in @user
+    end
+    it "renders the :cookie_policy view for an admin" do
+      get :cookie_policy
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #cookie_policy" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:member]
+      @user = FactoryBot.create(:member)
+      @user.roles << Role.where(name: 'member').first_or_create
+      sign_in @user
+    end
+    it "renders the :cookie_policy view for a member" do
+      get :cookie_policy
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #cookie_policy" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:visitor]
+      @user = FactoryBot.create(:visitor)
+      @user.roles << Role.where(name: 'visitor').first_or_create
+      sign_in @user
+    end
+    it "renders the :cookie_policy view for a visitor" do
+      get :cookie_policy
+      expect(response.status).to eq(200)
+    end
+  end
+
   describe "GET #privacy_policy" do
     it "renders the :privacy_policy view without authentication" do
       get :privacy_policy
