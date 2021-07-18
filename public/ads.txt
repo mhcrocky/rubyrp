@@ -1,0 +1,2 @@
+# See https://support.google.com/adsense/answer/7532444?hl=en for documentation on ads.txt
+# Or https://www.adstxtlab.com/adstxt-info.php for further documentation on ads.txt
