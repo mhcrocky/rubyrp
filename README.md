@@ -66,6 +66,7 @@ $ git push production master
 $ heroku run rake db:schema:load --app PROJECT_NAME
 $ heroku run rake db:seed --app PROJECT_NAME
 
+$ heroku run rails c
 $ heroku logs --tail
 $ heroku restart
 ```
