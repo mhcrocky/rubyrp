@@ -3,9 +3,9 @@ class RoomsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @rooms = @rooms.order('created_at DESC').
-                    search(filter).
-                    paginate(page: params[:page], per_page: 12)
+    @rooms = @rooms.order('created_at DESC')
+                   .search(filter)
+                   .paginate(page: params[:page], per_page: 12)
   end
 
   def show

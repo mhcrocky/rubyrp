@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def create
-    @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
+    @article      = Article.find(params[:article_id])
+    @comment      = @article.comments.create(comment_params)
     @comment.user = current_user
     respond_to do |format|
       if @comment.save

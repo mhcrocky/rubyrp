@@ -9,10 +9,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-    @articles = Article.where(user_id: @article.user.id)
-                       .order('created_at DESC')
-                       .paginate(page: params[:page], per_page: 3)
+    @article       = Article.find(params[:id])
+    @articles      = Article.where(user_id: @article.user.id)
+                            .order('created_at DESC')
+                            .paginate(page: params[:page], per_page: 3)
     @liked_article = UsersArticle.find_by(user: current_user, article: @article)
   end
 

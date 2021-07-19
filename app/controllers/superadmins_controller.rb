@@ -5,12 +5,12 @@ class SuperadminsController < ApplicationController
   def new
     if current_user.has_role?(:superadmin)
       @superadmin.add_role :superadmin
-      @users = User.with_role(:superadmin).
-                    order(:email).
-                    search(filter).
-                    paginate(page: params[:page], per_page: 12)
+      @users = User.with_role(:superadmin)
+                   .order(:email)
+                   .search(filter)
+                   .paginate(page: params[:page], per_page: 12)
     else
-      redirect_to authenticated_root_url, alert: 'You are not authorized to access this page.'
+      redirect_to authenticated_root_url, alert: 'You are not authorized to access that page.'
     end
   end
 

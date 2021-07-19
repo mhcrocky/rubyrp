@@ -5,10 +5,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @users = User.#accessible_by(current_ability).
-                  order(:email).
-                  search(filter).
-                  paginate(page: params[:page], per_page: 12)
+    @users = User.order(:email)
+                 .search(filter)
+                 .paginate(page: params[:page], per_page: 12)
   end
 
   def terms_and_conditions
