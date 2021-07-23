@@ -27,7 +27,7 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Action Text (trix)
 * will_paginate
 * Devise + Rolify + Cancan
-* Figaro (application.yml)
+* Figaro
 * Redis (production)
 * Simplecov
 * Rspec
@@ -45,6 +45,7 @@ $ open coverage/index.html
 
 ## Initialization (Development)
 
+* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN in /config/application.yml ( figaro / .gitignore )
 ```
 $ bundle install
 $ yarn install
@@ -59,6 +60,7 @@ $ rails s
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Add-ons: Rollbar | Papertrail | Heroku Redis | Heroku Postgres
 * Buildpacks: heroku/nodejs | heroku/ruby
+* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN in Config Vars
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
