@@ -45,7 +45,7 @@ $ open coverage/index.html
 
 ## Initialization (Development)
 
-* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN in /config/application.yml ( figaro / .gitignore )
+* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN in /config/application.yml ( figaro | .gitignore ). If you don't want to use verification email, comment out :confirmable in user model and edit db/seeds
 ```
 $ bundle install
 $ yarn install
