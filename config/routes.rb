@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'pages/cookie_policy'
   get 'pages/sitemap'
 
+  get 'sitemap.xml', to: 'sitemap#index', defaults: { format: 'xml' }
+
   resources :users, only: [:show, :destroy] do
     put :toggle_theme, on: :member
   end
