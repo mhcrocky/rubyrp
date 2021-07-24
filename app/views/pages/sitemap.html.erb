@@ -28,6 +28,15 @@
 <div class="media text-muted pt-3">
   <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
     <strong class="d-block">
+      <%= link_to pages_cookie_policy_path do %>
+        Cookies Policy
+      <% end %>
+    </strong>
+  </p><!-- .media-body -->
+</div><!-- .media -->
+<div class="media text-muted pt-3">
+  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <strong class="d-block">
       Sitemap
     </strong>
   </p><!-- .media-body -->
@@ -152,12 +161,39 @@
     </p><!-- .media-body -->
   </div><!-- .media -->
   <% if current_user.has_role?(:sysadmin) %>
-    <h5 class="border-bottom border-gray pt-5 mb-0">PGHero</h5>
+    <h5 class="border-bottom border-gray pt-5 mb-0">Other</h5>
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to '/robots.txt', target: :blank do %>
+            Robots (txt)
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to '/ads.txt', target: :blank do %>
+            Ads (txt)
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block">
+          <%= link_to '/sitemap.xml', target: :blank do %>
+            Sitemap (xml)
+          <% end %>
+        </strong>
+      </p><!-- .media-body -->
+    </div><!-- .media -->
     <div class="media text-muted pt-3 pb-5 mb-5">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to pg_hero_path, target: :blank do %>
-            Database Analysis
+            Database Analysis (PGHero)
           <% end %>
         </strong>
       </p><!-- .media-body -->
