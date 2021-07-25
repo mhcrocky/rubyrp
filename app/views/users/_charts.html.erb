@@ -1,9 +1,79 @@
-<div class="col-md-6 mt-3 mb-0">
-  <%= area_chart @user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(61,12,2,0.5)"], title: "Items" %>
-</div><!-- .col-md-6 -->
-<div class="col-md-6 mt-3 mb-5">
-  <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count, "Complete" => @user.todo_items.where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(61,12,2,0.3)", "rgba(61,12,2,0.7)"], title: "List Status" %>
-</div><!-- .col-md-6 -->
-<div class="col-12 mt-5">
-  <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, download: {background: "#ffffff"}, colors: ["rgba(251,79,20,0.5)"], title: "Articles" %>
-</div><!-- .col-12 -->
+<div class="col-lg-7">
+  <div class="row mb-5">
+    <div class="col-12 mt-3 text-left">
+      <section class="mt-0">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>ID</th>
+                <td><%= @user.id %></td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td><%= mail_to truncate(@user.email), @user.email, class: 'text-info font-weight-bold' %></td>
+              </tr>
+              <tr>
+                <th>Role</th>
+                <td><%= @user.roles.first.name if @user.roles.present? %></td>
+              </tr>
+              <tr>
+                <th>Joined</th>
+                <td><%= @user.created_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') %></td>
+              </tr>
+              <tr>
+                <th>Updated</th>
+                <td><%= @user.updated_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') %></td>
+              </tr>
+              <tr>
+                <th>Number of Logins</th>
+                <td><%= @user.sign_in_count %></td>
+              </tr>
+              <tr>
+                <th>Current Login</th>
+                <td><%= @user.current_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') if @user.current_sign_in_at.present? %></td>
+              </tr>
+              <tr>
+                <th>Current Login IP</th>
+                <td><%= @user.current_sign_in_ip %></td>
+              </tr>
+              <tr>
+                <th>Last Login</th>
+                <td><%= @user.last_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') if @user.last_sign_in_at.present? %></td>
+              </tr>
+              <tr>
+                <th>Last Login IP</th>
+                <td><%= @user.last_sign_in_ip %></td>
+              </tr>
+              <tr>
+                <th>Timezone</th>
+                <td><%= @user.timezone %></td>
+              </tr>
+              <tr>
+                <th>Dark Theme</th>
+                <td><%= @user.dark_theme ? 'Yes' : 'No' %></td>
+              </tr>
+              <tr>
+                <th>ToDo Items</th>
+                <td><%= @user.todo_items.count %></td>
+              </tr>
+              <tr>
+                <th>Articles</th>
+                <td><%= @user.articles.count %></td>
+              </tr>
+            </tbody>
+          </table><!-- .table .table-striped -->
+        </div><!-- .table-responsive -->
+      </section><!-- .text-center mt-0 -->
+    </div><!-- .col-12 -->
+  </div><!-- .row .mb-5 -->
+</div><!-- .col-lg-7 -->
+<div class="col-lg-1 pb-1"></div>
+<div class="col-lg-4">
+  <p class="mt-2">
+    <%= area_chart @user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "rgba(0,0,0,0.5)"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Items" %>
+  </p>
+  <p class="mt-3 mb-5">
+    <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count, "Complete" => @user.todo_items.where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "List Status" %>
+  </p>
+</div><!-- .col-lg-4 -->
