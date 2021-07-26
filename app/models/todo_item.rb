@@ -3,6 +3,7 @@ class TodoItem < ApplicationRecord
   belongs_to :user
   validates_presence_of :user
   validates :title, presence: true
+  visitable :ahoy_visit
 
   def created
     "#{self.created_at.in_time_zone("#{self.user.timezone}").strftime('%m/%d/%Y')}"

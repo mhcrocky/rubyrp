@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
+  include Trackable
 
   def show
     @articles = Article.where(user_id: @user.id)
                        .order('created_at DESC')
                        .paginate(page: params[:page], per_page: 12)
+
+    ahoy.track "Viewed User: #{@user.name}", view_user_id: @user.id
   end
 
   def toggle_theme

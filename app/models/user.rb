@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   # default_scope { order(created_at: :desc) }
 
+  visitable :ahoy_visit
+  has_many :visits, class_name: "Ahoy::Visit"
+
   has_many :todo_items, dependent: :destroy
   has_many :rooms, dependent: :destroy
 

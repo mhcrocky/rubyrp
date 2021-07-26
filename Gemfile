@@ -40,6 +40,9 @@ gem 'figaro'
 gem 'pghero'
 gem 'pg_query', '>= 0.9.0'
 
+# Analytics
+gem 'ahoy_matey'
+
 # Charts
 gem 'chartkick'
 gem 'groupdate'

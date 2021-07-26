@@ -15,15 +15,11 @@
               </tr>
               <tr>
                 <th>Joined</th>
-                <td><%= current_user.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></td>
-              </tr>
-              <tr>
-                <th>Updated</th>
-                <td><%= current_user.updated_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></td>
+                <td><%= current_user.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
                 <th>Current Login</th>
-                <td><%= current_user.current_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></td>
+                <td><%= current_user.current_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
                 <th>Current Login IP</th>
@@ -31,11 +27,27 @@
               </tr>
               <tr>
                 <th>Last Login</th>
-                <td><%= current_user.last_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></td>
+                <td><%= current_user.last_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
                 <th>Last Login IP</th>
                 <td><%= current_user.last_sign_in_ip %></td>
+              </tr>
+              <tr>
+                <th>Last Pageview</th>
+                <td><%= current_user.visits.last.events.last(2)[0].name if current_user.visits.present? %></td>
+              </tr>
+              <tr>
+                <th>Last Browser</th>
+                <td><%= current_user.visits.last(2)[0].browser if current_user.visits.present? %></td>
+              </tr>
+              <tr>
+                <th>Last OS</th>
+                <td><%= current_user.visits.last(2)[0].os if current_user.visits.present? %></td>
+              </tr>
+              <tr>
+                <th>Total Visits</th>
+                <td><%= current_user.visits.count %></td>
               </tr>
               <tr>
                 <th>Timezone</th>

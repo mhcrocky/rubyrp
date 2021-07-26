@@ -1,19 +1,26 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
+  include Trackable
 
   def index
     @articles = @articles.order('created_at DESC')
                          .search(filter)
                          .paginate(page: params[:page], per_page: 12)
+
+    ahoy.track "Viewed Articles"
   end
 
   def show
     @article       = Article.find(params[:id])
+
     @articles      = Article.where(user_id: @article.user.id)
                             .order('created_at DESC')
                             .paginate(page: params[:page], per_page: 3)
+
     @liked_article = UsersArticle.find_by(user: current_user, article: @article)
+
+    ahoy.track "Viewed Article: #{@article.title}", room_id: @article.id
   end
 
   def new

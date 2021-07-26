@@ -2,6 +2,8 @@ class Room < ApplicationRecord
 
   belongs_to :user
 
+  visitable :ahoy_visit
+
   validates_presence_of :user
 
   validates :name, presence: true

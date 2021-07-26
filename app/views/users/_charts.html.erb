@@ -19,11 +19,7 @@
               </tr>
               <tr>
                 <th>Joined</th>
-                <td><%= @user.created_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') %></td>
-              </tr>
-              <tr>
-                <th>Updated</th>
-                <td><%= @user.updated_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') %></td>
+                <td><%= @user.created_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
                 <th>Number of Logins</th>
@@ -31,7 +27,7 @@
               </tr>
               <tr>
                 <th>Current Login</th>
-                <td><%= @user.current_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') if @user.current_sign_in_at.present? %></td>
+                <td><%= @user.current_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') if @user.current_sign_in_at.present? %></td>
               </tr>
               <tr>
                 <th>Current Login IP</th>
@@ -39,11 +35,42 @@
               </tr>
               <tr>
                 <th>Last Login</th>
-                <td><%= @user.last_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y') if @user.last_sign_in_at.present? %></td>
+                <td><%= @user.last_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') if @user.last_sign_in_at.present? %></td>
               </tr>
               <tr>
                 <th>Last Login IP</th>
                 <td><%= @user.last_sign_in_ip %></td>
+              </tr>
+              <% if @user == current_user %>
+                <tr>
+                  <th>Last Pageview</th>
+                  <td><%= @user.visits.last.events.last(2)[0].name if @user.visits.present? %></td>
+                </tr>
+                <tr>
+                  <th>Last Browser</th>
+                  <td><%= @user.visits.last(2)[0].browser if @user.visits.present? %></td>
+                </tr>
+                <tr>
+                  <th>Last OS</th>
+                  <td><%= @user.visits.last(2)[0].os if @user.visits.present? %></td>
+                </tr>
+              <% else %>
+                <tr>
+                  <th>Last Pageview</th>
+                  <td><%= @user.visits.last.events.last.name if @user.visits.present? %></td>
+                </tr>
+                <tr>
+                  <th>Last Browser</th>
+                  <td><%= @user.visits.last.browser if @user.visits.present? %></td>
+                </tr>
+                <tr>
+                  <th>Last OS</th>
+                  <td><%= @user.visits.last.os if @user.visits.present? %></td>
+                </tr>
+              <% end %>
+              <tr>
+                <th>Total Visits</th>
+                <td><%= @user.visits.count %></td>
               </tr>
               <tr>
                 <th>Timezone</th>
@@ -73,7 +100,11 @@
   <p class="mt-2">
     <%= area_chart @user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "rgba(0,0,0,0.5)"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Items" %>
   </p>
-  <p class="mt-3 mb-5">
+  <p class="mt-3 mb-3">
     <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count, "Complete" => @user.todo_items.where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "List Status" %>
+  </p>
+  <!-- filler before adding .csv report button(s) -->
+  <p class="mt-5 pt-5 mb-5 text-secondary">
+    Articles liked by user: <span class="font-weight-bold text-tayberry"><%= @user.liked_articles.count %></span>
   </p>
 </div><!-- .col-lg-4 -->

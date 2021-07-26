@@ -1,15 +1,19 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
+  include Trackable
 
   def index
     @rooms = @rooms.order('created_at DESC')
                    .search(filter)
                    .paginate(page: params[:page], per_page: 12)
+
+    ahoy.track "Viewed Rooms"
   end
 
   def show
     @room = Room.find(params[:id])
+    ahoy.track "Viewed Room: #{@room.name}", room_id: @room.id
   end
 
   def new

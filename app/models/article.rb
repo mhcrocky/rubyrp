@@ -15,6 +15,8 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
 
+  visitable :ahoy_visit
+
   before_save :iframe
   before_save :thumb
 
