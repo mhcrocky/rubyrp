@@ -18,20 +18,8 @@
                 <td><%= current_user.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
-                <th>Current Login</th>
-                <td><%= current_user.current_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
-              </tr>
-              <tr>
-                <th>Current Login IP</th>
-                <td><%= current_user.current_sign_in_ip %></td>
-              </tr>
-              <tr>
                 <th>Last Login</th>
                 <td><%= current_user.last_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
-              </tr>
-              <tr>
-                <th>Last Login IP</th>
-                <td><%= current_user.last_sign_in_ip %></td>
               </tr>
               <tr>
                 <th>Last Pageview</th>
@@ -48,6 +36,18 @@
               <tr>
                 <th>Total Visits</th>
                 <td><%= current_user.visits.count %></td>
+              </tr>
+              <tr>
+                <th>Number of Logins</th>
+                <td><%= current_user.sign_in_count %></td>
+              </tr>
+              <tr>
+                <th>Current Login</th>
+                <td><%= current_user.current_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
+              </tr>
+              <tr>
+                <th>Country</th>
+                <td><%= current_user.visits.last.country if current_user.visits.present? %></td>
               </tr>
               <tr>
                 <th>Timezone</th>

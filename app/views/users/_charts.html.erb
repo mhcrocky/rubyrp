@@ -22,24 +22,8 @@
                 <td><%= @user.created_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
-                <th>Number of Logins</th>
-                <td><%= @user.sign_in_count %></td>
-              </tr>
-              <tr>
-                <th>Current Login</th>
-                <td><%= @user.current_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') if @user.current_sign_in_at.present? %></td>
-              </tr>
-              <tr>
-                <th>Current Login IP</th>
-                <td><%= @user.current_sign_in_ip %></td>
-              </tr>
-              <tr>
                 <th>Last Login</th>
                 <td><%= @user.last_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') if @user.last_sign_in_at.present? %></td>
-              </tr>
-              <tr>
-                <th>Last Login IP</th>
-                <td><%= @user.last_sign_in_ip %></td>
               </tr>
               <% if @user == current_user %>
                 <tr>
@@ -73,6 +57,18 @@
                 <td><%= @user.visits.count %></td>
               </tr>
               <tr>
+                <th>Number of Logins</th>
+                <td><%= @user.sign_in_count %></td>
+              </tr>
+              <tr>
+                <th>Current Login</th>
+                <td><%= @user.current_sign_in_at.in_time_zone("#{@user.timezone}").strftime('%b %-d, %Y, %l:%M %p') if @user.current_sign_in_at.present? %></td>
+              </tr>
+              <tr>
+                <th>Country</th>
+                <td><%= @user.visits.last.country if @user.visits.present? %></td>
+              </tr>
+              <tr>
                 <th>Timezone</th>
                 <td><%= @user.timezone %></td>
               </tr>
@@ -88,6 +84,10 @@
                 <th>Articles</th>
                 <td><%= @user.articles.count %></td>
               </tr>
+              <tr>
+                <th>Articles liked by user</th>
+                <td><%= @user.liked_articles.count %></td>
+              </tr>
             </tbody>
           </table><!-- .table .table-striped -->
         </div><!-- .table-responsive -->
@@ -102,9 +102,5 @@
   </p>
   <p class="mt-3 mb-3">
     <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count, "Complete" => @user.todo_items.where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "List Status" %>
-  </p>
-  <!-- filler before adding .csv report button(s) -->
-  <p class="mt-5 pt-5 mb-5 text-secondary">
-    Articles liked by user: <span class="font-weight-bold text-tayberry"><%= @user.liked_articles.count %></span>
   </p>
 </div><!-- .col-lg-4 -->
