@@ -24,9 +24,10 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Stimulus
 * Action Text (trix)
 * will_paginate
-* Ahoy
 * Chart.js
 * Chartkick + Groupdate
+* Ahoy
+* Geocoder + maxminddb
 * Devise + Rolify + Cancan
 * Figaro
 * Redis (production)
