@@ -42,6 +42,8 @@ gem 'pg_query', '>= 0.9.0'
 
 # Analytics
 gem 'ahoy_matey'
+gem 'geocoder', '~> 1.6', '>= 1.6.7'
+gem 'maxminddb'
 
 # Charts
 gem 'chartkick'

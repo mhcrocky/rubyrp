@@ -146,6 +146,7 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
+    maxminddb (0.1.22)
     method_source (1.0.0)
     mini_mime (1.0.3)
     mini_portile2 (2.5.1)
@@ -311,9 +312,11 @@ DEPENDENCIES
   devise
   factory_bot_rails
   figaro
+  geocoder (~> 1.6, >= 1.6.7)
   groupdate
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  maxminddb
   pg (>= 0.18, < 2.0)
   pg_query (>= 0.9.0)
   pghero

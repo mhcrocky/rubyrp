@@ -46,8 +46,10 @@
                 <td><%= current_user.current_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
               </tr>
               <tr>
-                <th>Country</th>
-                <td><%= current_user.visits.last.country if current_user.visits.present? %></td>
+                <th>Location</th>
+                <% if current_user.visits.present? %>
+                  <td><%= current_user.visits.last.city %>, <%= current_user.visits.last.country %></td>
+                <% end %>
               </tr>
               <tr>
                 <th>Timezone</th>
