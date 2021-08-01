@@ -68,10 +68,10 @@ class User < ApplicationRecord
     end
   end
 
-  # Returns a string .. referring_domain from the .last visit
-  def last_referring_domain
+  # Returns a string .. landing_page from the .last visit
+  def landing
     if self.visits.present?
-      "#{self.visits.last.referring_domain}"
+      "#{self.visits.last.landing_page}"
     else
       ''
     end
@@ -109,28 +109,48 @@ class User < ApplicationRecord
   end
 
   # Returns a string .. OS and browser of .last visit
+  # Fallback -> device_type
   def tech
-    if self.visits.present? && self.visits.last.os.present? && self.visits.last.browser.present?
-      "#{self.visits.last.browser} on #{self.visits.last.os}"
-    elsif self.visits.present? && self.visits.last.browser.present?
-      "#{self.visits.last.browser}"
-    elsif self.visits.present? && self.visits.last.os.present?
-      "#{self.visits.last.os}"
-    else
-      ''
+    if self.visits.present?
+      if self.visits.last.os.present? && self.visits.last.browser.present?
+        "#{self.visits.last.browser} on #{self.visits.last.os}"
+      elsif self.visits.last.device_type.present? && self.visits.last.os.present?
+        "#{self.visits.last.os} on #{self.visits.last.device_type}"
+      elsif self.visits.last.device_type.present? && self.visits.last.browser.present?
+        "#{self.visits.last.browser} on #{self.visits.last.device_type}"
+      elsif self.visits.last.browser.present?
+        "#{self.visits.last.browser}"
+      elsif self.visits.last.os.present?
+        "#{self.visits.last.os}"
+      elsif self.visits.last.device_type.present?
+        "#{self.visits.last.device_type}"
+      else
+        ''
+      end
     end
   end
 
   # Returns a string .. city and country of .last visit
+  # Fallbacks -> region, latitude and longitude
   def location
-    if self.visits.present? && self.visits.last.city.present? && self.visits.last.country.present?
-      "#{self.visits.last.city}, #{self.visits.last.country}"
-    elsif self.visits.present? && self.visits.last.country.present?
-      "#{self.visits.last.country}"
-    elsif self.visits.present? && self.visits.last.city.present?
-      "#{self.visits.last.city}"
-    else
-      ''
+    if self.visits.present?
+      if self.visits.last.city.present? && self.visits.last.country.present?
+        "#{self.visits.last.city}, #{self.visits.last.country}"
+      elsif self.visits.last.region.present? && self.visits.last.country.present?
+        "#{self.visits.last.region}, #{self.visits.last.country}"
+      elsif self.visits.last.city.present? && self.visits.last.region.present?
+        "#{self.visits.last.city}, #{self.visits.last.region}"
+      elsif self.visits.last.city.present?
+        "#{self.visits.last.city}"
+      elsif self.visits.last.region.present?
+        "#{self.visits.last.region}"
+      elsif self.visits.last.country.present?
+        "#{self.visits.last.country}"
+      elsif self.visits.last.latitude.present? && self.visits.last.longitude.present?
+        "#{self.visits.last.latitude}, #{self.visits.last.longitude}"
+      else
+        ''
+      end
     end
   end
 

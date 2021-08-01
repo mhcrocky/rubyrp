@@ -29,25 +29,14 @@
                 <th>Current Login</th>
                 <td><%= @user.current_login %></td>
               </tr>
-              <% if @user == current_user %>
-                <tr>
-                  <th>Referring Domain</th>
-                  <td><%= @user.second_to_last_referring_domain.truncate(30) %></td>
-                </tr>
-                <tr>
-                  <th>Last Event</th>
-                  <td><%= @user.second_to_last_page %></td>
-                </tr>
-              <% else %>
-                <tr>
-                  <th>Referring Domain</th>
-                  <td><%= @user.last_referring_domain.truncate(30) %></td>
-                </tr>
-                <tr>
-                  <th>Last Event</th>
-                  <td><%= @user.last_page %></td>
-                </tr>
-              <% end %>
+              <tr>
+                <th>Landing Page</th>
+                <td><%= link_to @user.landing, @user.landing.truncate(30), class: 'text-tayberry' %></td>
+              </tr>
+              <tr>
+                <th>Last Event</th>
+                <td><%= @user == current_user ? @user.second_to_last_page : @user.last_page %></td>
+              </tr>
               <tr>
                 <th>Tech</th>
                 <td><%= @user.tech %></td>

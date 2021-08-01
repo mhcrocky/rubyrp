@@ -30,8 +30,8 @@
                 <td><%= current_user.current_login %></td>
               </tr>
               <tr>
-                <th>Referring Domain</th>
-                <td><%= current_user.last_referring_domain %></td>
+                <th>Landing Page</th>
+                <td><%= link_to current_user.landing, current_user.landing.truncate(30), class: 'text-tayberry' %></td>
               </tr>
               <tr>
                 <th>Last Event</th>
