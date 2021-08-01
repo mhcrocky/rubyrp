@@ -10,8 +10,8 @@
     <tbody>
       <% @rooms.each do |room| %>
         <tr>
-          <td><%= link_to truncate(room.name), room, class: 'text-info font-weight-bold' %></td>
-          <td><%= room.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %> by <%= room.user.name %></td>
+          <td><%= link_to truncate(room.name), room, class: 'text-shnozberry font-weight-bold' %></td>
+          <td><%= room.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %> by <%= truncate(room.user.name) %></td>
           <td class="text-right">
             <% if can? :manage, room %>
               <%= link_to room_path(room), method: :delete, data: { confirm: 'Are you sure you want to delete this room?' } do %>

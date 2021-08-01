@@ -31,7 +31,7 @@
               </tr>
               <tr>
                 <th>Landing Page</th>
-                <td><%= link_to @user.landing, @user.landing.truncate(30), class: 'text-tayberry' %></td>
+                <td><%= link_to truncate(@user.landing), @user.landing, class: 'text-tayberry' %></td>
               </tr>
               <tr>
                 <th>Last Event</th>

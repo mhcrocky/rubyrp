@@ -44,7 +44,7 @@ class User < ApplicationRecord
     end
   end
 
-  # Returns a datetime .. formated created_at in the user's timezone
+  # Returns a datetime .. formatted created_at in the user's timezone
   def created
     self.created_at.in_time_zone("#{self.timezone}").strftime('%b %-d, %Y.  %l:%M %p')
   end

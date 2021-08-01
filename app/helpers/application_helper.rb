@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  # Returns a custom list of timezone options
   def timezone_options
     return [
       ['Eastern Time (US & Canada)', 'Eastern Time (US & Canada)'],
