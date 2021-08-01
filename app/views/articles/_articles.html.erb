@@ -2,7 +2,7 @@
   <div class="row">
     <% @articles.each do |article| %>
     <div class="col-lg-4">
-      <div class="card mb-4 box-shadow">
+      <div class="card mb-4 box-shadow shadow">
         <% if article.embed.present? %>
           <%= link_to article.thumb.html_safe, article_path(article) %>
         <% else %>
@@ -21,7 +21,7 @@
             <small class="text-muted"><%= article.updated_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></small>
           </div><!-- .d-flex -->
         </div><!-- .card-body -->
-      </div><!-- .card -->
+      </div><!-- .card .box-shadow .shadow -->
     </div><!-- .col-lg-4 -->
     <% end %>
   </div><!-- .row -->
