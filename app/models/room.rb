@@ -10,6 +10,7 @@ class Room < ApplicationRecord
 
   before_create :set_room_key
 
+  # Returns STUN and TURN server info from Twilio (before_create)
   def set_room_key
     require 'twilio-ruby'
     account_sid = ENV['TWILIO_ACCOUNT_SID']
@@ -19,6 +20,7 @@ class Room < ApplicationRecord
     self.room_key = token.ice_servers.to_json
   end
 
+  # Search
   def self.search(search)
     if search && search.length > 0
       where("lower(name) LIKE ?", "%#{search.downcase}%")

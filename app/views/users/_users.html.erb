@@ -4,7 +4,7 @@
       <tr>
         <th scope="col">User</th>
         <th scope="col">Articles</th>
-        <th scope="col">Joined</th>
+        <th scope="col">ToDo Items</th>
         <th scope="col">Role</th>
         <th scope="col"></th>
       </tr>
@@ -14,8 +14,8 @@
         <tr>
           <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
           <td><%= user.articles.count %></td>
-          <td><%= user.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></td>
-          <td><%= user.roles.first.name if user.roles.present? %></td>
+          <td><%= user.todo_items.count %></td>
+          <td><%= user.role %></td>
           <td>
             <% if can? :manage, user %>
               <%= link_to user_path(user), method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } do %>

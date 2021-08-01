@@ -11,49 +11,47 @@
               </tr>
               <tr>
                 <th>Role</th>
-                <td><%= current_user.roles.first.name if current_user.roles.present? %></td>
+                <td><%= current_user.role %></td>
               </tr>
               <tr>
                 <th>Joined</th>
-                <td><%= current_user.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
-              </tr>
-              <tr>
-                <th>Last Login</th>
-                <td><%= current_user.last_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
-              </tr>
-              <tr>
-                <th>Last Pageview</th>
-                <td><%= current_user.visits.last.events.last(2)[0].name if current_user.visits.present? %></td>
-              </tr>
-              <tr>
-                <th>Last Browser</th>
-                <td><%= current_user.visits.last(2)[0].browser if current_user.visits.present? %></td>
-              </tr>
-              <tr>
-                <th>Last OS</th>
-                <td><%= current_user.visits.last(2)[0].os if current_user.visits.present? %></td>
+                <td><%= current_user.created %></td>
               </tr>
               <tr>
                 <th>Total Visits</th>
                 <td><%= current_user.visits.count %></td>
               </tr>
               <tr>
-                <th>Number of Logins</th>
+                <th>Total Logins</th>
                 <td><%= current_user.sign_in_count %></td>
               </tr>
               <tr>
                 <th>Current Login</th>
-                <td><%= current_user.current_sign_in_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %></td>
+                <td><%= current_user.current_login %></td>
+              </tr>
+              <tr>
+                <th>Referring Domain</th>
+                <td><%= current_user.last_referring_domain %></td>
+              </tr>
+              <tr>
+                <th>Last Event</th>
+                <td><%= current_user.second_to_last_page %></td>
+              </tr>
+              <tr>
+                <th>Tech</th>
+                <td><%= current_user.tech %></td>
               </tr>
               <tr>
                 <th>Location</th>
-                <% if current_user.visits.present? %>
-                  <td><%= current_user.visits.last.city %>, <%= current_user.visits.last.country %></td>
-                <% end %>
+                <td><%= current_user.location %></td>
               </tr>
               <tr>
                 <th>Timezone</th>
                 <td><%= current_user.timezone %></td>
+              </tr>
+              <tr>
+                <th>Dark Theme</th>
+                <td><%= current_user.dark_theme ? 'Yes' : 'No' %></td>
               </tr>
               <tr>
                 <th>ToDo Items</th>
@@ -75,7 +73,7 @@
   <p class="mt-2">
     <%= pie_chart api_v1_charts_complete_incomplete_single_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "My List Status" %>
   </p><!-- .mt-3 -->
-  <p class="mt-3 mb-5">
-    <%= column_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.5)"], title: "My Todo Items" %>
+  <p class="mt-0 mb-5">
+    <%= area_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "My Todo Items" %>
   </p><!-- .mt-3 mb-5 -->
 </div><!-- .col-lg-4 -->

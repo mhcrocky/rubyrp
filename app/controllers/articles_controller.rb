@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
                          .search(filter)
                          .paginate(page: params[:page], per_page: 12)
 
-    ahoy.track "Viewed Articles"
+    ahoy.track "Viewed Blog"
   end
 
   def show
@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 
     @liked_article = UsersArticle.find_by(user: current_user, article: @article)
 
-    ahoy.track "Viewed Article: #{@article.title}", room_id: @article.id
+    ahoy.track "Viewed Article: #{@article.title}", article_id: @article.id
   end
 
   def new

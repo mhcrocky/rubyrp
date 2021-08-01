@@ -23,26 +23,120 @@ class User < ApplicationRecord
 
   after_create :assign_default_role, :first_items
 
+  # Assigns the default role 'visitor' to a new user (after_create)
   def assign_default_role
     self.add_role(:visitor)
   end
 
+  # Creates two ToDo items when a user is created (after_create)
   def first_items
     2.times do |i|
       self.todo_items.create(title: "Item #{i+1} for #{self.email}", complete: i % 3 == 0 ? true : false)
     end
   end
 
-  def name
-    "#{self.email.split('@').first}"
-  end
-
+  # Search
   def self.search(search)
     if search && search.length > 0
       where("lower(email) LIKE ?", "%#{search.downcase}%")
     else
       where(nil)
     end
+  end
+
+  # Returns a datetime .. formated created_at in the user's timezone
+  def created
+    self.created_at.in_time_zone("#{self.timezone}").strftime('%b %-d, %Y.  %l:%M %p')
+  end
+
+  # Returns a string .. email address before @
+  def role
+    if self.roles.present?
+      "#{self.roles.first.name}"
+    end
+  end
+
+  # Returns a string .. email address before @
+  def name
+    "#{self.email.split('@').first}"
+  end
+
+  # Returns a datetime .. formatted current_sign_in_at in the user's timezone
+  def current_login
+    if self.current_sign_in_at.present?
+      self.current_sign_in_at.in_time_zone("#{self.timezone}").strftime('%b %-d, %Y.  %l:%M %p')
+    end
+  end
+
+  # Returns a string .. referring_domain from the .last visit
+  def last_referring_domain
+    if self.visits.present?
+      "#{self.visits.last.referring_domain}"
+    else
+      ''
+    end
+  end
+
+  # Returns a string .. referring_domain from second to .last visit .last(2)[0] for current_user
+  def second_to_last_referring_domain
+    if self.visits.present? && self.visits.count > 1
+      "#{self.visits.second_to_last.referring_domain}"
+    else
+      last_referring_domain
+    end
+  end
+
+  # Returns a string .. .last event of .last visit
+  def last_page
+    if self.visits.present?
+      if self.visits.last.events.present?
+        "#{self.visits.last.events.last.name}"
+      else
+        ''
+      end
+    end
+  end
+
+  # Returns a string .. second_to_last event of .last visit .last(2)[0] for current_user
+  def second_to_last_page
+    if self.visits.present?
+      if self.visits.last.events.present? && self.visits.last.events.count > 1
+        "#{self.visits.last.events.second_to_last.name}"
+      else
+        last_page
+      end
+    end
+  end
+
+  # Returns a string .. OS and browser of .last visit
+  def tech
+    if self.visits.present? && self.visits.last.os.present? && self.visits.last.browser.present?
+      "#{self.visits.last.browser} on #{self.visits.last.os}"
+    elsif self.visits.present? && self.visits.last.browser.present?
+      "#{self.visits.last.browser}"
+    elsif self.visits.present? && self.visits.last.os.present?
+      "#{self.visits.last.os}"
+    else
+      ''
+    end
+  end
+
+  # Returns a string .. city and country of .last visit
+  def location
+    if self.visits.present? && self.visits.last.city.present? && self.visits.last.country.present?
+      "#{self.visits.last.city}, #{self.visits.last.country}"
+    elsif self.visits.present? && self.visits.last.country.present?
+      "#{self.visits.last.country}"
+    elsif self.visits.present? && self.visits.last.city.present?
+      "#{self.visits.last.city}"
+    else
+      ''
+    end
+  end
+
+  # Returns an integer .. number of articles the user has liked
+  def liked_by_count
+    self.liked_articles.count
   end
 
 end

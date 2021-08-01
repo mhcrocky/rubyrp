@@ -17,10 +17,10 @@ class Article < ApplicationRecord
 
   visitable :ahoy_visit
 
-  before_save :iframe
-  before_save :thumb
+  before_save :iframe, :thumb
 
-  #show
+  #show (before_save)
+  # Returns a string (html_safe) .. an iframe element from the youtube url
   def iframe
     if self.embed.present?
       ### YouTube
@@ -38,7 +38,8 @@ class Article < ApplicationRecord
     end
   end
 
-  #_articles
+  #_articles (before_save)
+  # Returns a string (html_safe) .. an img element from the youtube url
   def thumb
     if self.embed.present?
       ### YouTube
@@ -53,6 +54,7 @@ class Article < ApplicationRecord
     end
   end
 
+  # Search
   def self.search(search)
     if search && search.length > 0
       select('articles.*, lower(articles.title)').
