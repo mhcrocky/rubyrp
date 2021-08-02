@@ -55,6 +55,19 @@ html {
   background-color: rgba(111,71,190,1) !important;
 }
 
+.border-brownie {
+  border: 1px solid rgba(61,12,2,1) !important;
+}
+.border-orange {
+  border: 1px solid rgba(251,79,20,1) !important;
+}
+.border-tayberry {
+  border: 1px solid rgba(230,67,140,1) !important;
+}
+.border-shnozberry {
+  border: 1px solid rgba(111,71,190,1) !important;
+}
+
 .text-brownie {
   color: rgba(61,12,2,1) !important;
 }
@@ -161,6 +174,7 @@ img.card-img-top {
     object-fit: cover;
   }
 }
+
 #articleLikes a {
   text-decoration: none;
 }
