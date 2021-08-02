@@ -31,7 +31,7 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
-      <p class="lead text-left text-muted">Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>, you can use the header links to see the blog &plus; todo list. View the welcome video below for a quick tutorial about the site.</p>
+      <p class="lead text-left text-muted">Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>, you can use the header links to see the ToDo List, Blog, and WebRTC. View personal analytics below:</p>
     </div><!-- .container -->
   </section><!-- .jumbotron -->
   <section class="mt-0 text-center">
@@ -43,11 +43,6 @@
     <div class="col-12">
       <%= area_chart api_v1_charts_month_of_year_single_articles_path, points: false, colors: ["rgba(0,0,0,0.9)"], title: "My Articles" %>
     </div><!-- .col-12 -->
-  </section><!-- .text-center mt-0 -->
-  <section class="text-center mt-5 mb-5 pt-5 pb-5">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div><!-- .embed-responsive -->
   </section><!-- .text-center mt-0 -->
 
 <% end %>

@@ -103,6 +103,14 @@
   </div><!-- .row -->
 </section><!-- .text-center .in-app -->
 
+<!-- Site Video Tutorial
+<section class="text-center mt-5 mb-5 pt-5 pb-5">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+-->
+
 <!-- Transition Images -->
 <script>
   $(function(){$('.left-1').click(function(){$('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/react.png")%>');$(".left-1 svg").css('background','#6c757d');$('.left-1 svg').css('color','#fff');$(".left-2 svg").removeAttr('style');$(".right-1 svg").removeAttr('style');$(".right-2 svg").removeAttr('style');return!1});$('.left-2').click(function(){$('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/chart.png")%>');$(".left-2 svg").css('background','#6c757d');$('.left-2 svg').css('color','#fff');$(".left-1 svg").removeAttr('style');$(".right-1 svg").removeAttr('style');$(".right-2 svg").removeAttr('style');return!1});$('.right-1').click(function(){$('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/devise.png")%>');$(".right-1 svg").css('background','#6c757d');$('.right-1 svg').css('color','#fff');$(".right-2 svg").removeAttr('style');$(".left-1 svg").removeAttr('style');$(".left-2 svg").removeAttr('style');return!1});$('.right-2').click(function(){$('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/regex.png")%>');$(".right-2 svg").css('background','#6c757d');$('.right-2 svg').css('color','#fff');$(".right-1 svg").removeAttr('style');$(".left-1 svg").removeAttr('style');$(".left-2 svg").removeAttr('style');return!1})})
