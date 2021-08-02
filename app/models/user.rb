@@ -156,6 +156,7 @@ class User < ApplicationRecord
 
   # Returns an integer .. number of articles the user has liked
   def liked_by_count
+    # UsersArticle.where(user: self).count
     self.liked_articles.count
   end
 

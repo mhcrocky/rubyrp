@@ -20,7 +20,7 @@ class Article < ApplicationRecord
   before_save :iframe, :thumb
 
   #show (before_save)
-  # Returns a string (html_safe) .. an iframe element from the youtube url
+  # Returns a string (html_safe) .. iframe element from the embed string field
   def iframe
     if self.embed.present?
       ### YouTube
@@ -39,7 +39,7 @@ class Article < ApplicationRecord
   end
 
   #_articles (before_save)
-  # Returns a string (html_safe) .. an img element from the youtube url
+  # Returns a string (html_safe) .. img element from the embed string field
   def thumb
     if self.embed.present?
       ### YouTube
