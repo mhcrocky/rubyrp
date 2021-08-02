@@ -1,4 +1,4 @@
-<div id='articleLikes'>
+<span id='articleLikes'>
   <%# if current_user.liked_article?(@article.id) %>
   <% if @liked_article %>
     <%# link_to "unlike", article_like_path(@article, id: @liked_article.to_global_id), method: :delete %>
@@ -17,4 +17,4 @@
     <% end %> <sup class="font-italic text-muted"><%= @article.liked_by_users.size %></sup>
 
   <% end %>
-</div><!-- #articleLikes -->
+</span><!-- #articleLikes -->
