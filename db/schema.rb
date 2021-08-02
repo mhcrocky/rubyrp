@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_25_223947) do
+ActiveRecord::Schema.define(version: 2021_08_01_223058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2021_07_25_223947) do
     t.string "os_version"
     t.string "platform"
     t.datetime "started_at"
+    t.index ["latitude", "longitude"], name: "index_ahoy_visits_on_latitude_and_longitude"
     t.index ["user_id"], name: "index_ahoy_visits_on_user_id"
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
   end
