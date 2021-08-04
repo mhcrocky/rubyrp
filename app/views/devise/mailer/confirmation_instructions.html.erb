@@ -1,10 +1,27 @@
-<h2>Welcome, <%= @email %></h2>
+<div style="width:600px; text-align:left; color:#000; background-color:#fff;">
+  <div style="width:570px; margin-left:15px;">
 
-<p>By confirming, you agree that you are over 18. By using the site you accept our:</p>
-<ol>
-  <li><a href="https://rails-react-bootstrap.herokuapp.com/pages/terms_and_conditions">Terms and Conditions</a></li>
-  <li><a href="https://rails-react-bootstrap.herokuapp.com/pages/privacy_policy">Privacy Policy</a></li>
-  <li><a href="https://rails-react-bootstrap.herokuapp.com/pages/cookie_policy">Cookie Policy</a></li>
-</ol>
+    <h2 style="font-size:15px; margin-top:12px; margin-bottom:9px; margin-left:3px;"><%= @email %></h2>
 
-<h3><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></h3>
+    <h1 style="font-size:30px; margin-bottom:12px; margin-left:3px;">Welcome to RRB</h1>
+
+    <p style="font-size:18px; margin-bottom:6px; margin-left:6px;">Only join if you are over 18.</p>
+    <p style="font-size:18px; margin-bottom:6px; margin-left:6px;">Access is subject to our:</p>
+    <ol style="margin-left:3px;">
+      <li style="font-size:15px; margin-bottom:6px;"><a style="color:#6f47be; text-decoration:none;" href="https://rails-react-bootstrap.herokuapp.com/pages/terms_and_conditions">Terms and Conditions</a></li>
+      <li style="font-size:15px; margin-bottom:6px;"><a style="color:#6f47be; text-decoration:none;" href="https://rails-react-bootstrap.herokuapp.com/pages/privacy_policy">Privacy Policy</a></li>
+      <li style="font-size:15px;"><a style="color:#6f47be; text-decoration:none;" href="https://rails-react-bootstrap.herokuapp.com/pages/cookie_policy">Cookie Policy</a></li>
+    </ol>
+
+    <h3 style="font-size:21px; margin-top:45px; margin-left:9px;">
+      <%= link_to 'Accept and Confirm', confirmation_url(@resource, confirmation_token: @token), style: "cursor:pointer; font-weight:600; text-decoration:none; color:#fff; background-color:#17a2b8; border:solid 1px #17a2b8; padding:8px 12px;" %>
+    </h3>
+
+    <div style="margin-top:45px; margin-left:12px;">
+      <a href="https://rails-react-bootstrap.herokuapp.com/" style="text-decoration:none;">
+        <img src="https://rails-react-bootstrap.herokuapp.com/assets/logo-92660c5c2890ab892aaab15171ef70e729a4b8f81c6786659ddc928273d81ced.png" alt="logo" width=95 height=107>
+      </a>
+    </div>
+
+  </div>
+</div>
