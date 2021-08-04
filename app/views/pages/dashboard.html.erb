@@ -51,10 +51,10 @@
         <%= area_chart Ahoy::Visit.group_by_day(:started_at).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.7)"], title: "Visits" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-6 mt-1 mb-4">
-        <%= area_chart Ahoy::Event.group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.3)"], title: "Visit events" %>
+        <%= area_chart Ahoy::Event.group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.3)"], title: "Visit Events" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%#= TODO: tally logins %>
+        <%= area_chart UsersArticle.group_by_day(:created_at).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(251,79,20,0.5)"], title: "Article Likes" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
         <%= area_chart Ahoy::Event.where_event("Viewed Welcome").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Welcome Index" %>
@@ -63,22 +63,22 @@
         <%= area_chart Ahoy::Event.where_event("Viewed Dashboard").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Dashboard Index" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%= area_chart Ahoy::Event.where_event("Viewed ToDo List").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(251,79,20,0.5)"], title: "ToDo List" %>
+        <%= area_chart Ahoy::Event.where_event("Viewed Blog").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(251,79,20,0.7)"], title: "Blog" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%= area_chart Ahoy::Event.where_event("Viewed Blog").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(61,12,2,0.5)"], title: "Blog" %>
+        <%= area_chart Ahoy::Event.where_event("Viewed Rooms").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(230,67,140,0.7)"], title: "Chat Rooms" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%= area_chart Ahoy::Event.where_event("Viewed Rooms").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(230,67,140,1)"], title: "Chat Rooms" %>
+        <%= area_chart Ahoy::Event.where_event("Viewed ToDo List").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(61,12,2,0.7)"], title: "ToDo List" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%#= TODO: "viewed user show" %>
+        <%= area_chart Ahoy::Event.where('name LIKE ?', "%Viewed Article: %").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(251,79,20,0.3)"], title: "Article" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%#= TODO: "viewed blog show" %>
+        <%= area_chart Ahoy::Event.where('name LIKE ?', "%Viewed Room: %").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(230,67,140,0.3)"], title: "Room" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-4 mt-1 mb-4">
-        <%#= TODO: "viewed chat show" %>
+        <%= area_chart Ahoy::Event.where('name LIKE ?', "%Viewed User: %").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "User" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-3 mt-1 mb-4">
         <%= area_chart Ahoy::Event.where_event("Viewed Terms and Conditions").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(255,0,0,0.5)"], title: "Terms and Conditions" %>
@@ -92,8 +92,6 @@
       <div class="col-lg-3 mt-1 mb-4">
         <%= area_chart Ahoy::Event.where_event("Viewed Sitemap").group_by_day(:time).count, download: {background: "#ffffff"}, points: false, colors: ["rgba(122,123,122,0.5)"], title: "Sitemap" %>
       </div><!-- .col-lg-3 -->
-
-
     </div><!-- .row -->
   </section><!-- .mt-0 .nb-5 .text-center -->
 
