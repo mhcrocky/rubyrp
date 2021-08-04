@@ -71,5 +71,24 @@
 </div><!-- .modal -->
 
 <script>
-$(function(){$('p.member').click(function(){email="<%= User.with_role(:member).first.email if User.with_role(:member).present? %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1});$('p.superadmin').click(function(){email="<%= User.with_role(:superadmin).first.email if User.with_role(:superadmin).present? %>";var emailField=document.getElementById('inputEmail');var passwordField=document.getElementById('inputPassword');emailField.value=email;passwordField.value="m@keTh1ng$";$('#exampleModal').modal('toggle');return!1})})
+  $(function() {
+    $('p.member').click(function(){
+      email = "<%= User.with_role(:member).first.email if User.with_role(:member).present? %>";
+      var emailField = document.getElementById('inputEmail');
+      var passwordField = document.getElementById('inputPassword');
+      emailField.value = email;
+      passwordField.value = "m@keTh1ng$";
+      $('#exampleModal').modal('toggle');
+      return;
+    });
+    $('p.superadmin').click(function(){
+      email = "<%= User.with_role(:superadmin).first.email if User.with_role(:superadmin).present? %>";
+      var emailField = document.getElementById('inputEmail');
+      var passwordField = document.getElementById('inputPassword');
+      emailField.value = email;
+      passwordField.value = "m@keTh1ng$";
+      $('#exampleModal').modal('toggle');
+      return;
+    })
+  })
 </script>
