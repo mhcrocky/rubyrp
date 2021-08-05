@@ -51,6 +51,8 @@ Rails.application.routes.draw do
       resources :rooms, only: [:index, :show, :create, :update, :destroy]
       # Charts
       namespace :charts do
+        ## Analytics
+        get 'month_of_year_viewed_cookies-policy'
         # Users
         get 'month_of_year-superadmins'
         get 'month_of_year-admins'
@@ -61,6 +63,7 @@ Rails.application.routes.draw do
         get 'user-themes'
         get 'user-timezones'
         # Articles
+        get 'article-likes'
         get 'month_of_year-articles'
         get 'month_of_year_single_articles'
         get 'free_member-articles'

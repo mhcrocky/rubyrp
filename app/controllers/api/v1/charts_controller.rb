@@ -1,6 +1,11 @@
 class Api::V1::ChartsController < ApplicationController
   before_action :authenticate_user!
 
+  ## Analytics
+  def month_of_year_viewed_cookies_policy
+    render json: Ahoy::Event.where_event("Viewed Cookie Policy").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
   ## Users
   def month_of_year_superadmins
     render json: User.with_role(:superadmin).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
@@ -28,6 +33,9 @@ class Api::V1::ChartsController < ApplicationController
   end
 
   ## Articles
+  def article_likes
+    render json: UsersArticle.group(:article_id).count
+  end
   def month_of_year_articles
     render json: Article.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
