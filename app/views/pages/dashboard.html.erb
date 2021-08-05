@@ -27,10 +27,10 @@
     <div class="row">
 
       <div class="col-lg-6 mt-1 mb-4">
-        <%= area_chart Ahoy::Visit.group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.7)"], title: "Visits" %>
+        <%= area_chart api_v1_charts_month_of_year_visits_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.7)"], title: "Visits" %>
       </div><!-- .col-lg-4 -->
       <div class="col-lg-6 mt-1 mb-4">
-        <%= area_chart Ahoy::Event.group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.3)"], title: "Visit Events" %>
+        <%= area_chart api_v1_charts_month_of_year_visit_events_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.3)"], title: "Visit Events" %>
       </div><!-- .col-lg-4 -->
 
       <%= render partial: 'pages/bars' %>

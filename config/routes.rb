@@ -52,6 +52,9 @@ Rails.application.routes.draw do
       # Charts
       namespace :charts do
         ## Analytics
+        get 'month_of_year-visits'
+        get 'month_of_year_visit-events'
+
         get 'month_of_year_viewed_cookies-policy'
         # Users
         get 'month_of_year-superadmins'
@@ -64,6 +67,7 @@ Rails.application.routes.draw do
         get 'user-timezones'
         # Articles
         get 'article-likes'
+        get 'month_of_year_article-likes'
         get 'month_of_year-articles'
         get 'month_of_year_single_articles'
         get 'free_member-articles'
