@@ -8,12 +8,31 @@ class Api::V1::ChartsController < ApplicationController
   def month_of_year_visit_events
     render json: Ahoy::Event.group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
+
+  def month_of_year_viewed_terms
+    render json: Ahoy::Event.where_event("Viewed Terms and Conditions").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_privacy_policy
+    render json: Ahoy::Event.where_event("Viewed Privacy Policy").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
   def month_of_year_viewed_cookies_policy
     render json: Ahoy::Event.where_event("Viewed Cookie Policy").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_sitemap
+    render json: Ahoy::Event.where_event("Viewed Sitemap").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
   def month_of_year_chrome_browser
     render json: Ahoy::Visit.where('browser LIKE ?', "%Chrome%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_edge_browser
+    render json: Ahoy::Visit.where('browser LIKE ?', "%Edge%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_firefox_browser
+    render json: Ahoy::Visit.where('browser LIKE ?', "%Firefox%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_safari_browser
+    render json: Ahoy::Visit.where('browser LIKE ?', "%Safari%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
   ## Users

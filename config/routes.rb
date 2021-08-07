@@ -56,8 +56,14 @@ Rails.application.routes.draw do
         get 'month_of_year_visit-events'
 
         get 'month_of_year_chrome-browser'
+        get 'month_of_year_edge-browser'
+        get 'month_of_year_firefox-browser'
+        get 'month_of_year_safari-browser'
 
+        get 'month_of_year_viewed_terms'
+        get 'month_of_year_viewed_privacy-policy'
         get 'month_of_year_viewed_cookies-policy'
+        get 'month_of_year_viewed_sitemap'
         # Users
         get 'month_of_year-superadmins'
         get 'month_of_year-admins'

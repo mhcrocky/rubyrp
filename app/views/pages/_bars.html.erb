@@ -1,12 +1,12 @@
 <div class="col-lg-3 mt-1 mb-4">
-  <%= bar_chart api_v1_charts_month_of_year_chrome_browser_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,255,255,0.5"], title: "Chrome" %>
+  <%= bar_chart api_v1_charts_month_of_year_chrome_browser_path, refresh: 1200, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,255,255,0.9"], title: "Chrome" %>
 </div><!-- .col-lg-3 -->
 <div class="col-lg-3 mt-1 mb-4">
-  <%= bar_chart Ahoy::Visit.where('browser LIKE ?', "%Edge%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,255,0,0.5)"], title: "Edge" %>
+  <%= bar_chart api_v1_charts_month_of_year_edge_browser_path, refresh: 1200, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,255,0,0.5)"], title: "Edge" %>
 </div><!-- .col-lg-3 -->
 <div class="col-lg-3 mt-1 mb-4">
-  <%= bar_chart Ahoy::Visit.where('browser LIKE ?', "%Firefox%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, refresh: 1200, download: {background: "#ffffff"}, points: false, colors: ["rgba(255,255,0,0.5)"], title: "Firefox" %>
+  <%= bar_chart api_v1_charts_month_of_year_firefox_browser_path, refresh: 1200, download: {background: "#ffffff"}, points: false, colors: ["rgba(247, 202, 24, 0.9)"], title: "Firefox" %>
 </div><!-- .col-lg-3 -->
 <div class="col-lg-3 mt-1 mb-4">
-  <%= bar_chart Ahoy::Visit.where('browser LIKE ?', "%Safari%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,255,0.5)"], title: "Safari" %>
+  <%= bar_chart api_v1_charts_month_of_year_safari_browser_path, refresh: 1200, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,255,0.5)"], title: "Safari" %>
 </div><!-- .col-lg-3 -->
