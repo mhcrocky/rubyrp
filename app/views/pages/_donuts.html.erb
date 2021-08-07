@@ -2,11 +2,11 @@
   <%= pie_chart api_v1_charts_user_timezones_path, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "Timezones" %>
 </div><!-- .col-lg-3 -->
 <div class="col-lg-3 pt-0 mt-1 mb-5">
-  <%= pie_chart Ahoy::Visit.group(:country).count, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "Country" %>
+  <%= pie_chart api_v1_charts_visit_country_path, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "Country" %>
 </div><!-- .col-lg-3 -->
 <div class="col-lg-3 pt-0 mt-1 mb-5">
-  <%= pie_chart Ahoy::Visit.group(:region).count, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "Region" %>
+  <%= pie_chart api_v1_charts_visit_region_path, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "Region" %>
 </div><!-- .col-lg-3 -->
 <div class="col-lg-3 pt-0 mt-1 mb-5">
-  <%= pie_chart Ahoy::Visit.group(:city).count, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "City" %>
+  <%= pie_chart api_v1_charts_visit_city_path, donut: true, refresh: 1200, legend: false, download: {background: "#ffffff"}, title: "City" %>
 </div><!-- .col-lg-3 -->

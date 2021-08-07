@@ -54,11 +54,13 @@ Rails.application.routes.draw do
         ## Analytics
         get 'month_of_year-visits'
         get 'month_of_year_visit-events'
-
         get 'month_of_year_chrome-browser'
         get 'month_of_year_edge-browser'
         get 'month_of_year_firefox-browser'
         get 'month_of_year_safari-browser'
+        get 'visit-country'
+        get 'visit-region'
+        get 'visit-city'
 
         get 'month_of_year_viewed_terms'
         get 'month_of_year_viewed_privacy-policy'
