@@ -12,6 +12,10 @@ class Api::V1::ChartsController < ApplicationController
     render json: Ahoy::Event.where_event("Viewed Cookie Policy").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
+  def month_of_year_chrome_browser
+    render json: Ahoy::Visit.where('browser LIKE ?', "%Chrome%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
   ## Users
   def month_of_year_superadmins
     render json: User.with_role(:superadmin).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
