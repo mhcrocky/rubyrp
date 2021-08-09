@@ -71,7 +71,7 @@ class Api::V1::ChartsController < ApplicationController
 
   ## Articles
   def article_likes
-    render json: UsersArticle.group(:article_id).count
+    render json: UsersArticle.group(:article_id).limit(10).count
   end
   def month_of_year_article_likes
     render json: UsersArticle.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
