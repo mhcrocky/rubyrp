@@ -26,7 +26,30 @@ class Api::V1::ChartsController < ApplicationController
   def visit_city
     render json: Ahoy::Visit.group(:city).count
   end
-
+  def month_of_year_viewed_welcome
+    render json: Ahoy::Event.where_event("Viewed Welcome").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_dashboard
+    render json: Ahoy::Event.where_event("Viewed Dashboard").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_blog
+    render json: Ahoy::Event.where_event("Viewed Blog").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_rooms
+    render json: Ahoy::Event.where_event("Viewed Rooms").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_list
+    render json: Ahoy::Event.where_event("Viewed ToDo List").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_article
+    render json: Ahoy::Event.where('name LIKE ?', "%Viewed Article: %").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_room
+    render json: Ahoy::Event.where('name LIKE ?', "%Viewed Room: %").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+  def month_of_year_viewed_user
+    render json: Ahoy::Event.where('name LIKE ?', "%Viewed User: %").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
   def month_of_year_viewed_terms
     render json: Ahoy::Event.where_event("Viewed Terms and Conditions").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
