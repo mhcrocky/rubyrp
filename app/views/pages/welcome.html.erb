@@ -38,7 +38,7 @@
   </div><!-- .card -->
 </div><!-- .card-deck -->
 
-<div class="mb-5 my-3 p-4">
+<div class="my-3 p-4">
   <h5 class="jumbotron-heading border-bottom border-gray pb-2 mb-0">The Mission</h5>
   <div class="media text-muted pt-3">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
@@ -68,7 +68,7 @@
   <small class="d-block text-right text-muted mt-2">
     <strong class="d-block text-gray-dark">Anthony Juan Maseda</strong>
   </small><!-- .d-block -->
-</div><!-- mb-5 .my-3 p-3 card -->
+</div><!-- .my-3 p-3 card -->
 
 <section class="pt-5 mt-5 text-center in-app">
   <h4 class="jumbotron-heading mb-0 pb-0">Key Features</h4>
@@ -101,15 +101,7 @@
       </div><!-- .right-2 -->
     </div><!-- .col-sm-3 .text-muted -->
   </div><!-- .row -->
-</section><!-- .text-center .in-app -->
-
-<!-- Site Video Tutorial
-<section class="text-center mt-5 mb-5 pt-5 pb-5">
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</section>
--->
+</section><!-- .pt-5 .mt-5 .text-center .in-app -->
 
 <!-- Transition Images -->
 <script>
@@ -154,3 +146,22 @@
     });
   });
 </script>
+
+<!-- Site Video Tutorial
+<section class="text-center mt-5 mb-5 pt-5 pb-5">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+-->
+
+<!-- Google Charts world map (their JS required) -->
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<section class="mt-5 mb-5 pb-5 text-center">
+  <h4 class="jumbotron-heading text-muted mb-1 pb-0">Worldwide Membership</h4>
+  <div class="row">
+    <div class="col-12">
+      <%= geo_chart Ahoy::Visit.group(:country).count %>
+    </div>
+  </div>
+</section>

@@ -63,7 +63,6 @@ class Api::V1::ChartsController < ApplicationController
     render json: Ahoy::Event.where_event("Viewed Sitemap").group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
-
   ## Users
   def month_of_year_superadmins
     render json: User.with_role(:superadmin).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
@@ -97,7 +96,6 @@ class Api::V1::ChartsController < ApplicationController
     render json: User.group(:timezone).count
   end
 
-
   ## Articles
   def article_likes
     render json: UsersArticle.group(:article_id).limit(10).count
@@ -119,7 +117,6 @@ class Api::V1::ChartsController < ApplicationController
     })
   end
 
-
   ## Rooms
   def month_of_year_rooms
     render json: Room.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
@@ -128,21 +125,18 @@ class Api::V1::ChartsController < ApplicationController
     render json: Room.group(:name).count
   end
 
-
   ## Todo Items
   def complete_incomplete_todos
     render json: ({
       "Not Complete" => TodoItem.accessible_by(current_ability).where(complete: false).count,
       "Complete"     => TodoItem.where(complete: true).count
     })
-    # render json: TodoItem.accessible_by(current_ability).group(:complete).count ("True", "False")
   end
   def complete_incomplete_single_todos
     render json: ({
       "Not Complete" => current_user.todo_items.where(complete: false).count,
       "Complete"     => current_user.todo_items.where(complete: true).count
     })
-    # render json: current_user.todo_items.group(:complete).count ("True", "False")
   end
   def month_of_year_todos
     render json: TodoItem.accessible_by(current_ability).group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
