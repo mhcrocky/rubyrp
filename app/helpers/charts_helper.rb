@@ -18,8 +18,8 @@ module ChartsHelper
   # Returns a default array of colors for charts
   def chart_colors
     return [
-      "rgba(111,71,190,0.7)",
       "rgba(0,255,255,0.9)",
+      "rgba(111,71,190,0.7)",
       "rgba(255,0,0,0.7)",
       "rgba(0,255,0,0.9)",
       "rgba(0,0,255,0.7)",

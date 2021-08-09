@@ -54,6 +54,7 @@ Rails.application.routes.draw do
         ## Analytics
         get 'month_of_year-visits'
         get 'month_of_year_visit-events'
+        # get 'browser-type'
         get 'month_of_year_chrome-browser'
         get 'month_of_year_edge-browser'
         get 'month_of_year_firefox-browser'
