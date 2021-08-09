@@ -8,25 +8,14 @@ class Api::V1::ChartsController < ApplicationController
   def month_of_year_visit_events
     render json: Ahoy::Event.group_by_month_of_year(:time).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
-  # def browser_type
-  #   render json: ({
-  #     "Chrome"  => Ahoy::Visit.where('browser LIKE ?', "%Chrome%").count,
-  #     "Edge"    => Ahoy::Visit.where('browser LIKE ?', "%Edge%").count,
-  #     "Firefox" => Ahoy::Visit.where('browser LIKE ?', "%Firefox%").count,
-  #     "Safari"  => Ahoy::Visit.where('browser LIKE ?', "%Safari%").count
-  #   })
-  # end
-  def month_of_year_chrome_browser
-    render json: Ahoy::Visit.where('browser LIKE ?', "%Chrome%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  def browser_type
+    render json: Ahoy::Visit.group(:browser).count
   end
-  def month_of_year_edge_browser
-    render json: Ahoy::Visit.where('browser LIKE ?', "%Edge%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  def os_type
+    render json: Ahoy::Visit.group(:os).count
   end
-  def month_of_year_firefox_browser
-    render json: Ahoy::Visit.where('browser LIKE ?', "%Firefox%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
-  end
-  def month_of_year_safari_browser
-    render json: Ahoy::Visit.where('browser LIKE ?', "%Safari%").group_by_month_of_year(:started_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  def device_type
+    render json: Ahoy::Visit.group(:device_type).count
   end
   def visit_country
     render json: Ahoy::Visit.group(:country).count
