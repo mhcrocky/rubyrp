@@ -2,6 +2,11 @@ class UsersArticle < ApplicationRecord
   belongs_to :user
   belongs_to :article
 
+  # Returns only likes created in the past week
+  scope :this_week, -> {
+    where("created_at > ?", 1.week.ago)
+  }
+
   # Returns an array .. class method: number of article likes month over year
   def self.month_of_year_article_likes
            group_by_month_of_year(:created_at)

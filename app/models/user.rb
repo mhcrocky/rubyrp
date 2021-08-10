@@ -23,6 +23,11 @@ class User < ApplicationRecord
 
   after_create :assign_default_role, :first_items
 
+  # Returns only users created in the past week
+  scope :this_week, -> {
+    where("created_at > ?", 1.week.ago)
+  }
+
   # Assigns the default role 'visitor' to a new user (after_create)
   def assign_default_role
     self.add_role(:visitor)

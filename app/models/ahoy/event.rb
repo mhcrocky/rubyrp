@@ -6,6 +6,11 @@ class Ahoy::Event < ApplicationRecord
   belongs_to :visit
   belongs_to :user, optional: true
 
+  # Returns only events from the past week
+  scope :this_week, -> {
+    where("time > ?", 1.week.ago)
+  }
+
   # Returns an array .. class method: number of visit events month over year
   def self.month_of_year_visit_events
            group_by_month_of_year(:time)

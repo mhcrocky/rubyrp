@@ -4,6 +4,11 @@ class Ahoy::Visit < ApplicationRecord
   has_many :events, class_name: "Ahoy::Event"
   belongs_to :user, optional: true
 
+  # Returns only visits from the past week
+  scope :this_week, -> {
+    where("started_at > ?", 1.week.ago)
+  }
+
   # Returns a hash .. class method: bowsers that have visited and their sum
   def self.browsers
            group(:browser).count

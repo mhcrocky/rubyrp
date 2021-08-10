@@ -19,6 +19,11 @@ class Article < ApplicationRecord
 
   before_save :iframe, :thumb
 
+  # Returns only articles created in the past week
+  scope :this_week, -> {
+    where("created_at > ?", 1.week.ago)
+  }
+
   #show (before_save)
   # Returns a string (html_safe) .. iframe element from the embed string field
   def iframe
