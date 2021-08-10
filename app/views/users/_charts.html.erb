@@ -71,9 +71,11 @@
 <div class="col-lg-1 pb-1"></div>
 <div class="col-lg-4">
   <p class="mt-2">
-    <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count, "Complete" => @user.todo_items.where(complete: true).count}), legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "List Status" %>
+    <%= pie_chart ({"Not Complete" => @user.todo_items.where(complete: false).count,
+                    "Complete" => @user.todo_items.where(complete: true).count}),
+                    legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "List Status" %>
   </p>
   <p class="mt-0 mb-5">
-    <%= area_chart @user.todo_items.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, download: {background: "rgba(0,0,0,0.5)"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Items" %>
+    <%= area_chart @user.todo_items_count, download: {background: "rgba(0,0,0,0.5)"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "Items" %>
   </p>
 </div><!-- .col-lg-4 -->

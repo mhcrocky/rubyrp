@@ -14,7 +14,7 @@
   <div class="row mb-0">
     <div class="col-lg-12">
       <p class="mt-2 mb-0">
-        <%= area_chart @user.articles.group_by_month_of_year(:created_at).count.map{ |k, v| [I18n.t("date.month_names")[k], v] }, points: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.9)"], title: "Articles" %>
+        <%= line_chart @user.articles_count, points: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.9)"], title: "Articles" %>
       </p>
     </div><!-- .col-lg-12 -->
   </div><!-- .row -->

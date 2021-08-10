@@ -68,4 +68,11 @@ class Article < ApplicationRecord
     end
   end
 
+  # Returns an array .. class method: number of articles month over year
+  def self.month_of_year_articles
+           group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
 end

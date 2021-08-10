@@ -147,6 +147,17 @@
   });
 </script>
 
+<!-- Google Charts world map (their JS required) -->
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<section class="mt-5 mb-5 pb-5 text-center">
+  <h4 class="jumbotron-heading mt-2 mb-3 pb-0">International Usage</h4>
+  <div class="row">
+    <div class="col-12">
+      <%= geo_chart Ahoy::Visit.countries %>
+    </div>
+  </div>
+</section>
+
 <!-- Site Video Tutorial
 <section class="text-center mt-5 mb-5 pt-5 pb-5">
   <div class="embed-responsive embed-responsive-16by9">
@@ -154,14 +165,3 @@
   </div>
 </section>
 -->
-
-<!-- Google Charts world map (their JS required) -->
-<script src="https://www.gstatic.com/charts/loader.js"></script>
-<section class="mt-5 mb-5 pb-5 text-center">
-  <h4 class="jumbotron-heading text-muted mb-1 pb-0">Worldwide Membership</h4>
-  <div class="row">
-    <div class="col-12">
-      <%= geo_chart Ahoy::Visit.group(:country).count %>
-    </div>
-  </div>
-</section>

@@ -154,10 +154,73 @@ class User < ApplicationRecord
     end
   end
 
-  # Returns an integer .. number of articles the user has liked
+  # Returns an integer .. number of articles the user currently likes
   def liked_by_count
     # UsersArticle.where(user: self).count
     self.liked_articles.count
+  end
+
+  # Returns an array .. number of articles the user currently has month over year
+  def articles_count
+    self.articles
+        .group_by_month_of_year(:created_at)
+        .count
+        .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. number of ToDo items the user currently has month over year
+  def todo_items_count
+    self.todo_items
+        .group_by_month_of_year(:created_at)
+        .count
+        .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of users month over year
+  def self.month_of_year_users
+           group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of users month over year with sysadmin role
+  def self.month_of_year_sysadmins
+           with_role(:sysadmin)
+          .group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of users month over year with superadmin role
+  def self.month_of_year_superadmins
+           with_role(:superadmin)
+          .group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of users month over year with admin role
+  def self.month_of_year_admins
+           with_role(:admin)
+          .group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of users month over year with member role
+  def self.month_of_year_members
+           with_role(:member)
+          .group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of users month over year with visitor role
+  def self.month_of_year_visitors
+           with_role(:visitor)
+          .group_by_month_of_year(:created_at)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
 end
