@@ -33,8 +33,8 @@ Geocoder.configure(
     package: :country
   },
 
-  # # to use an API key:
-  # api_key: "...",
+  # to use an API key:
+  api_key: ENV['GEOCODER_API'],
 
   # geocoding service request timeout, in seconds (default 3):
   timeout: 5,
