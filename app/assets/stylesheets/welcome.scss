@@ -1,5 +1,12 @@
-/* What's in the App? section of welcome page
+/* Key Features + International Usage sections of welcome page
 ----------------------------------------------------------------------------- */
+
+.gstatic-welcome {
+  filter: hue-rotate(151deg);
+  g {
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+  }
+}
 
 .in-app {
   display: block;
