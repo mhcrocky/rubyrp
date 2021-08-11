@@ -39,30 +39,30 @@
 </div><!-- .card-deck -->
 
 <div class="my-3 p-4">
-  <h5 class="jumbotron-heading border-bottom border-gray pb-2 mb-0">The Mission</h5>
+  <h5 class="jumbotron-heading pb-0 mb-0">Breakdown</h5>
   <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block text-gray-dark">Modern Best Practices</strong>
-      This is a Rails 6 (PostgreSQL) ToDo, Blog, and WebRTC application packed with frontend libraries &amp; frameworks to shape the frontend.
+    <p class="media-body pb-3 mb-0 small lh-125">
+      <strong class="d-block text-gray-dark">The App</strong>
+      Rails 6 (PostgreSQL) ToDo &plus; Blog &plus; WebRTC application packed with modern, lightweight libraries &amp; frameworks to shape the frontend.
     </p>
   </div>
   <div class="media text-muted pt-3">
     <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <p class="media-body pb-3 mb-0 small lh-125">
       <strong class="d-block text-gray-dark">Free</strong>
       Donec id elit non mi porta gravida amo vidicus metu. Quipio udon rando, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
     </p><!-- .media-body -->
   </div><!-- .media -->
   <div class="media text-muted pt-3">
     <%= image_tag 'schnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <p class="media-body pb-3 mb-0 small lh-125">
       <strong class="d-block text-gray-dark">Premium</strong>
       Lorem Ipsum elit non mi porta gravida y at egorial. Giggiti nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapi, tellus ac cursus pulio, giggiti y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
     </p><!-- .media-body -->
   </div><!-- .media -->
   <div class="media text-muted pt-3">
     <p class="media-body pb-0 mb-0 small">
-      Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, spilia dur fermentum massa tellio cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Pellentesque nulla nisi elit non mi porta gravida y at egorial. Lorem Ipsum dividi non mi porta gravidisima y gravidisimo.
+      Lorem Ipsum elit non mi Talk abot gem dependencies. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Lorem Ipsum elit non mi porta gravida y at egorial. Pellentesque nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapibus, spilia dur fermentum massa tellio cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Fusce dapibus, tellus ac cursus pulio, e te brute y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus. Pellentesque nulla nisi elit non mi porta gravida y at egorial. Lorem Ipsum dividi non mi porta gravidisima y gravidisimo.
     </p><!-- .media-body -->
   </div><!-- .media -->
   <small class="d-block text-right text-muted mt-1">
@@ -70,7 +70,18 @@
   </small><!-- .d-block -->
 </div><!-- .my-3 p-3 card -->
 
-<section class="pt-5 mt-5 text-center in-app">
+<section class="mt-4 pt-4 mb-5 pb-5 text-center gstatic-welcome">
+  <h4 class="jumbotron-heading mb-1 pb-1">Community</h4>
+  <div class="row">
+    <div class="col-12">
+      <!-- Google Charts world map (their JS required) -->
+      <script src="https://www.gstatic.com/charts/loader.js"></script>
+      <%= geo_chart Ahoy::Visit.countries %>
+    </div><!-- .col-12 -->
+  </div><!-- .row -->
+</section><!-- .gstatic-welcome -->
+
+<section class="pt-0 mt-0 text-center in-app">
   <h4 class="jumbotron-heading mb-0 pb-0">Key Features</h4>
   <div class="row">
     <div class="col-sm-3 text-muted">
@@ -101,7 +112,7 @@
       </div><!-- .right-2 -->
     </div><!-- .col-sm-3 .text-muted -->
   </div><!-- .row -->
-</section><!-- .pt-5 .mt-5 .text-center .in-app -->
+</section><!-- .in-app -->
 
 <!-- Transition Images -->
 <script>
@@ -146,21 +157,3 @@
     });
   });
 </script>
-
-<section class="mt-3 pt-3 mb-5 pb-5 text-center gstatic-welcome">
-  <h4 class="jumbotron-heading mb-1 pb-1">Community</h4>
-  <div class="row">
-    <div class="col-12">
-      <!-- Google Charts world map (their JS required) -->
-      <script src="https://www.gstatic.com/charts/loader.js"></script>
-      <%= geo_chart Ahoy::Visit.countries %>
-    </div><!-- .col-12 -->
-  </div><!-- .row -->
-</section><!-- .gstatic-welcome -->
-
-<section class="text-center mt-4 pt-4 mb-5 pb-5">
-  <h4 class="jumbotron-heading mb-1 pb-1">Site Tutorial</h4>
-  <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/FsuQg42XNMo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</section>
