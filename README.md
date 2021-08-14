@@ -47,7 +47,8 @@ $ open coverage/index.html
 
 ## Initialization (Development)
 
-* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN in /config/application.yml ( figaro | .gitignore ). If you don't want to use verification email, comment out :confirmable in user model and edit db/seeds
+* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, GEOCODER_API in /config/application.yml ( figaro | .gitignore ). If you don't want to use verification email, comment out :confirmable in user model and edit db/seeds
+* Search and replace in project the following:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
 ```
 $ bundle install
 $ yarn install
@@ -55,7 +56,6 @@ $ rails db:create
 $ rails db:seed
 $ rails s
 ```
-* In a few necessary places, you'll want to search and replace the following for another project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
 
 
 ## Initialization (Heroku)
@@ -63,7 +63,8 @@ $ rails s
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Add-ons: Rollbar | Papertrail | Heroku Redis | Heroku Postgres
 * Buildpacks: heroku/nodejs | heroku/ruby
-* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN in Config Vars
+* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, GEOCODER_API in Config Vars
+* Search and replace in project the following (if you're skipping Development Initialization):  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
