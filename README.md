@@ -55,6 +55,7 @@ $ rails db:create
 $ rails db:seed
 $ rails s
 ```
+* In a few necessary places, you'll want to search and replace the following for another project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
 
 
 ## Initialization (Heroku)
