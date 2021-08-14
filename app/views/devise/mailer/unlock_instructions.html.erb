@@ -1,7 +1,27 @@
-<p>Hello <%= @resource.email %>!</p>
+<div style="width:600px; text-align:left; color:#000; background-color:#fff;">
+  <div style="width:570px; margin-left:15px;">
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+    <h2 style="font-size:15px; margin-top:12px; margin-bottom:9px; margin-left:3px;"><%= @resource.email %></h2>
 
-<p>Click the link below to unlock your account:</p>
+    <h1 style="font-size:30px; margin-bottom:12px; margin-left:3px;">Hello,</h1>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+    <p style="font-size:18px; margin-bottom:9px; margin-left:6px;">
+      Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+    </p>
+
+    <p style="font-size:18px; margin-bottom:6px; margin-left:6px;">
+      Click the link below to unlock your account:
+    </p>
+
+    <h3 style="font-size:21px; margin-top:45px; margin-left:9px;">
+      <%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token), style: "cursor:pointer; font-weight:600; text-decoration:none; color:#fff; background-color:#17a2b8; border:solid 1px #17a2b8; padding:8px 12px;" %>
+    </h3>
+
+    <div style="margin-top:45px; margin-left:12px;">
+      <a href="https://rails-react-bootstrap.herokuapp.com/" style="text-decoration:none;">
+        <img src="https://rails-react-bootstrap.herokuapp.com/assets/logo-92660c5c2890ab892aaab15171ef70e729a4b8f81c6786659ddc928273d81ced.png" alt="logo" width=95 height=107>
+      </a>
+    </div>
+
+  </div>
+</div>
