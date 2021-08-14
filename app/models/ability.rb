@@ -23,17 +23,28 @@ class Ability
       can :manage, Article
       can :manage, Comment
       can :manage, TodoItem, user_id: user.id
-      can :read, User
+      can :read,   User
 
-    else # members + visitors(default sign_up role)
-      can :read, Room
-      can :read, Article
+    elsif user.has_role? :member
+      can :read,   Room
+      can :manage, Room, user_id: user.id
+      can :read,   Article
       can :manage, Article, user_id: user.id
-      can :read, Comment
+      can :read,   Comment
       can :manage, Comment, user_id: user.id
       can :manage, Comment, article: { user: { id: user.id } }
       can :manage, TodoItem, user_id: user.id
-      can :read, User
+      can :read,   User
+
+    else # visitors(default sign_up role)
+      can :read,   Room
+      can :read,   Article
+      can :manage, Article, user_id: user.id
+      can :read,   Comment
+      can :manage, Comment, user_id: user.id
+      can :manage, Comment, article: { user: { id: user.id } }
+      can :manage, TodoItem, user_id: user.id
+      can :read,   User
     end
 
   end
