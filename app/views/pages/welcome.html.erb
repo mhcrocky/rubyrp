@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Welcome</h1>
-    <p class="lead text-left text-muted">There is no product being sold here. The site's content is meant to serve as an example. Join now to see the blog, todo list, &amp; video chat.</p>
+    <p class="lead text-left text-muted">This is an example Ruby on Rails application. Join us and become part of the greatest one ever 🖖🏼</p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
@@ -11,29 +11,29 @@
       <h4 class="my-0 font-weight-bold text-white">Free</h4>
     </div><!-- .card-header -->
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+      <h1 class="card-title pricing-card-title">$0</h1>
       <ul class="list-unstyled mt-3 mb-4">
-        <li><strong>Lorem</strong></li>
-        <li>Fusce dapibus donec id elit</li>
-        <li>Porta gravida giggidi</li>
-        <li>Justo</li>
+        <li><strong>Never Pay</strong></li>
+        <li>Private ToDo List</li>
+        <li>Read &amp; add to the Blog</li>
+        <li>Participate in the Video Chat</li>
       </ul><!-- .ist-unstyled -->
-      <%= link_to("Sign up for free", new_user_registration_path, class: 'btn btn-lg btn-block btn-outline-primary') %>
+      <%= link_to("Sign up for Free", new_user_registration_path, class: 'btn btn-lg btn-block btn-outline-primary') %>
     </div><!-- .card-body -->
   </div><!-- .card -->
   <div class="card mb-4 border-0 shadow">
     <div class="card-header bg-shnozberry">
-      <h4 class="my-0 font-weight-bold text-white">Premium</h4>
+      <h4 class="my-0 font-weight-bold text-white">Membership</h4>
     </div><!-- .card-header -->
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+      <h1 class="card-title pricing-card-title">$10 <small class="text-muted">minimum</small></h1>
       <ul class="list-unstyled mt-3 mb-4">
-        <li><strong>Lorem Ipsum</strong></li>
-        <li>Fusce dapibus donec id elit</li>
-        <li>Porta gravida at emic eget</li>
-        <li>Justo sit amet risus</li>
+        <li><strong>One-Time Payment</strong></li>
+        <li>Private ToDo List</li>
+        <li>Read &amp; add to the Blog</li>
+        <li>Participate in <i>and create</i> Video Chats</li>
       </ul><!-- .ist-unstyled -->
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Start subscription</button>
+      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Coming Soon</button>
     </div><!-- .card-body -->
   </div><!-- .card -->
 </div><!-- .card-deck -->
@@ -43,7 +43,7 @@
   <div class="media text-muted pt-3">
     <p class="media-body pb-3 mb-0 small lh-125">
       <strong class="d-block text-gray-dark">The App</strong>
-      This is a Rails 6 (PostgreSQL) ToDo &plus; Blog &plus; WebRTC application packed with modern, lightweight libraries &amp; frameworks to shape the frontend
+      This is a Rails 6 (PostgreSQL) ToDo &plus; Blog &plus; WebRTC application packed with modern, lightweight libraries &amp; frameworks to shape the frontend.
     </p>
   </div>
   <div class="media text-muted pt-3">
@@ -71,7 +71,7 @@
 </div><!-- .my-3 p-3 card -->
 
 <section class="mt-4 pt-4 mb-5 pb-5 text-center gstatic-welcome">
-  <h4 class="jumbotron-heading mb-1 pb-1">Community</h4>
+  <h4 class="jumbotron-heading mb-1 pb-1">Our Village</h4>
   <div class="row">
     <div class="col-12">
       <!-- Google Charts world map (their JS required) -->
@@ -92,8 +92,8 @@
       </div><!-- .left-1 -->
       <div class="left-2 mt-5 mb-5 pt-5 pb-5">
         <i class='fas fa-chart-pie'></i>
-        <h5>Chart JS</h5>
-    	  <p>Dynamic charts built with Chartkick &amp; Groupdate</p>
+        <h5>Analytics</h5>
+    	  <p>Chartkick, Groupdate, Geocoder &amp; Ahoy</p>
       </div><!-- .left-2 -->
     </div><!-- .col-sm-3 -->
     <div class="col-sm-6 d-flex align-items-center">
@@ -106,9 +106,9 @@
     	  <p>Devise, Rolify, &amp; CanCan</p>
       </div><!-- .right-1 -->
       <div class="right-2 mt-5 mb-5 pt-5 pb-5">
-        <i class='fas fa-language'></i>
-        <h5>Custom Regex</h5>
-        <p>Methods to validate &amp; format any YouTube url</p>
+        <i class='fas fa-comments'></i>
+        <h5>WebRTC</h5>
+        <p>Video Chat via Stimulus and the Twilio API</p>
       </div><!-- .right-2 -->
     </div><!-- .col-sm-3 .text-muted -->
   </div><!-- .row -->
@@ -147,7 +147,7 @@
       return false;
     });
     $('.right-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/regex.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/webRTC.png")%>');
       $(".right-2 svg").css('background', '#6c757d');
       $('.right-2 svg').css('color', '#fff');
       $(".right-1 svg").removeAttr('style');
