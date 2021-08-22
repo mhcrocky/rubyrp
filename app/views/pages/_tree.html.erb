@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  google.charts.load('current', {packages:['wordtree']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(
+      [ ['Phrases'],
+        <% @articles.each do |article| %>
+          ['<%= "#{article.text.to_plain_text.downcase
+                                             .gsub(/[^a-z0-9\s]/i, ' ')
+                                             .gsub(/[^0-9A-Za-z]/, ' ')
+                                             .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')}" %>'],
+        <% end %>
+      ]
+    );
+
+    var options = {
+      maxFontSize: 30,
+      wordtree: {
+        format: 'implicit',
+        word: 'Seed article',
+        fontName: 'Times-Roman',
+        colors: ['red', 'black', 'green'],
+        backgroundColor: '#fff'
+      }
+    };
+
+    var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+    chart.draw(data, options);
+  }
+</script>
+
+<div id="wordtree_basic" style="width:100%; max-height:900px;"></div>
