@@ -9,6 +9,28 @@ class Ahoy::Visit < ApplicationRecord
     where("started_at > ?", 1.week.ago)
   }
 
+  # Returns a string .. city and country of .last visit
+  # Fallbacks -> region, latitude and longitude
+  def location
+    if self.city.present? && self.country.present?
+      "#{self.city}, #{self.country}"
+    elsif self.region.present? && self.country.present?
+      "#{self.region}, #{self.country}"
+    elsif self.city.present? && self.region.present?
+      "#{self.city}, #{self.region}"
+    elsif self.city.present?
+      "#{self.city}"
+    elsif self.region.present?
+      "#{self.region}"
+    elsif self.country.present?
+      "#{self.country}"
+    elsif self.latitude.present? && self.longitude.present?
+      "#{self.latitude}, #{self.longitude}"
+    else
+      ''
+    end
+  end
+
   # Returns a hash .. class method: bowsers that have visited and their sum
   def self.browsers
            group(:browser).count

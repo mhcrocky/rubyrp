@@ -77,7 +77,7 @@
             ['Lat', 'Long', 'Location'],
 
             <% @visits.each do |visit| %>
-              [<%= visit.latitude %>, <%= visit.longitude %>, '<%= "#{visit.location}" %>'],
+              [<%= visit.latitude %>, <%= visit.longitude %>, <%= visit.location %>],
             <% end %>
 
           ]);
