@@ -121,6 +121,9 @@ class Api::V1::ChartsController < ApplicationController
   def month_of_year_rooms
     render json: Room.month_of_year_rooms
   end
+  def month_of_year_single_rooms
+    render json: current_user.rooms_count
+  end
   def chat_rooms
     render json: Room.group(:name).count
   end

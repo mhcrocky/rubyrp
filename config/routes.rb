@@ -89,6 +89,7 @@ Rails.application.routes.draw do
         get 'free_member-articles'
         # Rooms
         get 'month_of_year-rooms'
+        get 'month_of_year_single_rooms'
         get 'chat-rooms'
         # Todo Items
         get 'complete_incomplete-todos'

@@ -11,6 +11,10 @@ class PagesController < ApplicationController
                  .search(filter)
                  .paginate(page: params[:page], per_page: 12)
 
+    @visits = Ahoy::Visit.all
+
+    @articles = Article.all
+
     ahoy.track "Viewed Dashboard"
   end
 

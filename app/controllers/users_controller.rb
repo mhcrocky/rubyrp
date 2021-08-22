@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   include Trackable
 
   def show
+    @rooms = Room.where(user_id: @user.id)
+                 .order('created_at DESC')
+                 .paginate(page: params[:page], per_page: 4)
+
     @articles = Article.where(user_id: @user.id)
                        .order('created_at DESC')
                        .paginate(page: params[:page], per_page: 12)

@@ -1,4 +1,4 @@
-<div class="col-lg-7">
+<div class="col-lg-8">
   <div class="row mb-5">
     <div class="col-12 mt-3 text-left">
       <section class="mt-0">
@@ -54,12 +54,16 @@
                 <td><%= current_user.dark_theme ? 'Yes' : 'No' %></td>
               </tr>
               <tr>
-                <th>ToDo Items</th>
-                <td><%= current_user.todo_items.count %></td>
+                <th>Rooms</th>
+                <td><%= current_user.rooms.count %></td>
               </tr>
               <tr>
                 <th>Articles</th>
                 <td><%= current_user.articles.count %></td>
+              </tr>
+              <tr>
+                <th>ToDo Items</th>
+                <td><%= current_user.todo_items.count %></td>
               </tr>
             </tbody>
           </table><!-- .table .table-striped -->
@@ -67,13 +71,19 @@
       </section><!-- .text-center mt-0 -->
     </div><!-- .col-12 -->
   </div><!-- .row .mb-5 -->
-</div><!-- .col-lg-7 -->
-<div class="col-lg-1 pb-1"></div>
+</div><!-- .col-lg-8 -->
 <div class="col-lg-4">
   <p class="mt-2">
-    <%= pie_chart api_v1_charts_complete_incomplete_single_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "My List Status" %>
-  </p><!-- .mt-3 -->
+    <% if !current_user.has_role?(:visitor) %>
+      <%= area_chart api_v1_charts_month_of_year_single_rooms_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(230,67,140,0.7)"], title: "My Rooms" %>
+    <% else %>
+      <figure class="figure mt-5 mb-5">
+        <%= image_tag 'logo.svg', alt: 'Welcome', class: 'figure-img img-fluid rounded' %>
+        <figcaption class="figure-caption">Membershp feature coming soon</figcaption>
+      </figure>
+    <% end %>
+  </p>
   <p class="mt-0 mb-5">
-    <%= area_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "My Todo Items" %>
-  </p><!-- .mt-3 mb-5 -->
+    <%= area_chart api_v1_charts_month_of_year_single_articles_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(251,79,20,0.7)"], title: "My Articles" %>
+  </p>
 </div><!-- .col-lg-4 -->

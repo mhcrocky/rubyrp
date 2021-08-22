@@ -53,4 +53,9 @@ window.addEventListener("trix-file-accept", function(event) {
   console.log('File attachment not supported')
 })
 
+// Temporary: Bootstrap tooltips jQuery
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 // console.log('application js firing')

@@ -6,10 +6,6 @@
           <table class="table table-striped">
             <tbody>
               <tr>
-                <th>ID</th>
-                <td><%= @user.id %></td>
-              </tr>
-              <tr>
                 <th>Role</th>
                 <td><%= @user.role %></td>
               </tr>
@@ -60,6 +56,10 @@
               <tr>
                 <th>Articles</th>
                 <td><%= @user.articles.count %></td>
+              </tr>
+              <tr>
+                <th>Rooms</th>
+                <td><%= @user.rooms.count %></td>
               </tr>
             </tbody>
           </table><!-- .table .table-striped -->

@@ -165,6 +165,14 @@ class User < ApplicationRecord
     self.liked_articles.count
   end
 
+  # Returns an array .. number of ToDo items the user currently has month over year
+  def todo_items_count
+    self.todo_items
+        .group_by_month_of_year(:created_at)
+        .count
+        .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
   # Returns an array .. number of articles the user currently has month over year
   def articles_count
     self.articles
@@ -173,9 +181,9 @@ class User < ApplicationRecord
         .map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
-  # Returns an array .. number of ToDo items the user currently has month over year
-  def todo_items_count
-    self.todo_items
+  # Returns an array .. number of rooms the user currently has month over year
+  def rooms_count
+    self.rooms
         .group_by_month_of_year(:created_at)
         .count
         .map{ |k, v| [I18n.t("date.month_names")[k], v] }

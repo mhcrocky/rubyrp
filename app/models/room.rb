@@ -28,7 +28,12 @@ class Room < ApplicationRecord
   # Search
   def self.search(search)
     if search && search.length > 0
-      where("lower(name) LIKE ?", "%#{search.downcase}%")
+      select('rooms.*, lower(rooms.name)').
+      joins("LEFT OUTER JOIN users ON users.id = rooms.user_id").
+        where("lower(rooms.name) LIKE ? OR lower(users.email) LIKE ?",
+          "%#{search.downcase}%",
+          "%#{search.downcase}%").
+        distinct
     else
       where(nil)
     end

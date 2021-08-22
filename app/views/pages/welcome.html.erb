@@ -26,9 +26,9 @@
       <h4 class="my-0 font-weight-bold text-white">Membership</h4>
     </div><!-- .card-header -->
     <div class="card-body">
-      <h1 class="card-title pricing-card-title">$10 <small class="text-muted">minimum</small></h1>
+      <h1 class="card-title pricing-card-title">$10 <small class="text-muted">min</small></h1>
       <ul class="list-unstyled mt-3 mb-4">
-        <li><strong>One-Time Payment</strong></li>
+        <li><strong>Pay Once</strong></li>
         <li>Private ToDo List</li>
         <li>Read &amp; add to the Blog</li>
         <li>Participate in <i>and create</i> Video Chats</li>
@@ -45,19 +45,19 @@
       <strong class="d-block text-gray-dark">The App</strong>
       This is a Rails 6 (PostgreSQL) ToDo &plus; Blog &plus; WebRTC application packed with modern, lightweight libraries &amp; frameworks to shape the frontend.
     </p>
-  </div>
+  </div><!-- .media -->
   <div class="media text-muted pt-3">
     <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
     <p class="media-body pb-3 mb-0 small lh-125">
       <strong class="d-block text-gray-dark">Free</strong>
-      Donec id elit non mi porta gravida amo vidicus metu. Quipio udon rando, ut fermentum massa justo sit amet risus. Pellentesque nulla nisi, dapibus ut purus aliquam. Proin vel purus ut nulla sodales faucibus id ut lacus.
+      Sign up and never pay for free access to the site. This package includes a private ToDo List, full access to the Blog, and the ability to join Video Chats created by members. You can always decide to upgrade at any time.
     </p><!-- .media-body -->
   </div><!-- .media -->
   <div class="media text-muted pt-3">
-    <%= image_tag 'schnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
+    <%= image_tag 'shnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
     <p class="media-body pb-3 mb-0 small lh-125">
-      <strong class="d-block text-gray-dark">Premium</strong>
-      Lorem Ipsum elit non mi porta gravida y at egorial. Giggiti nulla nisi, dapibus ut purus aliquam, semper lacinia purus. Fusce dapi, tellus ac cursus pulio, giggiti y tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Proin vel purus ut nulla sodales faucibus id ut lacus.
+      <strong class="d-block text-gray-dark">Membership</strong>
+      Sign up and pay once for total access to the site. This package includes a private ToDo List, full access to the Blog, and the ability to create + join Video Chats created by yourself + other members. As new features are released, your early adoption will grant you access to them as well.
     </p><!-- .media-body -->
   </div><!-- .media -->
   <div class="media text-muted pt-3">
@@ -70,16 +70,39 @@
   </small><!-- .d-block -->
 </div><!-- .my-3 p-3 card -->
 
-<section class="mt-4 pt-4 mb-5 pb-5 text-center gstatic-welcome">
-  <h4 class="jumbotron-heading mb-1 pb-1">Our Village</h4>
+<section class="mt-4 pt-4 mb-5 pb-5 text-center">
+  <h4 class="jumbotron-heading mb-1 pb-1 pt-1">Our Community</h4>
+  <!-- Google Charts -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
   <div class="row">
-    <div class="col-12">
-      <!-- Google Charts world map (their JS required) -->
-      <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="col-lg-7 gstatic">
       <%= geo_chart Ahoy::Visit.countries %>
-    </div><!-- .col-12 -->
-  </div><!-- .row -->
-</section><!-- .gstatic-welcome -->
+    </div><!-- .col-lg-7 -->
+    <div class="col-lg-5">
+      <div class="row mt-5 pt-4">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Free"></div>
+            <div class="progress-bar progress-bar-striped bg-shnozberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:member).count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Members"></div>
+          </div><!-- .progress -->
+        </div><!-- .col-10 -->
+        <div class="col-1"></div>
+      </div><!-- row -->
+      <div class="row mt-5 pt-2">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Article.count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Articles"></div>
+            <div class="progress-bar progress-bar-striped bg-brownie progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= TodoItem.count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="ToDo Items"></div>
+            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Room.count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Chat Rooms"></div>
+          </div><!-- .progress -->
+        </div><!-- .col-10 -->
+        <div class="col-1"></div>
+      </div><!-- .row -->
+    </div><!-- .col-lg-5 -->
+  </div><!-- row -->
+</section><!-- .gstatic -->
 
 <section class="pt-0 mt-0 text-center in-app">
   <h4 class="jumbotron-heading mb-0 pb-0">Key Features</h4>
@@ -87,8 +110,8 @@
     <div class="col-sm-3 text-muted">
       <div class="left-1 mb-5 pt-3 pb-5">
         <i class="fas fa-laptop-code" style="background:#6c757d; color:#fff;"></i>
-        <h5>React JS</h5>
-    	  <p>A ToDo list built with React</p>
+        <h5>Mutation</h5>
+        <p>Reactive components</p>
       </div><!-- .left-1 -->
       <div class="left-2 mt-5 mb-5 pt-5 pb-5">
         <i class='fas fa-chart-pie'></i>
