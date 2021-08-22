@@ -74,10 +74,10 @@
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Lat', 'Long'],
+            ['Lat', 'Long', 'Location'],
 
             <% @visits.each do |visit| %>
-              [<%= visit.latitude %>, <%= visit.longitude %>],
+              [<%= visit.latitude %>, <%= visit.longitude %>, '<%= "#{visit.location}" %>'],
             <% end %>
 
           ]);
@@ -109,7 +109,7 @@
       var data = google.visualization.arrayToDataTable(
         [ ['Phrases'],
           <% @articles.each do |article| %>
-            ['<%= "#{article.text.to_plain_text.gsub('.', '')}" %>'],
+            ['<%= "#{article.text.to_plain_text.gsub!(/[^0-9A-Za-z!@%&"()]/, ' ')}" %>'],
           <% end %>
           ['fooBar'],
         ]
