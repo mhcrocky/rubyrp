@@ -109,29 +109,29 @@
   <div class="row">
     <div class="col-sm-3 text-muted">
       <div class="left-1 mb-5 pt-3 pb-5">
-        <i class="fas fa-laptop-code" style="background:#6c757d; color:#fff;"></i>
-        <h5>Mutation</h5>
-        <p>Reactive components</p>
-      </div><!-- .left-1 -->
-      <div class="left-2 mt-5 mb-5 pt-5 pb-5">
-        <i class='fas fa-chart-pie'></i>
+        <i class='fas fa-chart-pie' style="background:#6c757d; color:#fff;"></i>
         <h5>Analytics</h5>
     	  <p>Chartkick, Groupdate, Geocoder &amp; Ahoy</p>
+      </div><!-- .left-1 -->
+      <div class="left-2 mt-5 mb-5 pt-5 pb-5">
+        <i class="fas fa-laptop-code"></i>
+        <h5>Mutation</h5>
+        <p>Reactive components</p>
       </div><!-- .left-2 -->
     </div><!-- .col-sm-3 -->
     <div class="col-sm-6 d-flex align-items-center">
-      <%= image_tag 'welcome/react.png', alt: 'Welcome', class: 'center-img shadow-lg' %>
+      <%= image_tag 'welcome/chart.png', alt: 'Welcome', class: 'center-img shadow-lg' %>
     </div><!-- .col-sm-6 -->
     <div class="col-sm-3 text-muted">
       <div class="right-1 mb-5 pt-3 pb-5">
-        <i class='fas fa-lock-open'></i>
-        <h5>Authentication</h5>
-    	  <p>Devise, Rolify, &amp; CanCan</p>
-      </div><!-- .right-1 -->
-      <div class="right-2 mt-5 mb-5 pt-5 pb-5">
         <i class='fas fa-comments'></i>
         <h5>WebRTC</h5>
         <p>Video Chat via Stimulus and the Twilio API</p>
+      </div><!-- .right-1 -->
+      <div class="right-2 mt-5 mb-5 pt-5 pb-5">
+        <i class='fas fa-lock-open'></i>
+        <h5>Authentication</h5>
+    	  <p>Devise, Rolify, &amp; CanCan</p>
       </div><!-- .right-2 -->
     </div><!-- .col-sm-3 .text-muted -->
   </div><!-- .row -->
@@ -143,7 +143,7 @@
     $(".left-1 svg").css('background', '#6c757d');
     $('.left-1 svg').css('color', '#fff');
     $('.left-1').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/react.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/chart.png")%>');
       $(".left-1 svg").css('background', '#6c757d');
       $('.left-1 svg').css('color', '#fff');
       $(".left-2 svg").removeAttr('style');
@@ -152,7 +152,7 @@
       return false;
     });
     $('.left-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/chart.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/react.png")%>');
       $(".left-2 svg").css('background', '#6c757d');
       $('.left-2 svg').css('color', '#fff');
       $(".left-1 svg").removeAttr('style');
@@ -161,7 +161,7 @@
       return false;
     });
     $('.right-1').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/devise.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/webRTC.png")%>');
       $(".right-1 svg").css('background', '#6c757d');
       $('.right-1 svg').css('color', '#fff');
       $(".right-2 svg").removeAttr('style');
@@ -170,7 +170,7 @@
       return false;
     });
     $('.right-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/webRTC.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/devise.png")%>');
       $(".right-2 svg").css('background', '#6c757d');
       $('.right-2 svg').css('color', '#fff');
       $(".right-1 svg").removeAttr('style');

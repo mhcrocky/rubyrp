@@ -100,7 +100,7 @@
 </section><!-- .mt-0 .mb-5 .text-center -->
 
 <section class="jumbotron mt-0 mb-5 text-center">
-  <h2 class="jumbotron-heading mb-0 pb-0 text-orange">Article Word Tree</h2>
+  <h2 class="jumbotron-heading mb-0 pb-0 text-orange">Blog Terms</h2>
   <script type="text/javascript">
     google.charts.load('current', {packages:['wordtree']});
     google.charts.setOnLoadCallback(drawChart);
@@ -109,9 +109,10 @@
       var data = google.visualization.arrayToDataTable(
         [ ['Phrases'],
           <% @articles.each do |article| %>
-            ['<%= "#{article.text.to_plain_text.gsub!(/[^0-9A-Za-z!@%&"'()|an|a|the|be|there|their|too|to]/, ' ')}" %>'],
+            ['<%= "#{article.text.to_plain_text.downcase
+                                               .gsub(/[^a-z0-9\s]/i, ' ')
+                                               .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')}" %>'],
           <% end %>
-          ['fooBar'],
         ]
       );
 
