@@ -11,7 +11,8 @@ class PagesController < ApplicationController
                  .search(filter)
                  .paginate(page: params[:page], per_page: 12)
 
-    @visits = Ahoy::Visit.all
+    @visits = Ahoy::Visit.where.not(longitude: nil)
+                         .uniq{|v| v.longitude }
 
     @articles = Article.all
 
