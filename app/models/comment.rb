@@ -15,4 +15,14 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true
 
+  # Returns a string .. strip out unknown characters, etc.. for text in word tree
+  def strip_body_for_tree
+    self.body
+        .to_plain_text
+        .downcase
+        .gsub(/[^a-z0-9\s]/i, ' ')
+        .gsub(/[^0-9A-Za-z]/, ' ')
+        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+  end
+
 end

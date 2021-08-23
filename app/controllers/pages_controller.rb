@@ -16,6 +16,12 @@ class PagesController < ApplicationController
 
     @articles = Article.all
 
+    @comments = Comment.all
+
+    @rooms = Room.all
+
+    @todo_items = TodoItem.all
+
     ahoy.track "Viewed Dashboard"
   end
 

@@ -25,6 +25,15 @@ class Room < ApplicationRecord
     self.room_key = token.ice_servers.to_json
   end
 
+  # Returns a string .. strip out unknown characters, etc.. for title in word tree
+  def strip_name_for_tree
+    self.name
+        .downcase
+        .gsub(/[^a-z0-9\s]/i, ' ')
+        .gsub(/[^0-9A-Za-z]/, ' ')
+        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+  end
+
   # Search
   def self.search(search)
     if search && search.length > 0

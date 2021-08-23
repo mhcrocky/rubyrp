@@ -15,6 +15,15 @@ class TodoItem < ApplicationRecord
     "#{self.updated_at.in_time_zone("#{self.user.timezone}").strftime('%m/%d/%Y')}" # .. %H, %M, %S
   end
 
+  # Returns a string .. strip out unknown characters, etc.. for title in word tree
+  def strip_title_for_tree
+    self.title
+        .downcase
+        .gsub(/[^a-z0-9\s]/i, ' ')
+        .gsub(/[^0-9A-Za-z]/, ' ')
+        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+  end
+
   # Returns an array .. class method: number of todoItems month over year
   def self.month_of_year_todos
            group_by_month_of_year(:created_at)

@@ -59,6 +59,25 @@ class Article < ApplicationRecord
     end
   end
 
+  # Returns a string .. strip out unknown characters, etc.. for text in word tree
+  def strip_text_for_tree
+    self.text
+        .to_plain_text
+        .downcase
+        .gsub(/[^a-z0-9\s]/i, ' ')
+        .gsub(/[^0-9A-Za-z]/, ' ')
+        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+  end
+
+  # Returns a string .. strip out unknown characters, etc.. for title in word tree
+  def strip_title_for_tree
+    self.title
+        .downcase
+        .gsub(/[^a-z0-9\s]/i, ' ')
+        .gsub(/[^0-9A-Za-z]/, ' ')
+        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+  end
+
   # Search
   def self.search(search)
     if search && search.length > 0

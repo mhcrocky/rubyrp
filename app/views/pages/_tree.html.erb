@@ -1,3 +1,5 @@
+<h2 class="jumbotron-heading mb-0 pb-0 text-dark font-italic">Terminology</h2>
+
 <script type="text/javascript">
   google.charts.load('current', {packages:['wordtree']});
   google.charts.setOnLoadCallback(drawChart);
@@ -6,10 +8,21 @@
     var data = google.visualization.arrayToDataTable(
       [ ['Phrases'],
         <% @articles.each do |article| %>
-          ['<%= "#{article.text.to_plain_text.downcase
-                                             .gsub(/[^a-z0-9\s]/i, ' ')
-                                             .gsub(/[^0-9A-Za-z]/, ' ')
-                                             .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')}" %>'],
+          ['<%= "#{article.strip_text_for_tree}" %>'],
+
+          ['<%= "#{article.strip_title_for_tree}" %>'],
+        <% end %>
+
+        <% @comments.each do |comment| %>
+          ['<%= "#{comment.strip_body_for_tree}" %>'],
+        <% end %>
+
+        <% @rooms.each do |room| %>
+          ['<%= "#{room.strip_name_for_tree}" %>'],
+        <% end %>
+
+        <% @todo_items.each do |todo_item| %>
+          ['<%= "#{todo_item.strip_title_for_tree}" %>'],
         <% end %>
       ]
     );
@@ -19,15 +32,15 @@
       wordtree: {
         format: 'implicit',
         word: 'Seed article',
-        fontName: 'Times-Roman',
+        fontName: 'Lobster',
         colors: ['red', 'black', 'green'],
         backgroundColor: '#fff'
       }
     };
 
-    var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+    var chart = new google.visualization.WordTree(document.getElementById('wordtree_global'));
     chart.draw(data, options);
   }
 </script>
 
-<div id="wordtree_basic" style="width:100%; max-height:900px;"></div>
+<div id="wordtree_global" style="width:100%; max-height:900px;"></div>
