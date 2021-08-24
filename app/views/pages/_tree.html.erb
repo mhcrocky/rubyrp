@@ -1,5 +1,3 @@
-<h2 class="jumbotron-heading mb-0 pb-0 text-dark font-italic">Terminology</h2>
-
 <script type="text/javascript">
   google.charts.load('current', {packages:['wordtree']});
   google.charts.setOnLoadCallback(drawChart);
@@ -31,10 +29,8 @@
       maxFontSize: 30,
       wordtree: {
         format: 'implicit',
-        word: 'Seed article',
-        fontName: 'Lobster',
-        colors: ['red', 'black', 'green'],
-        backgroundColor: '#fff'
+        word: document.getElementById("root").value,
+        Default: 'suffix', // type: 'double',
       }
     };
 
@@ -43,4 +39,12 @@
   }
 </script>
 
-<div id="wordtree_global" style="width:100%; max-height:900px;"></div>
+<div class="jumbotron">
+  <div class="container">
+    <h4 class="jumbotron-heading text-dark font-italic">Word Tree</h4>
+    <div class="filter">
+      <input id="root" class="form-control" placeholder="Search word(s)" value="" onchange="drawChart()">
+    </div><!-- .filter -->
+  </div><!-- .container -->
+  <div id="wordtree_global" class="w-100 mt-2"></div>
+</div><!-- .jumbotron -->
