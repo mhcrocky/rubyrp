@@ -10,6 +10,13 @@
   }
 }
 
+#gauge_div_1, #gauge_div_2 {
+  width: 100%;
+  table {
+    margin: auto !important;
+  }
+}
+
 .in-app {
   display: block;
   svg {

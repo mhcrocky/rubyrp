@@ -3,7 +3,7 @@
   <div class="row">
     <%= render partial: 'pages/map' %>
     <div class="col-12">
-      <div class="row mt-1 pt-1">
+      <div class="row mt-1 pt-0">
         <div class="col-12">
           <div class="progress">
             <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Free"></div>
