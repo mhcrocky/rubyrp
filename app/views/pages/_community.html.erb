@@ -1,31 +1,25 @@
-<section class="mt-4 pt-4 mb-5 pb-5 text-center">
+<section class="mt-3 pt-3 mb-5 pb-5 text-center">
   <h4 class="jumbotron-heading mb-1 pb-1 pt-1">Our Community</h4>
   <div class="row">
-    <div class="col-lg-7 gstatic">
-      <%= geo_chart Ahoy::Visit.countries %>
-    </div><!-- .col-lg-7 -->
-    <div class="col-lg-5">
-      <div class="row mt-5 pt-4">
-        <div class="col-1"></div>
-        <div class="col-10">
+    <%= render partial: 'pages/map' %>
+    <div class="col-12">
+      <div class="row mt-1 pt-1">
+        <div class="col-12">
           <div class="progress">
             <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Free"></div>
             <div class="progress-bar progress-bar-striped bg-shnozberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:member).count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Members"></div>
           </div><!-- .progress -->
         </div><!-- .col-10 -->
-        <div class="col-1"></div>
       </div><!-- row -->
-      <div class="row mt-5 pt-2">
-        <div class="col-1"></div>
-        <div class="col-10">
+      <div class="row mt-2 pt-2 pb-5">
+        <div class="col-12">
           <div class="progress">
             <div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Article.count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Articles"></div>
             <div class="progress-bar progress-bar-striped bg-brownie progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= TodoItem.count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="ToDo Items"></div>
             <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Room.count * 75.31 %>%" data-toggle="tooltip" data-placement="bottom" title="Chat Rooms"></div>
           </div><!-- .progress -->
         </div><!-- .col-10 -->
-        <div class="col-1"></div>
       </div><!-- .row -->
-    </div><!-- .col-lg-5 -->
+    </div><!-- .col-12 -->
   </div><!-- row -->
 </section><!-- .gstatic -->

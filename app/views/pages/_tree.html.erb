@@ -5,10 +5,12 @@
   function drawChart() {
     var data = google.visualization.arrayToDataTable(
       [ ['Phrases'],
-        <% @articles.each do |article| %>
-          ['<%= "#{article.strip_text_for_tree}" %>'],
+        <% @article_titles.each do |article_title| %>
+          ['<%= "#{article_title.strip_title_for_tree}" %>'],
+        <% end %>
 
-          ['<%= "#{article.strip_title_for_tree}" %>'],
+        <% @article_texts.each do |article_text| %>
+          ['<%= "#{article_text.strip_text_for_tree}" %>'],
         <% end %>
 
         <% @comments.each do |comment| %>
@@ -30,7 +32,7 @@
       wordtree: {
         format: 'implicit',
         word: document.getElementById("root").value,
-        Default: 'suffix', // type: 'double',
+        Default: 'suffix'
       }
     };
 
@@ -42,6 +44,23 @@
 <div class="jumbotron">
   <div class="container">
     <h4 class="jumbotron-heading text-dark font-italic">Word Tree</h4>
+    <ul class="lead text-left text-muted small">
+      <li class="d-inline">
+        <%= "#{@article_titles.count} blog-titles" %><b> , </b>
+      </li>
+      <li class="d-inline">
+        <%= "#{@article_texts.count} blog-texts" %><b> , </b>
+      </li>
+      <li class="d-inline">
+        <%= "#{@comments.count} comments" %><b> , </b>
+      </li>
+      <li class="d-inline">
+        <%= "#{@rooms.count} rooms" %><b> , </b>
+      </li>
+      <li class="d-inline">
+        <%= "#{@todo_items.count} list-items" %>
+      </li>
+    </ul>
     <div class="filter">
       <input id="root" class="form-control" placeholder="Search word(s)" value="" onchange="drawChart()">
     </div><!-- .filter -->

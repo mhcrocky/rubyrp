@@ -17,6 +17,9 @@ class Api::V1::ChartsController < ApplicationController
   def device_type
     render json: Ahoy::Visit.devices
   end
+  def visit_mapping
+    render json: Ahoy::Visit.countries
+  end
   def visit_country
     render json: Ahoy::Visit.countries
   end

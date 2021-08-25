@@ -3,6 +3,9 @@ class PagesController < ApplicationController
   include Trackable
 
   def welcome
+    @visits = Ahoy::Visit.where.not(longitude: nil)
+                         .uniq{|v| v.longitude }
+
     ahoy.track "Viewed Welcome"
   end
 
@@ -11,16 +14,20 @@ class PagesController < ApplicationController
                  .search(filter)
                  .paginate(page: params[:page], per_page: 12)
 
-    @visits = Ahoy::Visit.where.not(longitude: nil)
-                         .uniq{|v| v.longitude }
+    @article_titles = Article.order('created_at DESC')
+                             .limit(900)
 
-    @articles = Article.all
+    @article_texts = Article.order('created_at DESC')
+                            .limit(150)
 
-    @comments = Comment.all
+    @comments = Comment.order('created_at DESC')
+                       .limit(150)
 
-    @rooms = Room.all
+    @rooms = Room.order('created_at DESC')
+                 .limit(1500)
 
-    @todo_items = TodoItem.all
+    @todo_items = TodoItem.order('created_at DESC')
+                          .limit(1500)
 
     ahoy.track "Viewed Dashboard"
   end

@@ -46,6 +46,11 @@ class Ahoy::Visit < ApplicationRecord
            group(:device_type).count
   end
 
+  # Returns a hash .. class method: landing pages and their sum
+  def self.landing_pages
+           group(:landing_page).count
+  end
+
   # Returns a hash .. class method: countries that have visited and their sum
   def self.countries
            group(:country).count

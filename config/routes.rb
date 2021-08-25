@@ -57,6 +57,7 @@ Rails.application.routes.draw do
         get 'browser-type'
         get 'os-type'
         get 'device-type'
+        get 'visit-mapping'
         get 'visit-country'
         get 'visit-region'
         get 'visit-city'
