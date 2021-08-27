@@ -8,14 +8,17 @@ class Api::V1::ChartsController < ApplicationController
   def month_of_year_visit_events
     render json: Ahoy::Event.month_of_year_visit_events
   end
-  def browser_type
-    render json: Ahoy::Visit.browsers
+  def device_type
+    render json: Ahoy::Visit.devices
   end
   def os_type
     render json: Ahoy::Visit.operating_systems
   end
-  def device_type
-    render json: Ahoy::Visit.devices
+  def browser_type
+    render json: Ahoy::Visit.browsers
+  end
+  def landing_pages
+    render json: Ahoy::Visit.landing_pages
   end
   def visit_mapping
     render json: Ahoy::Visit.countries

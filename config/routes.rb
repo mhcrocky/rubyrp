@@ -54,9 +54,10 @@ Rails.application.routes.draw do
         ## Analytics
         get 'month_of_year-visits'
         get 'month_of_year_visit-events'
-        get 'browser-type'
-        get 'os-type'
         get 'device-type'
+        get 'os-type'
+        get 'browser-type'
+        get 'landing-pages'
         get 'visit-mapping'
         get 'visit-country'
         get 'visit-region'
