@@ -61,7 +61,7 @@ $ rails s
 ## Initialization (Heroku)
 
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
-* Add-ons: Rollbar | Papertrail | Heroku Redis | Heroku Postgres
+* Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
 * Buildpacks: heroku/nodejs | heroku/ruby
 * Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, GEOCODER_API in Config Vars
 * Search and replace in project the following (if you're skipping Development Initialization):  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
