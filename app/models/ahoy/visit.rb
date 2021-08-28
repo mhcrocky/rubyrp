@@ -68,6 +68,11 @@ class Ahoy::Visit < ApplicationRecord
            group(:landing_page).count
   end
 
+  # Returns a string .. landing page url after '.com'
+  def landing_suffix
+    "#{self.landing_page.split('com').last}"
+  end
+
   # Returns a hash .. class method: countries that have visited and their sum
   def self.countries
            group(:country).count

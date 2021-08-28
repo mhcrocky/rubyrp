@@ -21,8 +21,8 @@
                 <%= visit.user ? visit.user.name : 'Unauthorized' %>
               </span>
             </li>
-            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
-              <strong>Landing:</strong> <%= visit.landing_page %>
+            <li class='landing' style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>Landing:</strong> <%= visit.landing_suffix %>
             </li>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
               <strong>Browser:</strong> <%= visit.browser %>
