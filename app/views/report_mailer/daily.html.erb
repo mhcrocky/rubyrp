@@ -129,12 +129,12 @@
 
     <h3 style="font-size:24px; color:#777; margin-top:72px; margin-bottom:12px; margin-left:6px;">Others</h3>
     <ol style="margin-left:3px; list-style-type:decimal;">
-      <% @member_one_visits.each do |visit| %>
+      <% @other_visits.each do |visit| %>
         <li style="font-size:15px; margin-bottom:6px; display:list-item;">
           <span style="color:#17a2b8;"><%= visit.id %></span>, <%= visit.started_at %>
           <ul style="margin-left:3px;">
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
-              <strong>user:</strong> <span style="color:#17a2b8;"><%= visit.user.name %></span>
+              <strong>user:</strong> <span style="color:#17a2b8;"><%= visit.user.name if visit.user.present? %></span>
             </li>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
               <strong>referrer:</strong> <%= visit.referrer %>

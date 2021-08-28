@@ -19,7 +19,7 @@ class ReportMailer < ApplicationMailer
                                     .where(user_id: 13)
 
     @other_visits = Ahoy::Visit#.daily
-                               .where.not('email LIKE ?', "%@example.com%")
+                               .where.not(user_id: [13, 17, 19])
 
     mail to: @user
     # mail to: @email #"to@example.org"
