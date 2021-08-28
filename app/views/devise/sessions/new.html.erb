@@ -5,8 +5,14 @@
       <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
     <% end %>
     <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
-    <p>Use the credentials below to view the blog, edit that user's posts, &amp; see their todo list:</p>
-    <p><span style="cursor:pointer;" class="text-info text-weight-bold" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i> Example Accounts</span></p>
+    <p>
+      <i class="fas fa-info-circle text-muted" data-toggle="modal" data-target="#exampleModal"></i>
+      View as 
+      <span style="cursor:pointer;" class="text-info text-weight-bold member" data-dismiss="modal">member</span>
+      or
+      <span style="cursor:pointer;" class="text-info text-weight-bold superadmin" data-dismiss="modal">superadmin</span>
+    </p>
+    <!-- <p><span style="cursor:pointer;" class="text-info text-weight-bold" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i> Example Accounts</span></p> -->
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-label-group">
@@ -72,22 +78,22 @@
 
 <script>
   $(function() {
-    $('p.member').click(function(){
+    $('.member').click(function(){
       email = "<%= User.with_role(:member).first.email if User.with_role(:member).present? %>";
       var emailField = document.getElementById('inputEmail');
       var passwordField = document.getElementById('inputPassword');
       emailField.value = email;
       passwordField.value = "m@keTh1ng$";
-      $('#exampleModal').modal('toggle');
+      $('#exampleModal').modal('hide');
       return;
     });
-    $('p.superadmin').click(function(){
+    $('.superadmin').click(function(){
       email = "<%= User.with_role(:superadmin).first.email if User.with_role(:superadmin).present? %>";
       var emailField = document.getElementById('inputEmail');
       var passwordField = document.getElementById('inputPassword');
       emailField.value = email;
       passwordField.value = "m@keTh1ng$";
-      $('#exampleModal').modal('toggle');
+      $('#exampleModal').modal('hide');
       return;
     })
   })
