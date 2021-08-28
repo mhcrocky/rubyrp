@@ -23,7 +23,9 @@
             </li>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
               <strong>Landing:</strong> 
-              <a href="<%= visit.landing_page %>" target="_blank" class="landing"><%= visit.landing_suffix %></a>
+              <a href="<%= visit.landing_page %>" target="_blank" class="landing">
+                <%= visit.landing_suffix %>
+              </a>
             </li>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
               <strong>Browser:</strong> <%= visit.browser %>
@@ -42,7 +44,10 @@
                     <li style="font-size:15px; margin-bottom:6px; display:list-item;">
                       <span style="color:#6f47be;"><%= event.name %></span>
                       <p style="margin-left:3px; font-size:15px; margin-top:3px; margin-bottom:3px;">
-                        <strong>Time:</strong> <span style="color:#6f47be;"><%= event.time.strftime('%m/%d/%Y, %H:%M:%S') %></span>
+                        <strong>Time:</strong>
+                        <span style="color:#6f47be;">
+                          <%= event.time.strftime('%m/%d/%Y, %H:%M:%S') %>
+                        </span>
                       </p>
                       <p style="margin-left:3px; font-size:15px; margin-top:3px; margin-bottom:3px;">
                         <strong>Properties:</strong> <%= event.properties %>
