@@ -21,7 +21,7 @@ class ReportMailer < ApplicationMailer
                                     .order(:started_at, id: :asc)
 
     @other_visits = Ahoy::Visit.daily
-                               .where.not(user_id: [13, 17, 19, 20])
+                               .where.not(user_id: [13, 17])
                                .order(:started_at, id: :asc)
 
     mail to: @user
