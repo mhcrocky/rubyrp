@@ -33,27 +33,24 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * Devise + Rolify + Cancan
 * Figaro
 * Redis (production)
-* Simplecov
-* Rspec
+* Rspec + Simplecov
+* Brakeman + bundler_audit
 * PGHero
 
 
 ## Analysis, Testing and Coverage
 
-* Rspec
+* Rspec + Simplecov
 ```
 $ rspec
 $ rspec spec/models/user_spec.rb
 $ open coverage/index.html
 ```
-* Brakeman
+* Brakeman + bundler_audit
 ```
 $ brakeman
 $ brakeman -o brakeman.html
 $ open brakeman.html
-```
-* Bundler Audit
-```
 $ bundle-audit
 ```
 * PGHero: root/pghero (sysadmin)
