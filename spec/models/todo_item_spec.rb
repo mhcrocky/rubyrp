@@ -31,6 +31,13 @@ RSpec.describe TodoItem, type: :model do
     end
   end
 
+  describe "strip_title_for_tree" do
+    let(:todo_item) { FactoryBot.build(:todo_item) }
+    it "should return a stripped string" do
+      expect(todo_item.strip_title_for_tree).to include("to do item ")
+    end
+  end
+
   ## Moved descending order to controller for chartkick
   # describe "order scope" do
   #   let!(:old_todo_item) { FactoryBot.create(:todo_item, created_at: Time.now - 1.day) }

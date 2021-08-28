@@ -28,4 +28,11 @@ RSpec.describe Comment, type: :model do
     end
   end
 
+  describe "strip_body_for_tree" do
+    let(:comment) { FactoryBot.build(:comment) }
+    it "should return a stripped text" do
+      expect(comment.strip_body_for_tree).to eq("i am a comment body  ")
+    end
+  end
+
 end

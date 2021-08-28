@@ -64,4 +64,18 @@ RSpec.describe Article, type: :model do
     end
   end
 
+  describe "strip_title_for_tree" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a stripped string" do
+      expect(article.strip_title_for_tree).to eq("i am a title  ")
+    end
+  end
+
+  describe "strip_text_for_tree" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a stripped text" do
+      expect(article.strip_text_for_tree).to eq("")
+    end
+  end
+
 end

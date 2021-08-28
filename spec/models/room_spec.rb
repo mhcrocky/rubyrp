@@ -33,4 +33,11 @@ RSpec.describe Room, type: :model do
     end
   end
 
+  describe "strip_name_for_tree" do
+    let(:room) { FactoryBot.build(:room) }
+    it "should return a stripped string" do
+      expect(room.strip_name_for_tree).to eq("room 101  ")
+    end
+  end
+
 end
