@@ -12,13 +12,13 @@ class ReportMailer < ApplicationMailer
                 .pluck(:email)
                 .first
 
-    @superadmin_one_visits = Ahoy::Visit.daily
+    @superadmin_one_visits = Ahoy::Visit#.daily
                                         .where(user_id: 17)
 
-    @member_one_visits = Ahoy::Visit.daily
+    @member_one_visits = Ahoy::Visit#.daily
                                     .where(user_id: 13)
 
-    @other_visits = Ahoy::Visit.daily
+    @other_visits = Ahoy::Visit#.daily
                                .where.not('email LIKE ?', "%@example.com%")
 
     mail to: @user
