@@ -20,6 +20,12 @@ class Ahoy::Visit < ApplicationRecord
            dirty.destroy_all
   end
 
+  # Send daily Ahoy report
+  # Run daily with Heroku Scheduler:  $ Ahoy::Visit.daily_report
+  def self.daily_report
+    ReportMailer.daily.deliver_now
+  end
+
   # Returns a string .. city and country of .last visit
   # Fallbacks -> region, latitude and longitude
   def location
