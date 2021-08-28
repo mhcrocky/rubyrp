@@ -12,7 +12,8 @@ class ReportMailer < ApplicationMailer
                 .pluck(:email)
                 .first
 
-    @visits = Ahoy::Visit.order(:started_at, id: :asc)
+    @visits = Ahoy::Visit.daily
+                         .order(:started_at, id: :asc)
 
     mail to: @user
     # mail to: @email #"to@example.org"
