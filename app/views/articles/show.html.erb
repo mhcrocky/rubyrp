@@ -13,7 +13,7 @@
 <div class="card-body">
   <% if @article.embed.present? %>
     <div class="embed-responsive embed-responsive-16by9">
-      <%= @article.iframe.html_safe %>
+      <%= @article.iframe %>
     </div><!-- .embed-responsive -->
   <% end %>
   <div class="card-text mt-3 mb-2">

@@ -38,13 +38,25 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 * PGHero
 
 
-## Monitoring, Testing and Coverage
+## Analysis, Testing and Coverage
 
-* PGHero: root/pghero (sysadmin)
+* Rspec
 ```
 $ rspec
+$ rspec spec/models/user_spec.rb
 $ open coverage/index.html
 ```
+* Brakeman
+```
+$ brakeman
+$ brakeman -o brakeman.html
+$ open brakeman.html
+```
+* Bundler Audit
+```
+$ bundle-audit
+```
+* PGHero: root/pghero (sysadmin)
 
 
 ## Initialization (Development)
