@@ -11,7 +11,7 @@ class Ahoy::Visit < ApplicationRecord
 
   # Returns bots that slip by Ahoy
   scope :dirty, -> {
-    where('device_type=? OR os=? OR browser=?', nil, nil, nil)
+    where(device_type: nil)
   }
 
   # Clean up bots that slip by Ahoy.
