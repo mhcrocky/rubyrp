@@ -12,14 +12,17 @@ class ReportMailer < ApplicationMailer
                 .pluck(:email)
                 .first
 
-    @superadmin_one_visits = Ahoy::Visit.where(user_id: 17)
-                                        .order(:started_at, id: :desc)
+    @superadmin_one_visits = Ahoy::Visit.daily
+                                        .where(user_id: 17)
+                                        .order(:started_at, id: :asc)
 
-    @member_one_visits = Ahoy::Visit.where(user_id: 13)
-                                    .order(:started_at, id: :desc)
+    @member_one_visits = Ahoy::Visit.daily
+                                    .where(user_id: 13)
+                                    .order(:started_at, id: :asc)
 
-    @other_visits = Ahoy::Visit.where.not(user_id: [13, 17, 19, 20])
-                               .order(:started_at, id: :desc)
+    @other_visits = Ahoy::Visit.daily
+                               .where.not(user_id: [13, 17, 19, 20])
+                               .order(:started_at, id: :asc)
 
     mail to: @user
     # mail to: @email #"to@example.org"
