@@ -15,6 +15,11 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true
 
+  # Returns only comments created in the past 24 hours
+  scope :daily, -> {
+    where("created_at > ?", 1.day.ago)
+  }
+
   # Returns a string .. strip out unknown characters, etc.. for text in word tree
   def strip_body_for_tree
     self.body

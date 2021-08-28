@@ -19,9 +19,9 @@ class Article < ApplicationRecord
 
   before_save :iframe, :thumb
 
-  # Returns only articles created in the past week
-  scope :this_week, -> {
-    where("created_at > ?", 1.week.ago)
+  # Returns only articles created in the past 24 hours
+  scope :daily, -> {
+    where("created_at > ?", 1.day.ago)
   }
 
   #show (before_save)

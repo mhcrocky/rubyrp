@@ -6,9 +6,9 @@ class Ahoy::Event < ApplicationRecord
   belongs_to :visit
   belongs_to :user, optional: true
 
-  # Returns only events from the past week
-  scope :this_week, -> {
-    where("time > ?", 1.week.ago)
+  # Returns only events created in the past 24 hours
+  scope :daily, -> {
+    where("time > ?", 1.day.ago)
   }
 
   # Returns an array .. class method: number of visit events month over year

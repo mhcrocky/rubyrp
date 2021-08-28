@@ -10,9 +10,9 @@ class Room < ApplicationRecord
 
   before_create :set_room_key
 
-  # Returns only chats created in the past week
-  scope :this_week, -> {
-    where("created_at > ?", 1.week.ago)
+  # Returns only rooms created in the past 24 hours
+  scope :daily, -> {
+    where("created_at > ?", 1.day.ago)
   }
 
   # Returns STUN and TURN server info from Twilio (before_create)

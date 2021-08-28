@@ -1,13 +1,24 @@
 class Ahoy::Visit < ApplicationRecord
   self.table_name = "ahoy_visits"
 
-  has_many :events, class_name: "Ahoy::Event"
+  has_many :events, class_name: "Ahoy::Event", dependent: :destroy
   belongs_to :user, optional: true
 
-  # Returns only visits from the past week
-  scope :this_week, -> {
-    where("started_at > ?", 1.week.ago)
+  # Returns only visits created in the past 24 hours
+  scope :daily, -> {
+    where("started_at > ?", 1.day.ago)
   }
+
+  # Returns bots that slip by Ahoy
+  scope :dirty, -> {
+    where('device_type=? OR os=? OR browser=?', nil, nil, nil)
+  }
+
+  # Clean up bots that slip by Ahoy.
+  # Run daily with Heroku Scheduler:  $ Ahoy::Visit.clean
+  def self.clean
+           dirty.destroy_all
+  end
 
   # Returns a string .. city and country of .last visit
   # Fallbacks -> region, latitude and longitude

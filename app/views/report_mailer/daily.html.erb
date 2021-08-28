@@ -1,0 +1,201 @@
+<div style="width:600px; text-align:left; color:#000; background-color:#fff;">
+  <div style="width:570px; margin-left:15px;">
+
+    <h6 style="font-size:15px; margin-top:12px; margin-bottom:9px; margin-left:3px;"><%= @user %></h6>
+    <h1 style="font-size:30px; margin-bottom:12px; margin-left:3px;">RRB Daily Analytics</h1>
+    <h2 style="font-size:27px; margin-bottom:12px; margin-left:3px;">Visits</h2>
+
+    <h3 style="font-size:24px; color:#777; margin-top:48px; margin-bottom:12px; margin-left:6px;">superadmin_1</h3>
+    <ol style="margin-left:3px; list-style-type:decimal;">
+      <% @superadmin_one_visits.each do |visit| %>
+        <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+          <span style="color:#17a2b8;"><%= visit.id %></span>, <%= visit.started_at %>
+          <ul style="margin-left:3px;">
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>referrer:</strong> <%= visit.referrer %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>referring_domain:</strong> <%= visit.referring_domain %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>landing_page:</strong> <%= visit.landing_page %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>user_agent:</strong> <%= visit.user_agent %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>browser:</strong> <%= visit.browser %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>os:</strong> <%= visit.os %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>device_type:</strong> <%= visit.device_type %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>country:</strong> <%= visit.country %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>region:</strong> <%= visit.region %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>city:</strong> <%= visit.city %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>app_version:</strong> <%= visit.app_version %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>os_version:</strong> <%= visit.os_version %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>platform:</strong> <%= visit.platform %>
+            </li>
+          </ul>
+        </li>
+        <h5 style="font-size:18px; margin-bottom:12px; margin-left:6px;">Events</h5>
+        <ol style="margin-left:3px; list-style-type:decimal;">
+          <% visit.events.each do |event| %>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <span style="color:#17a2b8;"><%= event.name %></span>, <%= event.time %>
+              <p style="margin-left:3px; font-size:15px; margin-bottom:6px;">
+                <%= event.properties %>
+              </p>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+    </ol>
+
+    <h3 style="font-size:24px; color:#777; margin-top:72px; margin-bottom:12px; margin-left:6px;">member_1</h3>
+    <ol style="margin-left:3px; list-style-type:decimal;">
+      <% @member_one_visits.each do |visit| %>
+        <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+          <span style="color:#17a2b8;"><%= visit.id %></span>, <%= visit.started_at %>
+          <ul style="margin-left:3px;">
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>referrer:</strong> <%= visit.referrer %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>referring_domain:</strong> <%= visit.referring_domain %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>landing_page:</strong> <%= visit.landing_page %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>user_agent:</strong> <%= visit.user_agent %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>browser:</strong> <%= visit.browser %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>os:</strong> <%= visit.os %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>device_type:</strong> <%= visit.device_type %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>country:</strong> <%= visit.country %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>region:</strong> <%= visit.region %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>city:</strong> <%= visit.city %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>app_version:</strong> <%= visit.app_version %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>os_version:</strong> <%= visit.os_version %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>platform:</strong> <%= visit.platform %>
+            </li>
+          </ul>
+        </li>
+        <h5 style="font-size:18px; margin-bottom:12px; margin-left:6px;">Events</h5>
+        <ol style="margin-left:3px; list-style-type:decimal;">
+          <% visit.events.each do |event| %>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <span style="color:#17a2b8;"><%= event.name %></span>, <%= event.time %>
+              <p style="margin-left:3px; font-size:15px; margin-bottom:6px;">
+                <%= event.properties %>
+              </p>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+    </ol>
+
+    <h3 style="font-size:24px; color:#777; margin-top:72px; margin-bottom:12px; margin-left:6px;">Others</h3>
+    <ol style="margin-left:3px; list-style-type:decimal;">
+      <% @member_one_visits.each do |visit| %>
+        <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+          <span style="color:#17a2b8;"><%= visit.id %></span>, <%= visit.started_at %>
+          <ul style="margin-left:3px;">
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>user:</strong> <span style="color:#17a2b8;"><%= visit.user.name %></span>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>referrer:</strong> <%= visit.referrer %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>referring_domain:</strong> <%= visit.referring_domain %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>landing_page:</strong> <%= visit.landing_page %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>user_agent:</strong> <%= visit.user_agent %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>browser:</strong> <%= visit.browser %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>os:</strong> <%= visit.os %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>device_type:</strong> <%= visit.device_type %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>country:</strong> <%= visit.country %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>region:</strong> <%= visit.region %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>city:</strong> <%= visit.city %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>app_version:</strong> <%= visit.app_version %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>os_version:</strong> <%= visit.os_version %>
+            </li>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <strong>platform:</strong> <%= visit.platform %>
+            </li>
+          </ul>
+        </li>
+        <h5 style="font-size:18px; margin-bottom:12px; margin-left:6px;">Events</h5>
+        <ol style="margin-left:3px; list-style-type:decimal;">
+          <% visit.events.each do |event| %>
+            <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+              <span style="color:#17a2b8;"><%= event.name %></span>, <%= event.time %>
+              <p style="margin-left:3px; font-size:15px; margin-bottom:6px;">
+                <%= event.properties %>
+              </p>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+    </ol>
+
+    <div style="margin-top:90px; margin-left:12px;">
+      <%= link_to root_url do %>
+        <img src="https://rails-react-bootstrap.herokuapp.com/assets/logo-92660c5c2890ab892aaab15171ef70e729a4b8f81c6786659ddc928273d81ced.png" alt="logo" width=95 height=107>
+      <% end %>
+    </div>
+
+  </div><!-- width:570px; -->
+</div><!-- width:600px; -->
