@@ -91,7 +91,7 @@
               <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
                 Edit Profile
               <% end %>
-              <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item") do %>
+              <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item", data: { turbo: false }) do %>
                 Sign out
               <% end %>
             </div><!-- .dropdown-menu .shadow-lg -->
