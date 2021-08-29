@@ -14,16 +14,9 @@ class Ahoy::Visit < ApplicationRecord
     daily.where(device_type: nil)
   }
 
-  # Clean up bots that slip by Ahoy.
-  # Run daily with Heroku Scheduler:  $ Ahoy::Visit.clean
+  # Clean up bots that slip by Ahoy
   def self.clean
            dirty.destroy_all
-  end
-
-  # Send daily Ahoy report
-  # Run daily with Heroku Scheduler:  $ Ahoy::Visit.daily_report
-  def self.daily_report
-    ReportMailer.daily.deliver_now
   end
 
   # Returns a string .. city and country of .last visit
