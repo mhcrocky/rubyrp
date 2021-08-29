@@ -1,32 +1,34 @@
-<%= form_for @room, html: { class: 'form-horizontal' } do |f| %>
+<%= turbo_frame_tag "room" do %>
+  <%= form_for @room, html: { class: 'form-horizontal' } do |f| %>
 
-  <% if @room.errors.any? %>
-    <div class="errors">
-      <h2>There was an error with this room:</h2>
-      <ul>
-        <% @room.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% if @room.errors.any? %>
+      <div class="errors">
+        <h2>There was an error with this room:</h2>
+        <ul>
+          <% @room.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <section class="form-section">
+
+      <div class="jumbotron text-center form-label-group">
+        <div class="col-sm-12">
+          <%= f.text_field :name, id: "inputName", class: "form-control", placeholder: "Name", autofocus: true %>
+          <label for="inputName"><code>&#42; Name</code></label>
+        </div><!-- .col-sm-12 -->
+      </div><!-- .jumbotron .text-center .form-group -->
+
+      <div class="form-group">
+        <div class="col-sm-12 text-center">
+          <%= link_to 'Cancel', @room, class: 'btn btn-outline-secondary' %>
+          <%= f.submit class: 'btn btn-success' %>
+        </div><!-- .col-sm-12 -->
+      </div><!-- .form-group -->
+
+    </section><!-- .form-section -->
+
   <% end %>
-
-  <section class="form-section">
-
-    <div class="jumbotron text-center form-label-group">
-      <div class="col-sm-12">
-        <%= f.text_field :name, id: "inputName", class: "form-control", placeholder: "Name", autofocus: true %>
-        <label for="inputName"><code>&#42; Name</code></label>
-      </div><!-- .col-sm-12 -->
-    </div><!-- .jumbotron .text-center .form-group -->
-
-    <div class="form-group">
-      <div class="col-sm-12 text-center">
-        <%= link_to 'Cancel', rooms_path, class: 'btn btn-outline-secondary' %>
-        <%= f.submit class: 'btn btn-success' %>
-      </div><!-- .col-sm-12 -->
-    </div><!-- .form-group -->
-
-  </section><!-- .form-section -->
-
 <% end %>

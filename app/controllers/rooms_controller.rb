@@ -23,10 +23,10 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room.user = current_user #.id gives Fixnum instead of User
+    @room.user = current_user
     respond_to do |format|
       if @room.save
-        format.html { redirect_to room_path(@room), notice: 'Room was successfully created.' }
+        format.html { redirect_to room_path(@room) }
       else
         format.html { render action: 'new' }
       end
@@ -36,7 +36,7 @@ class RoomsController < ApplicationController
   def update
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.html { redirect_to @room }
       else
         format.html { render :edit }
       end

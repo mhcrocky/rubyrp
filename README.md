@@ -26,10 +26,11 @@ $ npm view react version
 * jQuery
 * React
 * Stimulus
+* Hotwire
 * Action Text (trix)
 * will_paginate
-* Chart.js
-* Chartkick + Groupdate
+* Chartkick + Chart.js
+* Groupdate
 * Ahoy
 * Geocoder + maxminddb
 * Devise + Rolify + Cancan

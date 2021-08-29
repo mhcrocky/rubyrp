@@ -45,7 +45,7 @@
   <div class="media text-muted pt-3">
     <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
-        <%= link_to todo_items_path do %>
+        <%= link_to todo_items_path, data: { turbo: false } do %>
           Single Page Application
         <% end %>
       </strong>

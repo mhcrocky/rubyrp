@@ -10,7 +10,7 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="List">
-            <%= link_to(todo_items_path, class: "nav-link") do %>
+            <%= link_to(todo_items_path, class: "nav-link", data: { turbo: false }) do %>
               <i class="fas fa-clipboard-list burger-icon"></i>
               <span class="burger-text">List</span>
             <% end %>

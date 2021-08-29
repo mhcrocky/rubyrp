@@ -43,6 +43,9 @@ require("chart.js")
 // Stimulus
 import "controllers"
 
+// Hotwire
+import "@hotwired/turbo-rails"
+
 // Action View
 require("trix")
 require("@rails/actiontext")
