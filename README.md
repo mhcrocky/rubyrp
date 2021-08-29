@@ -40,20 +40,22 @@ $ rails new PROJECT_NAME -d=postgresql --webpacker=react
 
 ## Analysis, Testing and Coverage
 
-* Rspec + Simplecov
-```
-$ rspec
-$ rspec spec/models/user_spec.rb
-$ open coverage/index.html
-```
+* PGHero: root/pghero (sysadmin)
 * Brakeman + bundler_audit
 ```
 $ brakeman
 $ brakeman -o brakeman.html
 $ open brakeman.html
+
 $ bundle-audit
 ```
-* PGHero: root/pghero (sysadmin)
+* Rspec + Simplecov
+```
+$ rspec
+$ rspec spec/models/user_spec.rb
+
+$ open coverage/index.html
+```
 
 
 ## Initialization (Development)
@@ -84,6 +86,10 @@ $ heroku run rake db:schema:load --app PROJECT_NAME
 $ heroku run rake db:seed --app PROJECT_NAME
 
 $ heroku run rails c
+$ heroku run rake clean_ahoy
+$ heroku run rake deliver_daily
+
 $ heroku logs --tail
+
 $ heroku restart
 ```
