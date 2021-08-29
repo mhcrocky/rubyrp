@@ -8,12 +8,14 @@ Example application
 * Ruby 2.7.2
 * Ruby on Rails 6.1.3.2
 * PostgreSQL
+* React 17.0.2
 
 * If building from scratch (not cloning)
 ```
 $ ruby -v
 $ rails -v
 $ rails new PROJECT_NAME -d=postgresql --webpacker=react
+$ npm view react version
 ```
 
 
