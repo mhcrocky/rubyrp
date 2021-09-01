@@ -103,7 +103,7 @@ class TodoApp extends React.Component {
   }
 }
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbo:load', () => {
   const app = document.getElementById('todo-app')
   app && ReactDOM.render(<TodoApp />, app)
 })
