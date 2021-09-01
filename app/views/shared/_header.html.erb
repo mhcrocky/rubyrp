@@ -9,12 +9,6 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="List">
-            <%= link_to(todo_items_path, class: "nav-link") do %>
-              <i class="fas fa-clipboard-list burger-icon"></i>
-              <span class="burger-text">List</span>
-            <% end %>
-          </li><!-- .nav-item -->
           <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item dropdown" title="Blog">
             <a class="nav-link dropdown-toggle" href="" id="dropdownArticle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th burger-icon"></i> <span class="burger-text">Blog</span></a>
             <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownArticle">
@@ -26,6 +20,12 @@
               <%# end %>
             </div><!-- .dropdown-menu .shadow-lg -->
           </li><!-- .nav-item .dropdown -->
+          <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="List">
+            <%= link_to(todo_items_path, class: "nav-link") do %>
+              <i class="fas fa-clipboard-list burger-icon"></i>
+              <span class="burger-text">List</span>
+            <% end %>
+          </li><!-- .nav-item -->
           <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Video Chat">
             <%= link_to(rooms_path, class: "nav-link") do %>
               <i class="fas fa-comments burger-icon"></i>
