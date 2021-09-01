@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': true %>
+    <%= javascript_pack_tag 'application', 'data-turbo-track': true %>
     <% if user_signed_in? && current_user.dark_theme %>
       <style>
         /* Dark Theme */
