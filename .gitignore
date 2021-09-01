@@ -43,6 +43,7 @@ latest.dump
 .DS_Store
 
 coverage
+brakeman.html
 
 .env
 
