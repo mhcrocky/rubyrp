@@ -143,9 +143,19 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   margin-right: 1px;
 }
 
+a .fas {
+  text-decoration: none !important;
+}
+
 turbo-frame#room {
   display: block;
   height: 210px;
+  @media (max-width: 768px) {
+    height: 270px;
+  }
+  @media (max-width: 576px) {
+    height: 330px;
+  }
 }
 
 

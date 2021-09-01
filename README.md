@@ -35,7 +35,7 @@ $ npm view react version
 * Geocoder + maxminddb
 * Devise + Rolify + Cancan
 * Figaro
-* Redis (production)
+* Redis (video chat production & turbo streams development)
 * Rspec + Simplecov
 * Brakeman + bundler_audit
 * PGHero
@@ -71,6 +71,7 @@ $ yarn install
 $ rails db:create
 $ rails db:seed
 $ rails s
+$ bin/webpack-dev-server
 ```
 
 

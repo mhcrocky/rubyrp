@@ -1,13 +1,44 @@
-<section class="jumbotron text-center">
+<section class="jumbotron py-4 text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Video Chat</h1>
-    <p class="lead text-left text-muted">Join rooms and chat with other users. <i>If you're a member..</i> Create, Read, Update, &amp; Destroy WebRTC chat rooms.</p>
-    <div class="filter">
-      <%= render partial: 'rooms/search', locals: { action: rooms_path, q: '' } %>
-    </div><!-- .filter -->
+
+    <%= turbo_frame_tag "room" do %>
+      <h1 class="jumbotron-heading">Video Chat</h1>
+      <p class="lead text-left text-muted">Interact with rooms via ActionCable. <i>If you're a member..</i> Create, Read, Update, &amp; Destroy WebRTC chat rooms (hotwired).</p>
+      <% if can? :manage, Room %>
+        <p class="mt-2 mb-0">
+          <%= link_to 'New Room', new_room_path, title: 'New Room', class: 'btn btn-outline-dark text-tayberry' %>
+        </p>
+      <% end %>
+    <% end # turbo_frame_tag "room" %>
+
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<%= render partial: 'rooms/rooms' %>
+<%= turbo_stream_from :rooms %>
+<div class="filter mb-1">
+  <%= render partial: 'rooms/search', locals: { action: rooms_path, q: '' } %>
+</div><!-- .filter -->
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-muted">Room</th>
+        <th scope="col" class="text-muted">Created</th>
+        <th scope="col" class="text-muted">By</th>
+        <!-- <th scope="col" class="text-muted">By</th> -->
+      </tr>
+    </thead>
+    <tbody id="rooms">
+      <%= render(partial: @rooms) %>
+    </tbody>
+  </table><!-- .table .table-striped -->
+</div><!-- .table-responsive -->
+<div class="pagination">
+  <%= will_paginate @rooms,
+    previous_label:'Prev',
+    next_label:'Next',
+    inner_window: 1, outer_window: -1
+  %>
+</div><!-- .pagination -->
 
 <section class="jumbotron text-center my-5"></section>

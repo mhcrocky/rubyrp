@@ -10,7 +10,7 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="List">
-            <%= link_to(todo_items_path, class: "nav-link", data: { turbo: false }) do %>
+            <%= link_to(todo_items_path, class: "nav-link") do %>
               <i class="fas fa-clipboard-list burger-icon"></i>
               <span class="burger-text">List</span>
             <% end %>
@@ -26,16 +26,11 @@
               <%# end %>
             </div><!-- .dropdown-menu .shadow-lg -->
           </li><!-- .nav-item .dropdown -->
-          <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item dropdown" title="Video Chat">
-            <a class="nav-link dropdown-toggle" href="" id="dropdownRoom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-comments burger-icon"></i> <span class="burger-text">Video Chat</span></a>
-            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownRoom">
-              <%= link_to(rooms_path, class: "dropdown-item") do %>
-                View Rooms
-              <% end %>
-              <% if can? :manage, Room %>
-                <%= link_to 'New Room', new_room_path, class: 'dropdown-item' %>
-              <% end %>
-            </div><!-- .dropdown-menu .shadow-lg -->
+          <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Video Chat">
+            <%= link_to(rooms_path, class: "nav-link") do %>
+              <i class="fas fa-comments burger-icon"></i>
+              <span class="burger-text">View Rooms</span>
+            <% end %>
           </li><!-- .nav-item .dropdown -->
           <% if current_user.has_role?(:superadmin) %>
             <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item dropdown" title="Users">

@@ -8,6 +8,10 @@ class Room < ApplicationRecord
 
   validates :name, presence: true
 
+  broadcasts_to ->(room) { :rooms }, inserts_by: :prepend
+
+  after_update_commit :update_rooms_view
+
   before_create :set_room_key
 
   # Returns only rooms created in the past 24 hours
@@ -55,6 +59,13 @@ class Room < ApplicationRecord
            group_by_month_of_year(:created_at)
           .count
           .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  private
+
+  # after_update_commit: rooms index table hotwire broadcast
+  def update_rooms_view
+    broadcast_replace_to self, partial:"rooms/room", locals: { room: self }
   end
 
 end

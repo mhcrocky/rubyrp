@@ -26,7 +26,7 @@ class RoomsController < ApplicationController
     @room.user = current_user
     respond_to do |format|
       if @room.save
-        format.html { redirect_to room_path(@room) }
+        format.html { redirect_to rooms_path }
       else
         format.html { render action: 'new' }
       end
@@ -45,6 +45,7 @@ class RoomsController < ApplicationController
 
   def destroy
     @room.destroy
+    # Remove block if you want to put delete button in partial (warden issue)
     respond_to do |format|
       format.html { redirect_to rooms_path, notice: 'Room was successfully deleted.' }
     end
