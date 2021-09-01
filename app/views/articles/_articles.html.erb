@@ -15,9 +15,16 @@
           <p class="card-text"><i class="fas fa-user text-muted"></i> <%= link_to truncate(article.user.name), article.user, class: 'text-info font-weight-bold' %></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <%= link_to 'View', article_path(article), class: 'btn btn-sm btn-outline-secondary' %>
+              <%= link_to article_path(article) do %>
+                <i class='fas fa-book-dead text-dark mr-3' data-toggle="tooltip" data-placement="bottom" title="View"></i>
+              <% end %>
               <% if can? :manage, article %>
-                <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-sm btn-outline-secondary' %>
+                <%= link_to edit_article_path(article) do %>
+                  <i class='fas fa-signature text-orange mr-3' data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
+                <% end %>
+                <%= link_to article_path(article), method: :delete, data: { confirm: 'Are you sure you want to delete this article?' } do %>
+                  <i class='fas fa-trash text-danger' data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
+                <% end %>
               <% end %>
             </div><!-- .btn-group -->
             <% if article.users_articles.find_by(user_id: current_user) %>

@@ -1,6 +1,6 @@
 <% if current_user.has_role?(:superadmin) %>
 
-  <section class="jumbotron text-center">
+  <section class="jumbotron py-4 text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
       <p class="lead text-left text-muted">
@@ -48,7 +48,7 @@
 
 <% else # admins, members, and visitors %>
 
-  <section class="jumbotron text-center">
+  <section class="jumbotron py-4 text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
       <p class="lead text-left text-muted">

@@ -1,10 +1,15 @@
-<section class="jumbotron text-center">
+<section class="jumbotron py-4 text-center">
   <div class="container">
     <h1 class="jumbotron-heading"><%= @article.title %></h1>
     <p class="lead text-muted"><%= @article.updated_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %><strong class="d-block"><i class="fas fa-user"></i> <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></strong></p>
     <% if can? :manage, @article %>
       <p class="mt-0 mb-0">
-        <%= link_to 'Edit Article', edit_article_path(@article), title: 'Edit Article', class: 'btn btn-outline-dark' %>
+        <%= link_to edit_article_path(@article), class: 'btn btn-outline-dark' do %>
+          <i class='fas fa-signature text-orange' data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
+        <% end %>
+        <%= link_to article_path(@article), class: 'btn btn-outline-dark', method: :delete, data: { confirm: 'Are you sure you want to delete this article?' } do %>
+          <i class='fas fa-trash text-danger mx-1' data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
+        <% end %>
       </p>
     <% end %>
   </div><!-- .container -->
