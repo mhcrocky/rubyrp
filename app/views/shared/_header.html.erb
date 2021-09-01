@@ -26,10 +26,10 @@
               <span class="burger-text">List</span>
             <% end %>
           </li><!-- .nav-item -->
-          <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Video Chat">
+          <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Chat">
             <%= link_to(rooms_path, class: "nav-link") do %>
               <i class="fas fa-comments burger-icon"></i>
-              <span class="burger-text">View Rooms</span>
+              <span class="burger-text">Chat</span>
             <% end %>
           </li><!-- .nav-item .dropdown -->
           <% if current_user.has_role?(:superadmin) %>
