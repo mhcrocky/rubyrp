@@ -3,17 +3,19 @@
 Example application
 
 
-## System Dependencies
+## Main Dependencies
 
 * Ruby [2.7.4](https://www.ruby-lang.org/en/downloads/releases/)
 * Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
 * PostgreSQL [13.1](https://www.postgresql.org/support/versioning/)
-* React [17.0.2](https://reactjs.org/versions/) (yarn)
+* Redis [4.4.0](https://rubygems.org/gems/redis/versions)
+* Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
 * Stimulus [2.0.0](https://github.com/hotwired/stimulus/releases) (yarn)
 * Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
 * Turbo [0.7.10](https://rubygems.org/gems/turbo-rails/versions) (yarn)
+* React [17.0.2](https://reactjs.org/versions/) (yarn)
 * Bootstrap [4.6](https://getbootstrap.com/docs/versions/) (yarn)
-* If building from scratch (not cloning)
+* If building from scratch (not cloning):
 ```
 $ ruby -v
 $ rails -v
@@ -23,7 +25,7 @@ $ npm view react version
 ```
 
 
-## Libraries, Packages and Gems
+## Other Dependencies
 
 * Font Awesome
 * jQuery
@@ -35,7 +37,6 @@ $ npm view react version
 * Geocoder + maxminddb
 * Devise + Rolify + Cancan
 * Figaro
-* Redis (video chat production & turbo streams development)
 * Rspec + Simplecov
 * Brakeman + bundler_audit
 * PGHero
@@ -50,7 +51,7 @@ $ brakeman
 $ brakeman -o brakeman.html
 $ open brakeman.html
 
-$ bundle-audit
+$ bundle audit
 ```
 * Rspec + Simplecov
 ```
