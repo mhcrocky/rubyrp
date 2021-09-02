@@ -5,16 +5,20 @@ Example application
 
 ## System Dependencies
 
-* Ruby 2.7.2
-* Ruby on Rails 6.1.3.2
-* PostgreSQL
-* React 17.0.2
-
+* Ruby [2.7.4](https://www.ruby-lang.org/en/downloads/releases/)
+* Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
+* PostgreSQL [13.1](https://www.postgresql.org/support/versioning/)
+* React [17.0.2](https://reactjs.org/versions/) (yarn)
+* Stimulus [2.0.0](https://github.com/hotwired/stimulus/releases) (yarn)
+* Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
+* Turbo [0.7.10](https://rubygems.org/gems/turbo-rails/versions) (yarn)
+* Bootstrap [4.6](https://getbootstrap.com/docs/versions/) (yarn)
 * If building from scratch (not cloning)
 ```
 $ ruby -v
 $ rails -v
 $ rails new PROJECT_NAME -d=postgresql --webpacker=react
+$ pg_config --version
 $ npm view react version
 ```
 
@@ -22,11 +26,7 @@ $ npm view react version
 ## Libraries, Packages and Gems
 
 * Font Awesome
-* Bootstrap
 * jQuery
-* React
-* Stimulus
-* Hotwire
 * Action Text (trix)
 * will_paginate
 * Chartkick + Chart.js
