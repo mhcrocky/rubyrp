@@ -51,7 +51,7 @@ $ brakeman
 $ brakeman -o brakeman.html
 $ open brakeman.html
 
-$ bundle audit
+$ bundle-audit
 ```
 * Rspec + Simplecov
 ```
