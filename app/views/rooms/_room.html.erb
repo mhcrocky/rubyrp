@@ -1,11 +1,12 @@
 <tr id="<%= dom_id room %>">
-  <td><%= link_to truncate(room.name), room, class: 'text-dark font-weight-bold' %></td>
   <td>
-    <%= ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, room.created_at %> ago
-    <%#= room.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %>
+    <%= link_to truncate(room.name), room, class: 'text-dark font-weight-bold' %>
   </td>
   <td>
-    <%= truncate(room.user.name) %>
+    <%= room.created %>
+  </td>
+  <td>
+    <%= link_to truncate(room.user.name), room.user, class: 'text-info font-weight-bold' %>
   </td>
   <!-- <td class="text-right">
     <%# if can? :manage, room %>

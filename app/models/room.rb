@@ -19,6 +19,28 @@ class Room < ApplicationRecord
     where("created_at > ?", 1.day.ago)
   }
 
+  # Returns a string .. formatted Room created_at field
+  def created
+    if self.created_at > 1.day.ago
+      "Today"
+    elsif self.created_at > 1.week.ago
+      "#{ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, self.created_at} ago"
+    else
+      "#{self.created_at.strftime('%b %-d, %Y')}"
+    end
+  end
+
+  # Returns a string .. formatted Room updated_at field
+  def updated
+    if self.updated_at > 1.day.ago
+      "Today"
+    elsif self.updated_at > 1.week.ago
+      "#{ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, self.updated_at} ago"
+    else
+      "#{self.updated_at.strftime('%b %-d, %Y')}"
+    end
+  end
+
   # Returns STUN and TURN server info from Twilio (before_create)
   def set_room_key
     require 'twilio-ruby'

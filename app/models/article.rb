@@ -24,6 +24,28 @@ class Article < ApplicationRecord
     where("created_at > ?", 1.day.ago)
   }
 
+  # Returns a string .. formatted Aricle created_at field
+  def created
+    if self.created_at > 1.day.ago
+      "Today"
+    elsif self.created_at > 1.week.ago
+      "#{ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, self.created_at.in_time_zone("#{viewer.timezone}")} ago"
+    else
+      "#{self.created_at.strftime('%b %-d, %Y')}"
+    end
+  end
+
+  # Returns a string .. formatted Aricle updated_at field
+  def updated
+    if self.updated_at > 1.day.ago
+      "Today"
+    elsif self.updated_at > 1.week.ago
+      "#{ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, self.updated_at} ago"
+    else
+      "#{self.updated_at.strftime('%b %-d, %Y')}"
+    end
+  end
+
   #show (before_save)
   # Returns a string (html_safe) .. iframe element from the embed string field
   def iframe

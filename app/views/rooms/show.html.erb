@@ -2,7 +2,10 @@
   <div class="container">
     <%= turbo_frame_tag "room" do %>
       <h1 class="jumbotron-heading"><%= truncate(@room.name) %></h1>
-      <p class="lead text-muted"><%= @room.updated_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y, %l:%M %p') %><strong class="d-block"><i class="fas fa-user"></i> <%= link_to truncate(@room.user.name), @room.user, class: "text-info" %></strong></p>
+      <p class="lead text-muted">
+        <%= @room.created %>
+        <strong class="d-block"><i class="fas fa-user"></i> <%= link_to truncate(@room.user.name), @room.user, class: "text-info" %></strong>
+      </p>
       <% if can? :manage, @room %>
         <p class="mt-0 mb-0">
           <%= link_to edit_room_path(@room), class: 'btn btn-outline-dark' do %>
