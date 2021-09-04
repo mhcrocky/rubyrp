@@ -13,14 +13,14 @@
     <% end %>
 
     <section class="pt-1">
-      <div class="col-sm-12 pt-4">
+      <div class="d-block pt-4">
         <%= f.text_field :name, id: "inputName", class: "form-control", placeholder: "Name", autofocus: true %>
         <label for="inputName"><code>&#42; Name</code></label>
-      </div><!-- .col-sm-12 -->
-      <div class="col-sm-12 text-center pt-4 pb-2">
-        <%= link_to 'Cancel', @room, class: 'btn btn-outline-secondary' %>
-        <%= f.submit class: 'btn btn-success' %>
-      </div><!-- .col-sm-12 -->
+      </div><!-- .d-block .pt-4 -->
+      <div class="form-group d-flex justify-content-center">
+        <%= link_to 'Cancel', @room, class: 'btn btn-secondary align-self-center mx-1' %>
+        <%= f.submit 'Submit', class: 'btn btn-tayberry align-self-center mx-1' %>
+      </div><!-- .form-group -->
     </section><!-- .pt-1 -->
 
   <% end %>

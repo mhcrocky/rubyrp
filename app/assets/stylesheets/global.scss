@@ -49,45 +49,6 @@ a {
   }
 }
 
-.bg-brownie {
-  background-color: rgba(61,12,2,1) !important;
-}
-.bg-orange {
-  background-color: rgba(251,79,20,1) !important;
-}
-.bg-tayberry {
-  background-color: rgba(230,67,140,1) !important;
-}
-.bg-shnozberry {
-  background-color: rgba(111,71,190,1) !important;
-}
-
-.border-brownie {
-  border: 1px solid rgba(61,12,2,1) !important;
-}
-.border-orange {
-  border: 1px solid rgba(251,79,20,1) !important;
-}
-.border-tayberry {
-  border: 1px solid rgba(230,67,140,1) !important;
-}
-.border-shnozberry {
-  border: 1px solid rgba(111,71,190,1) !important;
-}
-
-.text-brownie {
-  color: rgba(61,12,2,1) !important;
-}
-.text-orange {
-  color: rgba(251,79,20,1) !important;
-}
-.text-tayberry {
-  color: rgba(230,67,140,1) !important;
-}
-.text-shnozberry {
-  color: rgba(111,71,190,1) !important;
-}
-
 
 /* Forms and Buttons
 ----------------------------------------------------------------------------- */
@@ -140,15 +101,6 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   transform: scale(1.5);
   margin-top: 15px !important;
 }
-// .table-responsive button.close path {
-//   fill: #dc3545 !important;
-// }
-.table-responsive button.close svg {
-  width: 24px;
-  height: 20px;
-  margin-top: 10px;
-  margin-right: 1px;
-}
 
 turbo-frame#room {
   display: block;
@@ -175,6 +127,16 @@ turbo-frame#room {
 
 .table th, .table td {
   padding: 9px 12px !important;
+}
+
+// .table-responsive button.close path {
+//   fill: #dc3545 !important;
+// }
+.table-responsive button.close svg {
+  width: 24px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: 1px;
 }
 
 
