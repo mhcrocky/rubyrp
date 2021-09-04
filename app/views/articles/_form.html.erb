@@ -36,11 +36,9 @@
       <%= f.rich_text_area :text, class: 'form-control' %>
     </div><!-- .jumbotron .form-group -->
 
-    <div class="form-group">
-      <div class="text-center">
-        <%= link_to 'Cancel', articles_path, class: 'btn btn-outline-secondary' %>
-        <%= f.submit class: 'btn btn-success' %>
-      </div><!-- .text-center -->
+    <div class="form-group d-flex justify-content-center">
+      <%= link_to 'Cancel', articles_path, class: 'btn btn-outline-secondary align-self-center mx-1' %>
+      <%= f.submit 'Submit', class: 'btn btn-outline-primary align-self-center mx-1' %>
     </div><!-- .form-group -->
 
   </section><!-- .form-section -->
