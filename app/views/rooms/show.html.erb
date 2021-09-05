@@ -9,10 +9,10 @@
       <% if can? :manage, @room %>
         <p class="mt-0 mb-0">
           <%= link_to edit_room_path(@room), class: 'btn btn-outline-dark' do %>
-            <i class='fas fa-signature text-tayberry' data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
+            <i class='fas fa-signature text-tayberry' title="Edit"></i>
           <% end %>
           <%= link_to room_path(@room), class: 'btn btn-outline-dark', method: :delete, data: { confirm: 'Are you sure you want to delete this room?' } do %>
-            <i class='fas fa-trash text-danger mx-1' data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
+            <i class='fas fa-trash text-danger mx-1' title="Delete"></i>
           <% end %>
         </p>
       <% end %>

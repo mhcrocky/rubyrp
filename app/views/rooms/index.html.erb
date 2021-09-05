@@ -15,7 +15,7 @@
 </section><!-- .jumbotron -->
 
 <%= turbo_stream_from :rooms %>
-<div class="filter mb-1">
+<div class="filter mb-2">
   <%= render partial: 'rooms/search', locals: { action: rooms_path, q: '' } %>
 </div><!-- .filter -->
 <div class="table-responsive">
@@ -30,7 +30,7 @@
     </thead>
     <tbody id="rooms">
       <%= render(partial: @rooms) %>
-    </tbody>
+    </tbody><!-- #rooms (hotwired) -->
   </table><!-- .table .table-striped -->
 </div><!-- .table-responsive -->
 <div class="pagination">
