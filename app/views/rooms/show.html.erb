@@ -33,4 +33,12 @@
   </div><!-- .col-12 -->
 </div><!-- .row -->
 
-<section class="jumbotron mb-5"></section>
+<section class="jumbotron mb-5">
+  <%= turbo_stream_from @room %>
+  <div id='notes'>
+    <h2>Notes</h2>
+    <%= render @room.notes %>
+  </div>
+</section>
+
+<%= turbo_frame_tag 'new_note', src: new_room_note_path(@room), target: :_top %>

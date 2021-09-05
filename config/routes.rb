@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   resources :members, only: [:index]
   resources :visitors, only: [:index]
 
-  resources :rooms
+  resources :rooms do
+    resources :notes, only: [:new, :create]
+  end
 
   resources :articles do
     resources :comments, only: [:create, :destroy]

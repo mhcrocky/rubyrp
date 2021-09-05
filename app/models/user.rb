@@ -21,6 +21,8 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  # has_many :notes, dependent: :destroy
+
   after_create :assign_default_role, :first_items
 
   # Returns only users created in the past 24 hours
