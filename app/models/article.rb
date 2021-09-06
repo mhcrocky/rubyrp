@@ -29,7 +29,7 @@ class Article < ApplicationRecord
     if self.created_at > 1.day.ago
       "Today"
     elsif self.created_at > 1.week.ago
-      "#{ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, self.created_at.in_time_zone("#{viewer.timezone}")} ago"
+      "#{ActionController::Base.helpers.distance_of_time_in_words Time.now.to_date, self.created_at} ago"
     else
       "#{self.created_at.strftime('%b %-d, %Y')}"
     end
