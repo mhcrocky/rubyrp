@@ -12,7 +12,7 @@ class Room < ApplicationRecord
 
   broadcasts_to ->(room) { :rooms }, inserts_by: :prepend
 
-  # active_record callbacks ... rooms hotwire broadcast
+  ## active_record callbacks ... rooms hotwire broadcast
   # broadcasts
   after_create_commit  { broadcast_prepend_to 'rooms' }
   after_update_commit  { broadcast_replace_to 'rooms' }

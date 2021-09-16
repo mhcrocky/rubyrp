@@ -8,7 +8,6 @@ class NotesController < ApplicationController
   end
 
   def create
-    # @note.user = current_user
     @note = @room.notes.create!(note_params)
     respond_to do |format|
       if @note.save
@@ -18,15 +17,6 @@ class NotesController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-
-    # @note = @room.notes.create!(note_params)
-    # @note.user = current_user
-    # respond_to do |format|
-    #   if @comment.save
-    #     format.turbo_stream
-    #     format.html { redirect_to @room }
-    #   end
-    # end
   end
 
   private

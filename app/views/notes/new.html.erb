@@ -1,10 +1,10 @@
 <%= turbo_frame_tag 'new_note' do %>
-  <h2>New Note</h2>
-  <%= form_with model: [@room, @note],
-        data: { controller: 'reset_form', action: 'turbo:submit-end->reset_form#reset' } do |form| %>
-      <div class='field'>
-        <%= form.rich_text_area :body %>
-        <%= form.submit 'Post', 'data-reset_form-target': 'button' %>
-      </div>
+  <%= form_with model: [@room, @note], data: { controller: 'reset', action: 'turbo:submit-end->reset#reset' } do |form| %>
+    <div class="form-group">
+      <%= form.rich_text_area :body, class: 'form-control comments' %>
+    </div><!-- .form-group -->
+    <div class="form-group d-flex justify-content-center">
+      <%= form.submit 'Add Note', class: 'btn btn-lg btn-outline-dark btn-block', 'data-reset-target': 'posted' %>
+    </div><!-- .form-group -->
   <% end %>
 <% end %>

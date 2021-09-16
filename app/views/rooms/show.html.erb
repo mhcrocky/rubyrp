@@ -20,25 +20,26 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<div class='row'>
-  <div class='col-12'>
-    <div id='videos'
-      data-controller='video-chat'
-      data-video-chat-twilio='<%= @room.room_key %>'
-      data-video-chat-session="<%= session.id %>"
-      data-video-chat-id="<%= @room.id %>">
-      <div class="d-inline" data-video-chat-target="remote_videos"></div>
-      <video data-video-chat-target="local_video" autoplay></video>
-    </div><!-- #videos -->
-  </div><!-- .col-12 -->
-</div><!-- .row -->
-
-<section class="jumbotron mb-5">
-  <%= turbo_stream_from @room %>
-  <div id='notes'>
-    <h2>Notes</h2>
-    <%= render @room.notes %>
-  </div>
-</section>
-
-<%= turbo_frame_tag 'new_note', src: new_room_note_path(@room), target: :_top %>
+<section class="container mb-5 pb-5">
+  <div class='row'>
+    <div class='col-12'>
+      <div id='videos'
+        data-controller='video-chat'
+        data-video-chat-twilio='<%= @room.room_key %>'
+        data-video-chat-session="<%= session.id %>"
+        data-video-chat-id="<%= @room.id %>">
+        <div class="d-inline" data-video-chat-target="remote_videos"></div>
+        <video data-video-chat-target="local_video" autoplay></video>
+      </div><!-- #videos -->
+    </div><!-- .col-12 -->
+    <div class="col-lg-7 overflow-auto" id='show-notes'>
+      <%= turbo_stream_from @room %>
+      <div id='notes'>
+        <%= render @room.notes %>
+      </div><!-- #notes -->
+    </div><!-- .col-lg-7 -->
+    <div class="col-lg-5 notes-form">
+      <%= turbo_frame_tag 'new_note', src: new_room_note_path(@room), target: :_top %>
+    </div><!-- .col-lg-5 -->
+  </div><!-- .row -->
+</section><!-- .container -->

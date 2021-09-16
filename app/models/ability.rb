@@ -30,8 +30,7 @@ class Ability
     elsif user.has_role? :member
       can :read,   Room
       can :manage, Room, user_id: user.id
-      can :manage, Note, user_id: user.id
-      can :manage, Note, room: { user: { id: user.id } }
+      can :manage, Note
       can :read,   Article
       can :manage, Article, user_id: user.id
       can :read,   Comment
@@ -42,8 +41,7 @@ class Ability
 
     else # visitors(default sign_up role)
       can :read,   Room
-      can :manage, Note, user_id: user.id
-      can :manage, Note, room: { user: { id: user.id } }
+      can :manage, Note
       can :read,   Article
       can :manage, Article, user_id: user.id
       can :read,   Comment
