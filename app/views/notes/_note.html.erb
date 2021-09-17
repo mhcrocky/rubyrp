@@ -1,7 +1,7 @@
 <%= content_tag :div, id: dom_id(note) do %>
   <div class="mb-5">
     <p class="jumbotron-heading text-muted small">
-      <%= note.created %>
+      <%= link_to truncate(note.user.name), note.user, class: 'text-info font-weight-bold' %>, <%= note.created %>
     </p><!-- .jumbotron-heading -->
     <div class="note-body overflow-auto">
       <%= note.body %>

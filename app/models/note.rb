@@ -1,17 +1,25 @@
 class Note < ApplicationRecord
-  default_scope { order(created_at: :desc) }
+  default_scope {
+    order(created_at: :desc).
+    limit(120)
+  }
 
   has_rich_text :body
 
-  # belongs_to :user
+  belongs_to :user
   belongs_to :room
 
-  # validates_presence_of :user
+  validates_presence_of :user
   validates_presence_of :room
 
   validates :body, presence: true
 
   broadcasts_to :room, inserts_by: :prepend
+
+  # Returns only notes created in the past 24 hours
+  scope :daily, -> {
+    where("created_at > ?", 1.day.ago)
+  }
 
   # Returns a string .. formatted Note created_at field
   def created
@@ -23,11 +31,6 @@ class Note < ApplicationRecord
       "#{self.created_at.strftime('%b %-d, %Y')}"
     end
   end
-
-  # Returns only notes created in the past 24 hours
-  scope :daily, -> {
-    where("created_at > ?", 1.day.ago)
-  }
 
   # Returns a string .. strip out unknown characters, etc.. for text in word tree
   def strip_body_for_tree

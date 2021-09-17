@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
-  # load_and_authorize_resource
   before_action :set_room
 
   def new
@@ -8,8 +7,9 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = @room.notes.create!(note_params)
-    # @note.user = current_user
+    @note      = @room.notes.create(note_params)
+    @note.user = current_user
+
     respond_to do |format|
       if @note.save
         format.turbo_stream
@@ -28,7 +28,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:body)
+    params.require(:note).permit(:user_id, :room_id, :body)
   end
 
 end

@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  # has_many :notes, dependent: :destroy
+  has_many :notes, dependent: :destroy
 
   after_create :assign_default_role, :first_items
 

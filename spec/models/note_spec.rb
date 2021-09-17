@@ -15,10 +15,10 @@ RSpec.describe Note, type: :model do
       note.room = nil
       expect(note).to_not be_valid
     end
-    # it "should have a user" do
-    #   note.user = nil
-    #   expect(note).to_not be_valid
-    # end
+    it "should have a user" do
+      note.user = nil
+      expect(note).to_not be_valid
+    end
     it "should have a body" do
       note.body = nil
       expect(note).to_not be_valid
