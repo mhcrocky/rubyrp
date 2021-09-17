@@ -1,5 +1,9 @@
 FactoryBot.define do
+
   factory :note do
-    room { nil }
+    body { "I am a note body had" }
+    # user
+    room
   end
+
 end
