@@ -9,10 +9,12 @@ class NotesController < ApplicationController
 
   def create
     @note = @room.notes.create!(note_params)
+    # @note.user = current_user
     respond_to do |format|
       if @note.save
         format.turbo_stream
         format.html { redirect_to @room }
+        format.js
       else
         format.html { render action: 'new' }
       end

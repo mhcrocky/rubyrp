@@ -26,6 +26,9 @@ class PagesController < ApplicationController
     @rooms = Room.order('created_at DESC')
                  .limit(1500)
 
+    @notes = Note.order('created_at DESC')
+                 .limit(150)
+
     @todo_items = TodoItem.order('created_at DESC')
                           .limit(1500)
 

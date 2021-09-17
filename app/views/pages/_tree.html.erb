@@ -21,6 +21,10 @@
           ['<%= "#{room.strip_name_for_tree}" %>'],
         <% end %>
 
+        <% @notes.each do |note| %>
+          ['<%= "#{note.strip_body_for_tree}" %>'],
+        <% end %>
+
         <% @todo_items.each do |todo_item| %>
           ['<%= "#{todo_item.strip_title_for_tree}" %>'],
         <% end %>
@@ -56,6 +60,9 @@
       </li>
       <li class="d-inline">
         <%= "#{@rooms.count} rooms" %><b> , </b>
+      </li>
+      <li class="d-inline">
+        <%= "#{@notes.count} notes" %><b> , </b>
       </li>
       <li class="d-inline">
         <%= "#{@todo_items.count} list-items" %>

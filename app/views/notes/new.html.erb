@@ -1,10 +1,11 @@
 <%= turbo_frame_tag 'new_note' do %>
-  <%= form_with model: [@room, @note], data: { controller: 'reset', action: 'turbo:submit-end->reset#reset' } do |form| %>
+  <%= form_with model: [@room, @note] do |form| %>
+    <!-- Allow body validation error without message -->
     <div class="form-group">
-      <%= form.rich_text_area :body, class: 'form-control comments' %>
+      <%= form.rich_text_area :body, class: 'form-control comments', id: 'bodyText' %>
     </div><!-- .form-group -->
     <div class="form-group d-flex justify-content-center">
-      <%= form.submit 'Add Note', class: 'btn btn-lg btn-outline-dark btn-block', 'data-reset-target': 'posted' %>
+      <%= form.submit 'Add Note', class: 'btn btn-lg btn-tayberry btn-block' %>
     </div><!-- .form-group -->
   <% end %>
 <% end %>
