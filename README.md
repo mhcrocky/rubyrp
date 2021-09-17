@@ -87,8 +87,9 @@ $ bin/webpack-dev-server
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
 $ git push production master
-$ heroku run rake db:schema:load --app PROJECT_NAME
-$ heroku run rake db:seed --app PROJECT_NAME
+$ heroku run rake db:schema:load
+$ heroku run rake db:seed
+$ heroku run rake db:migrate
 
 $ heroku run rails c
 $ heroku run rake clean_ahoy
