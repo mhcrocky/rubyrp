@@ -58,7 +58,7 @@ class User < ApplicationRecord
     self.created_at.in_time_zone("#{self.timezone}").strftime('%b %-d, %Y.  %l:%M %p')
   end
 
-  # Returns a string .. email address before @
+  # Returns a string .. rolify first role (sysadmins are also superadmins)
   def role
     if self.roles.present?
       "#{self.roles.first.name}"
