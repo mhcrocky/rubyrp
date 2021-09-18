@@ -25,6 +25,8 @@ class User < ApplicationRecord
 
   after_create :assign_default_role, :first_items
 
+  broadcasts_to ->(user) { :users }, inserts_by: :prepend
+
   # Returns only users created in the past 24 hours
   scope :daily, -> {
     where("created_at > ?", 1.day.ago)

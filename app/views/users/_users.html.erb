@@ -1,3 +1,5 @@
+<%= turbo_stream_from :users %>
+
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -11,7 +13,7 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
-        <tr>
+        <tr id="<%= dom_id user %>">
           <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
           <td><%= user.articles.count %></td>
           <td><%= user.todo_items.count %></td>

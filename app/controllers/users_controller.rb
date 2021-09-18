@@ -23,9 +23,6 @@ class UsersController < ApplicationController
   def destroy
     if can? :manage, @user # Prevent inserted delete button as html from working
       @user.destroy
-      respond_to do |format|
-        format.html { redirect_to request.referrer, notice: 'User was successfully deleted.' }
-      end
     else
       redirect_to authenticated_root_url, alert: 'You CANNOT delete a user other than yourself. If you want to delete your account, please click on Edit Profile in the top menu.'
     end
