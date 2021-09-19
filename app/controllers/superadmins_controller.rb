@@ -23,7 +23,7 @@ class SuperadminsController < ApplicationController
           @superadmin.remove_role :visitor
           format.html { redirect_to @superadmin, notice: 'Super Administator was successfully created.' }
         else
-          format.html { render action: 'new' }
+          format.html { redirect_to request.referrer, alert: 'There was an error. Super Admin was not saved. Please make sure to use a valid and unique email, plus a valid password.' }
         end
       end
     else
