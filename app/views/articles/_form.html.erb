@@ -32,6 +32,7 @@
           <% else %>
             <%= link_to image_tag("missing.svg", alt: 'No video', class: 'card-img-top') %>
           <% end %>
+          <small class="text-muted">YouTube video preview image</small>
         </div><!-- .jumbotron .text-center .form-label-group -->
       </div><!-- .col-lg-6 -->
     </div><!-- .row -->
@@ -44,7 +45,6 @@
       <%= link_to 'Cancel', articles_path, class: 'btn btn-secondary align-self-center mx-1' %>
       <%= f.submit 'Submit', class: 'btn btn-orange align-self-center mx-1' %>
     </div><!-- .form-group -->
-
   </section><!-- .form-section -->
 
 <% end %>
