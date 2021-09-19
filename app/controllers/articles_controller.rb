@@ -12,9 +12,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article       = Article.find(params[:id])
+    @article = Article.find(params[:id])
 
-    @articles      = Article.where(user_id: @article.user.id)
+    @articles = Article.where(user_id: @article.user.id)
                             .order('created_at DESC')
                             .paginate(page: params[:page], per_page: 3)
 
@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
       if @article.save
         format.html { redirect_to article_path(@article), notice: 'Article was successfully created.' }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', status: :unprocessable_entity }
       end
     end
   end
