@@ -4,6 +4,8 @@ class Article < ApplicationRecord
 
   has_rich_text :text
 
+  validates_length_of :text, maximum: 25000
+
   belongs_to :user
 
   validates_presence_of :user

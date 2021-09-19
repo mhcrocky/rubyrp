@@ -1,11 +1,12 @@
 class Comment < ApplicationRecord
-
   default_scope {
     order(created_at: :desc).
-    limit(120)
+    limit(10000)
   }
 
   has_rich_text :body
+
+  validates_length_of :body, maximum: 10000
 
   belongs_to :user
   belongs_to :article

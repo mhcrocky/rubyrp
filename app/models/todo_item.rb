@@ -3,6 +3,7 @@ class TodoItem < ApplicationRecord
   belongs_to :user
   validates_presence_of :user
   validates :title, presence: true
+  validates_length_of :title, maximum: 5000
   visitable :ahoy_visit
 
   # Returns a string .. formatted TodoItem created_at field
