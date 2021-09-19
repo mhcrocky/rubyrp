@@ -72,9 +72,13 @@ $ yarn install
 $ rails db:create
 $ rails db:seed
 $ rails s
-$ bin/webpack-dev-server
+$ bin/webpack-dev-server (separate tab)
 ```
-
+* Reset database
+```
+$ rails db:drop db:create db:migrate
+$ rails db:seed
+```
 
 ## Initialization (Heroku)
 
