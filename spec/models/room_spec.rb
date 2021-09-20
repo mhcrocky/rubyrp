@@ -33,6 +33,20 @@ RSpec.describe Room, type: :model do
     end
   end
 
+  describe "created" do
+    let(:room) { FactoryBot.build(:room) }
+    it "should return a string containing a formatted created_at date" do
+      expect(room.created).to eq("2 days ago")
+    end
+  end
+
+  describe "updated" do
+    let(:room) { FactoryBot.build(:room) }
+    it "should return a string containing a formatted created_at date" do
+      expect(room.updated).to eq("Today")
+    end
+  end
+
   describe "strip_name_for_tree" do
     let(:room) { FactoryBot.build(:room) }
     it "should return a stripped string" do

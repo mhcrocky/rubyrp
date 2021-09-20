@@ -28,6 +28,13 @@ RSpec.describe Note, type: :model do
     end
   end
 
+  describe "created" do
+    let(:note) { FactoryBot.build(:note) }
+    it "should return a string containing a formatted created_at date" do
+      expect(note.created).to eq("2 days ago")
+    end
+  end
+
   describe "strip_body_for_tree" do
     let(:note) { FactoryBot.build(:note) }
     it "should return a stripped text" do

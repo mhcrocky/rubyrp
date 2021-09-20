@@ -64,6 +64,20 @@ RSpec.describe Article, type: :model do
     end
   end
 
+  describe "created" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a string containing a formatted created_at date" do
+      expect(article.created).to eq("2 days ago")
+    end
+  end
+
+  describe "updated" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a string containing a formatted created_at date" do
+      expect(article.updated).to eq("Today")
+    end
+  end
+
   describe "strip_title_for_tree" do
     let(:article) { FactoryBot.build(:article) }
     it "should return a stripped string" do
