@@ -67,7 +67,7 @@ RSpec.describe Article, type: :model do
   describe "created" do
     let(:article) { FactoryBot.build(:article) }
     it "should return a string containing a formatted created_at date" do
-      expect(article.created).to eq("2 days ago")
+      expect(article.updated).to eq("Today")
     end
   end
 

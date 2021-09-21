@@ -31,7 +31,7 @@ RSpec.describe Note, type: :model do
   describe "created" do
     let(:note) { FactoryBot.build(:note) }
     it "should return a string containing a formatted created_at date" do
-      expect(note.created).to eq("2 days ago")
+      expect(note.created).to eq("Today")
     end
   end
 
