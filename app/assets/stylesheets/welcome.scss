@@ -49,8 +49,9 @@ img.center-img {
   width: 90%;
   margin: 0 auto 105px;
   transition: transform 0.75s;
-  animation: shuffle 1s ease-in;
+  animation: shuffle 0.75s ease-in;
   filter: invert(0%) !important;
+  z-index: 999;
 }
 @keyframes shuffle {
 	10% {
@@ -74,5 +75,10 @@ img.center-img {
 }
 img.center-img:hover {
   cursor: zoom-in;
-  transform: scale(1.25);
+  transform: scale(1.15);
+}
+img.center-img:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+  filter: invert(100%) !important;
 }
