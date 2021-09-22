@@ -49,29 +49,8 @@ img.center-img {
   width: 90%;
   margin: 0 auto 105px;
   transition: transform 0.75s;
-  animation: shuffle 0.75s ease-in;
-  filter: invert(0%) !important;
+  -webkit-animation: shuffle 1.25s ease-in;
   z-index: 999;
-}
-@keyframes shuffle {
-	10% {
-		transform: scale(1, 0.005);
-  }
-	35% {
-		transform: scale(0.05, 0.005);
-		opacity: 1;
-  }
-	50% {
-		transform: scale(0.5, 0.05);
-		opacity: 0;
-  }
-	85% {
-		transform: scale(1, 0.5);
-		opacity: 1;
-  }
-	100% {
-		transform: scale(1, 1);
-  }
 }
 img.center-img:hover {
   cursor: zoom-in;
@@ -81,4 +60,35 @@ img.center-img:active {
   cursor: grabbing;
   transform: scale(1.15);
   filter: invert(100%) !important;
+}
+
+@keyframes shuffle {
+  0% {
+    opacity: 0;
+    transform: translate3d(170px, 0, 0);
+  }
+
+  25% {
+    opacity: 0.25;
+    transform: translate3d(50px, 0, 0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate3d(0, 10px, 0);
+  }
+
+  75% {
+    opacity: 0.75;
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    opacity: 0.9;
+    transform: none;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
