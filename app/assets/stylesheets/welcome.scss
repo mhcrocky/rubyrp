@@ -19,6 +19,7 @@
 
 .in-app {
   display: block;
+  height: 545px;
   svg {
     width: 48px;
     height: 36px;
@@ -65,12 +66,25 @@ img.center-img:active {
 @keyframes shuffle {
   0% {
     opacity: 0;
-    transform: translate3d(170px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  10% {
+    opacity: 0;
+    transform: translate3d(0, 0, 10px);
   }
 
   25% {
-    opacity: 0.25;
-    transform: translate3d(50px, 0, 0);
+    opacity: 0;
+    transform: translate3d(10px, 0, 0);
+  }
+
+  30% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 0.3;
   }
 
   50% {
@@ -78,9 +92,21 @@ img.center-img:active {
     transform: translate3d(0, 10px, 0);
   }
 
+  60% {
+    opacity: 0.6;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
   75% {
     opacity: 0.75;
     transform: translate3d(0, -10px, 0);
+  }
+
+  80% {
+    opacity: 0.8;
   }
 
   90% {
