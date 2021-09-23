@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
       /* Email styles need to be inline */
-      a.landing {
+      a.black-link {
         color:#000;
         text-decoration:none;
         cursor:pointer;
@@ -13,6 +13,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-bottom:90px;">
+      <tr>
+        <td align="center">
+          <%= yield %>
+        </td>
+      </tr>
+    </table>
+
   </body>
 </html>

@@ -1,8 +1,19 @@
 <div style="width:600px; text-align:left; color:#000; background-color:#fff;">
   <div style="width:570px; margin-left:15px;">
 
-    <h1 style="font-size:30px; margin-bottom:12px; margin-left:3px;">RRB Daily Analytics</h1>
-    <h2 style="font-size:27px; margin-bottom:12px; margin-left:3px; color:#777;">Visits: <%= @visits.count %></h2>
+    <div style="margin-top:10px; margin-bottom:10px; margin-left:3px;">
+      <%= link_to root_url do %>
+        <img src="https://rails-react-bootstrap.herokuapp.com/assets/logo-92660c5c2890ab892aaab15171ef70e729a4b8f81c6786659ddc928273d81ced.png" alt="logo" width=24 height=30>
+      <% end %>
+    </div>
+
+    <h1 style="font-size:30px; margin-bottom:12px; margin-left:3px;">
+      RRB Daily Analytics
+    </h1>
+
+    <h2 style="font-size:27px; margin-bottom:12px; margin-left:3px; color:#777;">
+      Visits: <%= @visits.count %>
+    </h2>
 
     <ol style="margin-left:3px; list-style-type:decimal;">
       <% @visits.each do |visit| %>
@@ -21,9 +32,17 @@
                 <%= visit.user ? visit.user.name : 'Unauthorized' %>
               </span>
             </li>
+            <% if visit.referring_domain.present? %>
+              <li style="font-size:15px; margin-bottom:6px; display:list-item;">
+                <strong>Referrer:</strong>
+                <a href="<%= visit.referring_domain %>" target="_blank" class="black-link">
+                  <%= visit.referring_domain %>
+                </a>
+              </li>
+            <% end %>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
-              <strong>Landing:</strong> 
-              <a href="<%= visit.landing_page %>" target="_blank" class="landing">
+              <strong>Landing:</strong>
+              <a href="<%= visit.landing_page %>" target="_blank" class="black-link">
                 <%= visit.landing_suffix %>
               </a>
             </li>
@@ -34,7 +53,10 @@
               <strong>OS:</strong> <%= visit.os %>
             </li>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
-              <strong>Location:</strong> <%= visit.location %>
+              <strong>Location:</strong>
+              <span style="color:#dc3545;">
+                <%= visit.location %>
+              </span>
             </li>
             <li style="font-size:15px; margin-bottom:6px; display:list-item;">
               <strong>Events:</strong> <%= visit.events.count %>
@@ -42,16 +64,18 @@
                 <ol style="margin-left:2px; list-style-type:decimal; color:777;">
                   <% visit.events.each do |event| %>
                     <li style="font-size:15px; margin-bottom:6px; display:list-item;">
-                      <span style="color:#6f47be;"><%= event.name %></span>
+                      <span style="color:#dc3545;"><%= event.name %></span>
                       <p style="margin-left:3px; font-size:15px; margin-top:3px; margin-bottom:3px;">
                         <strong>Time:</strong>
                         <span style="color:#6f47be;">
                           <%= event.time.strftime('%m/%d/%Y, %H:%M:%S') %>
                         </span>
                       </p>
-                      <p style="margin-left:3px; font-size:15px; margin-top:3px; margin-bottom:3px;">
-                        <strong>Properties:</strong> <%= event.properties %>
-                      </p>
+                      <% if event.properties.any? %>
+                        <p style="margin-left:3px; font-size:15px; margin-top:3px; margin-bottom:3px;">
+                          <strong>Properties:</strong> <%= event.properties %>
+                        </p>
+                      <% end %>
                     </li>
                   <% end %>
                 </ol>
@@ -61,12 +85,6 @@
         </li>
       <% end %>
     </ol>
-
-    <div style="margin-top:90px; margin-left:12px;">
-      <%= link_to root_url do %>
-        <img src="https://rails-react-bootstrap.herokuapp.com/assets/logo-92660c5c2890ab892aaab15171ef70e729a4b8f81c6786659ddc928273d81ced.png" alt="logo" width=95 height=107>
-      <% end %>
-    </div>
 
   </div><!-- width:570px; -->
 </div><!-- width:600px; -->
