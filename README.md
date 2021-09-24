@@ -64,8 +64,9 @@ $ open coverage/index.html
 
 ## Initialization (Development)
 
-* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, GEOCODER_API in /config/application.yml ( figaro | .gitignore ). If you don't want to use verification email, comment out :confirmable in user model and edit db/seeds
-* Search and replace in project the following:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
+* Search and replace in project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP
+* config/example_application.yml -> config/application.yml (figaro and .gitignore already set)
+* If you don't want to verify email, comment out :confirmable in user model and edit db/seeds
 ```
 $ bundle install
 $ yarn install
@@ -74,7 +75,7 @@ $ rails db:seed
 $ rails s
 $ bin/webpack-dev-server (separate tab)
 ```
-* Reset database
+* Reseting database
 ```
 $ rails db:drop db:create db:migrate
 $ rails db:seed
@@ -82,11 +83,12 @@ $ rails db:seed
 
 ## Initialization (Heroku)
 
+* Search and replace in project: rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
-* Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
 * Buildpacks: heroku/nodejs | heroku/ruby
-* Set GMAIL_USERNAME, GMAIL_PASSWORD, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, GEOCODER_API in Config Vars
-* Search and replace in project the following (if you're skipping Development Initialization):  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP (case sensitive)
+* Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
+* example_application.yml -> personalize config vars in heroku dashboard
+* If you don't want to verify email, comment out :confirmable in user model and edit db/seeds
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
