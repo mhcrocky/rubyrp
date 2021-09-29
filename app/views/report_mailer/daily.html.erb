@@ -26,7 +26,7 @@
         <% if visit.referring_domain.present? %>
           <li style="font-size:15px; margin-bottom:6px; display:list-item;">
             <strong>Referrer:</strong>
-            <a href="<%= visit.referring_domain %>" target="_blank" class="black-link">
+            <a href="<%= visit.referrer %>" target="_blank" class="black-link">
               <%= visit.referring_domain %>
             </a>
           </li>
