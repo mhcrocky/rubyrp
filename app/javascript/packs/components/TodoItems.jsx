@@ -24,10 +24,10 @@ class TodoItems extends React.Component {
           <table className="table">
             <thead>
               <tr>
-                <th scope="col">Created</th>
-                <th scope="col">Finished</th>
-                <th scope="col">Description</th>
-                <th scope="col" className="text-right">
+                <th scope="col" className="text-muted">Created</th>
+                <th scope="col" className="text-muted">Finished</th>
+                <th scope="col" className="text-muted">Description</th>
+                <th scope="col" className="text-right text-muted">
                   Actions
                 </th>
               </tr>
