@@ -8,9 +8,9 @@
     	  <p>Chartkick, Groupdate, Geocoder &amp; Ahoy</p>
       </div><!-- .left-1 -->
       <div class="left-2 mt-5 mb-5 pt-5 pb-1">
-        <i class='fas fa-lock-open'></i>
-        <h5>Authentication</h5>
-    	  <p>Devise &plus; Rolify &plus; CanCan</p>
+        <i class="fas fa-laptop-code"></i>
+        <h5>Testing</h5>
+        <p>RSpec &plus; PG Hero &plus; Brakeman</p>
       </div><!-- .left-2 -->
     </div><!-- .col-sm-3 -->
     <div class="col-sm-6 d-flex align-items-center mt-5">
@@ -23,9 +23,9 @@
         <p>STUN and TURN servers via the Twilio API</p>
       </div><!-- .right-1 -->
       <div class="right-2 mt-5 mb-5 pt-5 pb-1">
-        <i class="fas fa-laptop-code"></i>
-        <h5>Components</h5>
-        <p>React, Stimulus &amp; Hotwire</p>
+        <i class='fas fa-lock-open'></i>
+        <h5>Authentication</h5>
+    	  <p>Devise &plus; Rolify &plus; CanCanCan</p>
       </div><!-- .right-2 -->
     </div><!-- .col-sm-3 .text-muted -->
   </div><!-- .row -->
@@ -46,7 +46,7 @@
       return false;
     });
     $('.left-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/devise.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/testing.png")%>');
       $(".left-2 svg").css('background', '#6c757d');
       $('.left-2 svg').css('color', '#fff');
       $(".left-1 svg").removeAttr('style');
@@ -64,7 +64,7 @@
       return false;
     });
     $('.right-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/react.png")%>');
+      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/devise.png")%>');
       $(".right-2 svg").css('background', '#6c757d');
       $('.right-2 svg').css('color', '#fff');
       $(".right-1 svg").removeAttr('style');
