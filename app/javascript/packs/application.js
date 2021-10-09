@@ -26,11 +26,11 @@ import gtag from "src/analytics"
 require('bootstrap')
 import 'bootstrap/dist/css/bootstrap'
 
-var jQuery = require('jquery')
-// include jQuery in global and window scope (access it globally)
-// $('.div') is actually refering to global.$('.div')
-global.$ = global.jQuery = jQuery;
-window.$ = window.jQuery = jQuery;
+// var jQuery = require('jquery')
+// // include jQuery in global and window scope (access it globally)
+// // $('.div') is actually refering to global.$('.div')
+// global.$ = global.jQuery = jQuery;
+// window.$ = window.jQuery = jQuery;
 
 // Font Awesome
 import '@fortawesome/fontawesome-free/js/all'
@@ -56,9 +56,9 @@ window.addEventListener("trix-file-accept", function(event) {
   console.log('File attachment not supported')
 })
 
-// Temporary: Bootstrap tooltips jQuery
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+// // Bootstrap 4 tooltips jQuery
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
 
 // console.log('application js firing')

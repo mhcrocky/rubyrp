@@ -14,7 +14,7 @@ Example application
 * Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
 * Turbo [0.7.10](https://rubygems.org/gems/turbo-rails/versions) (yarn)
 * React [17.0.2](https://reactjs.org/versions/) (yarn)
-* Bootstrap [4.6](https://getbootstrap.com/docs/versions/) (yarn)
+* Bootstrap [5.1.2](https://getbootstrap.com/docs/versions/) (yarn)
 * If building from scratch (not cloning):
 ```
 $ ruby -v
@@ -28,18 +28,17 @@ $ npm view react version
 ## Other Dependencies
 
 * Font Awesome
-* jQuery
+* Devise + Rolify + Cancan
+* Figaro
 * Action Text (trix)
 * will_paginate
 * Chartkick + Chart.js
 * Groupdate
 * Ahoy
 * Geocoder + maxminddb
-* Devise + Rolify + Cancan
-* Figaro
+* PGHero
 * Rspec + Simplecov
 * Brakeman + bundler_audit
-* PGHero
 
 
 ## Analysis, Testing and Coverage
