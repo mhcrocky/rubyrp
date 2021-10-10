@@ -12,7 +12,7 @@ Example application
 * Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
 * Stimulus [2.0.0](https://github.com/hotwired/stimulus/releases) (yarn)
 * Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
-* Turbo [0.7.10](https://rubygems.org/gems/turbo-rails/versions) (yarn)
+* Turbo [0.8.1](https://rubygems.org/gems/turbo-rails/versions) (yarn)
 * React [17.0.2](https://reactjs.org/versions/) (yarn)
 * Bootstrap [5.1.2](https://getbootstrap.com/docs/versions/) (yarn)
 * If building from scratch (not cloning):
