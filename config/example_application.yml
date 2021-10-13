@@ -2,13 +2,11 @@
 # Personalize your configuration values here + your production dashboard (eg Heroku)
 
 
-GMAIL_USERNAME: rrb@gmail.com
+GMAIL_USERNAME: rrb@example.com
 GMAIL_PASSWORD: eadfngyjkoveasplm
 
 TWILIO_ACCOUNT_SID: CRc75df1159399rrbbf3b6666b2f5c59yy
 TWILIO_AUTH_TOKEN: 99cub7795f7b1bf1337ee2k535317797
-
-GEOCODER_API: JLdrSgBLP6PlMep7kkVH8ujj1JaK5PHhNJZ43DNj
 
 
 ## Heroku Config Variables
