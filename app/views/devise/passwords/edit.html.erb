@@ -6,20 +6,20 @@
     <%= link_to root_path do %>
       <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
     <% end %>
-    <h1 class="h3 mb-3 font-weight-normal">Change your password</h1>
+    <h1 class="h3 mb-3 fw-normal">Change your password</h1>
   </div><!-- .text-center .mb-4 -->
 
-  <div class="form-label-group">
+  <div class="form-floating">
     <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password (6 characters minimum)", autofocus: true %>
     <label for="inputPassword">New password</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <div class="form-label-group">
+  <div class="form-floating">
     <%= f.password_field :password_confirmation, id: "inputPasswordConfirmation", class: "form-control", placeholder: "Password Confirmation" %>
     <label for="inputPasswordConfirmation">Confirm new password</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <%= f.submit "Change my password", class: "btn btn-lg btn-info btn-block" %>
+  <%= f.submit "Change my password", class: "w-100 btn btn-lg btn-info text-light" %>
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>

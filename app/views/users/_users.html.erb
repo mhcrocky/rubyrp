@@ -12,7 +12,7 @@
     <tbody>
       <% @users.each do |user| %>
         <tr id="<%= dom_id user %>">
-          <td><%= link_to truncate(user.name), user, class: 'text-info font-weight-bold' %></td>
+          <td><%= link_to truncate(user.name), user, class: 'text-info fw-bold' %></td>
           <td><%= user.role %></td>
           <td>
             <% if can? :manage, user %>

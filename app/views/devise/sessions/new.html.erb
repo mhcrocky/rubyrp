@@ -4,7 +4,7 @@
     <%= link_to root_path do %>
       <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
     <% end %>
-    <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+    <h1 class="h3 mb-3 fw-normal">Sign in</h1>
     <p>
       <i style="cursor:pointer;" class="fas fa-info-circle text-muted" data-toggle="modal" data-target="#exampleModal"></i>
       View as
@@ -15,28 +15,28 @@
     <!-- <p><span style="cursor:pointer;" class="text-info text-weight-bold" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-info-circle"></i> Example Accounts</span></p> -->
   </div><!-- .text-center .mb-4 -->
 
-  <div class="form-label-group">
+  <div class="form-floating mb-3">
     <%= f.email_field :email, autocomplete: "email", id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
     <label for="inputEmail">Email address</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <div class="form-label-group">
+  <div class="form-floating mb-3">
     <%= f.password_field :password, autocomplete: "current-password", id: "inputPassword", class: "form-control", placeholder: "Password (6 characters minimum)" %>
     <label for="inputPassword">Password</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
   <% if devise_mapping.rememberable? %>
-    <div class="form-label-group">
-      <div class="col-sm-12">
+    <div class="form-floating mb-3">
+      <div class="col-sm-12 ps-1">
         <%= f.label :remember_me, title: 'Remember me' do %>
           <%= f.check_box :remember_me, id: 'inputRemember' %>
         <% end %>
         <label for="inputRemember" class='text-muted'>Remember me</label>
       </div><!-- col-sm-12 -->
-    </div><!-- form-group -->
+    </div><!-- form-floating -->
   <% end %>
 
-  <%= f.submit "Sign in", class: "btn btn-lg btn-info btn-block" %>
+  <%= f.submit "Sign in", class: "w-100 btn btn-lg btn-info text-light" %>
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>
@@ -45,7 +45,7 @@
 <% end %>
 
 
-<div class="modal fade text-left" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+<div class="modal fade text-start" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

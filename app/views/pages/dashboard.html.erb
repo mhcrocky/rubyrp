@@ -3,8 +3,8 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
-      <p class="lead text-left text-muted">
-        Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>,
+      <p class="lead text-start text-muted">
+        Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info fw-bold" %>,
         this site contains a ToDo List, Blog, and WebRTC. This dashboard provides an admin view.
       </p>
       <div class="filter">
@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-lg-7">
         <div class="row mb-3">
-          <div class="col-12 mt-3 text-left">
+          <div class="col-12 mt-3 text-start">
             <%= render partial: 'users/users' %>
           </div><!-- .col-12 -->
           <%= render partial: 'pages/pies' %>
@@ -51,8 +51,8 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
-      <p class="lead text-left text-muted">
-        Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info font-weight-bold" %>,
+      <p class="lead text-start text-muted">
+        Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info fw-bold" %>,
         you can use the icon links in the header to see the ToDo List, Blog, and WebRTC. View your personal analytics below.
       </p>
     </div><!-- .container -->

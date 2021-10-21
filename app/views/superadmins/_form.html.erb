@@ -15,14 +15,14 @@
 
     <h4 class="text-center mt-2 mb-3">New Super Admin</h4>
 
-    <div class="text-center form-label-group">
+    <div class="text-center form-floating">
       <div class="col-sm-12">
         <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email", autofocus: false %>
         <label for="inputEmail"><code>&#42; Email</code></label>
       </div><!-- .col-sm-12 -->
     </div><!-- .jumbotron .text-center .form-group -->
 
-    <div class="text-center form-label-group">
+    <div class="text-center form-floating">
       <div class="col-sm-12">
         <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password", autofocus: false %>
         <label for="inputPassword"><code>&#42; Password</code></label>
@@ -31,7 +31,7 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-        <%= f.submit class: 'btn btn-lg btn-block btn-info' %>
+        <%= f.submit class: 'mb-3 w-100 btn btn-lg btn-info' %>
       </div><!-- .col-sm-12 -->
     </div><!-- .form-group -->
 

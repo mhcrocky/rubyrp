@@ -12,12 +12,12 @@
     <tbody>
       <% @rooms.each do |room| %>
         <tr>
-          <td><%= link_to truncate(room.name), room, class: 'text-dark font-weight-bold' %></td>
+          <td><%= link_to truncate(room.name), room, class: 'text-dark fw-bold' %></td>
           <td><%= room.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %></td>
-          <!-- <td class="text-right">
+          <!-- <td class="text-end">
             <%# if can? :manage, room %>
               <%#= link_to room_path(room), method: :delete, data: { confirm: 'Are you sure you want to delete this room?' } do %>
-                <i class='fas fa-trash text-dark mr-1'></i>
+                <i class='fas fa-trash text-dark me-1'></i>
               <%# end %>
             <%# end %>
           </td> -->

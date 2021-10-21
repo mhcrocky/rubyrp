@@ -3,7 +3,7 @@
     <h1 class="jumbotron-heading"><%= @user.name %></h1>
     <p class="lead">
       <% if can? :manage, @user  %>
-        <%= mail_to @user.email, @user.email, class: 'text-info font-weight-bold' %>
+        <%= mail_to @user.email, @user.email, class: 'text-info fw-bold' %>
       <% else %>
         🖖🏼
       <% end %>

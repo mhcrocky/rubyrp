@@ -14,26 +14,26 @@
   <section class="form-section pb-5">
     <div class="row">
       <div class="col-lg-6">
-        <div class="jumbotron text-center form-label-group mt-5">
+        <div class="jumbotron text-center form-floating mt-5">
           <%= f.text_field :title, id: "inputTitle", class: "form-control", placeholder: "Title", autofocus: true %>
           <label for="inputTitle"><code>&#42; Title</code></label>
-        </div><!-- .jumbotron .text-center .form-label-group -->
-        <div class="jumbotron text-center form-label-group mt-5">
+        </div><!-- .jumbotron .text-center .form-floating -->
+        <div class="jumbotron text-center form-floating mt-5">
           <%= f.text_field :embed, id: "inputEmbed", class: "form-control", placeholder: "YouTube Video" %>
           <label for="inputEmbed">
             YouTube Video <i style="cursor:pointer;" class="fas fa-info-circle text-muted" data-toggle="modal" data-target="#exampleModal"></i>
           </label>
-        </div><!-- .jumbotron .text-center .form-label-group -->
+        </div><!-- .jumbotron .text-center .form-floating -->
       </div><!-- .col-lg-6 -->
       <div class="col-lg-6">
-        <div class="jumbotron text-center form-label-group mt-1">
+        <div class="jumbotron text-center form-floating mt-1">
           <% if @article.embed.present? %>
             <%= link_to @article.thumb %>
           <% else %>
             <%= link_to image_tag("missing.svg", alt: 'No video', class: 'card-img-top') %>
           <% end %>
           <small class="text-muted">YouTube video preview image</small>
-        </div><!-- .jumbotron .text-center .form-label-group -->
+        </div><!-- .jumbotron .text-center .form-floating -->
       </div><!-- .col-lg-6 -->
     </div><!-- .row -->
 

@@ -5,50 +5,50 @@
     <%= link_to root_path do %>
       <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
     <% end %>
-    <h1 class="h3 mb-3 font-weight-normal"><%= link_to current_user.name, current_user, class: 'text-info' %> <%#= resource_name.to_s.humanize %></h1>
+    <h1 class="h3 mb-3 fw-normal"><%= link_to current_user.name, current_user, class: 'text-info' %> <%#= resource_name.to_s.humanize %></h1>
   </div><!-- .text-center .mb-4 -->
 
-  <div class="custom-control custom-switch text-center mt-3 mb-3">
-    <%= f.check_box :dark_theme, class: "custom-control-input", id: "inputTheme", data: {'user-id': current_user.id} %>
-    <label class="custom-control-label text-secondary" for="inputTheme">Dark Theme</label>
-  </div><!-- .custom-control .custom-switch -->
+  <div class="form-check form-switch text-start my-4">
+    <%= f.check_box :dark_theme, class: "form-check-input ms-0", id: "inputTheme", role: 'switch', data: {'user-id': current_user.id} %>
+    <label class="form-check-label ms-3 mt-2 text-secondary small" for="inputTheme">Dark Theme</label>
+  </div><!-- .form-check .form-switch -->
 
-  <div class="form-label-group mb-5">
-    <p class="mb-0 ml-3 small text-secondary">Timezone</p>
+  <div class="form-floating mb-5">
+    <p class="mb-0 ms-3 small text-secondary">Timezone</p>
     <%= f.select :timezone, timezone_options, { include_blank: false }, { class: 'form-control' } %>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <div class="form-label-group">
+  <div class="form-floating">
     <%= f.email_field :email, id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: true %>
     <label for="inputEmail">Email address</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="form-label-group">
+  <div class="form-floating">
     <%= f.password_field :password, id: "inputPassword", class: "form-control", placeholder: "Password (6 characters minimum)" %>
     <label for="inputPassword">Password</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <div class="form-label-group">
+  <div class="form-floating">
     <%= f.password_field :password_confirmation, id: "inputPasswordConfirmation", class: "form-control", placeholder: "Password Confirmation" %>
     <label for="inputPasswordConfirmation">Password confirmation</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <div class="form-label-group">
+  <div class="form-floating">
     <%= f.password_field :current_password, autocomplete: "current-password", id: "inputCurrentPassword", class: "form-control", placeholder: "Password (6 characters minimum)" %>
     <label for="inputCurrentPassword">Current Password</label>
-  </div><!-- .form-label-group -->
+  </div><!-- .form-floating -->
 
-  <%= f.submit "Update", class: "btn btn-lg btn-block btn-info" %>
+  <%= f.submit "Update", class: "mb-3 w-100 btn btn-lg btn-info text-light" %>
 
-  <button type="button" class="btn btn-lg btn-block btn-outline-secondary mt-5" data-toggle="modal" data-target="#goodbyeModal">Delete Account</button>
+  <button type="button" class="mb-3 w-100 btn btn-lg btn-outline-secondary mt-5" data-toggle="modal" data-target="#goodbyeModal">Delete Account</button>
 
 <% end %>
 
-<div class="modal fade text-left" id="goodbyeModal" tabindex="-1" role="dialog" aria-labelledby="goodbyeModal" aria-hidden="true">
+<div class="modal fade text-start" id="goodbyeModal" tabindex="-1" role="dialog" aria-labelledby="goodbyeModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

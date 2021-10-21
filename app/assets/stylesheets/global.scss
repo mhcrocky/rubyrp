@@ -1,11 +1,6 @@
 /* Global styles
 ----------------------------------------------------------------------------- */
 
-html {
-  // match header and footer .bg-dark
-  background-color: #343a40 !important;
-}
-
 :root {
   --jumbotron-padding-top: 1rem;
   --jumbotron-padding-bottom: 2rem;
@@ -37,7 +32,7 @@ html {
   max-width: 40rem;
 }
 
-.card-deck .card {
+.card-group .card {
   min-width: 280px;
 }
 

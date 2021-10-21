@@ -1,74 +1,79 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Welcome</h1>
-    <p class="lead text-left text-muted">This is an example Ruby on Rails application. Join us and become part of the greatest one ever 🖖🏼</p>
+    <p class="lead text-start text-muted">This is an example Ruby on Rails application. Join us and become part of the greatest one ever 🖖🏼</p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<div class="card-deck mb-1 text-center">
-  <div class="card mb-4 border-0 shadow">
-    <div class="card-header bg-tayberry">
-      <h4 class="my-0 font-weight-bold text-white">Free</h4>
-    </div><!-- .card-header -->
-    <div class="card-body">
-      <h1 class="card-title pricing-card-title">$0</h1>
-      <ul class="list-unstyled mt-3 mb-4">
-        <li><strong>Never Pay</strong></li>
-        <li>Private ToDo List</li>
-        <li>Read &amp; add to the Blog</li>
-        <li>Participate in the Video Chat</li>
-      </ul><!-- .ist-unstyled -->
-      <%= link_to("Sign up for Free", new_user_registration_path, class: 'btn btn-lg btn-block btn-outline-primary') %>
-    </div><!-- .card-body -->
-  </div><!-- .card -->
-  <div class="card mb-4 border-0 shadow">
-    <div class="card-header bg-shnozberry">
-      <h4 class="my-0 font-weight-bold text-white">Membership</h4>
-    </div><!-- .card-header -->
-    <div class="card-body">
-      <h1 class="card-title pricing-card-title">$10 <small class="text-muted">min</small></h1>
-      <ul class="list-unstyled mt-3 mb-4">
-        <li><strong>Pay Once</strong></li>
-        <li>Private ToDo List</li>
-        <li>Read &amp; add to the Blog</li>
-        <li>Participate in <i>and create</i> Video Chats</li>
-      </ul><!-- .ist-unstyled -->
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary">Coming Soon</button>
-    </div><!-- .card-body -->
-  </div><!-- .card -->
-</div><!-- .card-deck -->
+<div class="row row-cols-1 row-cols-md-2 mb-1 text-center">
+  <div class="col">
+    <div class="card mb-4 border-0 shadow">
+      <div class="card-header bg-tayberry">
+        <h4 class="my-0 fw-bold text-white">Free</h4>
+      </div><!-- .card-header -->
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><strong>Never Pay</strong></li>
+          <li>Private ToDo List</li>
+          <li>Read &amp; add to the Blog</li>
+          <li>Participate in the Video Chat</li>
+        </ul><!-- .ist-unstyled -->
+        <%= link_to("Sign up for Free", new_user_registration_path, class: 'mb-3 w-100 btn btn-lg btn-outline-primary') %>
+      </div><!-- .card-body -->
+    </div><!-- .card -->
+  </div><!-- .col -->
+  <div class="col">
+    <div class="card mb-4 border-0 shadow">
+      <div class="card-header bg-shnozberry">
+        <h4 class="my-0 fw-bold text-white">Membership</h4>
+      </div><!-- .card-header -->
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$35 <small class="text-muted">min</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><strong>Pay Once</strong></li>
+          <li>Github Read Access</li>
+          <li>Free use in your own App</li>
+          <li>Participate in <i>and create</i> Video Chats</li>
+        </ul><!-- .ist-unstyled -->
+        <button type="button" class="mb-3 w-100 btn btn-lg btn-outline-primary">Coming Soon</button>
+      </div><!-- .card-body -->
+    </div><!-- .card -->
+  </div><!-- .col -->
+</div><!-- .row row-cols-1 row-cols-md-2 -->
 
 <div class="my-3 p-4">
   <h5 class="jumbotron-heading pb-0 mb-0">Breakdown</h5>
   <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125">
-      <strong class="d-block text-gray-dark">The App</strong>
+    <p class="pb-3 mb-0 lh-125">
+      <strong class="d-block">The App</strong>
       This is a Rails <a href="https://rubygems.org/gems/rails/versions" target="_blank" class="text-info"><%= Rails.version %></a>
       (Ruby <a href="https://www.ruby-lang.org/en/downloads/releases/" target="_blank" class="text-info"><%= RUBY_VERSION %></a>)
       Blog &plus; ToDo &plus; WebRTC application packed with modern, lightweight libraries &amp; frameworks to shape the frontend.
     </p>
   </div><!-- .media -->
-  <div class="media text-muted pt-3">
-    <%= image_tag 'tayberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-    <p class="media-body pb-3 mb-0 small lh-125">
-      <strong class="d-block text-gray-dark">Free</strong>
-      Sign up and never pay for free access to the site. This package includes a private ToDo List,
+  <div class="d-flex text-muted pt-3">
+    <%= image_tag 'tayberry.svg', alt: 'Free', class: 'flex-shrink-0 me-2 h-25 rounded' %>
+    <p class="pb-3 mb-0 lh-125">
+      <strong class="d-block">Free</strong>
+      Sign up and never pay for free access to this site. Included is a private ToDo List,
       full access to the Blog, and the ability to join Video Chats created by members.
       You can always decide to upgrade at any time.
-    </p><!-- .media-body -->
+    </p><!-- .-->
+  </div><!-- .media -->
+
+  <div class="d-flex text-muted pt-3">
+    <%= image_tag 'shnozberry.svg', alt: 'Membership', class: 'flex-shrink-0 me-2 h-25 rounded' %>
+    <p class="pb-3 mb-0 lh-125">
+      <strong class="d-block">Membership</strong>
+      Sign up and pay once for read access to this app's repository.
+      You can clone the project and create your own application(s) with best practices in place.
+      This package includes the ability to join Video Chats created by YOU + other members.
+      As new features are released, your early adoption will grant you access to them as well.
+    </p><!-- .-->
   </div><!-- .media -->
   <div class="media text-muted pt-3">
-    <%= image_tag 'shnozberry.svg', alt: 'Media', class: 'mr-2 rounded' %>
-    <p class="media-body pb-3 mb-0 small lh-125">
-      <strong class="d-block text-gray-dark">Membership</strong>
-      Sign up and pay once for total access to the site. This package includes a private ToDo List,
-      full access to the Blog, and the ability to join Video Chats created by
-      YOU + other members. As new features are released, your early adoption will grant you
-      access to them as well.
-    </p><!-- .media-body -->
-  </div><!-- .media -->
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-0 mb-0 small">
+    <p class="pb-0 mb-0">
       This is a side project of mine that I began in late 2020.
       The idea was to create a sandbox, outside of work, in which I could experiment with
       the various web technologies I love.
@@ -77,9 +82,9 @@
       Collaboration fosters best practices; working with others is integral to personal growth as a developer.
       Coding solo fosters development in a freeform manner that values
       ownership over camaraderie, and craft over professional rigor.
-    </p><!-- .media-body -->
+    </p><!-- .-->
   </div><!-- .media -->
-  <small class="d-block text-right text-muted mt-1 mr-2">
+  <small class="d-block text-end text-muted mt-1 me-2">
     <strong class="d-block text-gray-dark">Anthony Juan Maseda Rey</strong>
   </small><!-- .d-block -->
 </div><!-- .my-3 p-3 card -->

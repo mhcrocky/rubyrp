@@ -1,13 +1,13 @@
 <div class="col-lg-8">
   <div class="row mb-5">
-    <div class="col-12 mt-3 text-left">
+    <div class="col-12 mt-3 text-start">
       <section class="mt-0">
         <div class="table-responsive">
           <table class="table table-striped">
             <tbody>
               <tr>
                 <th>Email</th>
-                <td><%= mail_to truncate(current_user.email), current_user.email, class: 'text-info font-weight-bold' %></td>
+                <td><%= mail_to truncate(current_user.email), current_user.email, class: 'text-info fw-bold' %></td>
               </tr>
               <tr>
                 <th>Membership</th>

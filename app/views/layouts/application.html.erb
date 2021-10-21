@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': true %>
     <%= javascript_pack_tag 'application', 'data-turbo-track': true %>
-    <% if user_signed_in? && current_user.dark_theme %>
-      <style>
+    <style>
+      html, .bg-dark {
+        background-color: #343a40 !important;
+        /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+      }
+      <% if user_signed_in? && current_user.dark_theme %>
         /* Dark Theme */
         body {background: #000;}
         .btn-info {
@@ -19,8 +23,8 @@
         .bg-success, .btn-success, .btn-outline-success,
         .bg-danger, .btn-danger, .btn-outline-danger, .text-danger,
         .dropdown-menu, code, video, iframe:not(:fullscreen), img {filter: invert(100%);}
-      </style>
-    <% end %>
+        <% end %>
+    </style>
     <!-- Google Charts -->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Google Analytics -->

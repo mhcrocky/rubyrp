@@ -27,7 +27,7 @@ class TodoItems extends React.Component {
                 <th scope="col" className="text-muted">Created</th>
                 <th scope="col" className="text-muted">Finished</th>
                 <th scope="col" className="text-muted">Description</th>
-                <th scope="col" className="text-right text-muted">
+                <th scope="col" className="text-end text-muted">
                   Actions
                 </th>
               </tr>

@@ -58,10 +58,10 @@
                 <span class="text-info"><%= current_user.name %></span>
               <% end %>
               <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class: "form-signin" }) do |f| %>
-                <div class="custom-control custom-switch text-center mt-3 mb-3">
-                  <%= f.check_box :dark_theme, class: "custom-control-input", id: "inputTheme", data: {'user-id': current_user.id} %>
-                  <label class="custom-control-label text-secondary" for="inputTheme">Theme</label>
-                </div><!-- .custom-control .custom-switch -->
+                <div class="form-check form-switch text-start my-4">
+                  <%= f.check_box :dark_theme, class: "form-check-input ms-0", id: "inputTheme", role: 'switch', data: {'user-id': current_user.id} %>
+                  <label class="form-check-label ms-3 mt-2 text-secondary small" for="inputTheme">Dark Theme</label>
+                </div><!-- .form-check .form-switch -->
               <% end %>
               <!-- Toggle Themes -->
               <script>

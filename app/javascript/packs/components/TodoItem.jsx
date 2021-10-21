@@ -100,7 +100,7 @@ class TodoItem extends React.Component {
             id={`todoItem__title-${todoItem.id}`}
           />
         </td>
-        <td className="text-right">
+        <td className="text-end">
           <div className="form-check form-check-inline">
             <input
               type="boolean"
