@@ -1,105 +1,93 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-  <div class="container">
-    <%= link_to root_path do %>
-      <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'header-logo' %>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item dropdown" title="Blog">
-            <a class="nav-link dropdown-toggle" href="" id="dropdownArticle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th burger-icon"></i> <span class="burger-text">Blog</span></a>
-            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownArticle">
-              <%= link_to(articles_path, class: "dropdown-item") do %>
-                View Blog
-              <% end %>
-              <%# if user_signed_in? ## In event that authorize_user is removed ## %>
-                <%= link_to 'New Article', new_article_path, class: 'dropdown-item' %>
-              <%# end %>
-            </div><!-- .dropdown-menu .shadow-lg -->
-          </li><!-- .nav-item .dropdown -->
-          <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="List">
-            <%= link_to(todo_items_path, class: "nav-link") do %>
-              <i class="fas fa-clipboard-list burger-icon"></i>
-              <span class="burger-text">List</span>
-            <% end %>
-          </li><!-- .nav-item -->
-          <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Chat">
-            <%= link_to(rooms_path, class: "nav-link") do %>
-              <i class="fas fa-comments burger-icon"></i>
-              <span class="burger-text">Chat</span>
-            <% end %>
-          </li><!-- .nav-item .dropdown -->
-          <% if current_user.has_role?(:superadmin) %>
-            <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item dropdown" title="Users">
-              <a class="nav-link dropdown-toggle" href="" id="dropdownRole" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users burger-icon"></i> <span class="burger-text">Users</span></a>
-              <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownRole">
-                <%= link_to(visitors_path, class: "dropdown-item") do %>
-                  Free Users
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <%= link_to root_path, class: 'navbar-brand text-decoration-none' do %>
+        <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'header-logo bi pb-1 me-2' %>
+      <% end %>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- LEFT -->
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <% if user_signed_in? %>
+            <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item dropdown" title="Profile">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-person"></i> <span class="burger-text">Profile</span></a>
+              <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownUser">
+                <%= link_to(current_user, class: "dropdown-item") do %>
+                  <span class="text-info"><%= current_user.name %></span>
                 <% end %>
-                <%= link_to(members_path, class: "dropdown-item") do %>
-                  Members
+                <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                  Edit Profile
                 <% end %>
-                <%= link_to(new_admin_path, class: "dropdown-item") do %>
-                  Admins
-                <% end %>
-                <%= link_to(new_superadmin_path, class: "dropdown-item") do %>
-                  Super Admins
+                <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item", data: { turbo: false }) do %>
+                  Sign out
                 <% end %>
               </div><!-- .dropdown-menu .shadow-lg -->
             </li><!-- .nav-item .dropdown -->
+
+            <% if current_user.has_role?(:superadmin) %>
+              <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item dropdown" title="Users">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownRole" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-people"></i> <span class="burger-text">Users</span></a>
+                <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownRole">
+                  <%= link_to(visitors_path, class: "dropdown-item") do %>
+                    Free Users
+                  <% end %>
+                  <%= link_to(members_path, class: "dropdown-item") do %>
+                    Members
+                  <% end %>
+                  <%= link_to(new_admin_path, class: "dropdown-item") do %>
+                    Admins
+                  <% end %>
+                  <%= link_to(new_superadmin_path, class: "dropdown-item") do %>
+                    Super Admins
+                  <% end %>
+                </div><!-- .dropdown-menu .shadow-lg -->
+              </li><!-- .nav-item .dropdown -->
+            <% end %>
+
+            <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item dropdown" title="Blog">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownArticle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-book"></i> <span class="burger-text">Blog</span></a>
+              <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownArticle">
+                <%= link_to(articles_path, class: "dropdown-item") do %>
+                  View Blog
+                <% end %>
+                <%# if user_signed_in? ## In event that authorize_user is removed ## %>
+                  <%= link_to 'New Article', new_article_path, class: 'dropdown-item' %>
+                <%# end %>
+              </div><!-- .dropdown-menu .shadow-lg -->
+            </li><!-- .nav-item .dropdown -->
+
+            <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="ToDo List">
+              <%= link_to(todo_items_path, class: "nav-link") do %>
+                <i class="burger-icon bi bi-card-checklist"></i>
+                <span class="burger-text">List</span>
+              <% end %>
+            </li><!-- .nav-item -->
+
+            <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Chat">
+              <%= link_to(rooms_path, class: "nav-link") do %>
+                <i class="burger-icon bi bi-chat"></i>
+                <span class="burger-text">Chat</span>
+              <% end %>
+            </li><!-- .nav-item .dropdown -->
           <% end %>
-          <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item dropdown" title="Profile">
-            <a class="nav-link dropdown-toggle" href="" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-secret burger-icon"></i> <span class="burger-text">Profile</span></a>
-            <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownUser">
-              <%= link_to(current_user, class: "dropdown-item") do %>
-                <span class="text-info"><%= current_user.name %></span>
-              <% end %>
-              <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class: "form-signin" }) do |f| %>
-                <div class="form-check form-switch text-start my-4">
-                  <%= f.check_box :dark_theme, class: "form-check-input ms-0", id: "inputTheme", role: 'switch', data: {'user-id': current_user.id} %>
-                  <label class="form-check-label ms-3 mt-2 text-secondary small" for="inputTheme">Dark Theme</label>
-                </div><!-- .form-check .form-switch -->
-              <% end %>
-              <!-- Toggle Themes -->
-              <script>
-                $('input[type=checkbox]#inputTheme').each(function(index, element) {
-                  return $(element).change(function(e) {
-                    var user_id;
-                    user_id = $(e.currentTarget).data('user-id');
-                    return $.ajax({
-                      url: '/users/' + user_id + '/toggle_theme',
-                      type: 'PUT',
-                      error: function(jqXHR, textStatus, errorThrown) {
-                        return console.log('user ajax error: ' + textStatus);
-                      },
-                      success: function(data, textStatus, jqXHR) {
-                        // show change + handle turbolinks
-                        return location.reload();
-                      }
-                    });
-                  });
-                });
-              </script>
-              <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
-                Edit Profile
-              <% end %>
-              <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item", data: { turbo: false }) do %>
-                Sign out
-              <% end %>
-            </div><!-- .dropdown-menu .shadow-lg -->
-          </li><!-- .nav-item .dropdown -->
+        </ul>
+
+        <!-- RIGHT -->
+        <% if user_signed_in? %>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         <% else %>
-          <li class="nav-item">
-            <%= link_to('Sign in', new_user_session_path, class: "nav-link") %>
-          </li><!-- .nav-item -->
-          <li class="nav-item">
-            <%= link_to("Sign up", new_user_registration_path, class: "nav-link nav-link-border") %>
-          </li><!-- .nav-item -->
+          <div class="d-flex">
+            <%= link_to('Sign in', new_user_session_path, class: "nav-link text-light text-center") %>
+            <%= link_to("Sign up", new_user_registration_path, class: "nav-link nav-link-border text-light text-center") %>
+          </div>
         <% end %>
-      </ul><!-- .navbar-nav -->
-    </div><!-- .navbar-collapse -->
-  </div><!-- .container -->
-</nav><!-- .navbar -->
+      </div>
+    </div>
+  </nav>
+</header>

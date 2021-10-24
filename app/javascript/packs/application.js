@@ -22,20 +22,6 @@ require("./components/TodoApp")
 // Analytics
 import gtag from "src/analytics"
 
-// Bootstrap
-require('bootstrap')
-import 'bootstrap/dist/css/bootstrap'
-
-// var jQuery = require('jquery')
-// // include jQuery in global and window scope (access it globally)
-// // $('.div') is actually refering to global.$('.div')
-// global.$ = global.jQuery = jQuery;
-// window.$ = window.jQuery = jQuery;
-
-// Font Awesome
-import '@fortawesome/fontawesome-free/js/all'
-import '@fortawesome/fontawesome-free/css/all'
-
 // Charts
 require("chartkick")
 require("chart.js")
@@ -45,6 +31,26 @@ import "controllers"
 
 // Hotwire
 import "@hotwired/turbo-rails"
+
+
+// Bootstrap
+require('bootstrap')
+import 'bootstrap/dist/css/bootstrap'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+// Bootstrap 5 tooltips (NO jQuery)
+window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
+document.addEventListener("DOMContentLoaded", function(event) {
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+});
 
 // Action View
 require("trix")
@@ -56,9 +62,5 @@ window.addEventListener("trix-file-accept", function(event) {
   console.log('File attachment not supported')
 })
 
-// // Bootstrap 4 tooltips jQuery
-// $(function () {
-//   $('[data-toggle="tooltip"]').tooltip()
-// })
 
 // console.log('application js firing')

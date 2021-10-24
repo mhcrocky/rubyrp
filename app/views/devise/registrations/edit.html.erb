@@ -44,7 +44,7 @@
 
   <%= f.submit "Update", class: "mb-3 w-100 btn btn-lg btn-info text-light" %>
 
-  <button type="button" class="mb-3 w-100 btn btn-lg btn-outline-secondary mt-5" data-toggle="modal" data-target="#goodbyeModal">Delete Account</button>
+  <button type="button" class="mb-3 w-100 btn btn-lg btn-outline-secondary mt-5" data-bs-toggle="modal" data-bs-target="#goodbyeModal">Delete Account</button>
 
 <% end %>
 
@@ -55,8 +55,8 @@
         <h3 class="modal-title text-danger" id="goodbyeModalLabel">
           Delete Account
         </h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <i class="fas fa-window-close"></i>
+        <button type="button" class="btn-light shadow-sm close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
         </button><!-- .close -->
       </div><!-- .modal-header -->
       <div class="modal-body">
@@ -68,7 +68,7 @@
         </div><!-- .my-3 .p-3 .bg-white .shadow-sm -->
       </div><!-- .modal-body -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
         <%= link_to(registration_path(resource_name), class:'btn btn-danger', data: { confirm: "Confirm Account Deletion" }, method: :delete) do %>
           Delete Acount
         <% end %>

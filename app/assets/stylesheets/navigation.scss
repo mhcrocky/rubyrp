@@ -33,8 +33,9 @@ li.nav-item a:active {
 .nav-item a.nav-link {
   font-size: 1.25rem;
   margin-right: 1.25rem;
-  svg.burger-icon {
-    display: none !important;
+  i.burger-icon {
+    display: inline-block !important;
+    font-size: 1.25rem;
   }
   span.burger-text {
     display: inline-block;
@@ -42,17 +43,26 @@ li.nav-item a:active {
     margin-left: 6px;
   }
   @media (min-width: 990px) {
+    img.header-logo {
+      display: none;
+    }
     span.burger-text {
       display: none;
     }
-    svg.burger-icon {
+    i.burger-icon {
       display: inline-block !important;
+      font-size: 1.5rem;
     }
   }
 }
+.nav-link-border {
+  margin-left: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
 
 img.header-logo {
-  width: 60px;
+  display: block;
+  width: 36px;
   height: auto;
   filter: invert(0%) !important;
 }

@@ -8,7 +8,7 @@
     <!-- Right -->
     <div class="mb-3">
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#footerModal"><i class="fas fa-bars"></i></button>
+      <button type="button" class="btn btn-lg btn-secondary" data-bs-toggle="modal" data-bs-target="#footerModal"><i class="bi bi-list"></i></button>
       <!-- Modal -->
       <div class="modal fade" id="footerModal" tabindex="-1" role="dialog" aria-labelledby="footerModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -19,8 +19,8 @@
                   <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
                 <% end %>
               </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="fas fa-window-close"></i>
+              <button type="button" class="btn-light shadow-sm close" data-bs-dismiss="modal" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
               </button><!-- .close -->
             </div><!-- .modal-header -->
             <div class="modal-body">
@@ -93,12 +93,7 @@
               </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
             </div><!-- .modal-body -->
             <div class="modal-footer">
-              <span class="float-left media-body pb-2 mb-0 small">
-                <strong class="d-block float-left">
-                  <a href="#/" title="Top of Page" class="text-secondary mt-2"><i class="fas fa-caret-square-up"></i>Top of Page</a>
-                </strong>
-              </span><!-- .media-body -->
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
             </div><!-- .modal-footer -->
           </div><!-- .modal-content -->
         </div><!-- .modal-dialog -->

@@ -7,7 +7,7 @@ Example application
 
 * Ruby [2.7.4](https://www.ruby-lang.org/en/downloads/releases/)
 * Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
-* PostgreSQL [13.4](https://www.postgresql.org/support/versioning/)
+* PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
 * Redis [4.4.0](https://rubygems.org/gems/redis/versions)
 * Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
 * Stimulus [2.0.0](https://github.com/hotwired/stimulus/releases) (yarn)
@@ -27,7 +27,6 @@ $ npm view react version
 
 ## Other Dependencies
 
-* Font Awesome
 * Devise + Rolify + Cancan
 * Figaro
 * Action Text (trix)
