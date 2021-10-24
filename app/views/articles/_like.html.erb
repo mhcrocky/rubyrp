@@ -6,15 +6,15 @@
 
     <%# link_to "unlike", article_like_path(@article, id: @liked_article.id), method: :delete %>
     <%= link_to article_like_path(@article, id: @liked_article.id), method: :delete, remote: true do %>
-      <i class="fas fa-heart lead font-italic text-tayberry" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Liked"></i>
+      <i class="bi bi-heart-fill lead font-italic text-tayberry" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Liked"></i>
     <% end %> <sup class="font-italic text-tayberry"><%= @article.liked_by_users.size %></sup>
 
   <% else %>
 
     <%# link_to "like", article_likes_path(@article), method: :article %>
     <%= link_to article_likes_path(@article), method: :post, remote: true do %>
-      <i class="fas fa-heart-broken lead font-italic text-muted"></i>
-    <% end %> <sup class="font-italic text-muted" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Like"><%= @article.liked_by_users.size %></sup>
+      <i class="bi bi-heart lead font-italic text-tayberry"></i>
+    <% end %> <sup class="font-italic text-tayberry" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Like"><%= @article.liked_by_users.size %></sup>
 
   <% end %>
 </span><!-- #articleLikes -->

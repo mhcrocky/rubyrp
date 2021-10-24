@@ -76,13 +76,14 @@ trix-editor.form-control.comments {
   }
 }
 
-.form-group.col-md-11 input[type="text"] {
+.form-floating.col-12 input[type="text"] {
   border: 1px solid #212529 !important;
+  padding: 10px;
 }
 
 .filter .form-control {
   border: 1px solid #212529 !important;
-  padding: 30px;
+  padding: 12px;
 }
 
 button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
@@ -90,13 +91,13 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   color: #fff !important;
 }
 
-.form-check .form-check-input, .theme-check {
-  -ms-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
-  margin-top: 15px !important;
+.theme-check, .form-check-inline {
+  -ms-transform: scale(1.5) !important;
+  -moz-transform: scale(1.5) !important;
+  -webkit-transform: scale(1.5) !important;
+  -o-transform: scale(1.5) !important;
+  transform: scale(1.5) !important;
+  margin-top: 5px !important;
 }
 
 turbo-frame#room {
@@ -118,22 +119,24 @@ turbo-frame#room {
   border: 1px solid #dee2e6 !important;
 }
 
-.table thead th {
-  border-bottom: 1px solid #dee2e6 !important;
+// .table thead th {
+//   border-bottom: 1px solid #dee2e6 !important;
+// }
+.table thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6 !important;
 }
 
-.table th, .table td {
+.table thead>tr>th, .table thead>tr>td {
   padding: 9px 12px !important;
 }
 
 // .table-responsive button.close path {
 //   fill: #dc3545 !important;
 // }
-.table-responsive button.close svg {
-  width: 24px;
-  height: 20px;
+.table-responsive div.close i {
+  font-size: 22px;
   margin-top: 10px;
-  margin-right: 1px;
 }
 
 

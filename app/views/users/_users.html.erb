@@ -1,7 +1,7 @@
 <%= turbo_stream_from :users %>
 
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table table-hover table-striped">
     <thead>
       <tr>
         <th scope="col" class="text-muted">User</th>
@@ -14,10 +14,10 @@
         <tr id="<%= dom_id user %>">
           <td><%= link_to truncate(user.name), user, class: 'text-info fw-bold' %></td>
           <td><%= user.role %></td>
-          <td>
+          <td class="text-end">
             <% if can? :manage, user %>
               <%= link_to user_path(user), method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } do %>
-                <i class='fas fa-trash text-muted'></i>
+                <i class='bi bi-trash-fill text-muted me-2'></i>
               <% end %>
             <% end %>
           </td>

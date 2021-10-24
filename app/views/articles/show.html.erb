@@ -3,17 +3,17 @@
     <h1 class="jumbotron-heading"><%= @article.title %></h1>
     <p class="lead text-muted">
       <%= @article.created %>
-      <strong class="d-block"><i class="fas fa-user"></i>
+      <strong class="d-block"><i class="bi bi-person-fill text-dark"></i> 
         <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %>
       </strong>
     </p>
     <% if can? :manage, @article %>
       <p class="mt-0 mb-0">
         <%= link_to edit_article_path(@article), class: 'btn btn-outline-dark' do %>
-          <i class='fas fa-signature text-orange' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"></i>
+          <i class='bi bi-pencil-fill text-orange' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"></i>
         <% end %>
         <%= link_to article_path(@article), class: 'btn btn-outline-dark', method: :delete, data: { confirm: 'Are you sure you want to delete this article?' } do %>
-          <i class='fas fa-trash text-danger mx-1' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"></i>
+          <i class='bi bi-trash-fill text-danger mx-1' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"></i>
         <% end %>
       </p>
     <% end %>

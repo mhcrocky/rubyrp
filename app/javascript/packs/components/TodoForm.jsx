@@ -35,8 +35,8 @@ class TodoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="my-3">
-        <div className="form-row">
-          <div className="form-group col-md-11">
+        <div className="row d-flex align-items-center">
+          <div className="form-floating col-12">
             <input
               type="text"
               name="title"
@@ -46,11 +46,7 @@ class TodoForm extends React.Component {
               id="title"
               placeholder="Write your todo item here..."
             />
-          </div>
-          <div className="form-group col-md-1">
-            <button className="btn btn-dark btn-block">
-              <i className="fas fa-plus"></i>
-            </button>
+            <label for="title" className="ms-2">Write your todo item here...</label>
           </div>
         </div>
       </form>

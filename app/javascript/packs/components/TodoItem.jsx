@@ -76,10 +76,10 @@ class TodoItem extends React.Component {
     const { todoItem } = this.props
     return (
       <tr className={`${ this.state.complete && this.props.hideCompletedTodoItems ? `d-none` : "" } ${this.state.complete ? "table-light" : ""}`} >
-        <td>
+        <td className="align-middle">
           {todoItem.created}
         </td>
-        <td>
+        <td className="align-middle">
           <span
             ref={this.updatedRef}
             className={`updated-date ${
@@ -100,8 +100,8 @@ class TodoItem extends React.Component {
             id={`todoItem__title-${todoItem.id}`}
           />
         </td>
-        <td className="text-end">
-          <div className="form-check form-check-inline">
+        <td className="text-end d-flex justify-content-end align-middle">
+          <div className="form-check-inline">
             <input
               type="boolean"
               defaultChecked={this.state.complete}
@@ -117,7 +117,7 @@ class TodoItem extends React.Component {
             >
             </label>
           </div>
-          <button onClick={this.handleDestroy} className="close"><i className="fas fa-trash text-dark"></i></button>
+          <div onClick={this.handleDestroy} className="close"><i className="bi bi-trash text-dark pointer"></i></div>
         </td>
       </tr>
     )

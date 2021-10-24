@@ -1,10 +1,8 @@
 <% flash.each do |key, value| %>
   <div class="container">
-    <div class="alert <%= key == 'notice' ? 'alert-primary' : 'alert-danger' %>" role="alert">
+    <div class="d-flex justify-content-between alert <%= key == 'notice' ? 'alert-primary' : 'alert-danger' %>" role="alert">
       <%= value %>
-      <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-        <i class="fas fa-times"></i>
-      </button>
+      <i class="bi bi-x-lg text-end text-dark close pointer" data-bs-dismiss="alert" aria-label="Close"></i>
     </div>
   </div>
 <% end %>
