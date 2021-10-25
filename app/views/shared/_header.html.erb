@@ -78,8 +78,10 @@
         <!-- RIGHT -->
         <% if user_signed_in? %>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control border-light me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-warning" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
           </form>
         <% else %>
           <div class="d-flex">

@@ -3,7 +3,7 @@
     <h1 class="jumbotron-heading"><%= @article.title %></h1>
     <p class="lead text-muted">
       <%= @article.created %>
-      <strong class="d-block"><i class="bi bi-person-fill text-dark"></i> 
+      <strong class="d-block"><i class="bi bi-person-fill text-dark"></i>
         <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %>
       </strong>
     </p>
