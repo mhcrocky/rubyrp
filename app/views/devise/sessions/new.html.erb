@@ -6,11 +6,11 @@
     <% end %>
     <h1 class="h3 mb-3 fw-normal">Sign in</h1>
     <p>
-      <i class="bi bi-info-circle-fill text-muted pointer" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+      <i class="bi bi-info-circle-fill text-muted"></i>
       View as
-      <span style="cursor:pointer;" class="text-info fw-bold member" data-bs-dismiss="modal">member</span>
+      <span style="cursor:pointer;" class="text-info fw-bold member">member</span>
       or
-      <span style="cursor:pointer;" class="text-info fw-bold superadmin" data-bs-dismiss="modal">superadmin</span>
+      <span style="cursor:pointer;" class="text-info fw-bold superadmin">superadmin</span>
     </p>
   </div><!-- .text-center .mb-4 -->
 
@@ -44,56 +44,23 @@
 <% end %>
 
 
-<div class="modal fade text-start" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">
-          Example Accounts
-        </h3>
-        <button type="button" class="btn-light shadow-sm close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="bi bi-x-lg"></i>
-        </button><!-- .close -->
-      </div><!-- .modal-header -->
-      <div class="modal-body">
-        <div class="my-3 p-3 shadow-lg">
-          <h5 class="border-bottom border-gray pb-1 mt-1">Member</h5>
-          <div class="media text-muted pt-1">
-            <p title="Click here to use credentials" class="member media-body small text-primary border-bottom border-gray pb-3 mb-0">
-              Click here to use credentials
-            </p><!-- .media-body -->
-          </div><!-- .media -->
-          <h5 class="border-bottom border-gray pb-1 mt-4">Superadmin</h5>
-          <div class="media text-muted pt-1">
-            <p title="Click here to use credentials" class="superadmin media-body small text-primary border-bottom border-gray pb-3 mb-0">
-              Click here to use credentials
-            </p><!-- .media-body -->
-          </div><!-- .media -->
-        </div><!-- .my-3 .p-3 .shadow-lg -->
-      </div><!-- .modal-body -->
-    </div><!-- .modal-content -->
-  </div><!-- .modal-dialog -->
-</div><!-- .modal -->
-
 <script>
-  $(function() {
-    $('.member').click(function(){
-      email = "<%= User.with_role(:member).first.email if User.with_role(:member).present? %>";
-      var emailField = document.getElementById('inputEmail');
-      var passwordField = document.getElementById('inputPassword');
-      emailField.value = email;
-      passwordField.value = "m@keTh1ng$";
-      $('#exampleModal').modal('hide');
-      return;
+  document.addEventListener("DOMContentLoaded", function() {
+    const member = document.querySelector('.member');
+    const superadmin = document.querySelector('.superadmin');
+
+    member.addEventListener('click', event => {
+      const email = "<%= User.with_role(:member).first.email if User.with_role(:member).present? %>";
+
+      document.querySelector('#inputEmail').value = email;
+      document.querySelector('#inputPassword').value = 'm@keTh1ng$';
     });
-    $('.superadmin').click(function(){
-      email = "<%= User.with_role(:superadmin).first.email if User.with_role(:superadmin).present? %>";
-      var emailField = document.getElementById('inputEmail');
-      var passwordField = document.getElementById('inputPassword');
-      emailField.value = email;
-      passwordField.value = "m@keTh1ng$";
-      $('#exampleModal').modal('hide');
-      return;
-    })
+
+    superadmin.addEventListener('click', event => {
+      const email = "<%= User.with_role(:superadmin).first.email if User.with_role(:superadmin).present? %>";
+
+      document.querySelector('#inputEmail').value = email;
+      document.querySelector('#inputPassword').value = 'm@keTh1ng$';
+    });
   })
 </script>
