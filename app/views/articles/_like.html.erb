@@ -1,22 +1,22 @@
 <%= turbo_frame_tag :users_article do %>
-  <span id='articleLikes'>
+  <span>
     <%# if current_user.liked_article?(@article.id) %>
     <% if @liked_article %>
       <%# link_to "unlike", article_like_path(@article, id: @liked_article.to_global_id), method: :delete %>
       <%# link_to "unlike", article_like_path(@article, id: @liked_article.to_sgid(expires_in: 1.hour)), method: :delete %>
 
       <%# link_to "unlike", article_like_path(@article, id: @liked_article.id), method: :delete %>
-      <%= link_to article_like_path(@article, id: @liked_article.id), method: :delete, data: { turbo_frame: "_top" } do %>
+      <%= link_to article_like_path(@article, id: @liked_article.id, t: Time.now.to_i), method: :delete do %> <!-- , data: { turbo_frame: "_top" } -->
         <i class="bi bi-heart-fill lead font-italic text-tayberry" title="Liked"></i>
       <% end %> <sup class="font-italic text-tayberry"><%= @article.liked_by_users.size %></sup>
 
     <% else %>
 
       <%# link_to "like", article_likes_path(@article), method: :article %>
-      <%= link_to article_likes_path(@article), method: :post, data: { turbo_frame: "_top" } do %>
+      <%= link_to article_likes_path(@article, t: Time.now.to_i), method: :post do %> <!-- , data: { turbo_frame: "_top" } -->
         <i class="bi bi-heart lead font-italic text-tayberry" title="Like"></i>
-      <% end %> <sup class="font-italic text-tayberry likes-count" title="Like"><%= @article.liked_by_users.size %></sup>
+      <% end %> <sup class="font-italic text-tayberry" title="Like"><%= @article.liked_by_users.size %></sup>
 
     <% end %>
-  </span><!-- #articleLikes -->
+  </span>
 <% end %>

@@ -5,8 +5,8 @@ class Articles::LikesController < ApplicationController
 
     current_user.users_articles.create(article: article)
 
-    # render partial: 'articles/like'
     redirect_to article
+    # redirect_to request.referrer
   end
 
   def destroy
@@ -14,6 +14,7 @@ class Articles::LikesController < ApplicationController
     users_article.destroy
 
     redirect_to article_path(users_article.article_id)
+    # redirect_to request.referrer
 
     # # users_article = GlobalID::Locator.locate(params[:id])
     # users_article = GlobalID::Locator.locate_signed(params[:id])

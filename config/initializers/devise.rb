@@ -15,7 +15,7 @@ Rails.application.reloader.to_prepare do
     end
   end
 
-  class TurboController < ApplicationController
+  class TurboController < ActionController::Base #ApplicationController
     class Responder < ActionController::Responder
       def to_turbo_stream
         controller.render(options.merge(formats: :html))
