@@ -1,76 +1,39 @@
-<section class="mt-5 pt-4 mb-0 pb-0 text-center in-app">
-  <h4 class="jumbotron-heading mb-0 pb-0">Key Features</h4>
-  <div class="row">
-    <div class="col-sm-3 text-muted">
-      <div class="left-1 mb-5 pt-3 pb-5">
-        <i class='bi bi-chart' style="background:#6c757d; color:#fff;"></i>
-        <h5>Analytics</h5>
-    	  <p>Chartkick, Groupdate, Geocoder &amp; Ahoy</p>
-      </div><!-- .left-1 -->
-      <div class="left-2 mt-5 mb-5 pt-5 pb-1">
-        <i class="bi bi-terminal"></i>
-        <h5>Testing</h5>
-        <p>RSpec &plus; PG Hero &plus; Brakeman</p>
-      </div><!-- .left-2 -->
-    </div><!-- .col-sm-3 -->
-    <div class="col-sm-6 d-flex align-items-center mt-5">
-      <%= image_tag 'welcome/chart.png', alt: 'Welcome', class: 'center-img shadow-lg' %>
-    </div><!-- .col-sm-6 -->
-    <div class="col-sm-3 text-muted">
-      <div class="right-1 mb-5 pt-3 pb-5">
-        <i class='bi bi-chat'></i>
-        <h5>WebRTC</h5>
-        <p>STUN and TURN servers via the Twilio API</p>
-      </div><!-- .right-1 -->
-      <div class="right-2 mt-5 mb-5 pt-5 pb-1">
-        <i class='bi bi-lock-open'></i>
-        <h5>Authentication</h5>
-    	  <p>Devise &plus; Rolify &plus; CanCanCan</p>
-      </div><!-- .right-2 -->
-    </div><!-- .col-sm-3 .text-muted -->
-  </div><!-- .row -->
+<section class="mt-5 mb-5 p-0 in-app">
+  <div class="row ps-5 pe-1" id="list-tab" role="tablist">
+    <div class="col-5 text-muted list-group">
+      <h5 class="jumbotron-heading my-3">Key Features</h5>
+      <a class="list-group-item list-group-item-action active " id="list-analytics-list" data-bs-toggle="list" href="#list-analytics" role="tab" aria-controls="list-analytics">
+        <h5 class="mt-2"><i class='bi bi-bar-chart-fill me-1'></i> Analytics</h5>
+    	  <p class="mt-3">Chartkick, Groupdate, Geocoder &amp; Ahoy</p>
+      </a>
+      <a class="list-group-item list-group-item-action " id="list-webrtc-list" data-bs-toggle="list" href="#list-webrtc" role="tab" aria-controls="list-webrtc">
+        <h5 class="mt-2"><i class='bi bi-chat-fill me-1'></i> WebRTC</h5>
+        <p class="mt-3">STUN &amp; TURN servers via the Twilio API</p>
+      </a>
+      <a class="list-group-item list-group-item-action " id="list-testing-list" data-bs-toggle="list" href="#list-testing" role="tab" aria-controls="list-testing">
+        <h5 class="mt-2"><i class="bi bi-terminal-fill me-1"></i> Testing</h5>
+        <p class="mt-3">RSpec &plus; PG Hero &plus; Brakeman</p>
+      </a>
+      <a class="list-group-item list-group-item-action " id="list-authentication-list" data-bs-toggle="list" href="#list-authentication" role="tab" aria-controls="list-authentication">
+        <h5 class="mt-2"><i class='bi bi-unlock-fill me-1'></i> Authentication</h5>
+    	  <p class="mt-3">Devise &plus; Rolify &plus; CanCanCan</p>
+      </a>
+    </div><!-- .col-5 -->
+    <div class="col-7 mt-5">
+      <div class="tab-content d-flex align-items-center" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="list-analytics" role="tabpanel" aria-labelledby="list-analytics-list">
+          <%= image_tag 'welcome/chart.png', alt: 'Welcome', class: 'center-img shadow' %>
+        </div>
+        <div class="tab-pane fade" id="list-testing" role="tabpanel" aria-labelledby="list-testing-list">
+          <%= image_tag 'welcome/testing.png', alt: 'Welcome', class: 'center-img shadow' %>
+        </div>
+        <div class="tab-pane fade" id="list-webrtc" role="tabpanel" aria-labelledby="list-webrtc-list">
+          <%= image_tag 'welcome/webRTC.png', alt: 'Welcome', class: 'center-img shadow' %>
+        </div>
+        <div class="tab-pane fade" id="list-authentication" role="tabpanel" aria-labelledby="list-authentication-list">
+          <%= image_tag 'welcome/devise.png', alt: 'Welcome', class: 'center-img shadow' %>
+        </div>
+      </div>
+    </div><!-- .col-7 -->
+  </div><!-- .row  #list-tab -->
 </section><!-- .in-app -->
-
-<!-- Transition Images -->
-<script>
-  $(function() {
-    $(".left-1 svg").css('background', '#6c757d');
-    $('.left-1 svg').css('color', '#fff');
-    $('.left-1').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/chart.png")%>');
-      $(".left-1 svg").css('background', '#6c757d');
-      $('.left-1 svg').css('color', '#fff');
-      $(".left-2 svg").removeAttr('style');
-      $(".right-1 svg").removeAttr('style');
-      $(".right-2 svg").removeAttr('style');
-      return false;
-    });
-    $('.left-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/testing.png")%>');
-      $(".left-2 svg").css('background', '#6c757d');
-      $('.left-2 svg').css('color', '#fff');
-      $(".left-1 svg").removeAttr('style');
-      $(".right-1 svg").removeAttr('style');
-      $(".right-2 svg").removeAttr('style');
-      return false;
-    });
-    $('.right-1').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/webRTC.png")%>');
-      $(".right-1 svg").css('background', '#6c757d');
-      $('.right-1 svg').css('color', '#fff');
-      $(".right-2 svg").removeAttr('style');
-      $(".left-1 svg").removeAttr('style');
-      $(".left-2 svg").removeAttr('style');
-      return false;
-    });
-    $('.right-2').click(function(){
-      $('img.center-img').hide().toggle("shuffle").attr("src",'<%= asset_path("welcome/devise.png")%>');
-      $(".right-2 svg").css('background', '#6c757d');
-      $('.right-2 svg').css('color', '#fff');
-      $(".right-1 svg").removeAttr('style');
-      $(".left-1 svg").removeAttr('style');
-      $(".left-2 svg").removeAttr('style');
-      return false;
-    });
-  });
-</script>
