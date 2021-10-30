@@ -28,7 +28,6 @@ $ npm view react version
 ## Other Dependencies
 
 * Devise + Rolify + Cancan
-* Figaro
 * Action Text (trix)
 * will_paginate
 * Chartkick + Chart.js
@@ -38,6 +37,7 @@ $ npm view react version
 * PGHero
 * Rspec + Simplecov
 * Brakeman + bundler_audit
+* Figaro
 
 
 ## Analysis, Testing and Coverage
@@ -85,8 +85,8 @@ $ rails db:seed
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Buildpacks: heroku/nodejs | heroku/ruby
 * Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
-* example_application.yml -> personalize config vars in heroku dashboard
-* If you don't want to verify email, comment out :confirmable in user model and edit db/seeds
+* example_application.yml -> personalize config vars in your heroku dashboard
+* If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
