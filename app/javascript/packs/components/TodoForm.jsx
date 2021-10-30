@@ -46,7 +46,7 @@ class TodoForm extends React.Component {
               id="title"
               placeholder="Write your todo item here..."
             />
-            <label for="title" className="ms-2">Write your todo item here...</label>
+            <label htmlFor="title" className="ms-2">Write your todo item here...</label>
           </div>
         </div>
       </form>
