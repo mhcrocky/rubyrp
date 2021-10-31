@@ -77,13 +77,17 @@ trix-editor.form-control.comments {
 }
 
 .form-floating.col-12 input[type="text"] {
-  border: 1px solid #212529 !important;
   padding: 10px;
+  border: 1px solid #212529 !important;
 }
 
 .filter .form-control {
   border: 1px solid #212529 !important;
-  padding: 12px;
+  padding: 14px;
+}
+
+.filter-accordian {
+  border: 1px solid #adb5bd !important;
 }
 
 button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
@@ -102,7 +106,9 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 
 turbo-frame#room {
   display: block;
-  height: 210px;
+  // leave room for rooms#new frame
+  // and match ToDo List margins
+  height: 183px;
   @media (max-width: 768px) {
     height: 270px;
   }

@@ -21,7 +21,7 @@
         <div class="jumbotron text-center mt-5">
           <%= f.text_field :embed, id: "inputEmbed", class: "form-control", placeholder: "YouTube Video" %>
           <label for="inputEmbed" class="text-muted">
-            YouTube Video <i class="bi bi-info-circle pointer" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+            YouTube Video <i class="bi bi-info-circle pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
           </label>
         </div><!-- .jumbotron .text-center .form-floating -->
       </div><!-- .col-lg-6 -->
@@ -46,5 +46,40 @@
       <%= f.submit 'Submit', class: 'btn btn-orange align-self-center mx-1' %>
     </div><!-- .form-group -->
   </section><!-- .form-section -->
-
 <% end %>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <small id="offcanvasRightLabel">Example YouTube Links</small>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div><!-- .offcanvas-header -->
+  <div class="offcanvas-body">
+    <h5 class="pb-1 mt-1">Format 1</h5>
+    <div class="text-muted">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
+        https://youtu.be/<strong>u75Zsl1ECPQ</strong>
+      </p>
+    </div>
+    <h5 class="pb-1 mt-4">Format 2</h5>
+    <div class="text-muted">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
+        https://www.youtube.com/watch?v=<strong>u75Zsl1ECPQ</strong>
+      </p>
+    </div>
+    <h5 class="pb-1 mt-4">Format 3</h5>
+    <div class="text-muted">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
+        https://www.youtube.com/watch?v=<strong>u75Zsl1ECPQ</strong>&list=PLu9lbDbw-S8zyBwu9_aA2nE-3QocgyzRE&index=4
+      </p>
+    </div>
+    <p class="mt-5 pb-3">
+      <small class="ms-1">
+        <span class="text-orange">Note</span>:
+        Preview image reflects saved &amp; formatted link
+      </small>
+    </p><!-- .mt-5 .pb-3 -->
+  </div><!-- .offcanvas-body -->
+  <!-- <div class="offcanvas-footer text-end">
+    <button type="button" class="btn btn-outline-secondary me-3 mb-3" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+  </div> -->
+</div><!-- .offcanvas -->

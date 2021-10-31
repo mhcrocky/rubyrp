@@ -1,3 +1,22 @@
-<form action="<%= action %>" method="get">
-  <%= search_field_tag 'q', @filter, class: 'form-control', placeholder: 'Search rooms...' %>
-</form>
+<div class="row">
+  <div class="col-md-9 mt-1">
+    <form action="<%= action %>" method="get">
+      <%= search_field_tag 'q', @filter, class: 'form-control', placeholder: 'Filter rooms...' %>
+    </form>
+  </div><!-- .col-md-9 -->
+
+  <div class="col-md-3 mt-1">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed filter-accordian text-muted" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <i class="bi bi-chat-right-text ms-1 me-2"></i> Rules
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body shadow-sm">Please, treat others as you wish to be treated.</div>
+        </div>
+      </div><!-- .accordion-item -->
+    </div><!-- .accordion -->
+  </div><!-- .col-md-3 -->
+</div><!-- .row -->

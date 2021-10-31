@@ -2,9 +2,14 @@
   <div class="container">
     <h1 class="jumbotron-heading">My ToDo List</h1>
     <p class="lead text-start text-muted">Create, Read, Update, &amp; Destroy your ToDo items. React will efficiently update and render just the right components as your data changes.</p>
+    <p class="mt-2 mb-0">
+      <button class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <i class="bi bi-activity me-1"></i> Activity
+      </button>
+    </p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<div id="todo-app"></div>
+<div id="todo-app" class="mb-5"></div>
 
 <%= render partial: 'todo_items/charts' %>

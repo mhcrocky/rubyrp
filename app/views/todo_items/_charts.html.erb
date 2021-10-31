@@ -1,11 +1,21 @@
-<section class="text-center pt-5 mt-5 pb-5">
-  <div class="row pt-0 mt-0 mb-5">
-    <div class="col-md-7">
-      <%= area_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "My Items" %>
-    </div><!-- .col-md-7 -->
-    <div class="col-md-1 pb-5"></div>
-    <div class="col-md-4">
-      <%= pie_chart api_v1_charts_complete_incomplete_single_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "My List Status" %>
-    </div><!-- .col-md-4 -->
-  </div><!-- .row -->
-</section><!-- .text-center .pt-5 .mt-5 -->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+      <i class="bi bi-activity me-1"></i> Activity
+    </h4><!-- .offcanvas-title -->
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div><!-- .offcanvas-body -->
+  <div class="offcanvas-body">
+    <div class="row">
+      <div class="col-12 my-3">
+        <%= pie_chart api_v1_charts_complete_incomplete_single_todos_path, legend: false, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.3)", "rgba(0,0,0,0.7)"], title: "My List Status" %>
+      </div><!-- .col-12 -->
+      <div class="col-12 my-3">
+        <%= area_chart api_v1_charts_month_of_year_single_todos_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(0,0,0,0.5)"], title: "My Items" %>
+      </div><!-- .col12 -->
+    </div><!-- .row -->
+  </div><!-- .offcanvas-body -->
+  <!-- <div class="offcanvas-footer text-end">
+    <button type="button" class="btn btn-outline-secondary me-3 mb-3" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+  </div> -->
+</div><!-- .offcanvas .offcanvas-start -->
