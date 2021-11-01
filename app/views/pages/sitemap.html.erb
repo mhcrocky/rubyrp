@@ -5,205 +5,205 @@
 </section><!-- .jumbotron -->
 
 <h5 class="border-bottom border-gray pb-1 mb-0">Legal</h5>
-<div class="media text-muted pt-3">
-  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+<div class="text-muted pt-3">
+  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
     <strong class="d-block">
       <%= link_to pages_terms_and_conditions_path do %>
         Terms and Conditions
       <% end %>
     </strong>
-  </p><!-- .media-body -->
-</div><!-- .media -->
-<div class="media text-muted pt-3">
-  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  </p>
+</div>
+<div class="text-muted pt-3">
+  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
     <strong class="d-block">
       <%= link_to pages_privacy_policy_path do %>
         Privacy Policy
       <% end %>
     </strong>
-  </p><!-- .media-body -->
-</div><!-- .media -->
-<div class="media text-muted pt-3">
-  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  </p>
+</div>
+<div class="text-muted pt-3">
+  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
     <strong class="d-block">
       <%= link_to pages_cookie_policy_path do %>
         Cookies Policy
       <% end %>
     </strong>
-  </p><!-- .media-body -->
-</div><!-- .media -->
-<div class="media text-muted pt-3">
-  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  </p>
+</div>
+<div class="text-muted pt-3">
+  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
     <strong class="d-block">
       Sitemap
     </strong>
-  </p><!-- .media-body -->
-</div><!-- .media -->
+  </p>
+</div>
 
 <% if user_signed_in? %>
   <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Todo List</h5>
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  <div class="text-muted pt-3">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to todo_items_path do %>
           Single Page Application
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
+    </p>
+  </div>
   <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Blog</h5>
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  <div class="text-muted pt-3">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to articles_path do %>
           Blog
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    </p>
+  </div>
+  <div class="text-muted pt-3">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to new_article_path do %>
           New Article
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
+    </p>
+  </div>
   <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Video Chats</h5>
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  <div class="text-muted pt-3">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to rooms_path do %>
           Chat Rooms
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
+    </p>
+  </div>
   <% if can? :manage, Room %>
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to new_room_path do %>
             New Room
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
+      </p>
+    </div>
   <% end %>
   <% if current_user.has_role?(:superadmin) %>
     <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Users</h5>
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to visitors_path do %>
             Free Users
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to members_path do %>
             Members
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to new_admin_path do %>
             Admins
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to new_superadmin_path do %>
             Super Admins
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
+      </p>
+    </div>
   <% end # if current_user.has_role?(:superadmin) %>
   <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Profile</h5>
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+  <div class="text-muted pt-3">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to current_user do %>
           View Profile
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
-  <div class="media text-muted pt-3">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    </p>
+  </div>
+  <div class="text-muted pt-3">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to edit_user_registration_path do %>
           Edit Profile
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
-  <div class="media text-muted pt-3 pb-5 mb-5">
-    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    </p>
+  </div>
+  <div class="text-muted pt-3 pb-5 mb-5">
+    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
         <%= link_to(destroy_user_session_path, method: :delete, data: { turbo: false }) do %>
           Sign out
         <% end %>
       </strong>
-    </p><!-- .media-body -->
-  </div><!-- .media -->
+    </p>
+  </div>
   <% if current_user.has_role?(:sysadmin) %>
     <h5 class="border-bottom border-gray pt-5 mb-0">Other</h5>
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to '/robots.txt', target: :blank do %>
             Robots (txt)
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to '/ads.txt', target: :blank do %>
             Ads (txt)
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to '/sitemap.xml', target: :blank do %>
             Sitemap (xml)
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to 'http://localhost:3000/rails/mailers/', target: :blank do %>
             Mailers (development)
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
-    <div class="media text-muted pt-3 pb-5 mb-5">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      </p>
+    </div>
+    <div class="text-muted pt-3 pb-5 mb-5">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block">
           <%= link_to pg_hero_path, target: :blank do %>
             Database Analysis (PGHero)
           <% end %>
         </strong>
-      </p><!-- .media-body -->
-    </div><!-- .media -->
+      </p>
+    </div>
   <% end # if current_user.has_role?(:sysadmin) %>
 <% end # user_signed_in? %>
