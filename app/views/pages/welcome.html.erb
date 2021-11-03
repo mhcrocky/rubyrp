@@ -12,7 +12,7 @@
         <h4 class="my-0 fw-bold text-white">Free</h4>
       </div><!-- .card-header -->
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0</h1>
+        <h2 class="card-title pricing-card-title">$0</h2>
         <ul class="list-unstyled mt-3 mb-4">
           <li><strong>Never Pay</strong></li>
           <li>Private ToDo List</li>
@@ -29,7 +29,7 @@
         <h4 class="my-0 fw-bold text-white">Membership</h4>
       </div><!-- .card-header -->
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$35 <small class="text-muted">min</small></h1>
+        <h2 class="card-title pricing-card-title">$35</h2>
         <ul class="list-unstyled mt-3 mb-4">
           <li><strong>Pay Once</strong></li>
           <li>Github Read Access</li>
@@ -43,7 +43,7 @@
 </div><!-- .row row-cols-1 row-cols-md-2 -->
 
 <div class="my-3 p-4">
-  <h5 class="jumbotron-heading pb-0 mb-0">Breakdown</h5>
+  <h4 class="jumbotron-heading pb-0 mb-0">Breakdown</h4>
   <div class="text-muted pt-3">
     <p class="pb-3 mb-0 lh-125">
       <strong class="d-block">The App</strong>
@@ -55,7 +55,7 @@
   <div class="d-flex text-muted pt-3">
     <%= image_tag 'tayberry.svg', alt: 'Free', class: 'flex-shrink-0 me-2 h-25 rounded' %>
     <p class="pb-3 mb-0 lh-125">
-      <strong class="d-block">Free</strong>
+      <strong class="d-block mt-1">Free</strong>
       Sign up and never pay for free access to this site. Included is a private ToDo List,
       full access to the Blog, and the ability to join Video Chats created by members.
       You can always decide to upgrade at any time.
@@ -65,15 +65,15 @@
   <div class="d-flex text-muted pt-3">
     <%= image_tag 'shnozberry.svg', alt: 'Membership', class: 'flex-shrink-0 me-2 h-25 rounded' %>
     <p class="pb-3 mb-0 lh-125">
-      <strong class="d-block">Membership</strong>
+      <strong class="d-block mt-1">Membership</strong>
       Sign up and pay once for read access to this app's repository.
       You can clone the project and create your own application(s) with best practices in place.
       This package includes the ability to join Video Chats created by YOU + other members.
       As new features are released, your early adoption will grant you access to them as well.
-    </p><!-- .-->
+    </p>
   </div>
   <div class="text-muted pt-3">
-    <p class="pb-0 mb-0">
+    <small class="pb-0 mb-0">
       This is a side project of mine that I began in late 2020.
       The idea was to create a sandbox, outside of work, in which I could experiment with
       the various web technologies I love.
@@ -82,11 +82,11 @@
       Collaboration fosters best practices; working with others is integral to personal growth as a developer.
       Coding solo fosters development in a freeform manner that values
       ownership over camaraderie, and craft over professional rigor.
-    </p><!-- .-->
+    </small>
   </div>
-  <small class="d-block text-end text-muted mt-1 me-2">
-    <strong class="d-block text-gray-dark">Tony Maseda</strong>
-  </small><!-- .d-block -->
+  <div class="d-block text-end text-muted mt-1 me-2">
+    <strong class="d-block">Tony Maseda</strong>
+  </div><!-- .d-block -->
 </div><!-- .my-3 p-3 card -->
 
 <%= render partial: 'pages/features' %>
