@@ -1,13 +1,3 @@
-<%= turbo_frame_tag :users_article do %>
-  <span class="ms-2">
-    <% if @liked_article %>
-      <%= link_to article_like_path(@article, id: @liked_article.id, t: Time.now.to_i), method: :delete do %>
-        <i class="bi bi-heart-fill lead font-italic text-tayberry" title="Liked"></i>
-      <% end %> <sup class="font-italic text-tayberry"><%= @article.liked_by_users.size %></sup>
-    <% else %>
-      <%= link_to article_likes_path(@article, t: Time.now.to_i), method: :post do %>
-        <i class="bi bi-heart lead font-italic text-tayberry" title="Like"></i>
-      <% end %> <sup class="font-italic text-tayberry" title="Like"><%= @article.liked_by_users.size %></sup>
-    <% end %>
-  </span>
-<% end %>
+<%= link_to article_likes_path(@article), method: :post, remote: true do %>
+  <i class="bi bi-heart lead font-italic text-tayberry" title="Like"></i>
+<% end %> <sup class="font-italic text-tayberry" title="Like"><%= @article.liked_by_users.size %></sup>

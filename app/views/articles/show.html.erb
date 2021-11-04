@@ -6,7 +6,6 @@
         <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %>
       </strong>
       <%= @article.created %>
-      <%= render partial: 'like' %>
     </p>
     <% if can? :manage, @article %>
       <p class="mt-0 mb-0">
@@ -25,11 +24,18 @@
   <% if @article.embed.present? %>
     <div class="ratio ratio-16x9">
       <%= @article.iframe %>
-    </div><!-- .embed-responsive -->
+    </div><!-- .ratio-16x9 -->
   <% end %>
   <div class="card-text mt-3 mb-2">
     <%= @article.text if @article.text.present? %>
   </div>
+  <h4 id="heart" class="jumbotron-heading text-end mt-3 me-5">
+    <% if @liked_article %>
+      <%= render partial: 'unlike' %>
+    <% else %>
+      <%= render partial: 'like' %>
+    <% end %>
+  </h4>
 </div><!-- .card-body -->
 
 <section class="container">
@@ -45,8 +51,13 @@
 </section><!-- .container -->
 
 <section class="text-center mt-5">
-  <h4 class="jumbotron-heading pt-5 mb-0 text-gray-dark">Articles by <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></h4>
-  <div class="pt-0 mt-0 mb-0">
-    <%= render partial: 'articles/articles' %>
-  </div><!-- .pt-0 .mt-0 .mb-0 -->
+  <% if @articles.present? %>
+    <h4 class="jumbotron-heading pt-5 mb-0 text-gray-dark">More articles by <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></h4>
+    <div class="pt-0 mt-0 mb-0">
+      <%= render partial: 'articles/articles' %>
+    </div><!-- .pt-0 .mt-0 .mb-0 -->
+  <% else %>
+    <!-- TODO: top articles -->
+    <div class="pb-5"></div>
+  <% end %>
 </section><!-- .text-center mt-5 -->

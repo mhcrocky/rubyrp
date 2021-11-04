@@ -15,8 +15,9 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     @articles = Article.where(user_id: @article.user.id)
-                            .order('created_at DESC')
-                            .paginate(page: params[:page], per_page: 3)
+                       .where.not(id: @article.id)
+                       .order('created_at DESC')
+                       .paginate(page: params[:page], per_page: 3)
 
     @liked_article = UsersArticle.find_by(user: current_user, article: @article)
 
