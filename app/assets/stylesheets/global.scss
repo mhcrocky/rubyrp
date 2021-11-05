@@ -101,6 +101,40 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   margin-top: 5px !important;
 }
 
+#comments, #show_notes {
+  max-height: 3600px;
+  @media (max-width: 768px) {
+    max-height: 1440px;
+  }
+  .comment-body, .note-body {
+    max-height: 360px;
+  }
+}
+
+.offcanvas-top.room-top, .offcanvas-top.comment-top {
+  height: 75vh !important;
+  @media (max-width: 576px) {
+    height: 55vh !important;
+  }
+}
+
+.offcanvas-top.room-top, .offcanvas-top.comment-top {
+  height: 75vh !important;
+  @media (max-width: 576px) {
+    height: 55vh !important;
+  }
+}
+
+.room-top trix-editor.form-control, .comment-top trix-editor.form-control {
+  height: 55vh !important;
+  @media (max-width: 992px) {
+    height: 45vh !important;
+  }
+  @media (max-width: 576px) {
+    height: 35vh !important;
+  }
+}
+
 
 /* Tables
 ----------------------------------------------------------------------------- */
@@ -140,24 +174,11 @@ img.card-img-top {
   object-fit: none;
   object-position: center;
 }
-@media screen and (min-width:510px) and (max-width:992px){
+
+@media screen and (min-width:510px) and (max-width:992px) {
   img.card-img-top {
     object-fit: cover;
   }
-}
-
-#comments {
-  max-height: 900px;
-  @media (max-width: 768px) {
-    max-height: 450px;
-  }
-  .comment-body {
-    max-height: 90px;
-  }
-}
-
-trix-editor.form-control.comments {
-  height: 420px !important;
 }
 
 
@@ -176,16 +197,6 @@ trix-editor.form-control.comments {
   }
 }
 
-#show-notes {
-  max-height: 3600px;
-  @media (max-width: 768px) {
-    max-height: 1440px;
-  }
-  .note-body {
-    max-height: 360px;
-  }
-}
-
 turbo-frame#room {
   display: block;
   // leave room for rooms#new frame
@@ -199,22 +210,5 @@ turbo-frame#room {
   }
   @media (max-width: 480px) {
     height: 200px;
-  }
-}
-
-.offcanvas-top.room-top {
-  height: 75vh !important;
-  @media (max-width: 576px) {
-    height: 55vh !important;
-  }
-}
-
-.room-top trix-editor.form-control {
-  height: 55vh !important;
-  @media (max-width: 992px) {
-    height: 45vh !important;
-  }
-  @media (max-width: 576px) {
-    height: 35vh !important;
   }
 }

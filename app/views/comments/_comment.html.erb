@@ -1,19 +1,17 @@
-<div class="container">
-  <% @article.comments.each do |comment| %>
-    <div class="mb-5">
-      <p class="jumbotron-heading text-muted">
-        <%= link_to truncate(comment.user.name), comment.user, class: "text-info fw-bold" %>, <%= comment.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %>
-        <% if can? :manage, comment %>
-          <span class="float-right">
-            <%= link_to [comment.article, comment], method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, remote: true do %>
-              <i class="bi bi-trash text-dark ms-3 pointer"></i>
-            <% end %>
-          </span><!-- .float-right -->
-        <% end %>
-      </p><!-- .jumbotron-heading -->
-      <div class="comment-body overflow-auto small">
-        <%= comment.body %>
-      </div><!-- .comment-body -->
-    </div><!-- .mb-5 -->
-  <% end %>
-</div><!-- .container -->
+<% @article.comments.each do |comment| %>
+  <div class="mb-5">
+    <p class="jumbotron-heading text-muted">
+      <%= link_to truncate(comment.user.name), comment.user, class: "text-info fw-bold" %>, <%= comment.created_at.in_time_zone("#{current_user.timezone}").strftime('%b %-d, %Y') %>
+      <% if can? :manage, comment %>
+        <span class="float-right">
+          <%= link_to [comment.article, comment], method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, remote: true do %>
+            <i class="bi bi-trash text-dark ms-3 pointer"></i>
+          <% end %>
+        </span><!-- .float-right -->
+      <% end %>
+    </p><!-- .jumbotron-heading -->
+    <div class="comment-body overflow-auto small">
+      <%= comment.body %>
+    </div><!-- .comment-body -->
+  </div><!-- .mb-5 -->
+<% end %>

@@ -38,19 +38,25 @@
   </h4>
 </div><!-- .card-body -->
 
-<section class="container">
-  <h4 class="jumbotron-heading text-center my-5">Comments</h4>
+<section class="mb-5">
+  <button class="w-100 btn btn-lg btn-outline-orange my-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasInput" aria-controls="offcanvasInput">
+    Comment
+  </button>
   <div class="row">
-    <div class="col-lg-7 overflow-auto" id='comments'>
+    <div class="col-12 overflow-auto" id='comments'>
       <%= render partial: 'comments/comment' %>
-    </div><!-- .col-lg-7 -->
-    <div class="col-lg-5">
-      <%= render partial: 'comments/form' %>
-    </div><!-- .col-lg-5 -->
+    </div><!-- .col-12 -->
+    <div class="col-12 overflow-auto">
+      <div class="offcanvas offcanvas-top comment-top" data-bs-scroll="true" tabindex="-1" id="offcanvasInput" aria-labelledby="offcanvasInputLabel">
+        <div class="offcanvas-body">
+          <%= render partial: 'comments/form' %>
+        </div>
+      </div>
+    </div><!-- .col-12 -->
   </div><!-- .row -->
-</section><!-- .container -->
+</section><!-- .mb-5 -->
 
-<section class="text-center mt-5">
+<section class="text-center">
   <% if @articles.present? %>
     <h4 class="jumbotron-heading pt-5 mb-0 text-gray-dark">More articles by <%= link_to truncate(@article.user.name), @article.user, class: "text-info" %></h4>
     <div class="pt-0 mt-0 mb-0">
@@ -60,4 +66,4 @@
     <!-- TODO: top articles -->
     <div class="pb-5"></div>
   <% end %>
-</section><!-- .text-center mt-5 -->
+</section><!-- .text-center -->

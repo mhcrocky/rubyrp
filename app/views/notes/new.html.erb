@@ -2,7 +2,7 @@
   <%= form_with model: [@room, @note] do |form| %>
     <!-- Allow body validation error without message -->
     <div class="form-group">
-      <%= form.rich_text_area :body, class: 'form-control comments', id: 'bodyText' %>
+      <%= form.rich_text_area :body, class: 'form-control', id: 'bodyText' %>
     </div><!-- .form-group -->
     <div class="form-group d-flex justify-content-center" data-bs-dismiss="offcanvas" aria-label="Close">
       <%= form.submit 'Submit Note', class: 'w-100 btn btn-lg btn-dark mt-2' %>
