@@ -143,7 +143,7 @@
   <div class="text-muted pt-3">
     <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
       <strong class="d-block">
-        <%= link_to edit_user_registration_path do %>
+        <%= link_to edit_user_registration_path, data: { turbo: false } do %>
           Edit Profile
         <% end %>
       </strong>

@@ -18,10 +18,10 @@
                 <%= link_to(current_user, class: "dropdown-item") do %>
                   <span class="text-info"><%= current_user.name %></span>
                 <% end %>
-                <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+                <%= link_to edit_user_registration_path, data: { turbo: false }, class: 'dropdown-item' do %>
                   Edit Profile
                 <% end %>
-                <%= link_to(destroy_user_session_path, method: :delete, class: "dropdown-item", data: { turbo: false }) do %>
+                <%= link_to(destroy_user_session_path, method: :delete, data: { turbo: false }, class: "dropdown-item") do %>
                   Sign out
                 <% end %>
               </div><!-- .dropdown-menu .shadow-lg -->
@@ -86,7 +86,7 @@
         <% else %>
           <div class="d-flex">
             <%= link_to('Sign in', new_user_session_path, data: { turbo: false }, class: "nav-link text-light text-center") %>
-            <%= link_to("Sign up", new_user_registration_path, class: "nav-link nav-link-border text-light text-center") %>
+            <%= link_to("Sign up", new_user_registration_path, data: { turbo: false }, class: "nav-link nav-link-border text-light text-center") %>
           </div>
         <% end %>
       </div>
