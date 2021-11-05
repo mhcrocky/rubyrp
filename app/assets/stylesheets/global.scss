@@ -147,9 +147,12 @@ img.card-img-top {
 }
 
 #comments {
-  max-height: 525px;
+  max-height: 900px;
+  @media (max-width: 768px) {
+    max-height: 450px;
+  }
   .comment-body {
-    max-height: 75px;
+    max-height: 90px;
   }
 }
 
@@ -174,9 +177,9 @@ trix-editor.form-control.comments {
 }
 
 #show-notes {
-  max-height: 1080px;
+  max-height: 3600px;
   @media (max-width: 768px) {
-    height: 720px;
+    max-height: 1440px;
   }
   .note-body {
     max-height: 360px;

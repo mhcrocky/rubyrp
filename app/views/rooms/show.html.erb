@@ -36,7 +36,7 @@
       </button>
     </div><!-- .col-12 -->
     <div class="col-12 overflow-auto" id='show-notes'>
-      <div class="offcanvas offcanvas-top room-top" tabindex="-1" id="offcanvasInput" aria-labelledby="offcanvasInputLabel">
+      <div class="offcanvas offcanvas-top room-top" data-bs-scroll="true" tabindex="-1" id="offcanvasInput" aria-labelledby="offcanvasInputLabel">
         <div class="offcanvas-body">
           <%= turbo_frame_tag 'new_note', src: new_room_note_path(@room), target: :_top %>
         </div>
