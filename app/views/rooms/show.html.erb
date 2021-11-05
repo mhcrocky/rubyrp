@@ -20,9 +20,9 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<section class="container mb-5 pb-5">
+<section class="mb-5 pb-5">
   <div class='row'>
-    <div class='col-12 mb-2'>
+    <div class='col-12'>
       <div id='videos'
         data-controller='video-chat'
         data-video-chat-twilio='<%= @room.room_key %>'
@@ -31,15 +31,20 @@
         <div class="d-inline" data-video-chat-target="remote_videos"></div>
         <video data-video-chat-target="local_video" autoplay></video>
       </div><!-- #videos -->
+      <button class="w-100 btn btn-lg btn-outline-tayberry mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasInput" aria-controls="offcanvasInput">
+        Add Notes
+      </button>
     </div><!-- .col-12 -->
-    <div class="col-lg-7 overflow-auto" id='show-notes'>
+    <div class="col-12 overflow-auto" id='show-notes'>
+      <div class="offcanvas offcanvas-top room-top" tabindex="-1" id="offcanvasInput" aria-labelledby="offcanvasInputLabel">
+        <div class="offcanvas-body">
+          <%= turbo_frame_tag 'new_note', src: new_room_note_path(@room), target: :_top %>
+        </div>
+      </div>
       <%= turbo_stream_from @room %>
       <div id='notes'>
         <%= render @room.notes %>
       </div><!-- #notes -->
-    </div><!-- .col-lg-7 -->
-    <div class="col-lg-5 notes-form">
-      <%= turbo_frame_tag 'new_note', src: new_room_note_path(@room), target: :_top %>
-    </div><!-- .col-lg-5 -->
+    </div><!-- .col-12 -->
   </div><!-- .row -->
-</section><!-- .container -->
+</section><!-- .mb-5 .pb-5 -->

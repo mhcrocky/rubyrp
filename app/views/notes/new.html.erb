@@ -4,8 +4,8 @@
     <div class="form-group">
       <%= form.rich_text_area :body, class: 'form-control comments', id: 'bodyText' %>
     </div><!-- .form-group -->
-    <div class="form-group d-flex justify-content-center">
-      <%= form.submit 'Add Note', class: 'w-100 btn btn-lg btn-tayberry mt-2' %>
+    <div class="form-group d-flex justify-content-center" data-bs-dismiss="offcanvas" aria-label="Close">
+      <%= form.submit 'Submit Note', class: 'w-100 btn btn-lg btn-dark mt-2' %>
     </div><!-- .form-group -->
   <% end %>
 <% end %>

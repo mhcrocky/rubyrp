@@ -2,9 +2,9 @@
   <div class="mb-5">
     <p class="jumbotron-heading text-muted small">
       <%= link_to truncate(note.user.name), note.user, class: 'text-info fw-bold' %>, <%= note.created %>
-    </p><!-- .jumbotron-heading -->
+    </p>
     <div class="note-body overflow-auto">
       <%= note.body %>
-    </div><!-- .comment-body -->
+    </div>
   </div><!-- .mb-5 -->
 <% end %>

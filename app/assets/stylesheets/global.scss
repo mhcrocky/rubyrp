@@ -63,9 +63,6 @@ trix-editor.form-control {
   display: none !important;
   width: 0 !important;
 }
-trix-editor.form-control.comments {
-  height: 420px !important;
-}
 @media (max-width: 768px) {
   trix-editor.form-control, trix-editor.form-control.comments {
     height: 350px !important;
@@ -102,19 +99,6 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   -o-transform: scale(1.5) !important;
   transform: scale(1.5) !important;
   margin-top: 5px !important;
-}
-
-turbo-frame#room {
-  display: block;
-  // leave room for rooms#new frame
-  // and match ToDo List margins
-  height: 183px;
-  @media (max-width: 768px) {
-    height: 270px;
-  }
-  @media (max-width: 576px) {
-    height: 330px;
-  }
 }
 
 
@@ -169,27 +153,65 @@ img.card-img-top {
   }
 }
 
+trix-editor.form-control.comments {
+  height: 420px !important;
+}
+
 
 /* Chat Room styles
 ----------------------------------------------------------------------------- */
 
-#show-notes {
-  top: -8vh;
-  max-height: 525px;
-  .note-body {
-    max-height: 315px;
-  }
-}
-.notes-form {margin-top: -8vh;}
-
 #videos {
   width: 100%;
   video {
+    // new video elements' widths = half of col-12
+    // .. within overall container
     width: calc(50% - 5px);
-    height: 40vh;
+    // width / 50% of viewport height = 4:3 ratio
+    height: 50vh;
     margin-bottom: 10vh;
-    // height: calc(#{width} * 0.5625);
-    // height: 33.333vh;
-    // margin-top: -10px;
+  }
+}
+
+#show-notes {
+  max-height: 1080px;
+  @media (max-width: 768px) {
+    height: 720px;
+  }
+  .note-body {
+    max-height: 360px;
+  }
+}
+
+turbo-frame#room {
+  display: block;
+  // leave room for rooms#new frame
+  // and match ToDo List margins
+  height: 183px;
+  @media (max-width: 768px) {
+    height: 270px;
+  }
+  @media (max-width: 576px) {
+    height: 330px;
+  }
+  @media (max-width: 480px) {
+    height: 200px;
+  }
+}
+
+.offcanvas-top.room-top {
+  height: 75vh !important;
+  @media (max-width: 576px) {
+    height: 55vh !important;
+  }
+}
+
+.room-top trix-editor.form-control {
+  height: 55vh !important;
+  @media (max-width: 992px) {
+    height: 45vh !important;
+  }
+  @media (max-width: 576px) {
+    height: 35vh !important;
   }
 }
