@@ -34,8 +34,7 @@ module.exports = function(api) {
           useBuiltIns: 'entry',
           corejs: 3,
           modules: false,
-          exclude: ['transform-typeof-symbol'],
-          loose: true
+          exclude: ['transform-typeof-symbol']
         }
       ],
       [
