@@ -25,7 +25,7 @@ Rails.application.reloader.to_prepare do
         elsif has_errors? && default_action
           render rendering_options.merge(formats: :html, status: :unprocessable_entity)
         else
-          redirect_to navigation_location
+          redirect_to '/'
         end
       end
     end

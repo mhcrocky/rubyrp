@@ -15,13 +15,13 @@
       Welcome to RRB
     </h1>
 
-    <p style="font-size:18px; margin-bottom:6px; margin-left:6px;">Only join if you are over 18.</p>
-    <p style="font-size:18px; margin-bottom:6px; margin-left:6px;">Access is subject to our:</p>
-    <ol style="margin-left:3px;">
-      <li style="font-size:15px; margin-bottom:6px;"><a style="color:#6f47be; text-decoration:none;" href="<%= root_url %>pages/terms_and_conditions">Terms and Conditions</a></li>
-      <li style="font-size:15px; margin-bottom:6px;"><a style="color:#6f47be; text-decoration:none;" href="<%= root_url %>pages/privacy_policy">Privacy Policy</a></li>
-      <li style="font-size:15px;"><a style="color:#6f47be; text-decoration:none;" href="<%= root_url %>pages/cookie_policy">Cookie Policy</a></li>
-    </ol>
+    <p style="font-size:15px; margin-bottom:6px; margin-left:6px;">
+      Membership is not available to those under the age of 18-years-old.
+      By using our website and services, you agree to our use of cookies as described in our
+      <a href="<%= root_url %>pages/terms_and_conditions" target="_blank" class="text-shnozberry fw-bold">terms</a>,
+      <a href="<%= root_url %>pages/cookie_policy" target="_blank" class="text-shnozberry fw-bold">cookies</a>,
+      and <a href="<%= root_url %>pages/privacy_policy" target="_blank" class="text-shnozberry fw-bold">privacy</a> policies.
+    </p>
 
     <h3 style="font-size:21px; margin-top:45px; margin-left:9px;">
       <%= link_to 'Accept and Confirm', confirmation_url(@resource, confirmation_token: @token), style: "cursor:pointer; fw:600; text-decoration:none; color:#fff; background-color:#17a2b8; border:solid 1px #17a2b8; padding:8px 12px;" %>

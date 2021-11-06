@@ -15,5 +15,5 @@ Ahoy.visit_duration = 3.hours
 # Ahoy.mask_ips = true
 # Ahoy.cookies = false
 
-# # track bots hitting production site (monitor effect on db)
+# # track bots hitting production site
 # Ahoy.track_bots = true

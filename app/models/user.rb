@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :todo_items, dependent: :destroy
   has_many :rooms, dependent: :destroy
 
-  has_many :users_articles
+  has_many :users_articles, dependent: :destroy
   has_many :liked_articles, through: :users_articles, source: :article
 
   has_many :articles, dependent: :destroy
