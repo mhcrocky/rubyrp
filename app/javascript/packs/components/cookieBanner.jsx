@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // https://www.npmjs.com/package/react-cookienotice
 import CookieNotice from 'react-cookienotice'
-import 'react-cookienotice/dist/index.css'
+import('react-cookienotice/dist/index.css')
 
 class Cookie extends React.Component {
   constructor(props) {
@@ -28,4 +28,4 @@ document.addEventListener('turbo:load', () => {
   app && ReactDOM.render(<Cookie />, app)
 })
 
-// <div id="cookie-banner" class="mb-5"></div>
+// <div id="cookie-banner"></div>
