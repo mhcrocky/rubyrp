@@ -1,6 +1,9 @@
 {
   "name": "rails-react-bootstrap",
   "private": true,
+  "browser": {
+    "[module-name]": false
+  },
   "dependencies": {
     "@babel/plugin-proposal-private-methods": "^7.16.0",
     "@babel/preset-react": "^7.12.5",
