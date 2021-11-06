@@ -35,7 +35,7 @@ module.exports = function(api) {
           corejs: 3,
           modules: false,
           exclude: ['transform-typeof-symbol'],
-          loose: true
+          loose: false
         }
       ],
       [
@@ -54,19 +54,19 @@ module.exports = function(api) {
       [
         '@babel/plugin-proposal-class-properties',
         {
-          loose: true
+          loose: false
         }
       ],
       [
         "@babel/plugin-proposal-private-property-in-object",
         {
-          loose: true 
+          loose: false
         }
       ],
       [
         "@babel/plugin-proposal-private-methods",
         {
-          loose: true
+          loose: false
         }
       ],
       [
