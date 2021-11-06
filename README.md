@@ -38,7 +38,8 @@ $ npm view react version
 * Rspec + Simplecov
 * Brakeman + bundler_audit
 * Figaro
-
+* bootstrap-icons
+* react-cookienotice
 
 ## Analysis, Testing and Coverage
 
