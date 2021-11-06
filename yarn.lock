@@ -6363,6 +6363,11 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-cookienotice@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-cookienotice/-/react-cookienotice-4.0.0.tgz#59d7fab0400d934d34f5361360a60950afb888b9"
+  integrity sha512-AaZ9szt53XPDslRIHLVmP7IQOrVS5iPXBVkfki5H+lV5pCNp/zToe0GcWqVKdTw3ygt9V5pPvPh2dtBX4I0U8Q==
+
 react-dom@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"

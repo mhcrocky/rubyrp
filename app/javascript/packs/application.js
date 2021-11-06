@@ -18,6 +18,7 @@ require("@hotwired/turbo")
 
 // Packs
 require("./components/TodoApp")
+require("./components/cookieBanner")
 
 // Analytics
 import gtag from "src/analytics"
