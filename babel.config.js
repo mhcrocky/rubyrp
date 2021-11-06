@@ -34,7 +34,8 @@ module.exports = function(api) {
           useBuiltIns: 'entry',
           corejs: 3,
           modules: false,
-          exclude: ['transform-typeof-symbol']
+          exclude: ['transform-typeof-symbol'],
+          loose: true
         }
       ],
       [
@@ -51,13 +52,13 @@ module.exports = function(api) {
       isTestEnv && 'babel-plugin-dynamic-import-node',
       '@babel/plugin-transform-destructuring',
       [
-        "@babel/plugin-proposal-private-property-in-object",
+        '@babel/plugin-proposal-class-properties',
         {
           loose: true
         }
       ],
       [
-        '@babel/plugin-proposal-class-properties',
+        "@babel/plugin-proposal-private-methods",
         {
           loose: true
         }
