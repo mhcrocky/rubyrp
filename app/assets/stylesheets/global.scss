@@ -73,9 +73,8 @@ trix-editor.form-control {
   }
 }
 
-.form-floating.col-12 input[type="text"] {
-  padding: 10px;
-  border: 1px solid #212529 !important;
+.form-control:focus {
+  box-shadow: 0 0 0 0.05rem !important;
 }
 
 .filter .form-control {
@@ -119,19 +118,22 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 }
 
 .offcanvas-top.room-top, .offcanvas-top.comment-top {
-  height: 75vh !important;
+  height: 70vh !important;
+  @media (max-width: 992px) {
+    height: 60vh !important;
+  }
   @media (max-width: 576px) {
-    height: 55vh !important;
+    height: 50vh !important;
   }
 }
 
 .room-top trix-editor.form-control, .comment-top trix-editor.form-control {
-  height: 55vh !important;
+  height: 53vh !important;
   @media (max-width: 992px) {
-    height: 45vh !important;
+    height: 43vh !important;
   }
   @media (max-width: 576px) {
-    height: 35vh !important;
+    height: 33vh !important;
   }
 }
 
@@ -173,6 +175,10 @@ img.card-img-top {
   height: auto;
   object-fit: none;
   object-position: center;
+}
+
+.preview-thumb img.card-img-top {
+  object-fit: cover;
 }
 
 @media screen and (min-width:510px) and (max-width:992px) {

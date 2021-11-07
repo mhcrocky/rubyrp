@@ -69,12 +69,30 @@ p.visitor, p.superadmin {cursor:grab;}
   display: block;
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
-  line-height: 1.1;
+  line-height: 0.3 !important;
   color: rgba(117,117,117,0.7);
   cursor: text; /* Match the input under the label */
   border: 1px solid transparent;
   border-radius: .25rem;
   transition: all .5s ease-in-out;
+}
+
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  font-size: 15px;
+  opacity: 0.75 !important;
+  transform: scale(0.75) translateY(-0.75rem) translateX(0.15rem) !important;
+}
+
+.form-floating input:not(:placeholder-shown) ~ label {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .form-floating input::-webkit-input-placeholder {

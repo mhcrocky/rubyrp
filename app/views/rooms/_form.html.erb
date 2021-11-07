@@ -12,11 +12,11 @@
       </div>
     <% end %>
 
-    <section class="pt-1">
-      <div class="d-block pt-4">
-        <%= f.text_field :name, id: "inputName", class: "form-control", placeholder: "Name", autofocus: true %>
-        <label for="inputName"><code>&#42; Name</code></label>
-      </div><!-- .d-block .pt-4 -->
+    <section class="pt-1 text-start">
+      <div class="form-floating">
+        <%= f.text_field :name, autocomplete: "Name", id: "inputName", class: "form-control", placeholder: "Name", autofocus: false %>
+        <label for="inputEmail"><code>&#42; Name</code></label>
+      </div><!-- .form-floating -->
       <div class="form-group d-flex justify-content-center">
         <%= link_to 'Cancel', @room, class: 'btn btn-secondary align-self-center mx-1' %>
         <%= f.submit 'Submit', class: 'btn btn-tayberry align-self-center mx-1' %>

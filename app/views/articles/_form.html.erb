@@ -11,29 +11,32 @@
     </div>
   <% end %>
 
-  <section class="form-section pb-5">
+  <section class="mt-5 pb-5">
     <div class="row">
-      <div class="col-lg-6">
-        <div class="jumbotron text-center mt-5">
-          <%= f.text_field :title, id: "inputTitle", class: "form-control", placeholder: "Title", autofocus: true %>
+      <div class="col-lg-6 pt-1">
+        <div class="form-floating mt-5 mb-5">
+          <%= f.text_field :title, autocomplete: "Title", id: "inputTitle", class: "form-control", placeholder: "Title", autofocus: false %>
           <label for="inputTitle"><code>&#42; Title</code></label>
-        </div><!-- .jumbotron .text-center .form-floating -->
-        <div class="jumbotron text-center mt-5">
-          <%= f.text_field :embed, id: "inputEmbed", class: "form-control", placeholder: "YouTube Video" %>
+        </div><!-- .form-floating -->
+        <div class="form-floating mt-5">
+          <%= f.text_field :embed, autocomplete: "Embed", id: "inputEmbed", class: "form-control", placeholder: "Embed", autofocus: false %>
           <label for="inputEmbed" class="text-muted">
-            YouTube Video <i class="bi bi-info-circle pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+            YouTube Video URL
           </label>
-        </div><!-- .jumbotron .text-center .form-floating -->
-      </div><!-- .col-lg-6 -->
+        </div><!-- .form-floating -->
+      </div><!-- .col-lg-6 .pt-1 -->
       <div class="col-lg-6">
-        <div class="container mt-5 text-center">
+        <div class="preview-thumb container mt-5 text-center">
           <% if @article.embed.present? %>
-            <%= link_to @article.thumb %>
+            <%= @article.thumb %>
           <% else %>
-            <%= link_to image_tag("missing.svg", alt: 'No video', class: 'card-img-top') %>
+            <%= image_tag("missing.svg", alt: 'No video', class: 'card-img-top') %>
           <% end %>
-          <small class="text-muted">YouTube video preview image</small>
-        </div><!-- .jumbotron .text-center .form-floating -->
+          <small class="text-muted">
+            <i class="bi bi-info-circle-fill pointer me-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+            YouTube video preview image
+          </small>
+        </div><!-- .container .text-center .form-floating -->
       </div><!-- .col-lg-6 -->
     </div><!-- .row -->
 
@@ -45,10 +48,11 @@
       <%= link_to 'Cancel', articles_path, class: 'btn btn-secondary align-self-center mx-1' %>
       <%= f.submit 'Submit', class: 'btn btn-orange align-self-center mx-1' %>
     </div><!-- .form-group -->
-  </section><!-- .form-section -->
+  </section><!-- .pb-5 -->
+
 <% end %>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <small id="offcanvasRightLabel">Example YouTube Links</small>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -79,7 +83,7 @@
       </small>
     </p><!-- .mt-5 .pb-3 -->
   </div><!-- .offcanvas-body -->
-  <!-- <div class="offcanvas-footer text-end">
+  <div class="offcanvas-footer text-end">
     <button type="button" class="btn btn-outline-secondary me-3 mb-3" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
-  </div> -->
+  </div>
 </div><!-- .offcanvas -->
