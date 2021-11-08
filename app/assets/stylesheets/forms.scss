@@ -1,0 +1,198 @@
+/* Trix
+----------------------------------------------------------------------------- */
+
+trix-editor.form-control {
+  height: 545px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  border: 3px solid #dee2e6 !important;
+}
+.trix-button-group--file-tools,
+.trix-button-group--history-tools,
+.trix-button--icon-decrease-nesting-level,
+.trix-button--icon-increase-nesting-level {
+  display: none !important;
+  width: 0 !important;
+}
+@media (max-width: 768px) {
+  trix-editor.form-control, trix-editor.form-control.comments {
+    height: 350px !important;
+  }
+  input[type="file" i] {
+    max-width: 100%!important;
+    clear: both !important;
+  }
+}
+
+
+/* form-floating
+----------------------------------------------------------------------------- */
+
+.form-floating {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-floating > input,
+.form-floating > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  padding-left: 15px;
+}
+
+.form-floating > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 0.3 !important;
+  color: rgba(117,117,117,0.7);
+  cursor: text; /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .5s ease-in-out;
+}
+
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  font-size: 15px;
+  opacity: 0.75 !important;
+  transform: scale(0.75) translateY(-0.75rem) translateX(0.15rem) !important;
+}
+
+.form-floating input:not(:placeholder-shown) ~ label {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.form-floating input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-floating input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-floating input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-floating input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-floating input::placeholder {
+  color: transparent;
+}
+
+.form-floating input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-floating input:not(:placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: rgba(117,117,117,0.5);
+}
+
+/* Fallback for Edge
+----------------------- */
+@supports (-ms-ime-align: auto) {
+  .form-floating > label {
+    display: none;
+  }
+  .form-floating input::-ms-input-placeholder {
+    color: rgba(117,117,117,0.5);
+  }
+}
+
+/* Fallback for IE
+----------------------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .form-floating > label {
+    display: none;
+  }
+  .form-floating input:-ms-input-placeholder {
+    color: rgba(117,117,117,0.5);
+  }
+}
+
+
+/* Custom Styles
+----------------------------------------------------------------------------- */
+
+.accordion-button:focus,
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(11, 11, 11, .1) !important;
+  box-shadow: 1px 2px 1px 1px rgba(11, 11, 11, .1) !important;
+}
+
+.filter .form-control {
+  border: 1px solid #212529 !important;
+  padding: 14px;
+}
+
+.filter-accordian {
+  border: 1px solid #adb5bd !important;
+}
+
+button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.theme-check, .form-check-inline {
+  -ms-transform: scale(1.5) !important;
+  -moz-transform: scale(1.5) !important;
+  -webkit-transform: scale(1.5) !important;
+  -o-transform: scale(1.5) !important;
+  transform: scale(1.5) !important;
+  margin-top: 5px !important;
+}
+
+#comments, #show_notes {
+  max-height: 3600px;
+  @media (max-width: 768px) {
+    max-height: 1440px;
+  }
+  .comment-body, .note-body {
+    max-height: 360px;
+  }
+}
+
+.offcanvas-top.room-top, .offcanvas-top.comment-top {
+  height: 75vh !important;
+  @media (max-width: 576px) {
+    height: 55vh !important;
+  }
+}
+
+.offcanvas-top.room-top, .offcanvas-top.comment-top {
+  height: 70vh !important;
+  @media (max-width: 992px) {
+    height: 60vh !important;
+  }
+  @media (max-width: 576px) {
+    height: 50vh !important;
+  }
+}
+
+.room-top trix-editor.form-control, .comment-top trix-editor.form-control {
+  height: 53vh !important;
+  @media (max-width: 992px) {
+    height: 43vh !important;
+  }
+  @media (max-width: 576px) {
+    height: 33vh !important;
+  }
+}

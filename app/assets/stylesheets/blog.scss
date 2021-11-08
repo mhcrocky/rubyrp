@@ -1,0 +1,20 @@
+/* Blog styles
+----------------------------------------------------------------------------- */
+
+img.card-img-top {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: none;
+  object-position: center;
+}
+
+.preview-thumb img.card-img-top {
+  object-fit: cover;
+}
+
+@media screen and (min-width:510px) and (max-width:992px) {
+  img.card-img-top {
+    object-fit: cover;
+  }
+}

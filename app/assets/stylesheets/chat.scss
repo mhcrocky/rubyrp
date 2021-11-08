@@ -1,0 +1,30 @@
+/* Chat Room styles
+----------------------------------------------------------------------------- */
+
+#videos {
+  width: 100%;
+  video {
+    // new video elements' widths = half of col-12
+    // .. within overall container
+    width: calc(50% - 5px);
+    // width / 50% of viewport height = 4:3 ratio
+    height: 50vh;
+    margin-bottom: 10vh;
+  }
+}
+
+turbo-frame#room {
+  display: block;
+  // leave room for rooms#new frame
+  // and match ToDo List margins
+  height: 183px;
+  @media (max-width: 768px) {
+    height: 270px;
+  }
+  @media (max-width: 576px) {
+    height: 330px;
+  }
+  @media (max-width: 480px) {
+    height: 200px;
+  }
+}

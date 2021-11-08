@@ -1,0 +1,26 @@
+/* Tables
+----------------------------------------------------------------------------- */
+
+.table {
+  border: 1px solid #dee2e6 !important;
+}
+
+// .table thead th {
+//   border-bottom: 1px solid #dee2e6 !important;
+// }
+.table thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6 !important;
+}
+
+.table thead>tr>th, .table thead>tr>td {
+  padding: 9px 12px !important;
+}
+
+// .table-responsive button.close path {
+//   fill: #dc3545 !important;
+// }
+.table-responsive div.close i {
+  font-size: 22px;
+  margin-top: 10px;
+}
