@@ -91,4 +91,11 @@
 
 <%= render partial: 'pages/features' %>
 
-<%= render partial: 'pages/community' %>
+<div id="welcomeMap"></div>
+<script>
+  document.addEventListener("turbo:load", ()=> {
+    setTimeout(function(){
+      document.getElementById("welcomeMap").innerHTML = "<%= j render partial: 'pages/community' %>";
+    }, 750);
+  })
+</script>
