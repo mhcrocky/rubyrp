@@ -57,10 +57,6 @@ img.center-img:hover, img.center-img:active {
   // filter: invert(100%) !important;
 }
 
-#welcomeMap {
-  -webkit-animation: shuffle 1.25s ease-in;
-}
-
 @keyframes shuffle {
   0% {
     opacity: 0;
