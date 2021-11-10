@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <%= link_to root_path, class: 'navbar-brand text-decoration-none' do %>
-        <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'header-logo bi pb-1 me-2' %>
+        <%= image_tag 'logo.png', alt: 'Logo', class: 'header-logo bi pb-1 me-2', title: 'Home' %>
       <% end %>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,8 +12,8 @@
         <!-- LEFT -->
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <% if user_signed_in? %>
-            <li class="<%= controller.class == UsersController ? 'active' : '' %> nav-item dropdown" title="Profile">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-person"></i> <span class="burger-text">Profile</span></a>
+            <li class="nav-item dropdown" title="Profile">
+              <a class="<%= controller.class == UsersController ? 'active' : '' %> nav-link dropdown-toggle" href="#" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-person"></i> <span class="burger-text">Profile</span></a>
               <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownUser">
                 <%= link_to(current_user, class: "dropdown-item") do %>
                   <span class="text-info"><%= current_user.name %></span>
@@ -28,7 +28,7 @@
             </li><!-- .nav-item .dropdown -->
 
             <% if current_user.has_role?(:superadmin) %>
-              <li class="<%= controller.class == PagesController ? 'active' : '' %> nav-item dropdown" title="Users">
+              <li class="nav-item dropdown" title="Users">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownRole" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-people"></i> <span class="burger-text">Users</span></a>
                 <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownRole">
                   <%= link_to(visitors_path, class: "dropdown-item") do %>
@@ -47,8 +47,8 @@
               </li><!-- .nav-item .dropdown -->
             <% end %>
 
-            <li class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-item dropdown" title="Blog">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownArticle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-book"></i> <span class="burger-text">Blog</span></a>
+            <li class="nav-item dropdown" title="Blog">
+              <a class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-link dropdown-toggle" href="#" id="dropdownArticle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-book"></i> <span class="burger-text">Blog</span></a>
               <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownArticle">
                 <%= link_to(articles_path, class: "dropdown-item") do %>
                   View Blog
@@ -59,15 +59,15 @@
               </div><!-- .dropdown-menu .shadow-lg -->
             </li><!-- .nav-item .dropdown -->
 
-            <li class="<%= controller.class == TodoItemsController ? 'active' : '' %> nav-item" title="ToDo List">
-              <%= link_to(todo_items_path, class: "nav-link") do %>
+            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ToDo List">
+              <%= link_to(todo_items_path, class: "#{controller.class == TodoItemsController ? 'active' : ''} nav-link") do %>
                 <i class="burger-icon bi bi-card-checklist"></i>
                 <span class="burger-text">List</span>
               <% end %>
             </li><!-- .nav-item -->
 
-            <li class="<%= controller.class == RoomsController ? 'active' : '' %> nav-item" title="Chat">
-              <%= link_to(rooms_path, class: "nav-link") do %>
+            <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat">
+              <%= link_to(rooms_path, class: "#{controller.class == RoomsController ? 'active' : ''} nav-link") do %>
                 <i class="burger-icon bi bi-chat"></i>
                 <span class="burger-text">Chat</span>
               <% end %>
@@ -78,7 +78,7 @@
         <!-- RIGHT -->
         <% if user_signed_in? %>
           <form class="d-flex">
-            <input class="form-control border-light me-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control border-dark pt-1 pb-1 me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-warning" type="submit">
               <i class="bi bi-search"></i>
             </button>
