@@ -3,7 +3,7 @@
   <script>
     google.charts.load("current", {
       "packages":["map"],
-      "mapsApiKey": "<%= "#{ENV['MAP_KEY']}" %>"
+      "mapsApiKey": "<%= "#{ENV['GEOCODER_API']}" %>"
     });
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
