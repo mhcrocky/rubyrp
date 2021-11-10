@@ -1,7 +1,6 @@
 # Rails React Bootstrap
 
-Example application
-
+An Example Ruby on Rails Application using modern, lightweight frameworks and libraries to shape the frontend. The app also utilizes well-maintained gems that won't cause dependency issues. The mission behind the project is to incorporate the latest best practices and serve as a template for future projects.
 
 ## Main Dependencies
 
@@ -64,6 +63,7 @@ $ open coverage/index.html
 ## Initialization (Development)
 
 * Search and replace in project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP
+* Replace google analytics ID
 * config/example_application.yml -> config/application.yml (figaro and .gitignore already set)
 * If you don't want to verify email, comment out :confirmable in user model and edit db/seeds
 ```
@@ -83,6 +83,7 @@ $ rails db:seed
 ## Initialization (Heroku)
 
 * Search and replace in project: rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP
+* Replace google analytics ID
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Buildpacks: heroku/nodejs | heroku/ruby
 * Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
