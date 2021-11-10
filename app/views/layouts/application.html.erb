@@ -4,6 +4,8 @@
     <title>Rails React Bootstrap</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Verify site for Google Maps -->
+    <meta name="google-site-verification" content="<%= "#{ENV['MAPS_KEY']}" %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': true %>
     <%= javascript_pack_tag 'application', 'data-turbo-track': true %>

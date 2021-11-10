@@ -51,7 +51,7 @@
     </div><!-- form-group -->
   <% end %>
 
-  <%= f.submit "Sign up", class: "w-100 btn btn-lg btn-info text-light" %>
+  <%= f.submit "Sign up", data: { turbo: false }, class: "w-100 btn btn-lg btn-info text-light" %>
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>

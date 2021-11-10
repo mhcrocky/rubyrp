@@ -1,7 +1,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" } ) do |f| %>
 
   <div class="text-center mb-4">
-    <%= link_to root_path do %>
+    <%= link_to root_path, data: { turbo: false } do %>
       <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
     <% end %>
     <h1 class="h3 mb-3 fw-normal">Sign in</h1>
@@ -35,7 +35,7 @@
     </div><!-- form-floating -->
   <% end %>
 
-  <%= f.submit "Sign in", class: "w-100 btn btn-lg btn-info text-light" %>
+  <%= f.submit "Sign in", data: { turbo: false }, class: "w-100 btn btn-lg btn-info text-light" %>
 
   <p class="mt-5 mb-3 text-muted text-center">
     <%= render "devise/shared/links" %>
@@ -45,7 +45,7 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("turbo:load", ()=> {
     const member = document.querySelector('.member');
     const superadmin = document.querySelector('.superadmin');
 

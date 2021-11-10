@@ -37,7 +37,7 @@ import "@hotwired/turbo-rails"
 import 'bootstrap/dist/css/bootstrap'
 
 window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbo:load", ()=> {
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
