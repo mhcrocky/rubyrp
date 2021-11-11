@@ -1,17 +1,34 @@
-# Rename this file application.yml (figaro) .. Already ignored in .gitignore
-# Personalize your configuration values here + your production dashboard (eg Heroku)
+# Rename this file application.yml (figaro gem) .. Already ignored in .gitignore
+# Personalize your configuration values + your production dashboard (eg Heroku)
+
+## Google Resources
+#
+# https://cloud.google.com/identity/docs/verify-domain-web
+# https://www.google.com/webmasters/verification/details?hl=en&siteUrl=<YOUR_SITE_URL>
+#
+# https://www.google.com/webmasters/verification/home?hl=en
+#
+# https://console.cloud.google.com/apis/credentials/key/<YOUR_KEY>?project=api-project-<YOUR_PROJECT_KEY>
+# https://console.cloud.google.com/home/dashboard?project=api-project-<YOUR_PROJECT_KEY>
+
+MAP_KEY: LONG_STRING
+
+GEOCODER_API: LONG_STRING
+GEOCODER_API: LONG_STRING
+
+GMAIL_USERNAME: your_name@example.com
+GMAIL_PASSWORD: your_password
+
+## Twilio Resources
+#
+# https://elements.heroku.com/buttons/hashobject/twilio-stun-turn
+# https://www.twilio.com/docs/video
+
+TWILIO_ACCOUNT_SID: LONG_STRING
+TWILIO_AUTH_TOKEN:  LONG_STRING
 
 
-MAP_KEY: T1000_g_mUw-tBD5tcXwG81Ps4Isxl79WZHcDh9OhPB
-
-GMAIL_USERNAME: rrb@example.com
-GMAIL_PASSWORD: eadfngyjkoveasplm
-
-TWILIO_ACCOUNT_SID: CRc75df1159399rrbbf3b6666b2f5c59yy
-TWILIO_AUTH_TOKEN: 99cub7795f7b1bf1337ee2k535317797
-
-
-## Heroku Config Variables
+## Heroku Config Variables (5 above included below)
 
 # DATABASE_URL
 
