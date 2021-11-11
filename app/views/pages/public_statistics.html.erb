@@ -1,0 +1,26 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Public Statistics</h1>
+    <p class="lead text-start text-muted">This is an example Ruby on Rails application. Join us and become part of the greatest one ever 🖖🏼</p>
+  </div><!-- .container -->
+</section><!-- .jumbotron -->
+
+<section class="mt-3 pt-3 mb-5 pb-5">
+  <h4 class="jumbotron-heading pb-0 mb-0">Our Community</h4>
+  <div class="row pb-5">
+    <%= render partial: 'pages/map' %>
+    <div class="col-12 mt-1 pt-0">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Free"></div>
+        <div class="progress-bar progress-bar-striped bg-shnozberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.without_role(:visitor).count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Members"></div>
+      </div><!-- .progress -->
+    </div><!-- .col-12 -->
+    <div class="col-12 mt-2 pt-2">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Article.count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Articles"></div>
+        <div class="progress-bar progress-bar-striped bg-brownie progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= TodoItem.count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ToDo Items"></div>
+        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Room.count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat Rooms"></div>
+      </div><!-- .progress -->
+    </div><!-- .col-12 -->
+  </div><!-- .row .pb-5 -->
+</section><!-- .mt-3 .pt-3 .mb-5 .pb-5 -->

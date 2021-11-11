@@ -1,4 +1,4 @@
-/* Key Features + Community sections of welcome page
+/* Dashboard + Welcome pages
 ----------------------------------------------------------------------------- */
 
 .progress {opacity: 0.7;}
@@ -20,6 +20,7 @@
 .in-app {
   display: block;
   height: 545px;
+  margin-bottom: 75px;
   .list-group-item {
     z-index: 2;
     color: #6c757d;
@@ -33,11 +34,11 @@
   }
   .list-group-item:hover, .list-group-item.active {
     color: #6c757d;
-    i.bi-bar-chart-fill  { color: #ffc107; }
-    i.bi-chat-fill       { color: rgba(230,67,140,1); }
-    i.bi-terminal-fill   { color: rgba(61,12,2,1); }
-    i.bi-unlock-fill     { color: #17a2b8; }
-    i.bi-cloud-moon-fill { color: rgba(251,79,20,1); }
+    i.bi-bar-chart-fill    { color: #ffc107; }
+    i.bi-fingerprint       { color: #17a2b8; }
+    i.bi-cpu-fill          { color: rgba(61,12,2,1); }
+    i.bi-grid-3x3-gap-fill { color: rgba(251,79,20,1); }
+    i.bi-chat-fill         { color: rgba(230,67,140,1); }
   }
   @media (max-width: 992px) {
     display: none;

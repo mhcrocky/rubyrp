@@ -3,9 +3,6 @@ class PagesController < ApplicationController
   include Trackable
 
   def welcome
-    @visits = Ahoy::Visit.where.not(longitude: nil)
-                         .uniq{|v| v.longitude }
-
     ahoy.track "Viewed Welcome"
   end
 
@@ -49,6 +46,17 @@ class PagesController < ApplicationController
 
   def sitemap
     ahoy.track "Viewed Sitemap"
+  end
+
+  def public_statistics
+    @visits = Ahoy::Visit.where.not(longitude: nil)
+                         .uniq{|v| v.longitude }
+
+    ahoy.track "Viewed Public Statistics"
+  end
+
+  def cheat_sheet
+    ahoy.track "Viewed Cheat Sheet"
   end
 
   private

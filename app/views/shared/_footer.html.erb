@@ -1,101 +1,72 @@
-<nav class="footer-navbar navbar navbar-dark bg-dark text-white pt-4 pb-1">
-  <footer class="container">
-    <!-- Left -->
-    <div>
-      <p class="small">&copy; 2020 &#8211; <%= Time.current.year %>. All Rights Reserved. </p>
-      <p class="small">Rails React Bootstrap</p>
-    </div>
-    <!-- Right -->
-    <div class="mb-3">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-lg btn-secondary" data-bs-toggle="modal" data-bs-target="#footerModal"><i class="bi bi-list"></i></button>
-      <!-- Modal -->
-      <div class="modal fade" id="footerModal" tabindex="-1" role="dialog" aria-labelledby="footerModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="footerModalLabel">
-                <%= link_to root_path, class: 'navbar-brand' do %>
-                  <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
-                <% end %>
-              </h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div><!-- .modal-header -->
-            <div class="modal-body">
-              <div class="my-3 p-3 bg-white">
-                <h5 class="border-bottom border-gray pb-1 mb-0">Legal</h5>
-                <div class="text-muted pt-3">
-                  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block">
-                      <%= link_to pages_terms_and_conditions_path do %>
-                        <i class="bi bi-book-fill me-1"></i>
-                        Terms and Conditions
-                      <% end %>
-                    </strong>
-                  </p>
-                </div>
-                <div class="text-muted pt-3">
-                  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block">
-                      <%= link_to pages_privacy_policy_path do %>
-                        <i class="bi bi-book-fill me-1"></i>
-                        Privacy Policy
-                      <% end %>
-                    </strong>
-                  </p>
-                </div>
-                <div class="text-muted pt-3">
-                  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block">
-                      <%= link_to pages_cookie_policy_path do %>
-                        <i class="bi bi-book-fill me-1"></i>
-                        Cookie Policy
-                      <% end %>
-                    </strong>
-                  </p>
-                </div>
-                <% if user_signed_in? %>
-                  <div class="text-muted pt-3">
-                    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                      <strong class="d-block">
-                        <%= link_to pages_sitemap_path do %>
-                          <i class="bi bi-book-fill me-1"></i>
-                          Sitemap
-                        <% end %>
-                      </strong>
-                    </p>
-                  </div>
-                <% end %>
-                <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Social</h5>
-                <div class="text-muted pt-3">
-                  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block">
-                      <a href="mailto:railsreactbootstrap@gmail.com" title="Email"><i class="bi bi-envelope-fill me-1"></i> Email</a>
-                    </strong>
-                  </p>
-                </div>
-                <div class="text-muted pt-3">
-                  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block">
-                      <a href="https://github.com/TonyMaseda/rails-react-bootstrap" target= "_blank" title="Github"><i class="bi bi-github me-1"></i> Github</a>
-                    </strong>
-                  </p>
-                </div>
-                <div class="text-muted pt-3">
-                  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block">
-                      <a href="https://www.youtube.com/channel/UCTF8-ine9K2DPLfFV9UCzTQ" target= "_blank" title="Youtube"><i class="bi bi-youtube me-1"></i> Youtube</a>
-                    </strong>
-                  </p>
-                </div>
-              </div><!-- .my-3 p-3 bg-white rounded shadow-sm -->
-            </div><!-- .modal-body -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
-            </div><!-- .modal-footer -->
-          </div><!-- .modal-content -->
-        </div><!-- .modal-dialog -->
-      </div><!-- .modal -->
-    </div><!-- .mb-3 -->
-  </footer><!-- .container -->
-</nav><!-- .footer-navbar -->
+<div class="bg-dark text-light">
+  <footer class="container px-5 py-5">
+    <div class="row">
+      <div class="col-6 col-md">
+        <h5>
+          <i class="bi bi-journals me-1"></i>
+          Legal
+        </h5>
+        <ul class="list-unstyled text-small">
+          <li class="my-1">
+            <%= link_to 'Terms and Conditions', pages_terms_and_conditions_path, class: 'link-secondary' %>
+          </li>
+          <li class="my-1">
+            <%= link_to 'Privacy Policy', pages_privacy_policy_path, class: 'link-secondary' %>
+          </li>
+          <li class="my-1">
+            <%= link_to 'Cookie Policy', pages_cookie_policy_path, class: 'link-secondary' %>
+          </li>
+        </ul><!-- .list-unstyled .text-small -->
+      </div><!-- .col-6 .col-md -->
+      <div class="col-6 col-md">
+        <h5>
+          <i class="bi bi-emoji-wink me-1"></i>
+          Social
+        </h5>
+        <ul class="list-unstyled text-small">
+          <li class="my-1">
+            <a href="https://github.com/TonyMaseda/" target= "_blank" class="link-secondary" title="Github">Github</a>
+          </li>
+          <li class="my-1">
+            <a href="https://www.youtube.com/channel/UCTF8-ine9K2DPLfFV9UCzTQ" target= "_blank" class="link-secondary" title="Youtube">Youtube</a>
+          </li>
+          <li class="my-1">
+            <a href="mailto:<%= ENV["GMAIL_USERNAME"] %>?subject=RRB Contact" class="link-secondary" title="Email">Email</a>
+          </li>
+        </ul><!-- .list-unstyled .text-small -->
+      </div><!-- .col-6 .col-md -->
+      <div class="col-6 col-md">
+        <h5>
+          <i class="bi bi-layers me-1"></i>
+          About
+        </h5>
+        <ul class="list-unstyled text-small">
+          <li class="my-1">
+            <%= link_to 'Public Statistics', pages_public_statistics_path, data: { turbo: false }, class: 'link-secondary' %>
+          </li>
+          <li class="my-1">
+            <%= link_to 'Site Map', pages_sitemap_path, class: 'link-secondary' %>
+          </li>
+        </ul><!-- .list-unstyled .text-small -->
+      </div><!-- .col-6 .col-md -->
+      <div class="col-6 col-md">
+        <h5>
+          <i class="bi bi-tsunami me-1"></i>
+          Misc
+        </h5>
+        <ul class="list-unstyled text-small">
+          <li class="my-1">
+            <%= link_to 'Cheat Sheet', pages_cheat_sheet_path, class: 'link-secondary' %>
+          </li>
+        </ul><!-- .list-unstyled .text-small -->
+      </div><!-- .col-6 .col-md -->
+      <div class="col-12 col-md mt-5 text-end">
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
+        <% end %>
+        <small class="d-block mt-3">&copy; 2020 &#8211; <%= Time.current.year %></small>
+        <small class="d-block mt-2">All Rights Reserved</small>
+      </div><!-- .col-12 .col-md -->
+    </div><!-- .row -->
+  </footer><!-- .container .px-5 .py-5 -->
+</div><!-- .bg-dark .text-light -->

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'pages/privacy_policy'
   get 'pages/cookie_policy'
   get 'pages/sitemap'
+  get 'pages/public_statistics'
+  get 'pages/cheat_sheet'
 
   get 'sitemap.xml', to: 'sitemap#index', defaults: { format: 'xml' }
 

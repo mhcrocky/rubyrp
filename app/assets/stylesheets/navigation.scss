@@ -122,36 +122,7 @@ img.header-logo {
 /* Footer
 ----------------------------------------------------------------------------- */
 
-.footer-navbar {
-  margin-top: 100px;
-  a {
-    color: rgba(255,255,255,0.5);
-  }
-  a:hover {
-    color: rgba(255,255,255,1);
-    text-decoration: none;
-  }
-  .modal.fade .modal-dialog {
-    transition: transform 0.1s ease-out !important;
-  }
-  .modal {
-    color: #212529;
-    a, span {
-      margin-left: 12px;
-      color: rgba(21,127,251,0.8);
-      font-size: 18px;
-    }
-    a:hover, span:hover {
-      color: rgba(21,127,251,1);
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .modal-title img {
-      width: 36px;
-      height: auto;
-    }
-    svg {
-      margin-right: 10px;
-    }
-  }
+img.footer-logo {
+  width: 36px;
+  height: auto;
 }

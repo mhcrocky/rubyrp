@@ -2,7 +2,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="text-center mb-4">
-    <%= link_to root_path do %>
+    <%= link_to root_path, data: { turbo: false } do %>
       <%= image_tag 'logo.png', alt: 'Logo', class: 'logo' %>
     <% end %>
     <h1 class="h3 mb-3 fw-normal">Sign up</h1>
