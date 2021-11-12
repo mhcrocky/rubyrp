@@ -1,17 +1,21 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Cheat Sheet</h1>
-    <p class="lead text-start text-muted">Sign in and see how to test creating, updating, and destroying models in the JavaScript console. Included are API links 🖖🏼</p>
+    <p class="lead text-start text-muted">
+      Create, Read, Update, and Destroy models in the JavaScript console. Included are API links.
+      <% if !user_signed_in? %>
+        <%= link_to('Sign in', new_user_session_path, data: { turbo: false }) %> to view &amp; use the code.
+      <% end %>
+    </p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
 <% if user_signed_in? %>
 
-  <h4 class="jumbotron-heading">
-    ToDo Items <small>(JS Console + API Links)</small>
-  </h4>
-
   <section class="mb-5 pb-5">
+    <h4 class="jumbotron-heading">
+      ToDo Items <small>(JS Console + API Links)</small>
+    </h4>
     <div class="accordion accordion-flush card" id="accordionFlushToDo">
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-todoOne">
@@ -35,12 +39,12 @@
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-todoTwo" data-bs-parent="#accordionFlushToDo">
           <div class="accordion-body">
-            <small class="text-start text-muted ms-2">
-              You'll need to replace <code>api/v1/todo_items/41</code> with your most recent ToDo Item (created above),
-              unless all you've done prior is seed the database.
+            <small class="text-start text-muted">
+              <i class="bi bi-info-circle text-muted me-1"></i>
+              Your last ToDo Item <code>id</code> will be populated below:
             </small>
             <div class="trix-content">
-              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/41', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; &nbsp; 'accept-language': 'en-US,en;q=0.9',<br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; 'content-type': 'application/json;charset=UTF-8',<br>&nbsp; &nbsp; pragma: 'no-cache',<br>&nbsp; &nbsp; 'sec-fetch-dest': 'empty',<br>&nbsp; &nbsp; 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin',<br>&nbsp; &nbsp; 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body:<br>&nbsp; &nbsp; '{"todo_item":{"title":"An UPDATED todo item","complete":false}}',<br>&nbsp; method: 'PUT',<br>&nbsp; mode: 'cors',<br>})</pre>
+              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/<%= @todo_item.id %>', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; &nbsp; 'accept-language': 'en-US,en;q=0.9',<br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; 'content-type': 'application/json;charset=UTF-8',<br>&nbsp; &nbsp; pragma: 'no-cache',<br>&nbsp; &nbsp; 'sec-fetch-dest': 'empty',<br>&nbsp; &nbsp; 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin',<br>&nbsp; &nbsp; 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body:<br>&nbsp; &nbsp; '{"todo_item":{"title":"An UPDATED todo item","complete":false}}',<br>&nbsp; method: 'PUT',<br>&nbsp; mode: 'cors',<br>})</pre>
             </div><!-- .trix-content -->
           </div><!-- .accordion-body -->
         </div><!-- #flush-collapseTwo -->
@@ -53,12 +57,12 @@
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-todoThree" data-bs-parent="#accordionFlushToDo">
           <div class="accordion-body">
-            <small class="text-start text-muted ms-2">
-              You'll need to replace <code>api/v1/todo_items/41</code> with your most recent ToDo Item (created/updated above),
-              unless all you've done prior is seed the database.
+            <small class="text-start text-muted">
+              <i class="bi bi-info-circle text-muted me-1"></i>
+              Your last ToDo Item <code>id</code> will be populated below:
             </small>
             <div class="trix-content">
-              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/41', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; 'accept-language': 'en-US,en;q=0.9', <br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; pragma: 'no-cache', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin', 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body: null,<br>&nbsp; method: 'Delete',<br>&nbsp; mode: 'cors',<br>})</pre>
+              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/<%= @todo_item.id %>', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; 'accept-language': 'en-US,en;q=0.9', <br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; pragma: 'no-cache', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin', 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body: null,<br>&nbsp; method: 'Delete',<br>&nbsp; mode: 'cors',<br>})</pre>
             </div><!-- .trix-content -->
           </div><!-- .accordion-body -->
         </div><!-- #flush-collapseThree -->
@@ -71,18 +75,16 @@
         </h2>
         <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-todoFour" data-bs-parent="#accordionFlushToDo">
           <div class="accordion-body">
-            <ol>
-              <li>
-                <a href="http://localhost:3000/api/v1/todo_items" target="_blank">
-                  http://localhost:3000/api/v1/todo_items
-                </a>
-              </li>
-              <li>
-                <a href="http://localhost:3000/api/v1/todo_items/41" target="_blank">
-                  http://localhost:3000/api/v1/todo_items/41
-                </a>
-              </li>
-            </ol>
+            <p>Index:
+              <a href="/api/v1/todo_items" target="_blank">
+                /api/v1/todo_items
+              </a>
+            </p>
+            <p> Show:
+              <a href="/api/v1/todo_items/<%= @todo_item.id %>" target="_blank">
+                /api/v1/todo_items/<%= @todo_item.id %>
+              </a>
+            </p>
           </div><!-- .accordion-body -->
         </div><!-- #flush-collapseFour -->
       </div><!-- .accordion-item -->
@@ -93,97 +95,98 @@
 
 <% else # user_signed_in? %>
 
-  <section class="mb-5 pb-5">
+  <section class="text-center mb-5 pb-5">
+    <p class="text-muted">Meanwhile, here are some emoji's 🤷</p>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       <div class="col">
-        <div class="p-3 border text-center">😂</div>
+        <div class="p-3 border">😂</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">❤️</div>
+        <div class="p-3 border">❤️</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😍</div>
+        <div class="p-3 border">😍</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😒</div>
+        <div class="p-3 border">😒</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">👌</div>
+        <div class="p-3 border">👌</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">☺️</div>
+        <div class="p-3 border">☺️</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😊</div>
+        <div class="p-3 border">😊</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😘</div>
+        <div class="p-3 border">😘</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😭</div>
+        <div class="p-3 border">😭</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😩</div>
+        <div class="p-3 border">😩</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">💕</div>
+        <div class="p-3 border">💕</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😔</div>
+        <div class="p-3 border">😔</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😔</div>
+        <div class="p-3 border">😔</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😁</div>
+        <div class="p-3 border">😁</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😳</div>
+        <div class="p-3 border">😳</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">👍</div>
+        <div class="p-3 border">👍</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">✌️</div>
+        <div class="p-3 border">✌️</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😉</div>
+        <div class="p-3 border">😉</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😌</div>
+        <div class="p-3 border">😌</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">💁</div>
+        <div class="p-3 border">💁</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">🙈</div>
+        <div class="p-3 border">🙈</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😎</div>
+        <div class="p-3 border">😎</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">🎶</div>
+        <div class="p-3 border">🎶</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">👀</div>
+        <div class="p-3 border">👀</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😑</div>
+        <div class="p-3 border">😑</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😴</div>
+        <div class="p-3 border">😴</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😄</div>
+        <div class="p-3 border">😄</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😜</div>
+        <div class="p-3 border">😜</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">😋</div>
+        <div class="p-3 border">😋</div>
       </div>
       <div class="col">
-        <div class="p-3 border text-center">👏</div>
+        <div class="p-3 border">👏</div>
       </div>
     </div><!-- .row -->
   </section><!-- .mb-5 .pb-5 -->
