@@ -1,32 +1,191 @@
 <section class="jumbotron text-center">
   <div class="container">
     <h1 class="jumbotron-heading">Cheat Sheet</h1>
-    <p class="lead text-start text-muted">This is an example Ruby on Rails application. Join us and become part of the greatest one ever 🖖🏼</p>
+    <p class="lead text-start text-muted">Sign in and see how to test creating, updating, and destroying models in the JavaScript console. Included are API links 🖖🏼</p>
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<h5 class="border-bottom border-gray pb-1 mb-0">FooBar</h5>
-<div class="text-muted pt-3">
-  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-    <strong class="d-block">
-      <%= link_to root_path do %>
-        Foo
-      <% end %>
-    </strong>
-  </p>
-</div>
-<div class="text-muted pt-3">
-  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-    <strong class="d-block">
-      Bar
-    </strong>
-  </p>
-</div>
-
-<!--
-TODO: style code blocks (<pre>) from actiontext
-      and use markup for examples on this page 
--->
-
 <% if user_signed_in? %>
+
+  <h4 class="jumbotron-heading">
+    ToDo Items <small>(JS Console + API Links)</small>
+  </h4>
+
+  <section class="mb-5 pb-5">
+    <div class="accordion accordion-flush card" id="accordionFlushToDo">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-todoOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Create
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-todoOne" data-bs-parent="#accordionFlushToDo">
+          <div class="accordion-body">
+            <div class="trix-content">
+              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; &nbsp; 'accept-language': 'en-US,en;q=0.9',<br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; 'content-type': 'application/json;charset=UTF-8',<br>&nbsp; &nbsp; pragma: 'no-cache',<br>&nbsp; &nbsp; 'sec-fetch-dest': 'empty',<br>&nbsp; &nbsp; 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin',<br>&nbsp; &nbsp; 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body: '{"todo_item":{"title":"A new todo item","complete":false}}',<br>&nbsp; method: 'POST',<br>&nbsp; mode: 'cors',<br>})</pre>
+            </div><!-- .trix-content -->
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseOne -->
+      </div><!-- .accordion-item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-todoTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Update
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-todoTwo" data-bs-parent="#accordionFlushToDo">
+          <div class="accordion-body">
+            <small class="text-start text-muted ms-2">
+              You'll need to replace <code>api/v1/todo_items/41</code> with your most recent ToDo Item (created above),
+              unless all you've done prior is seed the database.
+            </small>
+            <div class="trix-content">
+              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/41', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; &nbsp; 'accept-language': 'en-US,en;q=0.9',<br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; 'content-type': 'application/json;charset=UTF-8',<br>&nbsp; &nbsp; pragma: 'no-cache',<br>&nbsp; &nbsp; 'sec-fetch-dest': 'empty',<br>&nbsp; &nbsp; 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin',<br>&nbsp; &nbsp; 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body:<br>&nbsp; &nbsp; '{"todo_item":{"title":"An UPDATED todo item","complete":false}}',<br>&nbsp; method: 'PUT',<br>&nbsp; mode: 'cors',<br>})</pre>
+            </div><!-- .trix-content -->
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseTwo -->
+      </div><!-- .accordion-item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-todoThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Destroy
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-todoThree" data-bs-parent="#accordionFlushToDo">
+          <div class="accordion-body">
+            <small class="text-start text-muted ms-2">
+              You'll need to replace <code>api/v1/todo_items/41</code> with your most recent ToDo Item (created/updated above),
+              unless all you've done prior is seed the database.
+            </small>
+            <div class="trix-content">
+              <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/41', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; 'accept-language': 'en-US,en;q=0.9', <br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; pragma: 'no-cache', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin', 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body: null,<br>&nbsp; method: 'Delete',<br>&nbsp; mode: 'cors',<br>})</pre>
+            </div><!-- .trix-content -->
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseThree -->
+      </div><!-- .accordion-item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-todoFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            API Links
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-todoFour" data-bs-parent="#accordionFlushToDo">
+          <div class="accordion-body">
+            <ol>
+              <li>
+                <a href="http://localhost:3000/api/v1/todo_items" target="_blank">
+                  http://localhost:3000/api/v1/todo_items
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:3000/api/v1/todo_items/41" target="_blank">
+                  http://localhost:3000/api/v1/todo_items/41
+                </a>
+              </li>
+            </ol>
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseFour -->
+      </div><!-- .accordion-item -->
+    </div><!-- #accordionFlushToDo -->
+  </section><!-- .mb-5 .pb-5 -->
+
+  <div class="divider"></div>
+
+<% else # user_signed_in? %>
+
+  <section class="mb-5 pb-5">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="col">
+        <div class="p-3 border text-center">😂</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">❤️</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😍</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😒</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">👌</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">☺️</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😊</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😘</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😭</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😩</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">💕</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😔</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😔</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😁</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😳</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">👍</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">✌️</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😉</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😌</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">💁</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">🙈</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😎</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">🎶</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">👀</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😑</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😴</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😄</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😜</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">😋</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border text-center">👏</div>
+      </div>
+    </div><!-- .row -->
+  </section><!-- .mb-5 .pb-5 -->
+
 <% end # user_signed_in? %>
