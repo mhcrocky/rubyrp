@@ -58,7 +58,11 @@ class PagesController < ApplicationController
   def cheat_sheet
     if user_signed_in?
       @todo_item = current_user.todo_items.last
-    end    
+    end
+
+    @article = Article.last
+
+    @room = Room.last
 
     ahoy.track "Viewed Cheat Sheet"
   end

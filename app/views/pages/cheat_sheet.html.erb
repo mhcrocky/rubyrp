@@ -12,7 +12,7 @@
 
 <% if user_signed_in? %>
 
-  <section class="mb-5 pb-5">
+  <section class="mb-5 pb-1">
     <h4 class="jumbotron-heading">
       ToDo Items <small>(JS Console + API Links)</small>
     </h4>
@@ -41,7 +41,7 @@
           <div class="accordion-body">
             <small class="text-start text-muted">
               <i class="bi bi-info-circle text-muted me-1"></i>
-              Your last ToDo Item <code>id</code> will be populated below:
+              Your last ToDo Item <code>id</code>
             </small>
             <div class="trix-content">
               <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/<%= @todo_item.id %>', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; &nbsp; 'accept-language': 'en-US,en;q=0.9',<br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; 'content-type': 'application/json;charset=UTF-8',<br>&nbsp; &nbsp; pragma: 'no-cache',<br>&nbsp; &nbsp; 'sec-fetch-dest': 'empty',<br>&nbsp; &nbsp; 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin',<br>&nbsp; &nbsp; 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body:<br>&nbsp; &nbsp; '{"todo_item":{"title":"An UPDATED todo item","complete":false}}',<br>&nbsp; method: 'PUT',<br>&nbsp; mode: 'cors',<br>})</pre>
@@ -59,7 +59,7 @@
           <div class="accordion-body">
             <small class="text-start text-muted">
               <i class="bi bi-info-circle text-muted me-1"></i>
-              Your last ToDo Item <code>id</code> will be populated below:
+              Your last ToDo Item <code>id</code>
             </small>
             <div class="trix-content">
               <pre>var csrfToken = document.querySelector('[name=csrf-token]')<br>fetch('http://localhost:3000/api/v1/todo_items/<%= @todo_item.id %>', {<br>&nbsp; credentials: 'include',<br>&nbsp; headers: {<br>&nbsp; &nbsp; accept: 'application/json, text/plain, */*',<br>&nbsp; 'accept-language': 'en-US,en;q=0.9', <br>&nbsp; &nbsp; 'cache-control': 'no-cache',<br>&nbsp; &nbsp; pragma: 'no-cache', 'sec-fetch-dest': 'empty', 'sec-fetch-mode': 'cors',<br>&nbsp; &nbsp; 'sec-fetch-site': 'same-origin', 'x-csrf-token': csrfToken.content,<br>&nbsp; },<br>&nbsp; referrer: 'http://localhost:3000/',<br>&nbsp; referrerPolicy: 'strict-origin-when-cross-origin',<br>&nbsp; body: null,<br>&nbsp; method: 'Delete',<br>&nbsp; mode: 'cors',<br>})</pre>
@@ -80,18 +80,80 @@
                 /api/v1/todo_items
               </a>
             </p>
-            <p> Show:
-              <a href="/api/v1/todo_items/<%= @todo_item.id %>" target="_blank">
-                /api/v1/todo_items/<%= @todo_item.id %>
-              </a>
-            </p>
+            <% if @todo_item.present? %>
+              <p> Show:
+                <a href="/api/v1/todo_items/<%= @todo_item.id %>" target="_blank">
+                  /api/v1/todo_items/<%= @todo_item.id %>
+                </a>
+              </p>
+            <% end %>
           </div><!-- .accordion-body -->
         </div><!-- #flush-collapseFour -->
       </div><!-- .accordion-item -->
     </div><!-- #accordionFlushToDo -->
-  </section><!-- .mb-5 .pb-5 -->
+  </section><!-- .mb-5 .pb-1 -->
 
-  <div class="divider"></div>
+  <section class="mb-5 pb-1">
+    <h4 class="jumbotron-heading">
+      Articles <small>(API Links)</small>
+    </h4>
+    <div class="accordion accordion-flush card" id="accordionFlushArticle">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-articleFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            API Links
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-articleFive" data-bs-parent="#accordionFlushArticle">
+          <div class="accordion-body">
+            <p>Index:
+              <a href="/api/v1/articles" target="_blank">
+                /api/v1/articles
+              </a>
+            </p>
+            <% if @article.present? %>
+              <p> Show:
+                <a href="/api/v1/articles/<%= @article.id %>" target="_blank">
+                  /api/v1/articles/<%= @article.id %>
+                </a>
+              </p>
+            <% end %>
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseFive -->
+      </div><!-- .accordion-item -->
+    </div><!-- #accordionFlushArticle -->
+  </section><!-- .mb-5 .pb-1 -->
+
+  <section class="mb-5 pb-5">
+    <h4 class="jumbotron-heading">
+      Rooms <small>(API Links)</small>
+    </h4>
+    <div class="accordion accordion-flush card" id="accordionFlushRoom">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-roomSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            API Links
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-roomSix" data-bs-parent="#accordionFlushRoom">
+          <div class="accordion-body">
+            <p>Index:
+              <a href="/api/v1/rooms" target="_blank">
+                /api/v1/rooms
+              </a>
+            </p>
+            <% if @room.present? %>
+              <p> Show:
+                <a href="/api/v1/rooms/<%= @room.id %>" target="_blank">
+                  /api/v1/rooms/<%= @room.id %>
+                </a>
+              </p>
+            <% end %>
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseSix -->
+      </div><!-- .accordion-item -->
+    </div><!-- #accordionFlushRoom -->
+  </section><!-- .mb-5 .pb-5 -->
 
 <% else # user_signed_in? %>
 
@@ -102,9 +164,6 @@
         <div class="p-3 border">😂</div>
       </div>
       <div class="col">
-        <div class="p-3 border">❤️</div>
-      </div>
-      <div class="col">
         <div class="p-3 border">😍</div>
       </div>
       <div class="col">
@@ -112,9 +171,6 @@
       </div>
       <div class="col">
         <div class="p-3 border">👌</div>
-      </div>
-      <div class="col">
-        <div class="p-3 border">☺️</div>
       </div>
       <div class="col">
         <div class="p-3 border">😊</div>
@@ -127,9 +183,6 @@
       </div>
       <div class="col">
         <div class="p-3 border">😩</div>
-      </div>
-      <div class="col">
-        <div class="p-3 border">💕</div>
       </div>
       <div class="col">
         <div class="p-3 border">😔</div>
@@ -147,28 +200,13 @@
         <div class="p-3 border">👍</div>
       </div>
       <div class="col">
-        <div class="p-3 border">✌️</div>
-      </div>
-      <div class="col">
         <div class="p-3 border">😉</div>
       </div>
       <div class="col">
         <div class="p-3 border">😌</div>
       </div>
       <div class="col">
-        <div class="p-3 border">💁</div>
-      </div>
-      <div class="col">
-        <div class="p-3 border">🙈</div>
-      </div>
-      <div class="col">
         <div class="p-3 border">😎</div>
-      </div>
-      <div class="col">
-        <div class="p-3 border">🎶</div>
-      </div>
-      <div class="col">
-        <div class="p-3 border">👀</div>
       </div>
       <div class="col">
         <div class="p-3 border">😑</div>
@@ -187,6 +225,30 @@
       </div>
       <div class="col">
         <div class="p-3 border">👏</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">💁</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">🙈</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">❤️</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">☺️</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">💕</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">✌️</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">🎶</div>
+      </div>
+      <div class="col">
+        <div class="p-3 border">👀</div>
       </div>
     </div><!-- .row -->
   </section><!-- .mb-5 .pb-5 -->
