@@ -62,7 +62,7 @@ $ open coverage/index.html
 
 ## Initialization (Development)
 
-* Search and replace in project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP
+* Search and replace in project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP , RRB
 * Replace google analytics ID
 * config/example_application.yml -> config/application.yml (figaro and .gitignore already set)
 * If you don't want to verify email, comment out :confirmable in user model and edit db/seeds
@@ -82,7 +82,7 @@ $ rails db:seed
 
 ## Initialization (Heroku)
 
-* Search and replace in project: rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP
+* Search and replace in project: rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP , RRB
 * Replace google analytics ID
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Buildpacks: heroku/nodejs | heroku/ruby
