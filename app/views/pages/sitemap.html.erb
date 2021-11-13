@@ -5,210 +5,243 @@
   </div><!-- .container -->
 </section><!-- .jumbotron -->
 
-<h5 class="border-bottom border-gray pb-1 mb-0">Legal</h5>
-<div class="text-muted pt-3">
-  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-    <strong class="d-block">
-      <%= link_to pages_terms_and_conditions_path do %>
-        Terms and Conditions
-      <% end %>
-    </strong>
-  </p>
-</div>
-<div class="text-muted pt-3">
-  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-    <strong class="d-block">
-      <%= link_to pages_privacy_policy_path do %>
-        Privacy Policy
-      <% end %>
-    </strong>
-  </p>
-</div>
-<div class="text-muted pt-3">
-  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-    <strong class="d-block">
-      <%= link_to pages_cookie_policy_path do %>
-        Cookies Policy
-      <% end %>
-    </strong>
-  </p>
-</div>
+<section class="my-3">
+  <h4 class="jumbotron-heading mb-3">
+    Legal
+  </h4>
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+    <div class="col">
+      <div class="p-3">
+        <%= link_to pages_terms_and_conditions_path do %>
+          Terms and Conditions
+        <% end %>
+      </div>
+    </div><!-- .col -->
+    <div class="col">
+      <div class="p-3">
+        <%= link_to pages_privacy_policy_path do %>
+          Privacy Policy
+        <% end %>
+      </div>
+    </div><!-- .col -->
+    <div class="col">
+      <div class="p-3">
+        <%= link_to pages_cookie_policy_path do %>
+          Cookie Policy
+        <% end %>
+      </div>
+    </div><!-- .col -->
+  </div><!-- .row -->
+</section><!-- .my-3 -->
 
-<!--
-TODO: add new pages and moved sitemap to new section (like footer)
--->
-<div class="text-muted pt-3">
-  <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-    <strong class="d-block">
-      Sitemap
-    </strong>
-  </p>
-</div>
+<section class="my-3">
+  <h4 class="jumbotron-heading mb-3">
+    About
+  </h4>
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+    <div class="col">
+      <div class="p-3">
+        <%= link_to pages_public_statistics_path do %>
+          Public Statistics
+        <% end %>
+      </div>
+    </div><!-- .col -->
+    <div class="col">
+      <div class="p-3">
+        Sitemap
+      </div>
+    </div><!-- .col -->
+  </div><!-- .row -->
+</section><!-- .my-3 -->
+
+<section class="mt-3 mb-5">
+  <h4 class="jumbotron-heading mb-3">
+    Misc
+  </h4>
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+    <div class="col">
+      <div class="p-3">
+        <%= link_to pages_cheat_sheet_path do %>
+          Cheat Sheet
+        <% end %>
+      </div>
+    </div><!-- .col -->
+  </div><!-- .row -->
+</section><!-- .mt-3 .mb-5 -->
 
 <% if user_signed_in? %>
-  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Todo List</h5>
-  <div class="text-muted pt-3">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to todo_items_path do %>
-          Single Page Application
-        <% end %>
-      </strong>
-    </p>
-  </div>
-  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Blog</h5>
-  <div class="text-muted pt-3">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to articles_path do %>
-          Blog
-        <% end %>
-      </strong>
-    </p>
-  </div>
-  <div class="text-muted pt-3">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to new_article_path do %>
-          New Article
-        <% end %>
-      </strong>
-    </p>
-  </div>
-  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Video Chats</h5>
-  <div class="text-muted pt-3">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to rooms_path do %>
-          Chat Rooms
-        <% end %>
-      </strong>
-    </p>
-  </div>
-  <% if can? :manage, Room %>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to new_room_path do %>
-            New Room
+
+  <section class="my-3">
+    <h4 class="jumbotron-heading mb-3">
+      ToDo List
+    </h4>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+      <div class="col">
+        <div class="p-3">
+          <%= link_to todo_items_path do %>
+            Items
           <% end %>
-        </strong>
-      </p>
-    </div>
-  <% end %>
+        </div>
+      </div><!-- .col -->
+    </div><!-- .row -->
+  </section><!-- .my-3 -->
+
+  <section class="my-3">
+    <h4 class="jumbotron-heading mb-3">
+      Blog
+    </h4>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+      <div class="col">
+        <div class="p-3">
+          <%= link_to articles_path do %>
+            Gallery
+          <% end %>
+        </div>
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <%= link_to new_article_path do %>
+            New Article
+          <% end %>
+        </div>
+      </div><!-- .col -->
+    </div><!-- .row -->
+  </section><!-- .my-3 -->
+
+  <section class="my-3">
+    <h4 class="jumbotron-heading mb-3">
+      Video Chat
+    </h4>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+      <div class="col">
+        <div class="p-3">
+          <%= link_to rooms_path do %>
+            Chat Rooms
+          <% end %>
+        </div>
+      </div><!-- .col -->
+      <% if can? :manage, Room %>
+        <div class="col">
+          <div class="p-3">
+            <%= link_to new_room_path do %>
+              New Room
+            <% end %>
+          </div>
+        </div><!-- .col -->
+      <% end %>
+    </div><!-- .row -->
+  </section><!-- .my-3 -->
+
+  <section class="mt-3 mb-5">
+    <h4 class="jumbotron-heading mb-3">
+      Profile
+    </h4>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+      <div class="col">
+        <div class="p-3">
+          <%= link_to current_user do %>
+            View Profile
+          <% end %>
+        </div>
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <%= link_to edit_user_registration_path, data: { turbo: false } do %>
+            Edit Profile
+          <% end %>
+        </div>
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <%= link_to(destroy_user_session_path, method: :delete, data: { turbo: false }) do %>
+            Sign out
+          <% end %>
+        </div>
+      </div><!-- .col -->
+    </div><!-- .row -->
+  </section><!-- .mt-3 .mb-5 -->
+
   <% if current_user.has_role?(:superadmin) %>
-    <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Users</h5>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to visitors_path do %>
-            Free Users
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to members_path do %>
-            Members
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to new_admin_path do %>
-            Admins
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to new_superadmin_path do %>
-            Super Admins
-          <% end %>
-        </strong>
-      </p>
-    </div>
+    <section class="mt-3 mb-5">
+      <h4 class="jumbotron-heading mb-3">
+        Users
+      </h4>
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+        <div class="col">
+          <div class="p-3">
+            <%= link_to visitors_path do %>
+              Free Users
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to members_path do %>
+              Members
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to admins_path do %>
+              Admins
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to superadmins_path do %>
+              Super Admins
+            <% end %>
+          </div>
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </section><!-- .mt-3 .mb-5 -->
   <% end # if current_user.has_role?(:superadmin) %>
-  <h5 class="border-bottom border-gray pt-5 pb-1 mb-0">Profile</h5>
-  <div class="text-muted pt-3">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to current_user do %>
-          View Profile
-        <% end %>
-      </strong>
-    </p>
-  </div>
-  <div class="text-muted pt-3">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to edit_user_registration_path, data: { turbo: false } do %>
-          Edit Profile
-        <% end %>
-      </strong>
-    </p>
-  </div>
-  <div class="text-muted pt-3 pb-5 mb-5">
-    <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong class="d-block">
-        <%= link_to(destroy_user_session_path, method: :delete, data: { turbo: false }) do %>
-          Sign out
-        <% end %>
-      </strong>
-    </p>
-  </div>
+
   <% if current_user.has_role?(:sysadmin) %>
-    <h5 class="border-bottom border-gray pt-5 mb-0">Other</h5>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to '/robots.txt', target: :blank do %>
-            Robots (txt)
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to '/ads.txt', target: :blank do %>
-            Ads (txt)
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to '/sitemap.xml', target: :blank do %>
-            Sitemap (xml)
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to 'http://localhost:3000/rails/mailers/', target: :blank do %>
-            Mailers (development)
-          <% end %>
-        </strong>
-      </p>
-    </div>
-    <div class="text-muted pt-3 pb-5 mb-5">
-      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block">
-          <%= link_to pg_hero_path, target: :blank do %>
-            Database Analysis (PGHero)
-          <% end %>
-        </strong>
-      </p>
-    </div>
+    <section class="mt-3 mb-5">
+      <h4 class="jumbotron-heading mb-3">
+        System Admin
+      </h4>
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 text-center">
+        <div class="col">
+          <div class="p-3">
+            <%= link_to '/robots.txt', target: :blank do %>
+              Robots (txt)
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to '/ads.txt', target: :blank do %>
+              Ads (txt)
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to '/sitemap.xml', target: :blank do %>
+              Sitemap (xml)
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to 'http://localhost:3000/rails/mailers/', data: { turbo: false }, target: :blank do %>
+              Mailers (local)
+            <% end %>
+          </div>
+        </div><!-- .col -->
+        <div class="col">
+          <div class="p-3">
+            <%= link_to pg_hero_path, target: :blank do %>
+              Database Analysis (PGHero)
+            <% end %>
+          </div>
+        </div><!-- .col -->
+      </div><!-- .row -->
+    </section><!-- .mt-3 .mb-5 -->
   <% end # if current_user.has_role?(:sysadmin) %>
+
 <% end # user_signed_in? %>
