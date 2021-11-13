@@ -12,7 +12,7 @@
 
 <% if user_signed_in? %>
 
-  <section class="mb-5 pb-1">
+  <section class="mt-3 mb-5 pb-1">
     <h4 class="jumbotron-heading">
       ToDo Items <small>(JS Console + API Links)</small>
     </h4>
@@ -91,7 +91,7 @@
         </div><!-- #flush-collapseFour -->
       </div><!-- .accordion-item -->
     </div><!-- #accordionFlushToDo -->
-  </section><!-- .mb-5 .pb-1 -->
+  </section><!-- .mt-3 .mb-5 .pb-1 -->
 
   <section class="mb-5 pb-1">
     <h4 class="jumbotron-heading">
@@ -157,7 +157,7 @@
 
 <% else # user_signed_in? %>
 
-  <section class="text-center mb-5 pb-5">
+  <section class="text-center mt-3 mb-5 pb-5">
     <p class="text-muted">Meanwhile, here are some emoji's 🤷</p>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       <div class="col">
@@ -251,6 +251,6 @@
         <div class="p-3 border">👀</div>
       </div>
     </div><!-- .row -->
-  </section><!-- .mb-5 .pb-5 -->
+  </section><!-- .text-center .mt-3 .mb-5 .pb-5 -->
 
 <% end # user_signed_in? %>

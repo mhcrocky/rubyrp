@@ -34,11 +34,11 @@
   }
   .list-group-item:hover, .list-group-item.active {
     color: #6c757d;
-    i.bi-bar-chart-fill    { color: #ffc107; }
-    i.bi-fingerprint       { color: #17a2b8; }
-    i.bi-cpu-fill          { color: rgba(61,12,2,1); }
-    i.bi-grid-3x3-gap-fill { color: rgba(251,79,20,1); }
-    i.bi-chat-fill         { color: rgba(230,67,140,1); }
+    i.bi-graph-up-arrow { color: #0a58ca; }
+    i.bi-fingerprint    { color: #17a2b8; }
+    i.bi-cpu            { color: rgba(61,12,2,1); }
+    i.bi-layout-wtf     { color: rgba(251,79,20,1); }
+    i.bi-chat           { color: rgba(230,67,140,1); }
   }
   @media (max-width: 992px) {
     display: none;
