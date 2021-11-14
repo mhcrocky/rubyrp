@@ -25,6 +25,45 @@ trix-editor.form-control {
 }
 
 
+/* Buttons and Forms
+----------------------------------------------------------------------------- */
+
+.accordion-button:focus,
+.form-check-input:focus,
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(11, 11, 11, .1) !important;
+  box-shadow: 1px 2px 1px 1px rgba(11, 11, 11, .1) !important;
+}
+.btn:focus {
+  border-color: inherit !important;
+  box-shadow: none !important;
+}
+
+.filter .form-control {
+  border: 1px solid #212529 !important;
+  padding: 14px;
+}
+
+.filter-accordian {
+  border: 1px solid #adb5bd !important;
+}
+
+button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.theme-check, .form-check-inline {
+  -ms-transform: scale(1.5) !important;
+  -moz-transform: scale(1.5) !important;
+  -webkit-transform: scale(1.5) !important;
+  -o-transform: scale(1.5) !important;
+  transform: scale(1.5) !important;
+  margin-top: 5px !important;
+}
+
+
 /* form-floating
 ----------------------------------------------------------------------------- */
 
@@ -127,39 +166,8 @@ trix-editor.form-control {
 }
 
 
-/* Custom Styles
+/* Comments and Notes
 ----------------------------------------------------------------------------- */
-
-.accordion-button:focus,
-.form-check-input:focus,
-.form-control:focus,
-.form-select:focus {
-  border-color: rgba(11, 11, 11, .1) !important;
-  box-shadow: 1px 2px 1px 1px rgba(11, 11, 11, .1) !important;
-}
-
-.filter .form-control {
-  border: 1px solid #212529 !important;
-  padding: 14px;
-}
-
-.filter-accordian {
-  border: 1px solid #adb5bd !important;
-}
-
-button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
-  text-decoration: none;
-  color: #fff !important;
-}
-
-.theme-check, .form-check-inline {
-  -ms-transform: scale(1.5) !important;
-  -moz-transform: scale(1.5) !important;
-  -webkit-transform: scale(1.5) !important;
-  -o-transform: scale(1.5) !important;
-  transform: scale(1.5) !important;
-  margin-top: 5px !important;
-}
 
 #comments, #show_notes {
   max-height: 3600px;

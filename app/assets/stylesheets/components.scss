@@ -1,7 +1,11 @@
-/* Dashboard + Welcome pages
+/* progress-bar-animated
 ----------------------------------------------------------------------------- */
 
 .progress {opacity: 0.7;}
+
+
+/* world map and guages ( app/views/pages/_map_and_gauge.html.erb )
+----------------------------------------------------------------------------- */
 
 .gstatic {
   filter: hue-rotate(151deg);
@@ -16,6 +20,10 @@
     margin: auto !important;
   }
 }
+
+
+/* key features (app/views/pages/_features.html.erb)
+----------------------------------------------------------------------------- */
 
 .in-app {
   display: block;
