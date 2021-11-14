@@ -1,6 +1,14 @@
 /* Backgrounds
 ----------------------------------------------------------------------------- */
 
+// html, .bg-dark {
+//   background-color: #343a40 !important;
+//   /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+// }
+
+.bg-primary {
+  background-color: #0a58ca !important;
+}
 .bg-info {
   background-color: #17a2b8 !important;
 }
@@ -21,6 +29,9 @@
 /* Borders
 ----------------------------------------------------------------------------- */
 
+.border-primary {
+  border: 1px solid #0a58ca !important;
+}
 .border-info {
   border: 1px solid #17a2b8 !important;
 }
@@ -40,6 +51,20 @@
 
 /* Buttons
 ----------------------------------------------------------------------------- */
+
+.btn-outline-primary {
+  color: #0a58ca !important;
+  background-color: #fff !important;
+  background-image: none;
+  border-color: #0a58ca !important;
+}
+.btn-outline-primary:hover,
+.btn-primary {
+  color: #fff !important;
+  background-color: #0a58ca !important;
+  border-color: #0a58ca !important;
+}
+.btn-primary:hover {background-color: #0a58ca !important;}
 
 .btn-outline-info {
   color: #17a2b8 !important;
@@ -115,6 +140,9 @@
 /* Text
 ----------------------------------------------------------------------------- */
 
+.text-primary, a.text-primary {
+  color: #0a58ca !important;
+}
 .text-info, a.text-info {
   color: #17a2b8 !important;
 }
