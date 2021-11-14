@@ -1,17 +1,32 @@
 <% flash.each do |key, value| %>
   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast show fw-bold <%= key == 'notice' ? 'toast-success' : 'toast-danger' %>" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <%= link_to root_path, class: 'navbar-brand' do %>
           <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
         <% end %>
         <strong class="me-auto"></strong>
-        <small><%= "#{ActionController::Base.helpers.distance_of_time_in_words Time.now, Time.now} ago" %></small>
+        <small>
+          <% if signed_in? %>
+            <%= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %>
+          <% else %>
+            <%#= "#{ActionController::Base.helpers.distance_of_time_in_words Time.now, Time.now} ago" %>
+            <%= key.capitalize %>
+          <% end %>
+        </small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
+      </div><!-- .toast-header -->
       <div class="toast-body <%= key == 'notice' ? 'text-success' : 'text-danger' %>">
         <%= value %>
-      </div>
+      </div><!-- .toast-body -->
+    </div><!-- .toast .show -->
+  </div><!-- .position-fixed -->
+
+  <!-- Alert flash at top of page -->
+  <!-- <div class="container">
+    <div class="d-flex justify-content-between alert <%#= key == 'notice' ? 'alert-primary' : 'alert-danger' %>" role="alert">
+      <%#= value %>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-  </div>
+  </div> -->
 <% end %>

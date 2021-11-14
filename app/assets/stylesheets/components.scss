@@ -1,3 +1,17 @@
+/* flashes ( app/views/shared/_flash.html.erb )
+----------------------------------------------------------------------------- */
+
+// text-danger bg
+.toast-danger {
+  background-color: rgba(255,241,255,1) !important;
+}
+
+// text-success bg
+.toast-success {
+  background-color: rgba(241,255,255,1) !important;
+}
+
+
 /* progress-bar-animated
 ----------------------------------------------------------------------------- */
 
