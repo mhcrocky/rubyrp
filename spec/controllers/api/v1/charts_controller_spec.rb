@@ -264,5 +264,17 @@ describe Api::V1::ChartsController do
       expect(response.status).to eq(200)
     end
   end
+  describe "GET #month_of_year_viewed-cheat-sheet" do
+    it "renders the json" do
+      get :month_of_year_viewed_cheat_sheet
+      expect(response.status).to eq(200)
+    end
+  end
+  describe "GET #month_of_year_viewed-public-statistics" do
+    it "renders the json" do
+      get :month_of_year_viewed_public_statistics
+      expect(response.status).to eq(200)
+    end
+  end
 
 end

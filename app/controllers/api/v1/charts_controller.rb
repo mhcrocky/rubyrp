@@ -153,5 +153,11 @@ class Api::V1::ChartsController < ApplicationController
   def month_of_year_viewed_sitemap
     render json: Ahoy::Event.month_of_year_viewed_sitemap
   end
+  def month_of_year_viewed_cheat_sheet
+    render json: Ahoy::Event.month_of_year_viewed_cheat_sheet
+  end
+  def month_of_year_viewed_public_statistics
+    render json: Ahoy::Event.month_of_year_viewed_public_statistics
+  end
 
 end

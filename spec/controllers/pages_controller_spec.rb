@@ -148,6 +148,78 @@ describe PagesController do
     end
   end
 
+  describe "GET #terms_and_conditions" do
+    it "renders the :terms_and_conditions view without authentication" do
+      get :terms_and_conditions
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #terms_and_conditions" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
+      @user = FactoryBot.create(:sysadmin)
+      @user.roles << Role.where(name: 'sysadmin').first_or_create
+      sign_in @user
+    end
+    it "renders the :terms_and_conditions view for a sysadmin" do
+      get :terms_and_conditions
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #terms_and_conditions" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:superadmin]
+      @user = FactoryBot.create(:superadmin)
+      @user.roles << Role.where(name: 'superadmin').first_or_create
+      sign_in @user
+    end
+    it "renders the :terms_and_conditions view for a superadmin" do
+      get :terms_and_conditions
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #terms_and_conditions" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:admin]
+      @user = FactoryBot.create(:admin)
+      @user.roles << Role.where(name: 'admin').first_or_create
+      sign_in @user
+    end
+    it "renders the :terms_and_conditions view for an admin" do
+      get :terms_and_conditions
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #terms_and_conditions" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:member]
+      @user = FactoryBot.create(:member)
+      @user.roles << Role.where(name: 'member').first_or_create
+      sign_in @user
+    end
+    it "renders the :terms_and_conditions view for a member" do
+      get :terms_and_conditions
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #terms_and_conditions" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:visitor]
+      @user = FactoryBot.create(:visitor)
+      @user.roles << Role.where(name: 'visitor').first_or_create
+      sign_in @user
+    end
+    it "renders the :terms_and_conditions view for a visitor" do
+      get :terms_and_conditions
+      expect(response.status).to eq(200)
+    end
+  end
+
   describe "GET #sitemap" do
     it "renders the :sitemap view without authentication" do
       get :sitemap
@@ -220,74 +292,146 @@ describe PagesController do
     end
   end
 
-  describe "GET #terms_and_conditions" do
-    it "renders the :terms_and_conditions view without authentication" do
-      get :terms_and_conditions
+  describe "GET #cheat_sheet" do
+    it "renders the :cheat_sheet view without authentication" do
+      get :cheat_sheet
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #terms_and_conditions" do
+  describe "GET #cheat_sheet" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
       @user = FactoryBot.create(:sysadmin)
       @user.roles << Role.where(name: 'sysadmin').first_or_create
       sign_in @user
     end
-    it "renders the :terms_and_conditions view for a sysadmin" do
-      get :terms_and_conditions
+    it "renders the :cheat_sheet view for a sysadmin" do
+      get :cheat_sheet
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #terms_and_conditions" do
+  describe "GET #cheat_sheet" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:superadmin]
       @user = FactoryBot.create(:superadmin)
       @user.roles << Role.where(name: 'superadmin').first_or_create
       sign_in @user
     end
-    it "renders the :terms_and_conditions view for a superadmin" do
-      get :terms_and_conditions
+    it "renders the :cheat_sheet view for a superadmin" do
+      get :cheat_sheet
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #terms_and_conditions" do
+  describe "GET #cheat_sheet" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:admin]
       @user = FactoryBot.create(:admin)
       @user.roles << Role.where(name: 'admin').first_or_create
       sign_in @user
     end
-    it "renders the :terms_and_conditions view for an admin" do
-      get :terms_and_conditions
+    it "renders the :cheat_sheet view for an admin" do
+      get :cheat_sheet
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #terms_and_conditions" do
+  describe "GET #cheat_sheet" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:member]
       @user = FactoryBot.create(:member)
       @user.roles << Role.where(name: 'member').first_or_create
       sign_in @user
     end
-    it "renders the :terms_and_conditions view for a member" do
-      get :terms_and_conditions
+    it "renders the :cheat_sheet view for a member" do
+      get :cheat_sheet
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #terms_and_conditions" do
+  describe "GET #cheat_sheet" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:visitor]
       @user = FactoryBot.create(:visitor)
       @user.roles << Role.where(name: 'visitor').first_or_create
       sign_in @user
     end
-    it "renders the :terms_and_conditions view for a visitor" do
-      get :terms_and_conditions
+    it "renders the :cheat_sheet view for a visitor" do
+      get :cheat_sheet
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #public_statistics" do
+    it "renders the :public_statistics view without authentication" do
+      get :public_statistics
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #public_statistics" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
+      @user = FactoryBot.create(:sysadmin)
+      @user.roles << Role.where(name: 'sysadmin').first_or_create
+      sign_in @user
+    end
+    it "renders the :public_statistics view for a sysadmin" do
+      get :public_statistics
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #public_statistics" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:superadmin]
+      @user = FactoryBot.create(:superadmin)
+      @user.roles << Role.where(name: 'superadmin').first_or_create
+      sign_in @user
+    end
+    it "renders the :public_statistics view for a superadmin" do
+      get :public_statistics
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #public_statistics" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:admin]
+      @user = FactoryBot.create(:admin)
+      @user.roles << Role.where(name: 'admin').first_or_create
+      sign_in @user
+    end
+    it "renders the :public_statistics view for an admin" do
+      get :public_statistics
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #public_statistics" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:member]
+      @user = FactoryBot.create(:member)
+      @user.roles << Role.where(name: 'member').first_or_create
+      sign_in @user
+    end
+    it "renders the :public_statistics view for a member" do
+      get :public_statistics
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "GET #public_statistics" do
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:visitor]
+      @user = FactoryBot.create(:visitor)
+      @user.roles << Role.where(name: 'visitor').first_or_create
+      sign_in @user
+    end
+    it "renders the :public_statistics view for a visitor" do
+      get :public_statistics
       expect(response.status).to eq(200)
     end
   end

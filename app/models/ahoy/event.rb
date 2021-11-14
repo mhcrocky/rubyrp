@@ -114,4 +114,20 @@ class Ahoy::Event < ApplicationRecord
           .map{ |k, v| [I18n.t("date.month_names")[k], v] }
   end
 
+  # Returns an array .. class method: number of cheat sheet page views month over year
+  def self.month_of_year_viewed_cheat_sheet
+           where_event("Viewed Cheat Sheet")
+          .group_by_month_of_year(:time)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
+  # Returns an array .. class method: number of public statistics page views month over year
+  def self.month_of_year_viewed_public_statistics
+           where_event("Viewed Public Statistics")
+          .group_by_month_of_year(:time)
+          .count
+          .map{ |k, v| [I18n.t("date.month_names")[k], v] }
+  end
+
 end

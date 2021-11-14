@@ -48,13 +48,6 @@ class PagesController < ApplicationController
     ahoy.track "Viewed Sitemap"
   end
 
-  def public_statistics
-    @visits = Ahoy::Visit.where.not(longitude: nil)
-                         .uniq{|v| v.longitude }
-
-    ahoy.track "Viewed Public Statistics"
-  end
-
   def cheat_sheet
     if user_signed_in?
       @todo_item = current_user.todo_items.last
@@ -66,6 +59,14 @@ class PagesController < ApplicationController
 
     ahoy.track "Viewed Cheat Sheet"
   end
+
+  def public_statistics
+    @visits = Ahoy::Visit.where.not(longitude: nil)
+                         .uniq{|v| v.longitude }
+
+    ahoy.track "Viewed Public Statistics"
+  end
+
 
   private
 

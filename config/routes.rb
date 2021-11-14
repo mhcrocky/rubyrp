@@ -78,6 +78,8 @@ Rails.application.routes.draw do
         get 'month_of_year_viewed_privacy-policy'
         get 'month_of_year_viewed_cookies-policy'
         get 'month_of_year_viewed_sitemap'
+        get 'month_of_year_viewed_cheat-sheet'
+        get 'month_of_year_viewed_public-statistics'
         # Users
         get 'month_of_year-superadmins'
         get 'month_of_year-admins'
