@@ -25,8 +25,7 @@
 /* key features (app/views/pages/_features.html.erb)
 ----------------------------------------------------------------------------- */
 
-.in-app {
-  display: block;
+.features {
   height: 545px;
   margin-bottom: 75px;
   .list-group-item {
@@ -47,9 +46,6 @@
     i.bi-cpu            { color: rgba(61,12,2,1); }
     i.bi-layout-wtf     { color: rgba(251,79,20,1); }
     i.bi-chat           { color: rgba(230,67,140,1); }
-  }
-  @media (max-width: 992px) {
-    display: none;
   }
 }
 
