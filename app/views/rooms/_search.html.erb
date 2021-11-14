@@ -1,22 +1,42 @@
 <div class="row">
-  <div class="col-md-9 mt-1">
+  <div class="col-lg-9 mt-1">
     <form action="<%= action %>" method="get">
       <%= search_field_tag 'q', @filter, class: 'form-control', placeholder: 'Filter rooms...' %>
     </form>
   </div><!-- .col-md-9 -->
 
-  <div class="col-md-3 mt-1">
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed filter-accordian text-muted" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            <i class="bi bi-chat-right-text ms-1 me-2"></i> Rules
-          </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body shadow-sm">Please, treat others as you wish to be treated.</div>
-        </div>
-      </div><!-- .accordion-item -->
-    </div><!-- .accordion -->
+  <div class="col-lg-3 mt-1 d-flex justify-content-center align-items-center">
+    <div class="text-muted room-issues" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+      <i class="bi bi-webcam me-1"></i> Webcam Issues?
+    </div>
   </div><!-- .col-md-3 -->
 </div><!-- .row -->
+
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <small id="offcanvasRightLabel">Webcam Issues?</small>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div><!-- .offcanvas-header -->
+  <div class="offcanvas-body">
+    <h5 class="pb-1 mt-1">Windows</h5>
+    <div class="text-muted">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <a href="https://docs.microsoft.com/en-us/troubleshoot/browsers/disable-internet-explorer-windows" target="_blank">
+          IEv6 needs to be turned off.
+        </a>
+      </p>
+    </div>
+    <h5 class="pb-1 mt-4">Firewall</h5>
+    <div class="text-muted">
+      <p class="pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <a href="https://www.makeuseof.com/tag/6-tips-on-how-to-unblock-a-webpage-from-behind-a-firewall/" target="_blank">
+          You may need to add this url to the list of "allowed" websites by your firewall.
+        </a>
+      </p>
+    </div>
+  </div><!-- .offcanvas-body -->
+  <div class="offcanvas-footer text-end">
+    <button type="button" class="btn btn-outline-secondary me-3 mb-3" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+  </div>
+</div><!-- .offcanvas -->
