@@ -1,15 +1,37 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation">
+
+  <!-- Devise layout -->
+  <!-- <div id="error_explanation">
     <h2>
-      <%= I18n.t("errors.messages.not_saved",
+      <%#= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
                  resource: resource.class.model_name.human.downcase)
        %>
     </h2>
     <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <%# resource.errors.full_messages.each do |message| %>
+        <li><%#= message %></li>
+      <%# end %>
     </ul>
+  </div> -->
+
+  <!-- Customized layout -->
+  <div class="position-fixed d-flex justify-content-center align-items-center" style="z-index: 11">
+    <div class="toast show toast-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
+        <% end %>
+        <strong class="me-auto"></strong>
+        <small><%= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %></small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <% resource.errors.full_messages.each do |message| %>
+        <div class="toast-body text-danger">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
   </div>
+
 <% end %>

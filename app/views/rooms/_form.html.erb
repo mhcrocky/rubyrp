@@ -2,11 +2,22 @@
   <%= form_for @room, html: { class: 'form-horizontal' } do |f| %>
 
     <% if @room.errors.any? %>
-      <div class="errors">
-        <h2>There was an error with this room:</h2>
-        <% @room.errors.full_messages.each do |msg| %>
-          <p><%= msg %></p>
-        <% end %>
+      <div class="position-fixed d-flex justify-content-center align-items-center" style="z-index: 11">
+        <div class="toast show toast-danger" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <%= link_to root_path, class: 'navbar-brand' do %>
+              <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
+            <% end %>
+            <strong class="me-auto"></strong>
+            <small><%= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %></small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <% @room.errors.full_messages.each do |msg| %>
+            <div class="toast-body text-danger">
+              <%= msg %>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
 

@@ -1,16 +1,5 @@
 <%= form_for @admin, url: action, html: { class: 'form-horizontal' } do |f| %>
 
-  <% if @admin.errors.any? %>
-    <div class="errors">
-      <h2>There was an error with this administrator</h2>
-      <ul>
-        <% @admin.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="form-floating mb-3">
     <%= f.email_field :email, autocomplete: "email", id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: false %>
     <label for="inputEmail"><code>&#42; Email</code></label>
