@@ -22,12 +22,12 @@ class TodoItems extends React.Component {
         </button>
         <div className="table-responsive">
           <table className="table">
-            <thead>
+            <thead className="text-secondary fw-bold">
               <tr>
-                <th scope="col" className="text-muted">Created</th>
-                <th scope="col" className="text-muted">Finished</th>
-                <th scope="col" className="text-muted">Description</th>
-                <th scope="col" className="text-end text-muted">
+                <th scope="col">Created</th>
+                <th scope="col">Finished</th>
+                <th scope="col">Description</th>
+                <th scope="col" className="text-end">
                   Actions
                 </th>
               </tr>
