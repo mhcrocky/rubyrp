@@ -31,7 +31,8 @@ trix-editor.form-control {
 .accordion-button:focus,
 .form-check-input:focus,
 .form-control:focus,
-.form-select:focus {
+.form-select:focus,
+.btn-close:focus {
   border-color: rgba(11, 11, 11, .1) !important;
   box-shadow: 1px 2px 1px 1px rgba(11, 11, 11, .1) !important;
 }
