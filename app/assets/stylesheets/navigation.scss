@@ -30,6 +30,11 @@ li.nav-item a:active {
   }
 }
 
+.dropdown-item:active {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
 .nav-item a.nav-link {
   font-size: 1.25rem;
   margin-right: 1.25rem;
