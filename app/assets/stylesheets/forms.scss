@@ -143,8 +143,15 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
   color: rgba(117,117,117,0.5);
 }
 
+/* Handle Validation Errors
+--------------------------- */
+.field_with_errors input {
+  height: 5rem;
+  border-color: #e35d6a;
+}
+
 /* Fallback for Edge
------------------------ */
+--------------------------- */
 @supports (-ms-ime-align: auto) {
   .form-floating > label {
     display: none;
@@ -155,7 +162,7 @@ button.btn-outline-primary:hover a, button.btn-outline-primary a:hover {
 }
 
 /* Fallback for IE
------------------------ */
+--------------------------- */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .form-floating > label {
     display: none;

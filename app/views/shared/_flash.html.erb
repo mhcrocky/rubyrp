@@ -1,6 +1,6 @@
 <% flash.each do |key, value| %>
   <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-    <div class="toast show fw-bold <%= key == 'notice' ? 'toast-success' : 'toast-danger' %>" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast show <%= key == 'notice' ? 'toast-success' : 'toast-danger' %>" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <%= link_to root_path, class: 'navbar-brand' do %>
           <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
@@ -16,7 +16,7 @@
         </small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div><!-- .toast-header -->
-      <div class="toast-body <%= key == 'notice' ? 'text-success' : 'text-danger' %>">
+      <div class="toast-body fw-bold <%= key == 'notice' ? 'text-success' : 'text-danger' %>">
         <%= value %>
       </div><!-- .toast-body -->
     </div><!-- .toast .show -->

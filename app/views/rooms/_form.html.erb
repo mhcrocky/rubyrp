@@ -4,18 +4,16 @@
     <% if @room.errors.any? %>
       <div class="errors">
         <h2>There was an error with this room:</h2>
-        <ul>
-          <% @room.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
+        <% @room.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
       </div>
     <% end %>
 
     <section class="pt-1 text-start">
       <div class="form-floating">
         <%= f.text_field :name, autocomplete: "Name", id: "inputName", class: "form-control", placeholder: "Name", autofocus: false %>
-        <label for="inputEmail"><code>&#42; Name</code></label>
+        <label for="inputEmail"><code class="text-tayberry">&#42; Name</code></label>
       </div><!-- .form-floating -->
       <div class="form-group d-flex justify-content-center">
         <%= link_to 'Cancel', @room, class: 'btn btn-secondary align-self-center mx-1' %>
