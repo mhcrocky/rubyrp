@@ -42,9 +42,6 @@
 .features {
   height: 540px;
   margin-bottom: 6em;
-  .jumbotron-heading {
-    // padding-top: 30px !important;
-  }
   .list-group-item {
     z-index: 2;
     color: #6c757d;
@@ -70,7 +67,8 @@ img.center-img {
   width: 95%;
   margin: 0 auto 105px;
   transition: transform 1.25s;
-  -webkit-animation: shuffle 0.75s ease-in;
+  // -webkit-animation: bounce 1.25s ease-in;
+  // -webkit-animation: shuffle 0.75s ease-in;
   z-index: 999;
 }
 img.center-img:hover, img.center-img:active {
