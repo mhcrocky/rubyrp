@@ -1,0 +1,75 @@
+/* -webkit-animation: shuffle 0.75s ease-in;
+----------------------------------------------------------------------------- */
+
+@keyframes shuffle {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 0;
+  }
+  24% {
+    opacity: 0.1;
+  }
+  32% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  48% {
+    opacity: 0.3;
+  }
+  56% {
+    opacity: 0.3;
+  }
+  64% {
+    opacity: 0.4;
+  }
+  72% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  88% {
+    opacity: 0.7;
+  }
+  96% {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* -webkit-animation: bounce 1.25s ease-in;
+----------------------------------------------------------------------------- */
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, 545px, 0);
+  }
+  10% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, -3px, 0);
+  }
+  50% {
+    transform: translate3d(0, 3px, 0);
+  }
+  70% {
+    transform: translate3d(0, -1px, 0);
+  }
+  80% {
+    transform: translate3d(0, 1px, 0);
+  }
+  to {
+    transform: none;
+  }
+}

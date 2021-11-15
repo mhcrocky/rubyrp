@@ -40,8 +40,11 @@
 ----------------------------------------------------------------------------- */
 
 .features {
-  height: 545px;
-  margin-bottom: 75px;
+  height: 540px;
+  margin-bottom: 6em;
+  .jumbotron-heading {
+    // padding-top: 30px !important;
+  }
   .list-group-item {
     z-index: 2;
     color: #6c757d;
@@ -67,60 +70,11 @@ img.center-img {
   width: 95%;
   margin: 0 auto 105px;
   transition: transform 1.25s;
-  -webkit-animation: shuffle 1.25s ease-in;
+  -webkit-animation: shuffle 0.75s ease-in;
   z-index: 999;
 }
 img.center-img:hover, img.center-img:active {
   cursor: zoom-in;
   transform: scale(1.05);
   // filter: invert(100%) !important;
-}
-
-@keyframes shuffle {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 545px, 0);
-  }
-  10% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0);
-  }
-  25% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-    transform: translate3d(0, -3px, 0);
-  }
-  35% {
-    opacity: 0.1;
-  }
-  40% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.5;
-    transform: translate3d(0, 3px, 0);
-  }
-  60% {
-    opacity: 0.6;
-  }
-  70% {
-    opacity: 0.7;
-    transform: translate3d(0, -1px, 0);
-  }
-  75% {
-    opacity: 0.75;
-  }
-  80% {
-    opacity: 0.8;
-    transform: translate3d(0, 1px, 0);
-  }
-  90% {
-    opacity: 0.9;
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
