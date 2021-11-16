@@ -65,11 +65,16 @@
 
 img.center-img {
   width: 95%;
+  height: auto;
   margin: 0 auto 105px;
+  transform: skew(-0.4deg, -0.2deg);
   transition: transform 1.25s;
-  // -webkit-animation: bounce 1.25s ease-in;
-  // -webkit-animation: shuffle 0.75s ease-in;
-  z-index: 999;
+  @media (max-width: 1400px) {
+    margin: 30px auto 105px;
+  }
+  @media (max-width: 1200px) {
+    margin: 60px auto 105px;
+  }
 }
 img.center-img:hover, img.center-img:active {
   cursor: zoom-in;
