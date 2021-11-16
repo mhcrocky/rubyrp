@@ -120,6 +120,8 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
-  config.action_mailer.default_url_options = { :host => 'rails-react-bootstrap.herokuapp.com' }
+  # config.action_mailer.default_url_options = { :host => 'rails-react-bootstrap.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'rails-react-bootstrap.herokuapp.com', :protocol => 'https' }
+
 
 end
