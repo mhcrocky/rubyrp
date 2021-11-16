@@ -23,7 +23,14 @@
           <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
         <% end %>
         <strong class="me-auto"></strong>
-        <small><%= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %></small>
+        <small>
+          <% if signed_in? %>
+            <%= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %>
+          <% else %>
+            <%= "#{ActionController::Base.helpers.distance_of_time_in_words Time.now, Time.now} ago" %>
+          <% end %>
+        </small>
+
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <% resource.errors.full_messages.each do |message| %>

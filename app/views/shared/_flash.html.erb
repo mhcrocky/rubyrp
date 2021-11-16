@@ -7,12 +7,11 @@
         <% end %>
         <strong class="me-auto"></strong>
         <small>
-          <%# if signed_in? %>
-            <%#= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %>
-          <%# else %>
-            <%#= "#{ActionController::Base.helpers.distance_of_time_in_words Time.now, Time.now} ago" %>
+          <% if signed_in? %>
+            <%= Time.now.in_time_zone(current_user.timezone).strftime('%l:%M%P') %>
+          <% else %>
             <%= key.capitalize %>
-          <%# end %>
+          <% end %>
         </small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div><!-- .toast-header -->
