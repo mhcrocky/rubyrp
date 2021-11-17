@@ -67,7 +67,7 @@ img.center-img {
   width: 95%;
   height: auto;
   margin: 0 auto 105px;
-  transform: skew(-0.4deg, -0.2deg);
+  transform: skew(-0.7deg, -0.5deg);
   transition: transform 1.25s;
   @media (max-width: 1400px) {
     margin: 30px auto 105px;
@@ -78,6 +78,7 @@ img.center-img {
 }
 img.center-img:hover, img.center-img:active {
   cursor: zoom-in;
+  transform: skew(-0.3deg, -0.1deg);
   transform: scale(1.05);
   // filter: invert(100%) !important;
 }
