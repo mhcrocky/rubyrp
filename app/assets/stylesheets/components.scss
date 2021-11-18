@@ -66,19 +66,18 @@
 img.center-img {
   width: 95%;
   height: auto;
-  margin: 0 auto 105px;
-  transform: skew(-0.7deg, -0.5deg);
-  transition: transform 1.25s;
+  margin: 19px auto;
+  transition: transform 1s;
   @media (max-width: 1400px) {
-    margin: 30px auto 105px;
+    margin: 37px auto;
   }
   @media (max-width: 1200px) {
-    margin: 60px auto 105px;
+    margin: 63px auto;
   }
 }
 img.center-img:hover, img.center-img:active {
   cursor: zoom-in;
-  transform: skew(-0.3deg, -0.1deg);
-  transform: scale(1.05);
+  transform: scale(1.01);
+  // transform: skew(-0.3deg, -0.1deg);
   // filter: invert(100%) !important;
 }
