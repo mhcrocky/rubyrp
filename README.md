@@ -15,7 +15,7 @@ An Example Ruby on Rails Application using modern, lightweight frameworks and li
 * React [17.0.2](https://reactjs.org/versions/) (yarn)
 * Bootstrap [5.1.2](https://getbootstrap.com/docs/versions/) (yarn)
 ```
-If building from scratch (not cloning):
+--- If building from scratch (not cloning || forking) ---
 $ ruby -v
 $ rails -v
 $ rails new PROJECT_NAME -d=postgresql --webpacker=react
@@ -42,7 +42,7 @@ $ npm view react version
 
 ## Analysis, Testing and Coverage
 
-* PGHero: root/pghero (sysadmin)
+* PGHero: root/pghero (See /config/routes.rb)
 * Brakeman + bundler_audit
 ```
 $ brakeman
