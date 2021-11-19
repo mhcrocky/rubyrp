@@ -14,8 +14,8 @@ An Example Ruby on Rails Application using modern, lightweight frameworks and li
 * Turbo [0.8.1](https://rubygems.org/gems/turbo-rails/versions) (yarn)
 * React [17.0.2](https://reactjs.org/versions/) (yarn)
 * Bootstrap [5.1.2](https://getbootstrap.com/docs/versions/) (yarn)
-* If building from scratch (not cloning):
 ```
+If building from scratch (not cloning):
 $ ruby -v
 $ rails -v
 $ rails new PROJECT_NAME -d=postgresql --webpacker=react
@@ -49,7 +49,7 @@ $ brakeman
 $ brakeman -o brakeman.html
 $ open brakeman.html
 
-$ bundle-audit
+$ bundler-audit
 ```
 * Rspec + Simplecov
 ```
