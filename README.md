@@ -15,7 +15,8 @@ An Example Ruby on Rails Application using modern, lightweight frameworks and li
 * React [17.0.2](https://reactjs.org/versions/) (yarn)
 * Bootstrap [5.1.2](https://getbootstrap.com/docs/versions/) (yarn)
 ```
---- If building from scratch (not cloning || forking) ---
+<- If building from scratch (Not .. cloning || forking) ->
+
 $ ruby -v
 $ rails -v
 $ rails new PROJECT_NAME -d=postgresql --webpacker=react
