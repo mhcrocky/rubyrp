@@ -2,7 +2,7 @@
 
   <% if @article.errors.any? %>
     <div class="position-fixed d-flex justify-content-center align-items-center" style="z-index: 11">
-      <div class="toast show toast-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast show rounded toast-danger" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <%= link_to root_path, class: 'navbar-brand' do %>
             <%= image_tag 'logo.png', alt: 'Logo', title: 'Home', class: 'footer-logo' %>
@@ -16,8 +16,8 @@
             <%= msg %>
           </div>
         <% end %>
-      </div>
-    </div>
+      </div><!-- .toast .show -->
+    </div><!-- .position-fixed .d-flex -->
   <% end %>
 
   <section class="mt-5 pb-5">
