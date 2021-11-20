@@ -7,26 +7,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': true %>
     <%= javascript_pack_tag 'application', 'data-turbo-track': true %>
-      <style>
-        html {
-          background-color: #fff !important;
-        }
-        <% if user_signed_in? && current_user.dark_theme %>
-          /* Dark Theme */
-          .btn-info {
-            border-color: #556b2f !important;
-            background-color: #556b2f !important;
-          } .text-info {color: #556b2f !important;}
-          .theme, .bg-shnozberry, .text-shnozberry, .bg-tayberry, .text-tayberry,
-          .bg-success, .btn-success, .btn-outline-success,
-          .bg-danger, .btn-danger, .btn-outline-danger, .text-danger,
-          .dropdown-menu {filter: invert(100%);}
-        <% end %>
-      </style>
+    <style>
+      html {
+        background-color: #fff !important;
+      }
+    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V69XBLGQ6S"></script>
   </head>
   <body class="authorization theme">
     <%= yield %>
+
+    <!-- Theme Toggle: devise-dark-mode -->
+    <script>
+      console.log(document.cookie);
+      var element = document.body;
+      // Set Cookie
+      function setCookie(name,value,days) {
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime()+(days*24*60*60*1000));
+          var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+      }
+      // Get Cookie
+      function getCookie(key) {
+        var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+        return keyValue ? keyValue[2] : null;
+        console.log(getCookie('theme'));
+      }
+      // Page Load
+      if (getCookie('theme') == 1) {
+        document.querySelector('.theme-toggle').checked = false;
+      } else {
+        setCookie('theme','2', '30');
+        document.querySelector('.theme-toggle').checked = true;
+        element.classList.add("devise-dark-mode");
+      }
+      // Toggle Theme
+      document.querySelector(".theme-toggle").addEventListener('change', (e) => {
+        if (document.querySelector('.theme-toggle').checked == false) {
+          setCookie('theme','1', '30');
+          console.log('light(1) --  ' + getCookie('theme'));
+          element.classList.remove("devise-dark-mode");
+        } else {
+          setCookie('theme','2', '30');
+          console.log('dark(2) -- ' + getCookie('theme'));
+          element.classList.add("devise-dark-mode");
+        }
+
+        let user_id;
+        user_id = document.querySelector('.theme-toggle').getAttribute('data-user-id');
+        let request = new XMLHttpRequest();
+
+        console.log(user_id);
+        console.log(request);
+
+        // request.open("", "/users/", true);
+        // request.onload = function() {
+        //   if (this.status >= 200 && this.status < 400) {
+        //     let data, textStatus, jqXHR = this.response;
+        //     // return location.reload();
+        //   }
+        // }
+        // request.onerror = function(jqXHR, textStatus, errorThrown) {
+        //   return console.log('user ajax error: ' + textStatus);
+        // };
+        // request.send();
+
+      });
+    </script>
+
   </body>
 </html>

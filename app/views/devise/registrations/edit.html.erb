@@ -9,7 +9,7 @@
   </div><!-- .text-center .mb-4 -->
 
   <div class="form-check form-switch text-start my-4">
-    <%= f.check_box :dark_theme, class: "form-check-input ms-0", id: "inputTheme", role: 'switch', data: {'user-id': current_user.id} %>
+    <%= f.check_box :dark_theme, class: "form-check-input ms-0 theme-toggle", role: 'switch', data: {'user-id': current_user.id} %>
     <label class="form-check-label ms-2 mt-0 text-secondary small" for="inputTheme">Dark Theme</label>
   </div><!-- .form-check .form-switch -->
 
