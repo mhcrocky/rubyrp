@@ -1,6 +1,6 @@
 # Rails React Bootstrap
 
-An Example Ruby on Rails Application using modern, lightweight frameworks and libraries to shape the frontend. The app also utilizes well-maintained gems that won't cause dependency issues. The mission behind the project is to incorporate the latest best practices and serve as a template for future applications.
+A Ruby on Rails Application that utilizes modern, lightweight frameworks and libraries to shape the frontend. The app also incorporates well-maintained gems. The mission behind the project is to bundle together the latest best practices and serve as a template for future applications.
 
 ## Main Dependencies
 
