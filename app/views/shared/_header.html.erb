@@ -20,12 +20,14 @@
                 <% end %>
 
                 <!-- Theme Toggle: markup -->
-                <div class="py-2 px-3 rounded-pill">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input theme-toggle pointer" type="checkbox">
-                    <small>Dark Theme</small>
+                <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class: "" }) do |f| %>
+                  <div class="py-2 px-3 rounded-pill">
+                    <div class="form-check form-switch">
+                      <%= f.check_box :dark_theme, class: "form-check-input theme-toggle pointer", role: 'switch', data: {'user-id': current_user.id} %>
+                      <small>Dark Theme</small>
+                    </div>
                   </div>
-                </div>
+                <% end %>
                 <!-- Theme Toggle: script -->
                 <script>
                   // console.log(document.cookie);
@@ -46,31 +48,39 @@
                     return keyValue ? keyValue[2] : null;
                     // console.log(getCookie('theme'));
                   }
+                  // PUT toggle current_user dark_theme boolean
+                  function toggleField() {
+                    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+                    fetch('/users/' + document.querySelector('.theme-toggle').getAttribute('data-user-id') + '/toggle_theme', {
+                      method: 'PUT',
+                      headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-Token': csrf
+                      },
+                    });
+                  }
                   // Page Load
-                  if (getCookie('theme') == 1) {
-                    document.querySelector('.theme-toggle').checked = false;
-                  } else {
+                  if (getCookie('theme') == 2) {
                     setCookie('theme','2', '30');
                     document.querySelector('.theme-toggle').checked = true;
                     element.classList.add("dark-mode");
+                  } else { // == 1 OR null
+                    document.querySelector('.theme-toggle').checked = false;
                   }
                   // Toggle Theme
                   document.querySelector(".theme-toggle").addEventListener('change', (e) => {
                     if (document.querySelector('.theme-toggle').checked == false) {
                       setCookie('theme','1', '30');
                       element.classList.remove("dark-mode");
+                      toggleField();
                       // console.log('light(1) --  ' + getCookie('theme'));
                     } else {
                       setCookie('theme','2', '30');
                       element.classList.add("dark-mode");
+                      toggleField();
                       // console.log('dark(2) -- ' + getCookie('theme'));
                     }
                   });
-                  // TODO:
-                  // move to js folder when switching from webpacker to ES Build
-
-                  // update dark_theme boolean to track user activity.
-                  // For now, the checkbox will reflect current state and save on next form submission
                 </script>
 
                 <%= link_to edit_user_registration_path, data: { turbo: false }, class: 'dropdown-item' do %>

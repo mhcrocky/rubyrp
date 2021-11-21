@@ -80,30 +80,37 @@
     return keyValue ? keyValue[2] : null;
     console.log(getCookie('theme'));
   }
+  // PUT toggle current_user dark_theme boolean
+  function toggleField() {
+    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+    fetch('/users/' + document.querySelector('.theme-toggle').getAttribute('data-user-id') + '/toggle_theme', {
+      method: 'PUT',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-Token': csrf
+      },
+    });
+  }
   // Page Load
-  if (getCookie('theme') == 1) {
-    document.querySelector('.theme-toggle').checked = false;
-  } else {
+  if (getCookie('theme') == 2) {
     setCookie('theme','2', '30');
     document.querySelector('.theme-toggle').checked = true;
-    element.classList.add("devise-dark-mode");
+    element.classList.add("dark-mode");
+  } else { // == 1 OR null
+    document.querySelector('.theme-toggle').checked = false;
   }
   // Toggle Theme
   document.querySelector(".theme-toggle").addEventListener('change', (e) => {
     if (document.querySelector('.theme-toggle').checked == false) {
       setCookie('theme','1', '30');
       element.classList.remove("devise-dark-mode");
+      toggleField();
       // console.log('light(1) --  ' + getCookie('theme'));
     } else {
       setCookie('theme','2', '30');
       element.classList.add("devise-dark-mode");
+      toggleField();
       // console.log('dark(2) -- ' + getCookie('theme'));
     }
   });
-
-  // TODO:
-  // move to js folder when switching from webpacker to ES Build
-
-  // update dark_theme boolean to track user activity.
-  // For now, the checkbox will reflect current state and save on next form submission
 </script>
