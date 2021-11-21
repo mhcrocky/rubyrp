@@ -155,6 +155,31 @@
     </div><!-- #accordionFlushRoom -->
   </section><!-- .mb-5 .pb-5 -->
 
+
+  <section class="mt-3 mb-5 pb-1">
+    <h4 class="jumbotron-heading">
+      Cookies <small>(JS Console)</small>
+    </h4>
+    <div class="accordion accordion-flush card" id="accordionFlushCookie">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-cookieOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            View All Cookies
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-cookieOne" data-bs-parent="#accordionFlushCookie">
+          <div class="accordion-body">
+            <div class="trix-content">
+              <pre>console.log(document.cookie);</pre>
+            </div><!-- .trix-content -->
+          </div><!-- .accordion-body -->
+        </div><!-- #flush-collapseOne -->
+      </div><!-- .accordion-item -->
+    </div><!-- #accordionFlushCookie -->
+  </section><!-- .mt-3 .mb-5 .pb-1 -->
+
+
+
 <% else # user_signed_in? %>
 
   <section class="text-center mt-3 mb-5 pb-5">
