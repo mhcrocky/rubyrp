@@ -6,6 +6,10 @@
   Visits: <%= @visits.count %>
 </h2>
 
+<h3 style="font-size:18px; margin-bottom:12px; margin-left:3px; color:#777;">
+  <%= Time.1.day.ago.strftime('%l:%M%P') %> thru <%= Time.1.now.strftime('%l:%M%P') %>
+</h3>
+
 <ol style="margin-left:3px; list-style-type:decimal;">
   <% @visits.each do |visit| %>
     <li style="font-size:15px; margin-bottom:6px; display:list-item;">
