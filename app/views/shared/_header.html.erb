@@ -18,6 +18,61 @@
                 <%= link_to(current_user, class: "dropdown-item") do %>
                   <span class="text-info"><%= current_user.name %></span>
                 <% end %>
+
+                <!-- Theme Toggle: markup -->
+                <div class="py-2 px-3 rounded-pill">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input theme-toggle pointer" type="checkbox">
+                    <small>Dark Theme</small>
+                  </div>
+                </div>
+                <!-- Theme Toggle: script -->
+                <script>
+                  // console.log(document.cookie);
+                  var element = document.body;
+                  // Set Cookie
+                  function setCookie(name,value,days) {
+                    if (days) {
+                      var date = new Date();
+                      date.setTime(date.getTime()+(days*24*60*60*1000));
+                      var expires = "; expires="+date.toGMTString();
+                    }
+                    else var expires = "";
+                    document.cookie = name+"="+value+expires+"; path=/";
+                  }
+                  // Get Cookie
+                  function getCookie(key) {
+                    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+                    return keyValue ? keyValue[2] : null;
+                    // console.log(getCookie('theme'));
+                  }
+                  // Page Load
+                  if (getCookie('theme') == 1) {
+                    document.querySelector('.theme-toggle').checked = false;
+                  } else {
+                    setCookie('theme','2', '30');
+                    document.querySelector('.theme-toggle').checked = true;
+                    element.classList.add("dark-mode");
+                  }
+                  // Toggle Theme
+                  document.querySelector(".theme-toggle").addEventListener('change', (e) => {
+                    if (document.querySelector('.theme-toggle').checked == false) {
+                      setCookie('theme','1', '30');
+                      element.classList.remove("dark-mode");
+                      // console.log('light(1) --  ' + getCookie('theme'));
+                    } else {
+                      setCookie('theme','2', '30');
+                      element.classList.add("dark-mode");
+                      // console.log('dark(2) -- ' + getCookie('theme'));
+                    }
+                  });
+                  // TODO:
+                  // move to js folder when switching from webpacker to ES Build
+
+                  // update dark_theme boolean to track user activity.
+                  // For now, the checkbox will reflect current state and save on next form submission
+                </script>
+
                 <%= link_to edit_user_registration_path, data: { turbo: false }, class: 'dropdown-item' do %>
                   Edit Profile
                 <% end %>
