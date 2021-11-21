@@ -6,9 +6,9 @@
   Visits: <%= @visits.count %>
 </h2>
 
-<h3 style="font-size:18px; margin-bottom:12px; margin-left:3px; color:#777;">
-  <%= Time.1.day.ago.strftime('%l:%M%P') %> thru <%= Time.1.now.strftime('%l:%M%P') %>
-</h3>
+<h6 style="font-size:12px; margin-bottom:12px; margin-left:3px; color:#777;">
+  <%= 24.hours.ago.strftime('%m/%d/%Y,%l:%M%P') %> thru <%= 1.second.ago.strftime('%m/%d/%Y,%l:%M%P') %>
+</h6>
 
 <ol style="margin-left:3px; list-style-type:decimal;">
   <% @visits.each do |visit| %>
@@ -18,12 +18,12 @@
         <li style="font-size:15px; margin-bottom:6px; display:list-item;">
           <strong>Start:</strong>
           <span style="color:#6f47be;">
-            <%= visit.started_at.strftime('%m/%d/%Y, %H:%M:%S') %>
+            <%= visit.started_at.strftime('%m/%d/%Y,%l:%M%P') %>
           </span>
         </li>
         <li style="font-size:15px; margin-bottom:6px; display:list-item;">
           <strong>User:</strong>
-          <span style="color:#dc3545;">
+          <span style="color:#0a58ca;">
             <%= visit.user ? visit.user.name : 'Unauthorized' %>
           </span>
         </li>
@@ -49,7 +49,7 @@
         </li>
         <li style="font-size:15px; margin-bottom:6px; display:list-item;">
           <strong>Location:</strong>
-          <span style="color:#dc3545;">
+          <span style="color:#0a58ca;">
             <%= visit.location %>
           </span>
         </li>
@@ -63,7 +63,7 @@
                   <p style="margin-left:3px; font-size:15px; margin-top:3px; margin-bottom:3px;">
                     <strong>Time:</strong>
                     <span style="color:#6f47be;">
-                      <%= event.time.strftime('%m/%d/%Y, %H:%M:%S') %>
+                      <%= event.time.strftime('%m/%d/%Y,%l:%M%P') %>
                     </span>
                   </p>
                   <% if event.properties.any? %>
