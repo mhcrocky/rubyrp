@@ -209,6 +209,12 @@ canvas,
   filter: invert(100%);
 }
 
+.gstatic {
+  g.google-visualization-tooltip path {
+    fill: rgba(3,7,7,1) !important;
+  }
+}
+
 svg circle {
   fill: rgba(3,7,7,1) !important;
 }
