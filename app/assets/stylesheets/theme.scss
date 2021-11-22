@@ -18,7 +18,7 @@ a:hover { color: rgba(225, 225, 255, 0.7); }
 
 .text-shnozberry { color: #a98eda !important; }
 
-.text-brownie {color: #C4A484 !important;}
+.text-brownie { color: rgba(189, 162, 153, 1) !important; }
 
 .text-dark { color: #fff !important; }
 
@@ -136,7 +136,7 @@ trix-toolbar .trix-button-row button {
 .btn-outline-light:disabled,
 .btn-outline-light.disabled { color: #212529; background-color: transparent; }
 
-.btn-outline-brownie { border-color: #C4A484 !important; color: #C4A484 !important; }
+.btn-outline-brownie { border-color: rgba(189, 162, 153, 1) !important; color: rgba(189, 162, 153, 1) !important; }
 .btn-outline-info, .btn-outline-primary { background-color: rgba(225, 225, 255, 0.1) !important; }
 .btn-outline-danger { color: #dc3545 !important; }
 .btn-outline-success { background-color: rgba(225, 225, 255, 0.1) !important; }
@@ -203,10 +203,13 @@ table {
 /* Charts
 ----------------------------------------------------------------------------- */
 
-canvas,
+canvas {
+  filter: invert(100%) hue-rotate(180deg) saturate(111%);
+}
+
 #gauge_div_1,
 #gauge_div_2 {
-  filter: invert(100%);
+  filter: invert(95%) hue-rotate(222deg);
 }
 
 .gstatic {
