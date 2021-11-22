@@ -80,3 +80,21 @@
   </section><!-- .text-center mt-0 -->
 
 <% end %>
+
+
+<script>
+  // Reset Theme Cookie on Dashboard Page Load
+  // .. avoids issues with incognito mode and other devices/browsers
+  // .. aligns current_user.dark_theme with form-switch + current browser cookie
+  <% if current_user.dark_theme %>
+    setCookie('theme','2', '30');
+    document.querySelector('.theme-toggle').checked = true;
+    element.classList.add("dark-mode");
+    // console.log('Reset Theme Cookie');
+  <% else %>
+    setCookie('theme','1', '30');
+    document.querySelector('.theme-toggle').checked = false;
+    element.classList.remove("dark-mode");
+    // console.log('Reset Theme Cookie');
+  <% end %>
+</script>

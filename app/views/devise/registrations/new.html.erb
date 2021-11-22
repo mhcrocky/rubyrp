@@ -15,11 +15,6 @@
     </h6>
   </div><!-- .text-center .mb-4 -->
 
-  <div class="form-check form-switch text-start my-4">
-    <%= f.check_box :dark_theme, class: "form-check-input ms-0 theme-toggle", role: 'switch' %>
-    <label class="form-check-label ms-2 text-secondary small" for="inputTheme">Dark Theme</label>
-  </div><!-- .form-check .form-switch -->
-
   <div class="form-floating mb-3">
     <p class="mb-0 ms-3 small text-secondary">Timezone</p>
     <%= f.select :timezone, timezone_options, { include_blank: false }, { class: 'form-select' } %>
@@ -58,59 +53,3 @@
   </p>
 
 <% end %>
-
-<!-- Theme Toggle: devise-dark-mode -->
-<script>
-  // console.log(document.cookie);
-  var element = document.body;
-
-  // Set Cookie
-  function setCookie(name,value,days) {
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime()+(days*24*60*60*1000));
-      var expires = "; expires="+date.toGMTString();
-    }
-    else var expires = "";
-    document.cookie = name+"="+value+expires+"; path=/";
-  }
-  // Get Cookie
-  function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-    console.log(getCookie('theme'));
-  }
-  // PUT toggle current_user dark_theme boolean
-  function toggleField() {
-    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
-    fetch('/users/' + document.querySelector('.theme-toggle').getAttribute('data-user-id') + '/toggle_theme', {
-      method: 'PUT',
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-Token': csrf
-      },
-    });
-  }
-  // Page Load
-  if (getCookie('theme') == 2) {
-    setCookie('theme','2', '30');
-    document.querySelector('.theme-toggle').checked = true;
-    element.classList.add("dark-mode");
-  } else { // == 1 OR null
-    document.querySelector('.theme-toggle').checked = false;
-  }
-  // Toggle Theme
-  document.querySelector(".theme-toggle").addEventListener('change', (e) => {
-    if (document.querySelector('.theme-toggle').checked == false) {
-      setCookie('theme','1', '30');
-      element.classList.remove("devise-dark-mode");
-      toggleField();
-      // console.log('light(1) --  ' + getCookie('theme'));
-    } else {
-      setCookie('theme','2', '30');
-      element.classList.add("devise-dark-mode");
-      toggleField();
-      // console.log('dark(2) -- ' + getCookie('theme'));
-    }
-  });
-</script>

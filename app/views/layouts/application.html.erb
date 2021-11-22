@@ -19,12 +19,12 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V69XBLGQ6S"></script>
   </head>
-  <body>
+  <body class="bg-white">
     <%= render "shared/header" %>
     <%= render "shared/flash" %>
-    <div class="container theme overflow-hidden">
+    <div class="container overflow-hidden">
       <%= yield %>
-    </div><!-- .container .theme -->
+    </div><!-- .container -->
     <div id="cookie-banner"></div>
     <%= render "shared/footer" %>
   </body>

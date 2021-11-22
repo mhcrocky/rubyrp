@@ -59,14 +59,6 @@
                       },
                     });
                   }
-                  // Page Load
-                  if (getCookie('theme') == 2) {
-                    setCookie('theme','2', '30');
-                    document.querySelector('.theme-toggle').checked = true;
-                    element.classList.add("dark-mode");
-                  } else { // == 1 OR null
-                    document.querySelector('.theme-toggle').checked = false;
-                  }
                   // Toggle Theme
                   document.querySelector(".theme-toggle").addEventListener('change', (e) => {
                     if (document.querySelector('.theme-toggle').checked == false) {
@@ -81,6 +73,14 @@
                       // console.log('dark(2) -- ' + getCookie('theme'));
                     }
                   });
+                  // Page Load
+                  if (getCookie('theme') == 2) {
+                    setCookie('theme','2', '30');
+                    document.querySelector('.theme-toggle').checked = true;
+                    element.classList.add("dark-mode");
+                  } else { // == 1 OR null
+                    document.querySelector('.theme-toggle').checked = false;
+                  }
                 </script>
 
                 <%= link_to edit_user_registration_path, data: { turbo: false }, class: 'dropdown-item' do %>

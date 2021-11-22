@@ -5,16 +5,15 @@
   User.create(email: "free_#{i+1}@example.com",
               password: "m@keTh1ng$",
               password_confirmation: "m@keTh1ng$",
-              confirmed_at: 1.hour.ago,
-              dark_theme: i % 2 == 1 ? true : false)
+              confirmed_at: 1.hour.ago)
+              # dark_theme: i % 2 == 1 ? true : false)
 end
 
 2.times do |i|
   member = User.create(email: "member_#{i+1}@example.com",
                        password: "m@keTh1ng$",
                        password_confirmation: "m@keTh1ng$",
-                       confirmed_at: 1.hour.ago,
-                       dark_theme: i % 2 == 1 ? true : false)
+                       confirmed_at: 1.hour.ago)
   member.add_role 'member'
   member.remove_role 'visitor'
 end
@@ -23,8 +22,7 @@ end
   admin = User.create(email: "admin_#{i+1}@example.com",
                       password: 'm@keTh1ng$',
                       password_confirmation: "m@keTh1ng$",
-                      confirmed_at: 1.hour.ago,
-                      dark_theme: i % 2 == 1 ? true : false)
+                      confirmed_at: 1.hour.ago)
   admin.add_role 'admin'
   admin.remove_role 'visitor'
 end
@@ -33,8 +31,7 @@ end
   superadmin = User.create(email: "superadmin_#{i+1}@example.com",
                            password: 'm@keTh1ng$',
                            password_confirmation: "m@keTh1ng$",
-                           confirmed_at: 1.hour.ago,
-                           dark_theme: i % 2 == 1 ? true : false)
+                           confirmed_at: 1.hour.ago)
   superadmin.add_role 'superadmin'
   superadmin.remove_role 'visitor'
 end
@@ -43,8 +40,7 @@ end
   sysadmin = User.create(email: "sysadmin_#{i+1}@example.com",
                          password: 'm@keTh1ng$',
                          password_confirmation: "m@keTh1ng$",
-                         confirmed_at: 1.hour.ago,
-                         dark_theme: i % 2 == 1 ? true : false)
+                         confirmed_at: 1.hour.ago)
   sysadmin.add_role 'superadmin'
   sysadmin.add_role 'sysadmin'
   sysadmin.remove_role 'visitor'
