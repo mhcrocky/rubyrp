@@ -132,7 +132,7 @@
             </li><!-- .nav-item -->
 
             <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat">
-              <%= link_to(rooms_path, class: "#{controller.class == RoomsController ? 'active' : ''} nav-link") do %>
+              <%= link_to(rooms_path, data: { turbo: false }, class: "#{controller.class == RoomsController ? 'active' : ''} nav-link") do %>
                 <i class="burger-icon bi bi-chat"></i>
                 <span class="burger-text">Chat</span>
               <% end %>

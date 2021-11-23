@@ -180,100 +180,1007 @@
 
 <% else # user_signed_in? %>
 
-  <section class="text-center mt-3 mb-5 pb-5">
-    <p class="text-muted">Meanwhile, here are some emoji's 🤷</p>
+
+  <section class="text-center my-5 py-5">
+    <h2 class="text-muted">Custom Colors</h2>
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-      <div class="col">
-        <div class="p-3 border">😂</div>
+      <!--------------- Backgrounds  --------------->
+      <div class="col p-3 bg-primary text-white">bg-primary</div>
+      <div class="col p-3 bg-secondary text-white">bg-secondary</div>
+      <div class="col p-3 bg-success text-white">bg-success</div>
+      <div class="col p-3 bg-danger text-white">bg-danger</div>
+      <div class="col p-3 bg-warning text-dark">bg-warning</div>
+      <div class="col p-3 bg-info text-dark">bg-info</div>
+      <div class="col p-3 bg-light text-dark">bg-light</div>
+      <div class="col p-3 bg-dark text-white">bg-dark</div>
+      <div class="col p-3 bg-white text-dark">bg-white</div>
+      <div class="col p-3 bg-transparent">bg-transparent</div>
+      <div class="col p-3 bg-shnozberry text-white">bg-shnozberry</div>
+      <div class="col p-3 bg-tayberry text-white">bg-tayberry</div>
+      <div class="col p-3 bg-brownie text-white">bg-brownie</div>
+      <div class="col p-3 bg-orange text-white">bg-orange</div>
+      <div class="col"></div>
+      <!--------------- Borders and Alerts  --------------->
+      <div class="col border border-primary">
+        <div class="alert alert-primary mt-3" role="alert">A simple primary alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">😍</div>
+      <div class="col border border-secondary">
+        <div class="alert alert-secondary mt-3" role="alert">A simple secondary alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">😒</div>
+      <div class="col border border-success">
+        <div class="alert alert-success mt-3" role="alert">A simple success alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">👌</div>
+      <div class="col border border-danger">
+        <div class="alert alert-danger mt-3" role="alert">A simple danger alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">😊</div>
+      <div class="col border border-warning">
+        <div class="alert alert-warning mt-3" role="alert">A simple warning alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">😘</div>
+      <div class="col border border-info">
+        <div class="alert alert-info mt-3" role="alert">A simple info alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">😭</div>
+      <div class="col border border-light">
+        <div class="alert alert-light mt-3" role="alert">A simple light alert</div>
       </div>
-      <div class="col">
-        <div class="p-3 border">😩</div>
+      <div class="col border border-dark">
+        <div class="alert alert-dark mt-3" role="alert">A simple dark alert</div>
       </div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <!--------------- Badges  --------------->
       <div class="col">
-        <div class="p-3 border">😔</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-primary">Primary</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😔</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-secondary">Secondary</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😁</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-success">Success</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😳</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-danger">Danger</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">👍</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😉</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-info text-dark">Info</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😌</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-light text-dark">Light</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😎</div>
-      </div>
+        <div class="p-3">
+          <span class="badge rounded-pill bg-dark">Dark</span>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col"></div>
+      <div class="col"></div>
+      <!--------------- Spinners --------------->
       <div class="col">
-        <div class="p-3 border">😑</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😴</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😄</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😜</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">😋</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">👏</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">💁</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">🙈</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-border text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">❤️</div>
-      </div>
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">☺️</div>
-      </div>
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">💕</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">✌️</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">🎶</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
       <div class="col">
-        <div class="p-3 border">👀</div>
-      </div>
+        <div class="p-3">
+          <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <div class="spinner-grow text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col"></div>
+      <div class="col"></div>
+      <!--------------- Buttons  --------------->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-primary">Primary</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-secondary">Secondary</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-success">Success</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-danger">Danger</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-warning">Warning</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-info">Info</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-light">Light</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-dark">Dark</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-shnozberry">Shnozberry</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-tayberry">Tayberry</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-brownie">Brownie</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-orange">Orange</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-primary">Primary</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-secondary">Secondary</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-success">Success</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-danger">Danger</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-warning">Warning</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-info">Info</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-light">Light</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-dark">Dark</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-shnozberry">Shnozberry</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-tayberry">Tayberry</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-brownie">Brownie</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col">
+        <div class="p-3">
+          <button type="button" class="btn btn-outline-orange">Orange</button>
+        </div><!-- .p-3 .border -->
+      </div><!-- .col -->
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <!--------------- Text  --------------->
+      <div class="col p-3 text-primary">text primary</div>
+      <div class="col p-3 text-success">text success</div>
+      <div class="col p-3 text-danger">text danger</div>
+      <div class="col p-3 text-warning">text warning</div>
+      <div class="col p-3 text-info">text info</div>
+      <div class="col p-3 text-light">text light</div>
+      <div class="col p-3 text-white">text white</div>
+      <div class="col p-3 text-dark">text dark</div>
+      <div class="col p-3 text-secondary">text secondary</div>
+      <div class="col p-3 text-muted">text muted</div>
+      <div class="col p-3 text-shnozberry">text shnozberry</div>
+      <div class="col p-3 text-tayberry">text tayberry</div>
+      <div class="col p-3 text-brownie">text brownie</div>
+      <div class="col p-3 text-orange">text orange</div>
+      <div class="col"></div>
     </div><!-- .row -->
-  </section><!-- .text-center .mt-3 .mb-5 .pb-5 -->
+  </section><!-- .my-5 py-5 -->
+
+
+  <section class="my-5 py-5">
+    <h2 class="text-muted text-center">Kitchen Sink</h2>
+
+    <div class="my-3">
+      <label for="exampleColorInput" class="form-label">Color picker</label>
+      <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+
+      <p class="display-1">Display 1</p>
+      <p class="display-2">Display 2</p>
+      <p class="display-3">Display 3</p>
+      <p class="display-4">Display 4</p>
+      <p class="display-5">Display 5</p>
+      <p class="display-6">Display 6</p>
+      <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+      <p><del>This line of text is meant to be treated as deleted text.</del></p>
+      <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+      <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+      <p><u>This line of text will render as underlined.</u></p>
+      <p><small>This line of text is meant to be treated as fine print.</small></p>
+      <p><strong>This line rendered as bold text.</strong></p>
+      <p><em>This line rendered as italicized text.</em></p>
+      <blockquote class="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      </blockquote>
+      <ul class="list-unstyled">
+        <li>This is a list.</li>
+        <li>It appears completely unstyled.</li>
+        <li>Structurally, it's still a list.</li>
+        <li>However, this style only applies to immediate child elements.</li>
+        <li>Nested lists:
+          <ul>
+            <li>are unaffected by this style</li>
+            <li>will still show a bullet</li>
+            <li>and have appropriate left margin</li>
+          </ul>
+        </li>
+        <li>This may still come in handy in some situations.</li>
+      </ul>
+      <ul class="list-inline">
+        <li class="list-inline-item">This is a list item.</li>
+        <li class="list-inline-item">And another one.</li>
+        <li class="list-inline-item">But they're displayed inline.</li>
+      </ul>
+      <nav aria-label="breadcrumb mt-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav>
+      <ul class="list-group">
+        <li class="list-group-item disabled" aria-disabled="true">A disabled item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div><!-- .my-3 -->
+
+    <article class="my-4">
+      <h3>Tables</h3>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-hover my-4">
+        <thead>
+        <tr>
+          <th scope="col">Class</th>
+          <th scope="col">Heading</th>
+          <th scope="col">Heading</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Default</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+
+        <tr class="table-primary">
+          <th scope="row">Primary</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-secondary">
+          <th scope="row">Secondary</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-success">
+          <th scope="row">Success</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-danger">
+          <th scope="row">Danger</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-warning">
+          <th scope="row">Warning</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-info">
+          <th scope="row">Info</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-light">
+          <th scope="row">Light</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        <tr class="table-dark">
+          <th scope="row">Dark</th>
+          <td>Cell</td>
+          <td>Cell</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-sm table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+      </table>
+    </article><!-- .my-4 -->
+
+    <article class="my-4">
+      <h3>Forms</h3>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <fieldset class="mb-3">
+          <legend>Radios buttons</legend>
+          <div class="form-check">
+            <input type="radio" name="radios" class="form-check-input" id="exampleRadio1">
+            <label class="form-check-label" for="exampleRadio1">Default radio</label>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
+            <label class="form-check-label" for="exampleRadio2">Another radio</label>
+          </div>
+        </fieldset>
+        <div class="mb-3">
+          <label class="form-label" for="customFile">Upload</label>
+          <input type="file" class="form-control" id="customFile">
+        </div>
+        <div class="mb-3 form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+        </div>
+        <div class="mb-3">
+          <label for="customRange3" class="form-label">Example range</label>
+          <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+        </div>
+      </form>
+      <form>
+        <fieldset disabled aria-label="Disabled fieldset example">
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">Disabled input</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+          </div>
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Disabled select menu</label>
+            <select id="disabledSelect" class="form-select">
+              <option>Disabled select</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+              <label class="form-check-label" for="disabledFieldsetCheck">
+                Can't check this
+              </label>
+            </div>
+          </div>
+          <fieldset class="mb-3">
+            <legend>Disabled radios buttons</legend>
+            <div class="form-check">
+              <input type="radio" name="radios" class="form-check-input" id="disabledRadio1" disabled>
+              <label class="form-check-label" for="disabledRadio1">Disabled radio</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="radio" name="radios" class="form-check-input" id="disabledRadio2" disabled>
+              <label class="form-check-label" for="disabledRadio2">Another radio</label>
+            </div>
+          </fieldset>
+          <div class="mb-3">
+            <label class="form-label" for="disabledCustomFile">Upload</label>
+            <input type="file" class="form-control" id="disabledCustomFile" disabled>
+          </div>
+          <div class="mb-3 form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="disabledSwitchCheckChecked" checked disabled>
+            <label class="form-check-label" for="disabledSwitchCheckChecked">Disabled checked switch checkbox input</label>
+          </div>
+          <div class="mb-3">
+            <label for="disabledRange" class="form-label">Disabled range</label>
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="disabledRange">
+          </div>
+        </fieldset>
+      </form>
+      <form>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+      </form>
+      <form class="row g-3">
+        <div class="col-md-4">
+          <label for="validationServer01" class="form-label">First name</label>
+          <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Last name</label>
+          <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServerUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+            <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationServer03" class="form-label">City</label>
+          <input type="text" class="form-control is-invalid" id="validationServer03" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationServer04" class="form-label">State</label>
+          <select class="form-select is-invalid" id="validationServer04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationServer05" class="form-label">Zip</label>
+          <input type="text" class="form-control is-invalid" id="validationServer05" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+            <label class="form-check-label" for="invalidCheck3">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+      </div>
+      <label for="basic-url" class="form-label">Your vanity URL</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+    </article><!-- .my-4 -->
+
+    <article class="my-4">
+      <h3>Components</h3>
+      <div class="my-2">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div><!-- .accordion -->
+      </div><!-- .accordion -->
+
+      <div class="my-2">
+        <div class="card w-50 my-2">
+          <%= image_tag("missing.svg", alt: 'No video', class: 'card-img-top') %>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-outline-secondary">Go somewhere</a>
+          </div><!-- .card-body -->
+        </div><!-- .card -->
+      </div><!-- .my-2 -->
+
+      <div class="my-2">
+        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+          Popover on top
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+          Popover on end
+        </button>
+        <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+          Popover on bottom
+        </button>
+        <button type="button" class="btn btn-warning" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+          Popover on start
+        </button>
+      </div><!-- .my-2 -->
+      <div class="my-2">
+        <div class="tooltip-demo">
+          <button type="button" class="btn btn-shnozberry" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Tooltip on top</button>
+          <button type="button" class="btn btn-tayberry" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on end">Tooltip on end</button>
+          <button type="button" class="btn btn-brownie" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+          <button type="button" class="btn btn-orange" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on start">Tooltip on start</button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
+        </div>
+      </div><!-- .my-2 -->
+      <div class="my-2">
+        <a class="btn btn-outline-tayberry" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          Offcanvas 1 (href)
+        </a>
+        <button class="btn btn-outline-shnozberry" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          Offcanvas 2 (button)
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div><!-- .my-2 -->
+      <div class="my-2">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                "The quick brown fox jumps over the lazy dog" is an English-language pangram—a sentence that contains all of the letters of the English alphabet.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- .my-2 -->
+      <div class="my-2">
+        <div class="my-1">
+          <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-success w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-info text-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-warning text-dark w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-danger w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+          </div>
+        </div><!-- .my-1 -->
+        <div class="my-1">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div><!-- .my-1 -->
+      </div><!-- .my-2 -->
+    </article><!-- .my-4 -->
+
+    <article class="my-3">
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 my-2 text-center">
+        <div class="col">
+          <div class="p-3 border">😂</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😍</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😒</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">👌</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😊</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😘</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😭</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😩</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😔</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😔</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😁</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😳</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">👍</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😉</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😌</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😎</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😑</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😴</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😄</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😜</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">😋</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">👏</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">💁</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">🙈</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">❤️</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">🤷</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">💕</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">✌️</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">🎶</div>
+        </div>
+        <div class="col">
+          <div class="p-3 border">👀</div>
+        </div>
+      </div><!-- .row .my-2 -->
+    </article><!-- .my-3 -->
+
+    <article class="my-5">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/-8SYJE3jmL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </article><!-- .my-5 -->
+  </section><!-- .my-5 py-5 -->
+
+
+  <div class="position-fixed rounded-pill py-2 px-3 bg-secondary text-warning fw-bold" style="bottom:1rem; left:1rem;">
+    <div class="form-check form-switch pull-right">
+      <input class="form-check-input temporary-theme-toggle" type="checkbox">
+      <label>Temp Dark Theme</label>
+    </div>
+  </div>
+
+  <script>
+    var element = document.body;
+    document.querySelector(".temporary-theme-toggle").addEventListener('change', (e) => {
+      if (document.querySelector('.temporary-theme-toggle').checked == false) {
+        element.classList.remove("dark-mode");
+      } else {
+        element.classList.add("dark-mode");
+      }
+    });
+  </script>
+
 
 <% end # user_signed_in? %>

@@ -7,10 +7,15 @@ img.card-img-top {
   height: auto;
   object-fit: none;
   object-position: center;
+  filter: none;
 }
 
 .preview-thumb img.card-img-top {
   object-fit: cover;
+}
+
+img.card-img-top:hover {
+  filter: grayscale(55%) saturate(105%);
 }
 
 @media screen and (min-width:510px) and (max-width:992px) {
