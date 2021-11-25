@@ -149,7 +149,7 @@
             </button>
           </form>
         <% else %>
-          <div class="d-flex mb-1">
+          <div class="d-flex mb-1 welcome-nav-links">
             <%= link_to('Sign in', new_user_session_path, data: { turbo: false }, class: "nav-link text-light text-center") %>
             <%= link_to("Sign up", new_user_registration_path, data: { turbo: false }, class: "nav-link nav-link-border text-light text-center") %>
           </div>
