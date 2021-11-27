@@ -38,7 +38,7 @@ a:hover { color: rgba(225, 225, 255, 0.7); }
 
 .text-dark { color: var(--lit) !important; }
 
-.text-white, .text-light { color: var(--lit) !important; }
+.text-white, .text-light { color: var(--dim) !important; }
 
 
 /* Backgrounds
@@ -46,8 +46,10 @@ a:hover { color: rgba(225, 225, 255, 0.7); }
 
 .bg-dark { background-color: var(--lit) !important; }
 .navbar.bg-dark,
-.footer-navbar.bg-dark {
+.footer-navbar.bg-dark,
+.badge.bg-dark {
   background-color: #343a40 !important;
+  color: var(--lit) !important;
 }
 
 .bg-white, .bg-light, .offcanvas, .pagination { background-color: var(--dim) !important; }
@@ -221,7 +223,7 @@ table {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) > * {
-  // --bs-table-accent-bg: var(--bs-table-striped-bg);
+  background-color: rgba(225, 225, 255, 0.1) !important;
   color: var(--lit) !important;
 }
 

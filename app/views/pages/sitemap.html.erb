@@ -153,7 +153,7 @@
   </section><!-- .mt-3 .mb-5 -->
 
   <% if current_user.has_role?(:superadmin) %>
-    <section class="mt-3 mb-5">
+    <section class="mt-3 mb-5 pb-5">
       <h4 class="jumbotron-heading mb-3">
         Users
       </h4>
@@ -191,7 +191,7 @@
   <% end # if current_user.has_role?(:superadmin) %>
 
   <% if current_user.has_role?(:sysadmin) %>
-    <section class="mt-3 mb-5">
+    <section class="mb-5 pb-5">
       <h4 class="jumbotron-heading mb-3">
         System
       </h4>
