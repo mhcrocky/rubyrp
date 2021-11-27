@@ -61,6 +61,7 @@
                   }
                   // Toggle Theme
                   document.querySelector(".theme-toggle").addEventListener('change', (e) => {
+                    element.style.transition = "1s";
                     if (document.querySelector('.theme-toggle').checked == false) {
                       setCookie('theme','1', '30');
                       element.classList.remove("dark-mode");

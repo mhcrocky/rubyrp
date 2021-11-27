@@ -1145,10 +1145,10 @@
           <div class="p-3 border">💕</div>
         </div>
         <div class="col">
-          <div class="p-3 border">✌️</div>
+          <div class="p-3 border">🤡</div>
         </div>
         <div class="col">
-          <div class="p-3 border">🎶</div>
+          <div class="p-3 border">💀</div>
         </div>
         <div class="col">
           <div class="p-3 border">👀</div>
@@ -1158,22 +1158,23 @@
 
     <article class="my-5">
       <div class="ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/-8SYJE3jmL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ifj7g1P1POQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </article><!-- .my-5 -->
   </section><!-- .my-5 py-5 -->
 
 
-  <div class="position-fixed rounded-pill py-2 px-3 bg-secondary text-warning fw-bold" style="bottom:1rem; left:1rem;">
+  <div class="position-fixed rounded-pill py-2 px-3 temporary-theme-switch fw-bold" style="bottom:1rem; left:1rem;">
     <div class="form-check form-switch pull-right">
       <input class="form-check-input temporary-theme-toggle" type="checkbox">
-      <label>Temp Dark Theme</label>
+      <label>Test Dark Mode</label>
     </div>
   </div>
 
   <script>
     var element = document.body;
     document.querySelector(".temporary-theme-toggle").addEventListener('change', (e) => {
+      element.style.transition = "1s";
       if (document.querySelector('.temporary-theme-toggle').checked == false) {
         element.classList.remove("dark-mode");
       } else {

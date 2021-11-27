@@ -1,4 +1,4 @@
-/* Backgrounds
+/* Begin Custom Colors
 ----------------------------------------------------------------------------- */
 
 // html, .bg-dark {
@@ -6,23 +6,40 @@
 //   /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
 // }
 
+body {
+
+
+/* Variables
+----------------------------------------------------------------------------- */
+
+--primary: #0a58ca;
+--info: #17a2b8;
+--brownie: rgba(61,12,2,1);
+--orange: rgba(251,79,20,1);
+--tayberry: rgba(230,67,140,1);
+--shnozberry: rgba(111,71,190,1);
+
+
+/* Backgrounds
+----------------------------------------------------------------------------- */
+
 .bg-primary {
-  background-color: #0a58ca !important;
+  background-color: var(--primary) !important;
 }
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color: var(--info) !important;
 }
 .bg-brownie {
-  background-color: rgba(61,12,2,1) !important;
+  background-color: var(--brownie) !important;
 }
 .bg-orange {
-  background-color: rgba(251,79,20,1) !important;
+  background-color: var(--orange) !important;
 }
 .bg-tayberry {
-  background-color: rgba(230,67,140,1) !important;
+  background-color: var(--tayberry) !important;
 }
 .bg-shnozberry {
-  background-color: rgba(111,71,190,1) !important;
+  background-color: var(--shnozberry) !important;
 }
 
 
@@ -30,22 +47,22 @@
 ----------------------------------------------------------------------------- */
 
 .border-primary {
-  border: 1px solid #0a58ca !important;
+  border: 1px solid var(--primary) !important;
 }
 .border-info {
-  border: 1px solid #17a2b8 !important;
+  border: 1px solid var(--info) !important;
 }
 .border-brownie {
-  border: 1px solid rgba(61,12,2,1) !important;
+  border: 1px solid var(--brownie) !important;
 }
 .border-orange {
-  border: 1px solid rgba(251,79,20,1) !important;
+  border: 1px solid var(--orange) !important;
 }
 .border-tayberry {
-  border: 1px solid rgba(230,67,140,1) !important;
+  border: 1px solid var(--tayberry) !important;
 }
 .border-shnozberry {
-  border: 1px solid rgba(111,71,190,1) !important;
+  border: 1px solid var(--shnozberry) !important;
 }
 
 
@@ -53,108 +70,114 @@
 ----------------------------------------------------------------------------- */
 
 .btn-outline-primary {
-  color: #0a58ca !important;
+  color: var(--primary) !important;
   background-color: #fff !important;
   background-image: none;
-  border-color: #0a58ca !important;
+  border-color: var(--primary) !important;
 }
 .btn-outline-primary:hover,
 .btn-primary {
   color: #fff !important;
-  background-color: #0a58ca !important;
-  border-color: #0a58ca !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
 }
-.btn-primary:hover {background-color: #0a58ca !important;}
+.btn-primary:hover {background-color: var(--primary) !important;}
 
 .btn-outline-info {
-  color: #17a2b8 !important;
+  color: var(--info) !important;
   background-color: #fff !important;
   background-image: none;
-  border-color: #17a2b8 !important;
+  border-color: var(--info) !important;
 }
 .btn-outline-info:hover,
 .btn-info {
   color: #fff !important;
-  background-color: #17a2b8 !important;
-  border-color: #17a2b8 !important;
+  background-color: var(--info) !important;
+  border-color: var(--info) !important;
 }
-.btn-info:hover {background-color: #17a2b8 !important;}
+.btn-info:hover {background-color: var(--info) !important;}
 
 .btn-outline-brownie {
-  color: rgba(61,12,2,1) !important;
+  color: var(--brownie) !important;
   background-color: transparent;
   background-image: none;
-  border-color: rgba(61,12,2,1) !important;
+  border-color: var(--brownie) !important;
 }
 .btn-outline-brownie:hover,
 .btn-brownie {
   color: #fff !important;
-  background-color: rgba(61,12,2,1) !important;
-  border-color: rgba(61,12,2,1) !important;
+  background-color: var(--brownie) !important;
+  border-color: var(--brownie) !important;
 }
 .btn-brownie:hover {background-color: rgba(61,12,2,0.9) !important;}
 
 .btn-outline-orange {
-  color: rgba(251,79,20,1) !important;
+  color: var(--orange) !important;
   background-color: transparent;
   background-image: none;
-  border-color: rgba(251,79,20,1) !important;
+  border-color: var(--orange) !important;
 }
 .btn-outline-orange:hover,
 .btn-orange {
   color: #fff !important;
-  background-color: rgba(251,79,20,1) !important;
-  border-color: rgba(251,79,20,1) !important;
+  background-color: var(--orange) !important;
+  border-color: var(--orange) !important;
 }
 .btn-orange:hover {background-color: rgba(251,79,20,0.9) !important;}
 
 .btn-outline-tayberry {
-  color: rgba(230,67,140,1) !important;
+  color: var(--tayberry) !important;
   background-color: transparent;
   background-image: none;
-  border-color: rgba(230,67,140,1) !important;
+  border-color: var(--tayberry) !important;
 }
 .btn-outline-tayberry:hover,
 .btn-tayberry {
   color: #fff !important;
-  background-color: rgba(230,67,140,1) !important;
-  border-color: rgba(230,67,140,1) !important;
+  background-color: var(--tayberry) !important;
+  border-color: var(--tayberry) !important;
 }
-.btn-tayberry:hover {background-color: rgba(230,67,140,0.9) !important;}
+.btn-tayberry:hover { background-color: rgba(230,67,140,0.9) !important; }
 
 .btn-outline-shnozberry {
-  color: rgba(111,71,190,1) !important;
+  color: var(--shnozberry) !important;
   background-color: transparent;
   background-image: none;
-  border-color: rgba(111,71,190,1) !important;
+  border-color: var(--shnozberry) !important;
 }
 .btn-outline-shnozberry:hover,
 .btn-shnozberry {
   color: #fff !important;
-  background-color: rgba(111,71,190,1) !important;
-  border-color: rgba(111,71,190,1) !important;
+  background-color: var(--shnozberry) !important;
+  border-color: var(--shnozberry) !important;
 }
-.btn-shnozberry:hover {background-color: rgba(111,71,190,0.9) !important;}
+.btn-shnozberry:hover { background-color: rgba(111,71,190,0.9) !important; }
 
 
 /* Text
 ----------------------------------------------------------------------------- */
 
 .text-primary, a.text-primary {
-  color: #0a58ca !important;
+  color: var(--primary) !important;
 }
 .text-info, a.text-info {
-  color: #17a2b8 !important;
+  color: var(--info) !important;
 }
 .text-brownie {
-  color: rgba(61,12,2,1) !important;
+  color: var(--brownie) !important;
 }
 .text-orange {
-  color: rgba(251,79,20,1) !important;
+  color: var(--orange) !important;
 }
 .text-tayberry {
-  color: rgba(230,67,140,1) !important;
+  color: var(--tayberry) !important;
 }
 .text-shnozberry {
-  color: rgba(111,71,190,1) !important;
+  color: var(--shnozberry) !important;
+}
+
+
+/* End  Custom Colors
+----------------------------------------------------------------------------- */
+// body
 }
