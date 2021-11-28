@@ -1,6 +1,10 @@
 /* Header
 ----------------------------------------------------------------------------- */
 
+// header .navbar {
+//   margin-bottom: 35px;
+// }
+
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus,
@@ -14,6 +18,11 @@ li.nav-item a:active {
 
 .dropdown-toggle::after {
   display: none !important;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(0,0,0,0) !important;
+  border-color: rgba(0,0,0,0) !important;
 }
 
 @media (min-width: 990px) {
@@ -67,7 +76,7 @@ li.nav-item a:active {
 
 img.header-logo {
   display: block;
-  width: 36px;
+  width: 27px;
   height: auto;
   filter: invert(0%) !important;
 }

@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed w-100 z-eleven p-0">
     <div class="container">
       <%= link_to root_path, data: { turbo: false }, class: 'navbar-brand text-decoration-none' do %>
         <%= image_tag 'logo.png', alt: 'Logo', class: 'header-logo bi pb-1 me-2', title: 'Home' %>
@@ -150,9 +150,9 @@
             </button>
           </form>
         <% else %>
-          <div class="d-flex mb-1 welcome-nav-links">
-            <%= link_to('Sign in', new_user_session_path, data: { turbo: false }, class: "nav-link text-light text-center") %>
-            <%= link_to("Sign up", new_user_registration_path, data: { turbo: false }, class: "nav-link nav-link-border text-light text-center") %>
+          <div class="d-flex mt-1 mb-2 welcome-nav-links">
+            <%= link_to('Sign in', new_user_session_path, data: { turbo: false }, class: "nav-link btn bg-jam text-light fw-bold border-dark rounded") %>
+            <%#= link_to("Sign up", new_user_registration_path, data: { turbo: false }, class: "nav-link text-light") %>
           </div>
         <% end %>
       </div>

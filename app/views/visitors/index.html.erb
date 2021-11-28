@@ -1,4 +1,4 @@
-<section class="jumbotron text-center">
+<section class="jumbotron text-center mt-5">
   <div class="container">
     <h1 class="jumbotron-heading">Free Users</h1>
     <p class="lead text-start text-muted">Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info fw-bold" %>, you are authorized to view free users. Free users can become members upon upgrading to premium.</p>
@@ -12,7 +12,7 @@
   <div class="col-lg-8 mb-5">
     <%= render partial: 'users/users' %>
   </div><!-- .col-lg-8 -->
-  <div class="col-lg-4 mb-5">
+  <div class="col-lg-4 mb-5 pb-5">
     <%= render partial: 'visitors/chart' %>
   </div><!-- .col-lg-4 -->
 </div><!-- .row -->
