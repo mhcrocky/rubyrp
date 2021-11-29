@@ -78,21 +78,7 @@
       <%= column_chart api_v1_charts_month_of_year_single_rooms_path, download: {background: "#ffffff"}, points: false, colors: ["rgba(230,67,140,0.7)"], title: "My Rooms" %>
     <% else %>
       <div class="card mb-3 border-0 shadow-sm">
-        <div class="card-header bg-shnozberry">
-          <h4 class="my-0 fw-bold text-white">Membership</h4>
-        </div><!-- .card-header -->
-        <div class="card-body">
-          <h2 class="card-title pricing-card-title">$35</h2>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li><strong>Pay Once</strong></li>
-            <li>Github Read Access</li>
-            <li>Free use in your own App</li>
-            <li>Participate in <i>and create</i> Video Chats</li>
-          </ul><!-- .list-unstyled -->
-          <a class="mb-3 w-100 btn btn-lg btn-outline-primary" href="mailto:<%= ENV["GMAIL_USERNAME"] %>?subject=I am interested in Membership and Github Read Access">
-            Inquire Today
-          </a>
-        </div><!-- .card-body -->
+        <%= render MembershipPitchComponent.new %>
       </div><!-- .card -->
     <% end %>
   </div><!-- .mt-3 -->
