@@ -26,6 +26,9 @@ gem 'redis'
 # Hotwire (turbo added via yarn)
 gem 'hotwire-rails'
 
+# View Components
+gem "view_component"
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

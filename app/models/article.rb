@@ -26,6 +26,11 @@ class Article < ApplicationRecord
     where("created_at > ?", 1.day.ago)
   }
 
+  # Returns a string .. Aricle title
+  def name
+    self.title
+  end
+
   # Returns a string .. formatted Aricle created_at field
   def created
     if self.created_at > 1.day.ago

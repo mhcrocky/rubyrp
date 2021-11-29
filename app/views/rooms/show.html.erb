@@ -1,18 +1,14 @@
 <section class="jumbotron text-center mt-5">
   <div class="container">
     <%= turbo_frame_tag "room" do %>
-      <h1 class="jumbotron-heading"><%= truncate(@room.name) %></h1>
-      <p class="lead text-muted">
-        <%= @room.created %>
-        <strong class="d-block"><i class="bi bi-person-fill text-dark"></i> <%= link_to truncate(@room.user.name), @room.user, class: "text-info" %></strong>
-      </p>
+      <%= render ShowCreditComponent.new(item: @room) %>
       <% if can? :manage, @room %>
         <p class="mt-0 mb-0">
           <%= link_to edit_room_path(@room), class: 'btn btn-outline-dark' do %>
             <i class='bi bi-pencil-fill text-tayberry' title="Edit"></i>
           <% end %>
           <%= link_to room_path(@room), class: 'btn btn-outline-dark', method: :delete, data: { confirm: 'Are you sure you want to delete this room?' } do %>
-            <i class='bi bi-trash-fill text-danger mx-1' title="Delete"></i>
+            <i class='bi bi-trash-fill text-danger' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"></i>
           <% end %>
         </p>
       <% end %>

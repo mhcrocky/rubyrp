@@ -1,0 +1,7 @@
+<h1 class="jumbotron-heading"><%= @item.name %></h1>
+<p class="lead text-muted">
+  <strong class="d-block mb-2"><i class="bi bi-person-fill text-dark"></i>
+    <%= link_to truncate(@item.user.name), @item.user, class: "text-info", target: "_blank" %>
+  </strong>
+  <%= @item.created %>
+</p>

@@ -24,6 +24,27 @@ RSpec.describe Article, type: :model do
     end
   end
 
+  describe "name" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a string containing the title" do
+      expect(article.name).to eq("I am a title had")
+    end
+  end
+
+  describe "created" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a string containing a formatted created_at date" do
+      expect(article.updated).to eq("Today")
+    end
+  end
+
+  describe "updated" do
+    let(:article) { FactoryBot.build(:article) }
+    it "should return a string containing a formatted created_at date" do
+      expect(article.updated).to eq("Today")
+    end
+  end
+
   describe "iframe" do
     let(:article) { FactoryBot.build(:article) }
     it "should reject an invalid embed" do
@@ -61,20 +82,6 @@ RSpec.describe Article, type: :model do
     it "should create an image with a share link" do
       article.embed = "https://youtu.be/u75Zsl1ECPQ"
       expect(article.thumb).to match("<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/u75Zsl1ECPQ/0.jpg' />")
-    end
-  end
-
-  describe "created" do
-    let(:article) { FactoryBot.build(:article) }
-    it "should return a string containing a formatted created_at date" do
-      expect(article.updated).to eq("Today")
-    end
-  end
-
-  describe "updated" do
-    let(:article) { FactoryBot.build(:article) }
-    it "should return a string containing a formatted created_at date" do
-      expect(article.updated).to eq("Today")
     end
   end
 

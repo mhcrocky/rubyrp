@@ -28,6 +28,7 @@ $ npm view react version
 ## Other Dependencies
 
 * Devise + Rolify + Cancan
+* ViewComponent
 * Action Text (trix)
 * will_paginate
 * Chartkick + Chart.js
