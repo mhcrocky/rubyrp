@@ -8,7 +8,34 @@
 <section class="mb-5 pb-5">
   <h4 class="jumbotron-heading mb-1 ms-1">Our Community</h4>
   <div class="row pb-5">
-    <%= render partial: 'pages/map' %>
+    <!-- Public Map (country name, to avoid divulging sensitive Ahoy::Visit.count data) -->
+    <div class="col-12 mb-5">
+      <script>
+        google.charts.load("current", {
+          "packages":["map"],
+          "mapsApiKey": "<%= "#{ENV['GEOCODER_API']}" %>"
+        });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Location'],
+
+            <% @visits.each do |visit| %>
+              [<%= visit.latitude %>, <%= visit.longitude %>, '<%= "#{visit.location}" %>'],
+            <% end %>
+
+          ]);
+
+          var map = new google.visualization.Map(document.getElementById('map_div'));
+          map.draw(data, {
+            showTooltip: true,
+            showInfoWindow: true
+          });
+        }
+      </script>
+
+      <div id="map_div" class="ratio ratio-21x9"></div>
+    </div><!-- .col-12 .mb-5 -->
     <div class="col-12 mt-1 pt-0">
       <div class="progress">
         <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Free"></div>
