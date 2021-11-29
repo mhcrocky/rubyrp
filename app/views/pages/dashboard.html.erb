@@ -4,8 +4,8 @@
     <div class="container">
       <h1 class="jumbotron-heading">Dashboard</h1>
       <p class="lead text-start text-muted">
-        Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info fw-bold" %>,
-        this site contains a ToDo List, Blog, and WebRTC. This dashboard provides an admin view.
+        Hello, <%= link_to truncate(current_user.name), current_user, class: "text-info fw-bold" %>.
+        Your admin priveleges allow you to manage the Blog, ToDo List, and WebRTC. This is your admin dashboard.
       </p>
       <div class="filter">
         <%= render partial: 'pages/search', locals: { action: root_path, q: '' } %>

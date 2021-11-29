@@ -19,6 +19,9 @@ body {
 --tayberry: rgba(230,67,140,1);
 --shnozberry: rgba(111,71,190,1);
 
+--dim: rgba(3,7,7,1);
+--lit: rgba(255,255,255,1);
+
 
 /* Backgrounds
 ----------------------------------------------------------------------------- */
@@ -43,7 +46,10 @@ body {
 }
 
 .bg-jam {
-  background-image: linear-gradient(to top, rgba(230,67,140,0.79) 0%, rgba(111,71,190,0.79) 100%);
+  filter: saturate(55%);
+  -webkit-filter: saturate(55%);
+  background-image: linear-gradient(to top, var(--tayberry) 0%, var(--shnozberry) 100%);
+  color: var(--lit);
 }
 
 
@@ -75,13 +81,13 @@ body {
 
 .btn-outline-primary {
   color: var(--primary) !important;
-  background-color: #fff !important;
+  background-color: var(--lit) !important;
   background-image: none;
   border-color: var(--primary) !important;
 }
 .btn-outline-primary:hover,
 .btn-primary {
-  color: #fff !important;
+  color: var(--lit) !important;
   background-color: var(--primary) !important;
   border-color: var(--primary) !important;
 }
@@ -89,13 +95,13 @@ body {
 
 .btn-outline-info {
   color: var(--info) !important;
-  background-color: #fff !important;
+  background-color: var(--lit) !important;
   background-image: none;
   border-color: var(--info) !important;
 }
 .btn-outline-info:hover,
 .btn-info {
-  color: #fff !important;
+  color: var(--lit) !important;
   background-color: var(--info) !important;
   border-color: var(--info) !important;
 }
@@ -109,7 +115,7 @@ body {
 }
 .btn-outline-brownie:hover,
 .btn-brownie {
-  color: #fff !important;
+  color: var(--lit) !important;
   background-color: var(--brownie) !important;
   border-color: var(--brownie) !important;
 }
@@ -123,7 +129,7 @@ body {
 }
 .btn-outline-orange:hover,
 .btn-orange {
-  color: #fff !important;
+  color: var(--lit) !important;
   background-color: var(--orange) !important;
   border-color: var(--orange) !important;
 }
@@ -137,7 +143,7 @@ body {
 }
 .btn-outline-tayberry:hover,
 .btn-tayberry {
-  color: #fff !important;
+  color: var(--lit) !important;
   background-color: var(--tayberry) !important;
   border-color: var(--tayberry) !important;
 }
@@ -151,7 +157,7 @@ body {
 }
 .btn-outline-shnozberry:hover,
 .btn-shnozberry {
-  color: #fff !important;
+  color: var(--lit) !important;
   background-color: var(--shnozberry) !important;
   border-color: var(--shnozberry) !important;
 }

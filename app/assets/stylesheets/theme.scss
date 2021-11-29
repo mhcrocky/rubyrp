@@ -84,8 +84,14 @@ trix-toolbar .trix-button-row button {
 
 .btn-link, a.btn { color: var(--lit); }
 
-.btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
-.toast-header .btn-close {  filter: none !important; }
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  -webkit-filter: invert(1) grayscale(100%) brightness(200%);
+}
+.toast-header .btn-close {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
 
 .btn-dark { color: #000; background-color: #f8f9fa; border-color: #f8f9fa; }
 .btn-dark:hover { color: #000; background-color: #f9fafb; border-color: #f9fafb; }
@@ -194,6 +200,7 @@ trix-toolbar .trix-button-row button {
   border: 1px solid var(--lit) !important;
   color: rgba(3,3,3,1) !important;
   filter: invert(0.85) !important;
+  -webkit-filter: invert(0.85) !important;
 }
 
 .form-select:focus { border-color: #dc3545; box-shadow: 0 0 0 0.2rem #dc3545; background-color: rgba(255,0,0,0.1); }
@@ -245,11 +252,13 @@ table {
 
 canvas {
   filter: invert(100%) hue-rotate(180deg) saturate(111%);
+  -webkit-filter: invert(100%) hue-rotate(180deg) saturate(111%);
 }
 
 #gauge_div_1,
 #gauge_div_2 {
   filter: invert(95%) hue-rotate(222deg);
+  -webkit-filter: invert(95%) hue-rotate(222deg);
 }
 
 .gstatic {
@@ -366,7 +375,10 @@ svg text {
 .accordion:not(.accordion-flush) { border-top: 1px solid #333; border-top-left-radius: 0.25rem !important; border-top-right-radius: 0.25rem !important; }
 .accordion-button { color: var(--lit); background-color: #000; border: 1px solid #333; border-top: none; }
 .accordion-button:not(.collapsed) { color: var(--lit); background-color: rgba(3,3,3,0.9); border-bottom: none; }
-.accordion-button::after { filter: invert(1) grayscale(100%) brightness(200%); }
+.accordion-button::after {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  -webkit-filter: invert(1) grayscale(100%) brightness(200%);
+}
 .accordion-collapse { border: 1px solid #333; }
 
 .accordion-flush .accordion-button { border-right: 0; border-left: 0; border-radius: 0; }

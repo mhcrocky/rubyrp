@@ -12,15 +12,6 @@
 }
 
 
-/* temporary-theme-switch
------------------------------------------------------------------------------ */
-
-.temporary-theme-switch {
-  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  color: rgba(255,255,255,1);
-}
-
-
 /* progress-bar-animated
 ----------------------------------------------------------------------------- */
 
@@ -32,8 +23,10 @@
 
 .gstatic {
   filter: hue-rotate(151deg);
+  -webkit-filter: hue-rotate(151deg);
   g {
     filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.15));
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.15));
   }
 }
 
@@ -88,4 +81,5 @@ img.center-img:hover, img.center-img:active {
   transform: scale(1.01);
   // transform: skew(-0.3deg, -0.1deg);
   // filter: invert(100%) !important;
+  // -webkit-filter: invert(100%) !important;
 }

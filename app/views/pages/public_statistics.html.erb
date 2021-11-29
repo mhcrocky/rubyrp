@@ -6,10 +6,10 @@
 </section><!-- .jumbotron -->
 
 <section class="mb-5 pb-5">
-  <h4 class="jumbotron-heading mb-1 ms-1">Our Community</h4>
   <div class="row pb-5">
     <!-- Public Map (country name, to avoid divulging sensitive Ahoy::Visit.count data) -->
-    <div class="col-12 mb-5">
+    <h4 class="jumbotron-heading mb-1 ms-1">Visits by Country</h4>
+    <div class="col-12 mb-4">
       <script>
         google.charts.load("current", {
           "packages":["map"],
@@ -35,18 +35,20 @@
       </script>
 
       <div id="map_div" class="ratio ratio-21x9"></div>
-    </div><!-- .col-12 .mb-5 -->
-    <div class="col-12 mt-1 pt-0">
+    </div><!-- .col-12 .mb-4 -->
+    <div class="col-12">
+      <h4 class="jumbotron-heading mb-1 ms-1">Visitors vs Members</h4>
       <div class="progress">
-        <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Free"></div>
-        <div class="progress-bar progress-bar-striped bg-shnozberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.without_role(:visitor).count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Members"></div>
+        <div class="progress-bar progress-bar-striped bg-tayberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.with_role(:visitor).count * 75.319 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visitors"></div>
+        <div class="progress-bar progress-bar-striped bg-shnozberry progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= User.without_role(:visitor).count * 75.319 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Members"></div>
       </div><!-- .progress -->
     </div><!-- .col-12 -->
     <div class="col-12 mt-2 pt-2">
+      <h4 class="jumbotron-heading mb-1 ms-1">Articles vs ToDo Items vs WebRTC</h4>
       <div class="progress">
-        <div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Article.count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Articles"></div>
-        <div class="progress-bar progress-bar-striped bg-brownie progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= TodoItem.count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ToDo Items"></div>
-        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Room.count * 75.31 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat Rooms"></div>
+        <div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Article.count * 75.319 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Articles"></div>
+        <div class="progress-bar progress-bar-striped bg-brownie progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= TodoItem.count * 75.319 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ToDo Items"></div>
+        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= Room.count * 75.319 %>%" data-bs-toggle="tooltip" data-bs-placement="bottom" title="WebRTC"></div>
       </div><!-- .progress -->
     </div><!-- .col-12 -->
   </div><!-- .row .pb-5 -->
