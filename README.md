@@ -4,10 +4,10 @@ A Ruby on Rails Application that utilizes modern, lightweight frameworks and lib
 
 ## Main Dependencies
 
-* Ruby [2.7.4](https://www.ruby-lang.org/en/downloads/releases/)
+* Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
 * Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
 * PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
-* Redis [4.4.0](https://rubygems.org/gems/redis/versions)
+* Redis [4.5.1](https://rubygems.org/gems/redis/versions)
 * Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
 * Stimulus [3.0.1](https://github.com/hotwired/stimulus/releases) (yarn)
 * Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
