@@ -4,7 +4,6 @@
       <%= link_to root_path, data: { turbo: false }, class: 'navbar-brand text-decoration-none' do %>
         <%= image_tag 'logo.png', alt: 'Logo', class: 'header-logo bi pb-1 me-2', title: 'Home' %>
       <% end %>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,7 +17,6 @@
                 <%= link_to(current_user, class: "dropdown-item") do %>
                   <span class="text-info"><%= current_user.name %></span>
                 <% end %>
-
                 <!-- Theme Toggle: markup -->
                 <%= form_for(current_user, url: registration_path(current_user), html: { method: :put, class: "" }) do |f| %>
                   <div class="py-2 px-3 rounded-pill">
@@ -83,7 +81,6 @@
                     document.querySelector('.theme-toggle').checked = false;
                   }
                 </script>
-
                 <%= link_to edit_user_registration_path, data: { turbo: false }, class: 'dropdown-item' do %>
                   Edit Profile
                 <% end %>
@@ -92,7 +89,6 @@
                 <% end %>
               </div><!-- .dropdown-menu .shadow-lg -->
             </li><!-- .nav-item .dropdown -->
-
             <% if current_user.has_role?(:superadmin) %>
               <li class="nav-item dropdown" title="Users">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownRole" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-people"></i> <span class="burger-text">Users</span></a>
@@ -112,7 +108,6 @@
                 </div><!-- .dropdown-menu .shadow-lg -->
               </li><!-- .nav-item .dropdown -->
             <% end %>
-
             <li class="nav-item dropdown" title="Blog">
               <a class="<%= controller.class == ArticlesController ? 'active' : '' %> nav-link dropdown-toggle" href="#" id="dropdownArticle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="burger-icon bi bi-book"></i> <span class="burger-text">Blog</span></a>
               <div class="dropdown-menu shadow-lg" aria-labelledby="dropdownArticle">
@@ -124,14 +119,12 @@
                 <%# end %>
               </div><!-- .dropdown-menu .shadow-lg -->
             </li><!-- .nav-item .dropdown -->
-
             <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ToDo List">
               <%= link_to(todo_items_path, class: "#{controller.class == TodoItemsController ? 'active' : ''} nav-link") do %>
                 <i class="burger-icon bi bi-card-checklist"></i>
                 <span class="burger-text">List</span>
               <% end %>
             </li><!-- .nav-item -->
-
             <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat">
               <%= link_to(rooms_path, data: { turbo: false }, class: "#{controller.class == RoomsController ? 'active' : ''} nav-link") do %>
                 <i class="burger-icon bi bi-chat"></i>
@@ -140,14 +133,15 @@
             </li><!-- .nav-item .dropdown -->
           <% end %>
         </ul>
-
         <!-- RIGHT -->
         <% if user_signed_in? %>
           <form class="d-flex">
-            <input class="form-control border-dark pt-1 pb-1 me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning" type="submit">
+            <input class="form-control border-dark pt-1 pb-1 me-2 my-2" type="search" placeholder="Search" aria-label="Search">
+            <!--
+            <button class="btn btn-outline-transparent text-warning" type="submit">
               <i class="bi bi-search"></i>
             </button>
+            -->
           </form>
         <% else %>
           <div class="d-flex mt-1 mb-2 welcome-nav-links">

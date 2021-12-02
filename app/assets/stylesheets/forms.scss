@@ -28,6 +28,10 @@ trix-editor.form-control {
 /* Buttons and Forms
 ----------------------------------------------------------------------------- */
 
+.form-select {
+  background-image: none !important;
+}
+
 .accordion-button:focus,
 .form-check-input:focus,
 .form-control:focus,
