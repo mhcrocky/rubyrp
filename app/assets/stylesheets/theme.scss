@@ -70,12 +70,8 @@ trix-toolbar .trix-button-row button {
 /* Borders
 ----------------------------------------------------------------------------- */
 
-.border,
-.border-top,
-.border-end,
-.border-bottom,
-.border-start { border-color: rgba(3,7,7,0.9) !important; }
-
+.border-dark { border-color: var(--lit) !important; }
+.border-light { border-color: var(--dim) !important; }
 .border-shnozberry { border-color: var(--dark-shnozberry); }
 
 

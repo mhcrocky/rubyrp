@@ -51,6 +51,10 @@ body {
   background-image: linear-gradient(to top, var(--tayberry) 0%, var(--shnozberry) 100%);
   color: var(--lit);
 }
+.bg-jam:hover {
+  filter: saturate(75%);
+  -webkit-filter: saturate(75%);
+}
 
 
 /* Borders
