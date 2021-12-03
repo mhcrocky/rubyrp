@@ -68,7 +68,7 @@ img.center-img {
   width: 95%;
   height: auto;
   margin: 19px auto;
-  transition: transform 1s;
+  transition: transform 0.75s;
   @media (max-width: 1400px) {
     margin: 37px auto;
   }
@@ -76,9 +76,13 @@ img.center-img {
     margin: 63px auto;
   }
 }
-img.center-img:hover, img.center-img:active {
+img.center-img:hover {
   cursor: zoom-in;
   transform: scale(1.01);
+}
+img.center-img:active {
+  cursor: zoom-in;
+  transform: scale(1.1);
   // transform: skew(-0.3deg, -0.1deg);
   // filter: invert(100%) !important;
   // -webkit-filter: invert(100%) !important;
