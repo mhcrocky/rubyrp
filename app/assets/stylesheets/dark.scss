@@ -52,14 +52,28 @@ a:hover { color: rgba(225, 225, 255, 0.7); }
   color: var(--lit) !important;
 }
 
-.bg-white, .bg-light, .offcanvas, .pagination { background-color: var(--dim) !important; }
+.bg-white,
+.bg-light,
+.offcanvas,
+.pagination {
+  background-color: var(--dim) !important;
+}
 
 .bg-dark.text-white,
 .bg-white.text-white,
-.bg-warning.text-dark,
-.bg-info.text-dark { color: var(--dim) !important; }
+.bg-warning.text-dark {
+  color: var(--dim) !important;
+}
 
 .bg-shnozberry { background-color: var(--dark-shnozberry); }
+
+.bg-shnozberry.text-white,
+.bg-tayberry.text-white,
+.bg-brownie.text-white,
+.bg-orange.text-white,
+.bg-info.text-white {
+  color: var(--lit) !important;
+}
 
 trix-toolbar .trix-button-row button {
   background-color: #dee2e6 !important;
@@ -190,7 +204,7 @@ trix-toolbar .trix-button-row button {
 
 .form-control-plaintext { color: #ccc; }
 
-.form-control { color: var(--lit); background-color: #333; border: 1px solid rgba(3,3,3,0.9); }
+.form-control, .form-control.border-dark { color: var(--lit); background-color: #333; border: 1px solid rgba(3,3,3,0.9) !important; }
 
 .form-select {
   border: 1px solid var(--lit) !important;
