@@ -18,7 +18,7 @@
 <div class="filter mb-2">
   <%= render partial: 'rooms/search', locals: { action: rooms_path, q: '' } %>
 </div><!-- .filter -->
-<div class="table-responsive">
+<div class="table-responsive table-12">
   <table class="table table-hover table-striped">
     <thead class="text-secondary fw-bold">
       <tr>
@@ -28,16 +28,14 @@
       </tr>
     </thead>
     <tbody id="rooms">
-      <%= render(partial: @rooms) %>
+      <%= render partial: 'room', collection: @rooms %>
     </tbody><!-- #rooms (hotwired) -->
   </table><!-- .table .table-striped -->
-</div><!-- .table-responsive -->
-<div class="pagination">
-  <%= will_paginate @rooms,
-    previous_label:'Prev',
-    next_label:'Next',
-    inner_window: 1, outer_window: -1
-  %>
-</div><!-- .pagination -->
-
-<section class="jumbotron text-center mt-5 my-5"></section>
+  <div class="pagination">
+    <%= will_paginate @rooms,
+      previous_label:'Prev',
+      next_label:'Next',
+      inner_window: 1, outer_window: -1
+    %>
+  </div><!-- .pagination -->
+</div><!-- .table-responsive .table-12 -->

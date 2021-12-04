@@ -1,6 +1,12 @@
 /* Tables
 ----------------------------------------------------------------------------- */
 
+@media (min-width: 992px) {
+  .table-12 {
+    min-height: 690px !important;
+  }
+}
+
 .table {
   border: 1px solid #dee2e6 !important;
 }
