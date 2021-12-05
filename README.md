@@ -81,6 +81,18 @@ $ bin/webpack-dev-server (separate tab)
 $ rails db:drop db:create db:migrate
 $ rails db:seed
 ```
+* Importing Heroku database
+```
+$ rails db:drop db:create db:migrate
+$ heroku pg:backups capture DATABASE_URL
+$ curl -o latest.dump `heroku pg:backups public-url`
+$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U YOUR_USERNAME -d DATABASE_NAME latest.dump
+
+- get YOUR_USERNAME on your local machine
+- DATABASE_NAME can be your development/test/production db (Ex. rails_react_bootstrap_development) from your config/database.yml file.
+
+- DATABASE_URL is not a variable or example code you need to set. It is a valid heroku option
+```
 
 ## Initialization (Heroku)
 
