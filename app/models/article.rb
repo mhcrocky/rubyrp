@@ -59,10 +59,10 @@ class Article < ApplicationRecord
     if self.embed.present?
       ### YouTube
       ## Browser link --- use array to handle most playlist links, etc
-      if self.embed =~ /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=/  # self.embed.include? 'https://www.youtube.com/watch?v='
+      if self.embed =~ YOUTUBE_REGEX_ONE  # self.embed.include? 'https://www.youtube.com/watch?v='
         ("<iframe src='https://www.youtube.com/embed/#{self.embed[32..42]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>").html_safe
       ## YouTube share link --- using array, because .split('https://youtu.be/').last wouldn't handle start at option ()?t=12)
-      elsif self.embed =~ /^(https?:\/\/)?(www\.)?youtu.be\//  # self.embed.include? 'https://youtu.be/'
+      elsif self.embed =~ YOUTUBE_REGEX_TWO  # self.embed.include? 'https://youtu.be/'
         ("<iframe src='https://www.youtube.com/embed/#{self.embed[17..27]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>").html_safe
       ### Validate + Generate iframe for whatever other embeds you want to allow (Google Maps, Vimeo, etc)
       # elsif
@@ -78,9 +78,9 @@ class Article < ApplicationRecord
     if self.embed.present?
       ### YouTube
       ## Each YouTube video has 4 generated images [ /0 .. /3 ]
-      if self.embed =~ /^(https?:\/\/)?(www\.)?youtube.com\/watch\?v=/
+      if self.embed =~ YOUTUBE_REGEX_ONE
         ("<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/#{self.embed[32..42]}/0.jpg' />").html_safe
-      elsif self.embed =~ /^(https?:\/\/)?(www\.)?youtu.be\//
+      elsif self.embed =~ YOUTUBE_REGEX_TWO
         ("<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/#{self.embed[17..27]}/0.jpg' />").html_safe
       else
         self.embed = nil
@@ -95,7 +95,7 @@ class Article < ApplicationRecord
         .downcase
         .gsub(/[^a-z0-9\s]/i, ' ')
         .gsub(/[^0-9A-Za-z]/, ' ')
-        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+        .gsub(STOP_WORD_REGEX, ' ')
   end
 
   # Returns a string .. strip out unknown characters, etc.. for title in word tree
@@ -104,7 +104,7 @@ class Article < ApplicationRecord
         .downcase
         .gsub(/[^a-z0-9\s]/i, ' ')
         .gsub(/[^0-9A-Za-z]/, ' ')
-        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+        .gsub(STOP_WORD_REGEX, ' ')
   end
 
   # Search

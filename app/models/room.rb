@@ -66,7 +66,7 @@ class Room < ApplicationRecord
         .downcase
         .gsub(/[^a-z0-9\s]/i, ' ')
         .gsub(/[^0-9A-Za-z]/, ' ')
-        .gsub(/and|are|but|can|from|has|have|had|too|the|there|very|way|where|who/, ' ')
+        .gsub(STOP_WORD_REGEX, ' ')
   end
 
   # Search

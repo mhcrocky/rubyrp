@@ -27,7 +27,7 @@ RSpec.describe Article, type: :model do
   describe "name" do
     let(:article) { FactoryBot.build(:article) }
     it "should return a string containing the title" do
-      expect(article.name).to eq("I am a title had")
+      expect(article.name).to eq("The quick brown fox is and are jumping over the lazy dog about porque.")
     end
   end
 
@@ -88,7 +88,7 @@ RSpec.describe Article, type: :model do
   describe "strip_title_for_tree" do
     let(:article) { FactoryBot.build(:article) }
     it "should return a stripped string" do
-      expect(article.strip_title_for_tree).to eq("i am a title  ")
+      expect(article.strip_title_for_tree).to eq("  quick brown fox is     jumping over   lazy dog     ")
     end
   end
 
