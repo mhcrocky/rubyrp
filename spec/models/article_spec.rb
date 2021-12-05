@@ -27,7 +27,7 @@ RSpec.describe Article, type: :model do
   describe "name" do
     let(:article) { FactoryBot.build(:article) }
     it "should return a string containing the title" do
-      expect(article.name).to eq("The quick brown fox is and are jumping over the lazy dog about porque.")
+      expect(article.name).to eq("The QUICK brown fOx is AND are jumping OVER THE lazy dog about porque.")
     end
   end
 
