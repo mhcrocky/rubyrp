@@ -62,12 +62,48 @@ $ open coverage/index.html
 ```
 
 
+## Initialization
+
+* Replace google analytics ID
+
+* If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
+
+* Search and replace in project:
+```
+rails_react_bootstrap ->
+  config/cable.yml
+  config/database.yml
+  config/environments/production.rb
+
+rails-react-bootstrap ->
+  config/database.yml
+  config/environments/production.rb
+  package.json
+  app/javascript/packs/components/cookieBanner.jsx
+  app/views/devise/mailer/confirmation_instructions.html.erb
+  app/views/devise/mailer/email_changed.html.erb
+  app/views/devise/mailer/password_change.html.erb
+  app/views/devise/mailer/reset_password_instructions.html.erb
+  app/views/devise/mailer/unlock_instructions.html.erb
+  app/views/layouts/mailer.html.erb
+
+RAILSREACTBOOTSTRAP ->
+  app/mailers/application_mailer.rb
+  config/application.rb
+  config/database.yml
+  config/initializers/devise.rb
+
+RRB ->
+  app/views/devise/mailer/confirmation_instructions.html.erb
+  app/views/pages/terms_and_conditions.html.erb
+  app/views/pages/welcome.html.erb
+  app/views/report_mailer/daily.html.erb
+  app/views/shared/_footer.html.erb
+```
+
 ## Initialization (Development)
 
-* Search and replace in project:  rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP , RRB
-* Replace google analytics ID
-* config/example_application.yml -> config/application.yml (figaro and .gitignore already set)
-* If you don't want to verify email, comment out :confirmable in user model and edit db/seeds
+* Run
 ```
 $ bundle install
 $ yarn install
@@ -76,17 +112,20 @@ $ rails db:seed
 $ rails s
 $ bin/webpack-dev-server (separate tab)
 ```
-* Reseting database
+
+* Rename config/example_application.yml -> config/application.yml and define variables (figaro and .gitignore already set)
+
+* Resetting database
 ```
-$ rails db:drop db:create db:migrate
+$ rails db:drop db:create db:migrate RAILS_ENV=development
 $ rails db:seed
 ```
 * Importing Heroku database
 ```
-$ rails db:drop db:create db:migrate
+$ rails db:drop db:create db:migrate RAILS_ENV=development
 $ heroku pg:backups capture DATABASE_URL
 $ curl -o latest.dump `heroku pg:backups public-url`
-$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U YOUR_USERNAME -d DATABASE_NAME latest.dump
+$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U LOCAL_USERNAME -d DATABASE_NAME latest.dump
 
 - get YOUR_USERNAME on your local machine
 - DATABASE_NAME can be your development/test/production db (Ex. rails_react_bootstrap_development) from your config/database.yml file.
@@ -96,13 +135,10 @@ $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U YOUR_USERNAME
 
 ## Initialization (Heroku)
 
-* Search and replace in project: rails_react_bootstrap , rails-react-bootstrap , RAILSREACTBOOTSTRAP , RRB
-* Replace google analytics ID
 * The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 * Buildpacks: heroku/nodejs | heroku/ruby
 * Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
 * example_application.yml -> personalize config vars in your heroku dashboard
-* If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
