@@ -2,6 +2,7 @@
 
 A Ruby on Rails Application that utilizes modern, lightweight frameworks and libraries to shape the frontend. The app also incorporates well-maintained gems. The mission behind the project is to bundle together the latest best practices and serve as a template for future applications.
 
+
 ## Main Dependencies
 
 * Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
@@ -42,6 +43,7 @@ $ npm view react version
 * bootstrap-icons
 * react-cookienotice
 
+
 ## Analysis, Testing and Coverage
 
 * PGHero: root/pghero (See /config/routes.rb)
@@ -64,48 +66,53 @@ $ open coverage/index.html
 
 ## Initialization
 
-<details>
-  <summary>Search and replace in project:</summary>
-
-  1. rails_react_bootstrap
-    ```
-    config/cable.yml
-    config/database.yml
-    config/environments/production.rb
-    ```
-  2. rails-react-bootstrap
-    ```
-    config/database.yml
-    config/environments/production.rb
-    package.json
-    app/javascript/packs/components/cookieBanner.jsx
-    app/views/devise/mailer/confirmation_instructions.html.erb
-    app/views/devise/mailer/email_changed.html.erb
-    app/views/devise/mailer/password_change.html.erb
-    app/views/devise/mailer/reset_password_instructions.html.erb
-    app/views/devise/mailer/unlock_instructions.html.erb
-    app/views/layouts/mailer.html.erb
-    ```
-  3. RAILSREACTBOOTSTRAP
-    ```
-    app/mailers/application_mailer.rb
-    config/application.rb
-    config/database.yml
-    config/initializers/devise.rb
-    ```
-  4. RRB
-    ```
-    app/views/devise/mailer/confirmation_instructions.html.erb
-    app/views/pages/terms_and_conditions.html.erb
-    app/views/pages/welcome.html.erb
-    app/views/report_mailer/daily.html.erb
-    app/views/shared/_footer.html.erb
-    ```
-</details>
-
 * Replace google analytics ID
 
 * If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
+
+* Search and replace in project:
+
+<details>
+  <summary>rails_react_bootstrap</summary>
+
+  1. config/cable.yml
+  2. config/database.yml
+  3. config/environments/production.rb
+</details>
+
+<details>
+  <summary>rails-react-bootstrap</summary>
+
+  1. config/database.yml
+  2. config/environments/production.rb
+  3. package.json
+  4. app/javascript/packs/components/cookieBanner.jsx
+  5. app/views/devise/mailer/confirmation_instructions.html.erb
+  6. app/views/devise/mailer/email_changed.html.erb
+  7. app/views/devise/mailer/password_change.html.erb
+  8. app/views/devise/mailer/reset_password_instructions.html.erb
+  9. app/views/devise/mailer/unlock_instructions.html.erb
+  10. app/views/layouts/mailer.html.erb
+</details>
+
+<details>
+  <summary>RAILSREACTBOOTSTRAP</summary>
+
+  1. app/mailers/application_mailer.rb
+  2. config/application.rb
+  3. config/database.yml
+  4. config/initializers/devise.rb
+</details>
+
+<details>
+  <summary>RRB</summary>
+
+  1. app/views/devise/mailer/confirmation_instructions.html.erb
+  2. app/views/pages/terms_and_conditions.html.erb
+  3. app/views/pages/welcome.html.erb
+  4. app/views/report_mailer/daily.html.erb
+  5. app/views/shared/_footer.html.erb
+</details>
 
 
 ## Initialization (Development)
