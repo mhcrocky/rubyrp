@@ -64,40 +64,49 @@ $ open coverage/index.html
 
 ## Initialization
 
-* Replace google analytics ID
-
-* If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
-
 <details>
   <summary>Search and replace in project:</summary>
 
   1. rails_react_bootstrap
-    * config/cable.yml
-    * config/database.yml
-    * config/environments/production.rb
+    ```
+    config/cable.yml
+    config/database.yml
+    config/environments/production.rb
+    ```
   2. rails-react-bootstrap
-    * config/database.yml
-    * config/environments/production.rb
-    * package.json
-    * app/javascript/packs/components/cookieBanner.jsx
-    * app/views/devise/mailer/confirmation_instructions.html.erb
-    * app/views/devise/mailer/email_changed.html.erb
-    * app/views/devise/mailer/password_change.html.erb
-    * app/views/devise/mailer/reset_password_instructions.html.erb
-    * app/views/devise/mailer/unlock_instructions.html.erb
-    * app/views/layouts/mailer.html.erb
+    ```
+    config/database.yml
+    config/environments/production.rb
+    package.json
+    app/javascript/packs/components/cookieBanner.jsx
+    app/views/devise/mailer/confirmation_instructions.html.erb
+    app/views/devise/mailer/email_changed.html.erb
+    app/views/devise/mailer/password_change.html.erb
+    app/views/devise/mailer/reset_password_instructions.html.erb
+    app/views/devise/mailer/unlock_instructions.html.erb
+    app/views/layouts/mailer.html.erb
+    ```
   3. RAILSREACTBOOTSTRAP
-    * app/mailers/application_mailer.rb
-    * config/application.rb
-    * config/database.yml
-    * config/initializers/devise.rb
+    ```
+    app/mailers/application_mailer.rb
+    config/application.rb
+    config/database.yml
+    config/initializers/devise.rb
+    ```
   4. RRB
-    * app/views/devise/mailer/confirmation_instructions.html.erb
-    * app/views/pages/terms_and_conditions.html.erb
-    * app/views/pages/welcome.html.erb
-    * app/views/report_mailer/daily.html.erb
-    * app/views/shared/_footer.html.erb
+    ```
+    app/views/devise/mailer/confirmation_instructions.html.erb
+    app/views/pages/terms_and_conditions.html.erb
+    app/views/pages/welcome.html.erb
+    app/views/report_mailer/daily.html.erb
+    app/views/shared/_footer.html.erb
+    ```
 </details>
+
+* Replace google analytics ID
+
+* If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
+
 
 ## Initialization (Development)
 
@@ -130,6 +139,7 @@ $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U LOCAL_USERNAM
 
 - DATABASE_URL is not a variable or example code you need to set. It is a valid heroku option
 ```
+
 
 ## Initialization (Heroku)
 
