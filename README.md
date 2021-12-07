@@ -1,20 +1,20 @@
 # Rails React Bootstrap
 
-[![Screenshot](https://rails-react-bootstrap.herokuapp.com/assets/og-fab128531615e906ea867fa57f4490e78698faf348e9f4df0f35df0cfce29af2.png)](https://rails-react-bootstrap.herokuapp.com)
+[![Screenshot](https://rails-react-bootstrap.herokuapp.com/assets/og-7ad506a34090c58c7f172a5aae824f3ed2e6d72f5d6a294a251b4d2f6a2c6ea5.png)](https://rails-react-bootstrap.herokuapp.com)
 
 
 ## Main Dependencies
 
-> Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
-> Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
-> PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
-> Redis [4.5.1](https://rubygems.org/gems/redis/versions)
-> Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
-> Stimulus [3.0.1](https://github.com/hotwired/stimulus/releases) (yarn)
-> Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
-> Turbo [0.8.3](https://rubygems.org/gems/turbo-rails/versions) (yarn)
-> React [17.0.2](https://reactjs.org/versions/) (yarn)
-> Bootstrap [5.1.3](https://getbootstrap.com/docs/versions/) (yarn)
+* Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
+* Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
+* PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
+* Redis [4.5.1](https://rubygems.org/gems/redis/versions)
+* Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
+* Stimulus [3.0.1](https://github.com/hotwired/stimulus/releases) (yarn)
+* Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
+* Turbo [0.8.3](https://rubygems.org/gems/turbo-rails/versions) (yarn)
+* React [17.0.2](https://reactjs.org/versions/) (yarn)
+* Bootstrap [5.1.3](https://getbootstrap.com/docs/versions/) (yarn)
 ```
 Building from scratch (Not cloning or forking)
 $ ruby -v
@@ -27,25 +27,26 @@ $ npm view react version
 
 ## Other Dependencies
 
-> Devise + Rolify + Cancan
-> ViewComponent
-> Action Text (trix)
-> will_paginate
-> Chartkick + Chart.js
-> Groupdate
-> Ahoy
-> Geocoder + maxminddb
-> PGHero
-> Rspec + Simplecov
-> Brakeman + bundler_audit
-> Figaro
-> bootstrap-icons
-> react-cookienotice
+* Devise + Rolify + Cancan
+* ViewComponent
+* Action Text (trix)
+* will_paginate
+* Chartkick + Chart.js
+* Groupdate
+* Ahoy
+* Geocoder + maxminddb
+* PGHero
+* Rspec + Simplecov
+* Brakeman + bundler_audit
+* Figaro
+* bootstrap-icons
+* react-cookienotice
 
 
 ## Analysis, Testing and Coverage
 
 > PGHero: root/pghero (See /config/routes.rb)
+
 > Brakeman + bundler_audit
 ```
 $ brakeman
