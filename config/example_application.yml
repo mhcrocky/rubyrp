@@ -12,10 +12,13 @@
 # https://console.cloud.google.com/home/dashboard?project=api-project-<YOUR_PROJECT_KEY>
 
 
-MAP_KEY: LONG_STRING
+SITE_NAME: Rails React Bootstrap
+SITE_DESCRIPTION: A Ruby on Rails Blog, ToDo List and WebRTC application packed with modern, lightweight libraries and frameworks to shape the frontend.
 
-GEOCODER_API: LONG_STRING
-GEOCODER_API: LONG_STRING
+MAP_KEY: LoNg_StR1Ng
+
+GEOCODER_API: LoNg_StR1Ng
+GEOCODER_API: LoNg_StR1Ng
 
 GMAIL_USERNAME: your_name@example.com
 GMAIL_PASSWORD: your_password
@@ -33,9 +36,13 @@ TWILIO_AUTH_TOKEN:  LONG_STRING
 
 # DATABASE_URL
 
-# GEOCODER_API
+# SITE_NAME
+
+# SITE_DESCRIPTION
 
 # MAP_KEY
+
+# GEOCODER_API
 
 # GMAIL_PASSWORD
 

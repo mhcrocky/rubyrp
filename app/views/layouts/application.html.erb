@@ -6,18 +6,29 @@
     <!-- Title -->
     <title>Rails React Bootstrap</title>
     <!-- Site Description (SEO) -->
-    <meta name="description" content="A Ruby on Rails Blog, ToDo List and WebRTC application packed with modern, lightweight libraries and frameworks to shape the frontend." >
+    <meta name="description" content="<%= ENV["SITE_DESCRIPTION"] %>" >
     <!-- Canonical (SEO) -->
     <link rel="canonical" href="<%= root_url %>">
+    <!-- Facebook meta -->
+    <meta property="og:site_name" content="<%= ENV["SITE_NAME"] %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= root_url %>">
+    <meta property="og:title" content="<%= ENV["SITE_NAME"] %>">
+    <meta property="og:description" content="<%= ENV["SITE_DESCRIPTION"] %>">
+    <meta property="og:image" content="https://rails-react-bootstrap.herokuapp.com/assets/og-fab128531615e906ea867fa57f4490e78698faf348e9f4df0f35df0cfce29af2.png">
+    <!-- Twitter meta -->
+    <!-- <meta name="twitter:site" content="@idonthaveatwitterhandle"> -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= ENV["SITE_NAME"] %>">
+    <meta name="twitter:description" content="<%= ENV["SITE_DESCRIPTION"] %>">
+    <meta name="twitter:image" content="https://rails-react-bootstrap.herokuapp.com/assets/og-fab128531615e906ea867fa57f4490e78698faf348e9f4df0f35df0cfce29af2.png">
     <!-- Verify site for Google Maps -->
     <meta name="google-site-verification" content="<%= "#{ENV['MAPS_KEY']}" %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': true %>
     <%= javascript_pack_tag 'application', 'data-turbo-track': true %>
     <style>
-      html, .bg-dark {
-        background-color: #343a40 !important;
-      }
+      html, .bg-dark { background-color: #343a40 !important; }
     </style>
     <!-- Google Charts -->
     <script src="https://www.gstatic.com/charts/loader.js"></script>

@@ -83,16 +83,17 @@ $ open coverage/index.html
 <details>
   <summary>rails-react-bootstrap</summary>
 
-  1. config/database.yml
-  2. config/environments/production.rb
-  3. package.json
-  4. app/javascript/packs/components/cookieBanner.jsx
-  5. app/views/devise/mailer/confirmation_instructions.html.erb
-  6. app/views/devise/mailer/email_changed.html.erb
-  7. app/views/devise/mailer/password_change.html.erb
-  8. app/views/devise/mailer/reset_password_instructions.html.erb
-  9. app/views/devise/mailer/unlock_instructions.html.erb
+  1.  config/database.yml
+  2.  config/environments/production.rb
+  3.  package.json
+  4.  app/javascript/packs/components/cookieBanner.jsx
+  5.  app/views/devise/mailer/confirmation_instructions.html.erb
+  6.  app/views/devise/mailer/email_changed.html.erb
+  7.  app/views/devise/mailer/password_change.html.erb
+  8.  app/views/devise/mailer/reset_password_instructions.html.erb
+  9.  app/views/devise/mailer/unlock_instructions.html.erb
   10. app/views/layouts/mailer.html.erb
+  11. app/views/layouts/application.html.erb
 </details>
 
 <details>
@@ -138,13 +139,11 @@ $ rails db:seed
 ```
 $ rails db:drop db:create db:migrate RAILS_ENV=development
 $ heroku pg:backups capture DATABASE_URL
+- DATABASE_URL is in your Heroku dashboard config variables. It is a valid Heroku option, so you  do not need to change the above command
 $ curl -o latest.dump `heroku pg:backups public-url`
 $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U LOCAL_USERNAME -d DATABASE_NAME latest.dump
-
 - get YOUR_USERNAME on your local machine
 - DATABASE_NAME can be your development/test/production db (Ex. rails_react_bootstrap_development) from your config/database.yml file.
-
-- DATABASE_URL is not a variable or example code you need to set. It is a valid heroku option
 ```
 
 
