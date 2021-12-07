@@ -1,7 +1,5 @@
 # Rails React Bootstrap
 
-A Ruby on Rails Application that utilizes modern, lightweight frameworks and libraries to shape the frontend. The app also incorporates well-maintained gems. The mission behind the project is to bundle together the latest best practices and serve as a template for future applications.
-
 [![Screenshot](https://rails-react-bootstrap.herokuapp.com/assets/og-fab128531615e906ea867fa57f4490e78698faf348e9f4df0f35df0cfce29af2.png)](https://rails-react-bootstrap.herokuapp.com)
 
 
