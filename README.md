@@ -2,22 +2,23 @@
 
 A Ruby on Rails Application that utilizes modern, lightweight frameworks and libraries to shape the frontend. The app also incorporates well-maintained gems. The mission behind the project is to bundle together the latest best practices and serve as a template for future applications.
 
+[![Screenshot](https://rails-react-bootstrap.herokuapp.com/assets/og-fab128531615e906ea867fa57f4490e78698faf348e9f4df0f35df0cfce29af2.png)](https://rails-react-bootstrap.herokuapp.com)
+
 
 ## Main Dependencies
 
-* Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
-* Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
-* PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
-* Redis [4.5.1](https://rubygems.org/gems/redis/versions)
-* Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
-* Stimulus [3.0.1](https://github.com/hotwired/stimulus/releases) (yarn)
-* Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
-* Turbo [0.8.3](https://rubygems.org/gems/turbo-rails/versions) (yarn)
-* React [17.0.2](https://reactjs.org/versions/) (yarn)
-* Bootstrap [5.1.3](https://getbootstrap.com/docs/versions/) (yarn)
+> Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
+> Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
+> PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
+> Redis [4.5.1](https://rubygems.org/gems/redis/versions)
+> Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
+> Stimulus [3.0.1](https://github.com/hotwired/stimulus/releases) (yarn)
+> Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
+> Turbo [0.8.3](https://rubygems.org/gems/turbo-rails/versions) (yarn)
+> React [17.0.2](https://reactjs.org/versions/) (yarn)
+> Bootstrap [5.1.3](https://getbootstrap.com/docs/versions/) (yarn)
 ```
-Building from scratch (Not .. cloning || forking)
-
+Building from scratch (Not cloning or forking)
 $ ruby -v
 $ rails -v
 $ rails new PROJECT_NAME -d=postgresql --webpacker=react
@@ -28,26 +29,26 @@ $ npm view react version
 
 ## Other Dependencies
 
-* Devise + Rolify + Cancan
-* ViewComponent
-* Action Text (trix)
-* will_paginate
-* Chartkick + Chart.js
-* Groupdate
-* Ahoy
-* Geocoder + maxminddb
-* PGHero
-* Rspec + Simplecov
-* Brakeman + bundler_audit
-* Figaro
-* bootstrap-icons
-* react-cookienotice
+> Devise + Rolify + Cancan
+> ViewComponent
+> Action Text (trix)
+> will_paginate
+> Chartkick + Chart.js
+> Groupdate
+> Ahoy
+> Geocoder + maxminddb
+> PGHero
+> Rspec + Simplecov
+> Brakeman + bundler_audit
+> Figaro
+> bootstrap-icons
+> react-cookienotice
 
 
 ## Analysis, Testing and Coverage
 
-* PGHero: root/pghero (See /config/routes.rb)
-* Brakeman + bundler_audit
+> PGHero: root/pghero (See /config/routes.rb)
+> Brakeman + bundler_audit
 ```
 $ brakeman
 $ brakeman -o brakeman.html
@@ -55,7 +56,7 @@ $ open brakeman.html
 
 $ bundler-audit
 ```
-* Rspec + Simplecov
+> Rspec + Simplecov
 ```
 $ rspec
 $ rspec spec/models/user_spec.rb
@@ -66,11 +67,11 @@ $ open coverage/index.html
 
 ## Initialization
 
-* Replace google analytics ID
+> Replace google analytics ID
 
-* If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
+> If you don't want to verify email, comment out :confirmable in the user model and edit db/seeds
 
-* Search and replace in project:
+> Search and replace in project:
 
 <details>
   <summary>rails_react_bootstrap</summary>
@@ -118,7 +119,7 @@ $ open coverage/index.html
 
 ## Initialization (Development)
 
-* Run
+> Run
 ```
 $ bundle install
 $ yarn install
@@ -128,14 +129,14 @@ $ rails s
 $ bin/webpack-dev-server (separate tab)
 ```
 
-* Rename config/example_application.yml -> config/application.yml and define variables (figaro and .gitignore already set)
+> Rename config/example_application.yml -> config/application.yml and define variables (figaro and .gitignore already set)
 
-* Resetting database
+> Resetting database
 ```
 $ rails db:drop db:create db:migrate RAILS_ENV=development
 $ rails db:seed
 ```
-* Importing Heroku database
+> Importing Heroku database
 ```
 $ rails db:drop db:create db:migrate RAILS_ENV=development
 $ heroku pg:backups capture DATABASE_URL
@@ -149,10 +150,10 @@ $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U LOCAL_USERNAM
 
 ## Initialization (Heroku)
 
-* The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
-* Buildpacks: heroku/nodejs | heroku/ruby
-* Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
-* example_application.yml -> personalize config vars in your heroku dashboard
+> The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+> Buildpacks: heroku/nodejs | heroku/ruby
+> Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
+> example_application.yml -> personalize config vars in your heroku dashboard
 ```
 $ heroku git:remote -a your_app_name
 $ git remote rename heroku production
