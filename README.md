@@ -6,7 +6,7 @@
 ## Main Dependencies
 
 * Ruby [3.0.3](https://www.ruby-lang.org/en/downloads/releases/)
-* Ruby on Rails [6.1.4.1](https://rubygems.org/gems/rails/versions)
+* Ruby on Rails [7.0.0](https://rubygems.org/gems/rails/versions)
 * PostgreSQL [14.0](https://www.postgresql.org/support/versioning/)
 * Redis [4.5.1](https://rubygems.org/gems/redis/versions)
 * Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
