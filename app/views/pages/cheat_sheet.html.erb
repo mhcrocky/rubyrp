@@ -171,7 +171,12 @@
         <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-cookieOne" data-bs-parent="#accordionFlushCookie">
           <div class="accordion-body">
             <div class="trix-content">
-              <pre>console.log(document.cookie);</pre>
+              <h4>
+                <pre>console.log(document.cookie);</pre>
+              </h4>
+              <div class="px-5 py-3">
+                <script>document.write(document.cookie.replace(/;/g, ';<br><br>'));</script>
+              </div>
             </div><!-- .trix-content -->
           </div><!-- .accordion-body -->
         </div><!-- #flush-collapseSeven -->

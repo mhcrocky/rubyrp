@@ -137,6 +137,7 @@ $ rails db:seed
 ```
 > Importing Heroku database
 ```
+$ bin/rails db:environment:set RAILS_ENV=development
 $ rails db:drop db:create db:migrate RAILS_ENV=development
 $ heroku pg:backups capture DATABASE_URL
 - DATABASE_URL is in your Heroku dashboard config variables. It is a valid Heroku option, so you  do not need to change the above command
