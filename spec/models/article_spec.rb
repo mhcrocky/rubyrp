@@ -57,11 +57,11 @@ RSpec.describe Article, type: :model do
     end
     it "should create an iframe with a browser url" do
       article.embed = "https://www.youtube.com/watch?v=u75Zsl1ECPQ"
-      expect(article.iframe).to match("<iframe src='https://www.youtube.com/embed/u75Zsl1ECPQ' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+      expect(article.iframe).to match("<iframe src='https://www.youtube.com/embed/u75Zsl1ECPQ' loading='lazy' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
     end
     it "should create an iframe with a share link" do
       article.embed = "https://youtu.be/u75Zsl1ECPQ"
-      expect(article.iframe).to match("<iframe src='https://www.youtube.com/embed/u75Zsl1ECPQ' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+      expect(article.iframe).to match("<iframe src='https://www.youtube.com/embed/u75Zsl1ECPQ' loading='lazy' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
     end
   end
 
@@ -77,11 +77,11 @@ RSpec.describe Article, type: :model do
     end
     it "should create an image with a browser url" do
       article.embed = "https://www.youtube.com/watch?v=u75Zsl1ECPQ"
-      expect(article.thumb).to match("<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/u75Zsl1ECPQ/0.jpg' />")
+      expect(article.thumb).to match("<img alt='Media' loading='lazy' class='card-img-top' src='https://img.youtube.com/vi/u75Zsl1ECPQ/0.jpg' />")
     end
     it "should create an image with a share link" do
       article.embed = "https://youtu.be/u75Zsl1ECPQ"
-      expect(article.thumb).to match("<img alt='Media' class='card-img-top' src='https://img.youtube.com/vi/u75Zsl1ECPQ/0.jpg' />")
+      expect(article.thumb).to match("<img alt='Media' loading='lazy' class='card-img-top' src='https://img.youtube.com/vi/u75Zsl1ECPQ/0.jpg' />")
     end
   end
 
