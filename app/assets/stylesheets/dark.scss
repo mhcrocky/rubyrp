@@ -28,7 +28,7 @@ a { color: #9de1f6; }
 a:hover { color: rgba(225, 225, 255, 0.7); }
 
 .welcome-nav-links a.nav-link { color: var(--lit) !important; }
-.welcome-nav-links a.nav-link:hover { color: rgba(225, 225, 255, 0.7) !important; }
+.welcome-nav-links a.nav-link:hover { color: var(--lit) !important; }
 
 .pagination a { color: #6c757d !important; }
 
