@@ -3,8 +3,8 @@ module ApplicationHelper
   # Devise methods
 
   def resource_name
-     :user
-   end
+    :user
+  end
 
   def resource_class
     User
