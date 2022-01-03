@@ -1,0 +1,45 @@
+<section class="jumbotron text-center mt-5">
+  <div class="container">
+    <h1 class="jumbotron-heading">Free Users</h1>
+    <p class="lead text-start text-muted">
+      Hi, <%= link_to truncate(current_user.name), current_user, class: "text-info fw-bold" %>,
+      you are authorized to create visitors. You can create a new free user.
+    </p>
+    <div class="filter">
+      <%= render partial: 'visitors/search', locals: { action: new_visitor_path, q: '' } %>
+    </div><!-- .filter -->
+  </div><!-- .container -->
+</section><!-- .jumbotron -->
+
+<div class="row">
+  <div class="col-lg-8 mb-5">
+    <%= render partial: 'users/users' %>
+  </div><!-- .col-lg-8 -->
+  <div class="col-lg-4 mb-5 pb-5">
+    <div class="d-block mb-4 pb-1">
+      <%= column_chart api_v1_charts_month_of_year_visitors_path, download: {background: "#ffffff"}, colors: ["rgba(0,0,0,0.5)"], title: "Free Users" %>
+    </div>
+    <button class="w-100 btn btn-lg btn-outline-info mt-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+      <i class="bi bi-people me-1"></i> New Free User
+    </button>
+  </div><!-- .col-lg-4 -->
+</div><!-- .row -->
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+      <i class="bi bi-people me-1"></i> New Free User
+    </h4><!-- .offcanvas-title -->
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div><!-- .offcanvas-body -->
+  <div class="offcanvas-body">
+    <div class="row">
+      <div class="col-12 my-3">
+        <%= render partial: 'visitors/form', locals: { action: visitors_path } %>
+      </div><!-- .col-12 -->
+    </div><!-- .row -->
+  </div><!-- .offcanvas-body -->
+  <div class="offcanvas-footer text-end">
+    <button type="button" class="btn btn-secondary me-3 mb-3" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+  </div>
+</div><!-- .offcanvas .offcanvas-start -->

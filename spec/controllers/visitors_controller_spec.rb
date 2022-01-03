@@ -5,33 +5,33 @@ describe VisitorsController do
 
   render_views
 
-  describe "GET #index" do
+  describe "GET #new" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:sysadmin]
       @user = FactoryBot.create(:sysadmin)
       @user.roles << Role.where(name: 'sysadmin').first_or_create
       sign_in @user
     end
-    it "renders the :index view for a sysadmin" do
-      get :index
+    it "renders the :new view for a sysadmin" do
+      get :new
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #index" do
+  describe "GET #new" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:superadmin]
       @user = FactoryBot.create(:superadmin)
       @user.roles << Role.where(name: 'superadmin').first_or_create
       sign_in @user
     end
-    it "renders the :index view for a superadmin" do
-      get :index
+    it "renders the :new view for a superadmin" do
+      get :new
       expect(response.status).to eq(200)
     end
   end
 
-  describe "GET #index" do
+  describe "GET #new" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:admin]
       @user = FactoryBot.create(:admin)
@@ -39,12 +39,12 @@ describe VisitorsController do
       sign_in @user
     end
     it "denies access to an admin" do
-      get :index
+      get :new
       expect(response.status).to eq(302)
     end
   end
 
-  describe "GET #index" do
+  describe "GET #new" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:member]
       @user = FactoryBot.create(:member)
@@ -52,12 +52,12 @@ describe VisitorsController do
       sign_in @user
     end
     it "denies access to a member" do
-      get :index
+      get :new
       expect(response.status).to eq(302)
     end
   end
 
-  describe "GET #index" do
+  describe "GET #new" do
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:visitor]
       @user = FactoryBot.create(:visitor)
@@ -65,7 +65,7 @@ describe VisitorsController do
       sign_in @user
     end
     it "denies access to a visitor" do
-      get :index
+      get :new
       expect(response.status).to eq(302)
     end
   end

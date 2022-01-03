@@ -1,0 +1,15 @@
+<%= form_for @member, url: action, html: { class: 'form-horizontal' } do |f| %>
+
+  <div class="form-floating mb-3">
+    <%= f.email_field :email, autocomplete: "email", id: "inputEmail", class: "form-control", placeholder: "Email address", autofocus: false %>
+    <label for="inputEmail"><code>&#42; Email</code></label>
+  </div><!-- .form-floating -->
+
+  <div class="form-floating mb-3">
+    <%= f.password_field :password, autocomplete: "current-password", id: "inputPassword", class: "form-control", placeholder: "Password (6 characters minimum)", autofocus: false %>
+    <label for="inputPassword"><code>&#42; Password</code></label>
+  </div><!-- .form-floating -->
+
+  <%= f.submit "Create", class: "w-100 btn btn-lg btn-info text-light" %>
+
+<% end %>

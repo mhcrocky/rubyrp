@@ -26,9 +26,16 @@ Rails.application.routes.draw do
   end
 
   resources :superadmins, only: [:new, :create]
+  get '/superadmins', to: 'superadmins#new'
+
   resources :admins, only: [:new, :create]
-  resources :members, only: [:index]
-  resources :visitors, only: [:index]
+  get '/admins', to: 'admins#new'
+
+  resources :members, only: [:new, :create]
+  get '/members', to: 'members#new'
+
+  resources :visitors, only: [:new, :create]
+  get '/visitors', to: 'visitors#new'
 
   resources :rooms do
     resources :notes, only: [:new, :create]
