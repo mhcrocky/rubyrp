@@ -151,8 +151,11 @@ $ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U LOCAL_USERNAM
 ## Initialization (Heroku)
 
 > The Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+
 > Buildpacks: heroku/nodejs | heroku/ruby
+
 > Add-ons (free): Heroku Postgres | Heroku Redis | Heroku Scheduler | Rollbar | Papertrail
+
 > example_application.yml -> personalize config vars in your heroku dashboard
 ```
 $ heroku git:remote -a your_app_name
@@ -160,13 +163,14 @@ $ git remote rename heroku production
 $ git push production master
 $ heroku run rake db:schema:load
 $ heroku run rake db:seed
-$ heroku run rake db:migrate
 
-$ heroku run rails c
-$ heroku run rake clean_ahoy
-$ heroku run rake deliver_daily
+$ heroku run rake db:migrate
 
 $ heroku logs --tail
 
 $ heroku restart
+
+$ heroku run rails c
+$ heroku run rake clean_ahoy
+$ heroku run rake deliver_daily
 ```
