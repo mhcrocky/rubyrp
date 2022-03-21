@@ -10,6 +10,7 @@ gem 'rails', '~> 7.0.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 
+# Avoid Ruby 3.1.1 errors 
 gem 'psych', '< 4'
 
 # Use Puma as the app server
