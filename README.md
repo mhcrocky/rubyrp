@@ -1,6 +1,6 @@
 # Rails React Bootstrap
 
-[![Screenshot](https://rails-react-bootstrap.herokuapp.com/assets/og-7ad506a34090c58c7f172a5aae824f3ed2e6d72f5d6a294a251b4d2f6a2c6ea5.png)](https://rails-react-bootstrap.herokuapp.com)
+[![Screenshot](http://www.couriernewjersey.com/images/github-screenshot.png)](https://rails-react-bootstrap.herokuapp.com)
 
 
 ## Main Dependencies
