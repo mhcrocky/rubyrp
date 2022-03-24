@@ -29,10 +29,13 @@
     "react-dom": "^17.0.1",
     "stimulus": "3.0.1",
     "trix": "^1.2.0",
-    "turbo": "1.0.0",
+    "turbo": "1.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
+  "engines": {
+    "node": "^15.4.0"
+  },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
   }
