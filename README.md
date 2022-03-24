@@ -11,7 +11,7 @@
 * Redis [4.5.1](https://rubygems.org/gems/redis/versions)
 * Webpacker [4.3.0](https://rubygems.org/gems/webpacker/versions)
 * Hotwire [0.1.3](https://rubygems.org/gems/hotwire-rails/versions)
-* Turbo [1.0.0](https://rubygems.org/gems/turbo-rails/versions) (yarn)
+* Turbo [1.0.1](https://rubygems.org/gems/turbo-rails/versions) (yarn)
 * Stimulus [3.0.1](https://github.com/hotwired/stimulus/releases) (yarn)
 * React [17.0.2](https://reactjs.org/versions/) (yarn)
 * Bootstrap [5.1.3](https://getbootstrap.com/docs/versions/) (yarn)
@@ -137,7 +137,7 @@ $ rails db:seed
 ```
 > Importing Heroku database
 ```
-$ bin/rails db:environment:set RAILS_ENV=development
+$ rails db:environment:set RAILS_ENV=development
 $ rails db:drop db:create db:migrate RAILS_ENV=development
 $ heroku pg:backups capture DATABASE_URL
 - DATABASE_URL is in your Heroku dashboard config variables. It is a valid Heroku option, so you  do not need to change the above command
