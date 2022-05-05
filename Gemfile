@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby '3.1.0' ## waiting for Rails 7.0.1
-ruby '3.1.1'
+ruby '3.1.2'
 
-# # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0.2.3'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 7.0', '>= 7.0.2.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 
-# Avoid Ruby 3.1.1 errors 
+# Avoid Ruby 3.1.1 errors
 gem 'psych', '< 4'
 
 # Use Puma as the app server
