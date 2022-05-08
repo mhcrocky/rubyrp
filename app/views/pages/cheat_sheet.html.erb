@@ -12,7 +12,6 @@
 
 <% if user_signed_in? %>
 
-
   <section class="mt-3 mb-5 pb-1">
     <h4 class="jumbotron-heading">
       ToDo Items <small>(JS Console + API Links)</small>
@@ -174,8 +173,12 @@
               <h4>
                 <pre>console.log(document.cookie);</pre>
               </h4>
-              <div class="px-5 py-3">
-                <script>document.write(document.cookie.replace(/;/g, ';<br><br>'));</script>
+              <div class="px-5 py-3" id="cookie">
+                <script>
+                  // When you set the textContent property,
+                  // all child nodes are removed and replaced by only one new text node.
+                  document.querySelector('#cookie').textContent = document.cookie.replace(/;/g, '; ----- ');
+                </script>
               </div>
             </div><!-- .trix-content -->
           </div><!-- .accordion-body -->
@@ -183,7 +186,6 @@
       </div><!-- .accordion-item -->
     </div><!-- #accordionFlushCookie -->
   </section><!-- .mt-3 .mb-5 .pb-1 -->
-
 
 <% else # user_signed_in? %>
 
