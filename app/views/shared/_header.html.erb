@@ -145,8 +145,8 @@
           </form>
         <% else %>
           <div class="d-flex mt-1 mb-2 welcome-nav-links">
-            <%= link_to('Sign in', new_user_session_path, data: { turbo: false }, class: "nav-link text-white fw-bold border-0 rounded-1") %>
-            <%= link_to('Sign up', new_user_registration_path, data: { turbo: false }, class: "nav-link btn bg-sign-in text-white fw-bold border-0 rounded-1") %>
+            <%= link_to('Sign in', new_user_session_path, data: { turbo: false }, class: "nav-link text-white fw-bold border-0 rounded-1 p-2 me-1") %>
+            <%= link_to('Sign up', new_user_registration_path, data: { turbo: false }, class: "nav-link btn bg-sign-in text-white fw-bold border-0 rounded-1 p-2") %>
           </div>
         <% end %>
       </div>
